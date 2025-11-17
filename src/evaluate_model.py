@@ -12,6 +12,7 @@ import numpy as np
 import evaluate
 import os
 import json
+from sklearn.metrics import confusion_matrix
 
 # --- 0. VRAM Measurement Setup ---
 if torch.cuda.is_available():
@@ -80,6 +81,7 @@ accuracy_metric = evaluate.load("accuracy")
 precision_metric = evaluate.load("precision")
 recall_metric = evaluate.load("recall")
 f1_metric = evaluate.load("f1")
+mcc_metric = evaluate.load("matthews_correlation")
 
 def compute_metrics(eval_pred):
     predictions, labels = eval_pred
@@ -90,12 +92,17 @@ def compute_metrics(eval_pred):
     precision = precision_metric.compute(predictions=predictions, references=labels, average="weighted")
     recall = recall_metric.compute(predictions=predictions, references=labels, average="weighted")
     f1 = f1_metric.compute(predictions=predictions, references=labels, average="weighted")
+    mcc = mcc_metric.compute(predictions=predictions, references=labels)
     
+    cm = confusion_matrix(labels, predictions)
+    print(f"\nConfusion Matrix:\n{cm}")
+
     return {
         "accuracy": accuracy["accuracy"],
         "precision": precision["precision"],
         "recall": recall["recall"],
         "f1": f1["f1"],
+        "matthews_correlation": mcc["matthews_correlation"],
     }
 
 # --- 6. INITIALIZE TRAINER FOR EVALUATION ---
@@ -124,6 +131,7 @@ print(f"  Accuracy: {results['eval_accuracy']:.4f}")
 print(f"  Precision: {results['eval_precision']:.4f}")
 print(f"  Recall: {results['eval_recall']:.4f}")
 print(f"  F1-Score: {results['eval_f1']:.4f}")
+print(f"  Matthews Correlation: {results['eval_matthews_correlation']:.4f}")
 
 # --- 8. VRAM Measurement Reporting ---
 if device is not None:
