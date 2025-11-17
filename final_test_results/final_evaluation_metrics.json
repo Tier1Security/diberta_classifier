@@ -6,7 +6,7 @@
     "eval_recall": 1.0,
     "eval_f1": 1.0,
     "eval_matthews_correlation": 1.0,
-    "eval_runtime": 1.3169,
-    "eval_samples_per_second": 1518.714,
-    "eval_steps_per_second": 24.299
+    "eval_runtime": 1.3188,
+    "eval_samples_per_second": 1516.57,
+    "eval_steps_per_second": 24.265
 }
