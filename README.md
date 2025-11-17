@@ -34,6 +34,8 @@ The model is trained as a multi-class sequence classifier to assign one of four 
 | MITRE Technique | MITRE ID | Description |
 | :--- | :--- | :--- |
 | Credential Dumping | **T1003.002** |	Focuses on accessing sensitive data stored in Registry Hives (specifically the SAM and SECURITY hives) or the LSA secrets. |
+| Account Discovery: Local Account | **T1087.001** | Adversaries may attempt to get a listing of local system accounts. This information can help adversaries determine which local accounts exist on a system to aid in follow-on behavior. |
+| System Network Connections Discovery | **T1049** | Adversaries may attempt to get a listing of network connections to or from the compromised system they are currently accessing or from remote systems by querying for information over the network. |
 
 -----
 
