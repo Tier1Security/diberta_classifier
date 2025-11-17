@@ -9,15 +9,16 @@ A highly accurate sequence classification model fine-tuned to detect log events 
 This model achieved **perfect classification** on a dedicated, held-out test set, demonstrating robust generalization across the defined MITRE techniques.
 
 | **Metric** | **Value** |
-| eval_loss | 0.017877502366900444 |
-| eval_model_preparation_time | 0.0024 |
-| eval_accuracy | 1.0 |
-| eval_precision | 1.0 |
-| eval_recall | 1.0 |
-| eval_f1 | 1.0 |
-| eval_runtime | 1.3101 |
-| eval_samples_per_second | 1526.604 |
-| eval_steps_per_second | 24.426 |
+| :--- | :--- |
+| **eval_loss** | 0.017877502366900444 |
+| **eval_model_preparation_time** | 0.0024 |
+| **eval_accuracy** | 1.0 |
+| **eval_precision** | 1.0 |
+| **eval_recall** | 1.0 |
+| **eval_f1** | 1.0 |
+| **eval_runtime** | 1.3101 |
+| **eval_samples_per_second** | 1526.604 |
+| **eval_steps_per_second** | 24.426 |
 
 ### Inference Performance
 
