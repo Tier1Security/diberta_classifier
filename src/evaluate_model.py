@@ -29,7 +29,7 @@ else:
 BASE_MODEL_ID = "microsoft/deberta-v3-base" 
 ADAPTER_PATH = "models/final_deberta_model" # Directory where trainer.save_model() saved the LoRA adapter
 TEST_DATA_FILE = "data/test.csv" # *** CRITICAL: Ensure this is a new, unseen dataset ***
-RESULT_OUTPUT_DIR = "final_test_results" 
+RESULT_OUTPUT_DIR = "results/final_test_results" 
 
 # Set seed for reproducibility
 set_seed(42)
