@@ -1,8 +1,8 @@
 -----
 
-# 🛡️ MITRE T1003.002 Credential Dumping Detector
+# 🛡️ MITRE ATT&CK classifier built on DeBERTa-v3
 
-A highly accurate sequence classification model fine-tuned to detect log events associated with **OS Credential Dumping** (MITRE ATT\&CK T1003.002) and related techniques.
+This model is a fine-tuned DeBERTa-v3 text classifier designed to detect cybersecurity threats. It analyzes text to categorize it as either benign or a specific MITRE ATT&CK technique, such as credential dumping or process discovery.
 
 ## 🌟 Model Performance Summary
 
