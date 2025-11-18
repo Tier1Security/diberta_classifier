@@ -113,15 +113,27 @@ else:
         model = PeftModel.from_pretrained(base_model, selected_model_path)
         model = model.merge_and_unload()
     except Exception as e:
-        print(f"PEFT load failed ({e}). Falling back to loading full model from {selected_model_path}...")
-        model = AutoModelForSequenceClassification.from_pretrained(
-            selected_model_path,
-            num_labels=len(labels),
-            id2label=id2label,
-            label2id=label2id,
-            torch_dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
-            device_map="auto" if torch.cuda.is_available() else None,
-        )
+        print(f"PEFT load failed ({e}). Attempting to load a full model from: {selected_model_path}...")
+        try:
+            model = AutoModelForSequenceClassification.from_pretrained(
+                selected_model_path,
+                num_labels=len(labels),
+                id2label=id2label,
+                label2id=label2id,
+                torch_dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
+                device_map="auto" if torch.cuda.is_available() else None,
+            )
+        except Exception as e2:
+            print(f"Failed to load full model from {selected_model_path} ({e2}).")
+            print(f"Falling back to loading the base model from the hub: {BASE_MODEL_ID}...")
+            model = AutoModelForSequenceClassification.from_pretrained(
+                BASE_MODEL_ID,
+                num_labels=len(labels),
+                id2label=id2label,
+                label2id=label2id,
+                torch_dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
+                device_map="auto" if torch.cuda.is_available() else None,
+            )
 
 # --- 5. METRICS CALCULATION (Same as training) ---
 accuracy_metric = evaluate.load("accuracy")

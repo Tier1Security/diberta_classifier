@@ -7,3 +7,6 @@ bitsandbytes
 accelerate
 scikit-learn
 ninja
+pandas
+numpy
+evaluate

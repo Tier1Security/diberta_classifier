@@ -4,11 +4,13 @@ import os
 
 # --- HELPER FUNCTIONS FOR OBFUSCATION ---
 def normalize_case(text):
-    """Introduces random case variations for better obfuscation training (approx. 70% chance of mixed case)."""
-    if random.random() < 0.7:
-        # Apply mixed casing
-        return ''.join(c.upper() if random.random() < 0.5 else c.lower() for c in text)
-    # Default to lowercase
+    """
+    Forces all text to lowercase to match the server's preprocessing step.
+    This aligns the training data with the deployment strategy, simplifying 
+    the model's task and maximizing prediction confidence for command arguments.
+    """
+    # CRITICAL CHANGE: Always return lowercase. The Flask API handles this 
+    # normalization, so the model only needs to learn the lowercase patterns.
     return text.lower()
 
 def random_space():

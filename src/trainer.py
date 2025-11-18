@@ -59,21 +59,39 @@ raw_datasets = DatasetDict({
 print("Filtering dataset for 'Benign' and 'T1003.002' classes...")
 raw_datasets = raw_datasets.filter(lambda example: example['label'] in [0, 1])
 
+# Determine the column names for text and label for robustness
+text_column = "text"
+label_column = "label"
+
 # --- 3. TOKENIZER & PREPROCESSING ---
-# CRITICAL CHANGE: Using AutoTokenizer for RoBERTa
+# CRITICAL: RoBERTa-base tokenizer is inherently CASED, meaning it
+# 'accommodates' case differences by treating them as distinct tokens.
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 
 def preprocess_function(examples):
-    # Tokenize the text column
-    inputs = tokenizer(examples["text"], max_length=128, padding="max_length", truncation=True)
+    # Tokenize the text column. By not applying .lower() here, 
+    # the RoBERTa tokenizer preserves the casing, accommodating the differences.
+    # The 'text' column is passed directly to keep case distinctions.
+    inputs = tokenizer(
+        examples[text_column], 
+        max_length=128, 
+        padding="max_length", 
+        truncation=True
+    )
     
     # The 'label' column is used for training
-    inputs["labels"] = examples["label"]
+    inputs["labels"] = examples[label_column]
     
     return inputs
 
 print("Preprocessing datasets...")
-processed_datasets = raw_datasets.map(preprocess_function, batched=True, remove_columns=raw_datasets["train"].column_names)
+# Get list of columns to remove, keeping only the label column for training later
+cols_to_remove = [col for col in raw_datasets["train"].column_names if col not in [label_column]]
+processed_datasets = raw_datasets.map(
+    preprocess_function, 
+    batched=True, 
+    remove_columns=cols_to_remove
+)
 
 
 # --- 4. MODEL LOADING (Sequence Classification) ---
@@ -83,7 +101,8 @@ model = AutoModelForSequenceClassification.from_pretrained(
     num_labels=len(labels),
     id2label=id2label,
     label2id=label2id,
-    torch_dtype=torch.bfloat16,
+    # Use bfloat16 for efficiency on supported GPUs
+    torch_dtype=torch.bfloat16, 
     device_map="auto",
 )
 
@@ -93,10 +112,12 @@ model.enable_input_require_grads()
 
 # --- 5. PEFT CONFIG (BitFit preferred, LoRA fallback) ---
 if _PEFT_BACKEND == "bitfit":
+    # BitFit only tunes bias terms
     peft_config = BitFitConfig(
         bias="all",
         task_type="SEQ_CLS",
     )
+    print("Using BitFit configuration for PEFT.")
 else:
     # LoRA fallback: small rank to keep compute reasonable
     peft_config = LoraConfig(
@@ -106,6 +127,7 @@ else:
         bias="none",
         task_type="SEQ_CLS",
     )
+    print(f"BitFit not available. Falling back to LoRA configuration.")
 
 model = get_peft_model(model, peft_config)
 model.print_trainable_parameters()
@@ -120,7 +142,7 @@ def compute_metrics(eval_pred):
     predictions, labels = eval_pred
     predictions = np.argmax(predictions, axis=1)
     
-    # Use 'binary' average for binary classification
+    # Use 'binary' average for binary classification (0 and 1)
     accuracy = accuracy_metric.compute(predictions=predictions, references=labels)
     precision = precision_metric.compute(predictions=predictions, references=labels, average="binary")
     recall = recall_metric.compute(predictions=predictions, references=labels, average="binary")
@@ -176,14 +198,14 @@ trainer = Trainer(
 )
 
 # --- 9. TRAIN ---
-print("Starting training for Sequence Classification (RoBERTa-base with BitFit)...")
+print("Starting training for Sequence Classification (RoBERTa-base with PEFT)...")
 trainer.train()
 
 # --- 10. VRAM MEASUREMENT REPORTING ---
 if device is not None:
     peak_vram = torch.cuda.max_memory_allocated(device) / (1024**2) # Convert bytes to MB
     print(f"\n--- VRAM Usage ---")
-    print(f"  Peak VRAM allocated during training: {peak_vram:.2f} MB")
+    print(f"  Peak VRAM allocated during training: {peak_vram:.2f} MB")
 
 
 # --- 11. SAVE ---
