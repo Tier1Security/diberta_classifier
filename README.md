@@ -1,89 +1,70 @@
------
+🛡️ MITRE ATT&CK T1003.002 Classifier (RoBERTa-Base + BitFit)
 
-# 🛡️ MITRE ATT&CK classifier built on RoBERTa BitFit
+This model is a fine-tuned RoBERTa-base classifier designed to detect the high-risk MITRE ATT&CK technique T1003.002 — OS Credential Dumping from system log or command-line snippets.
+It predicts whether an input is Benign or T1003.002 (Malicious).
 
-This model is a fine-tuned DeBERTa-v3 text classifier designed to detect cybersecurity threats. It analyzes text to categorize it as either benign or a specific MITRE ATT&CK technique, such as credential dumping or process discovery.
+🌟 Model Performance Summary
 
-## 🌟 Model Performance Summary
+The model achieved an overall Accuracy: 0.9995 on a held-out test set, demonstrating strong generalization on both benign and malicious samples.
 
-This model achieved **perfect classification** on a dedicated, held-out test set, demonstrating robust generalization across the defined MITRE techniques.
+Confusion Matrix
+	Predicted Benign	Predicted T1003.002
+Actual Benign	1923 (TN)	2 (FP)
+Actual T1003.002	0 (FN)	1997 (TP)
 
---- Confusion Matrix ---
-|           |   Predicted Benign |   Predicted T1003.002 |
-|:----------|-------------------:|----------------------:|
-| Benign    |               1923 |                     2 |
-| T1003.002 |                  0 |                  1997 |
+Perfect recall (0 False Negatives) — every malicious sample was successfully detected.
 
---- Classification Report (Per-Class Metrics) ---
-|              | precision | recall | f1-score | support |
-|:-------------|----------:|-------:|---------:|--------:|
-|      Benign  |   1.0000  | 0.9990 | 0.9995   |   1925  |
-|   T1003.002  |   0.9990  | 1.0000 | 0.9995   |   1997  |
-|    accuracy  |                    | 0.9995   |   3922  |
-|   macro avg  |   0.9995  | 0.9995 | 0.9995   |   3922  |
-| weighted avg |   0.9995  | 0.9995 | 0.9995   |   3922  |
+Classification Report
+Class	Precision	Recall	F1-Score	Support
+Benign	1.0000	0.9990	0.9995	1925
+T1003.002 (Malicious)	0.9990	1.0000	0.9995	1997
+Macro Average	0.9995	0.9995	0.9995	3922
+Weighted Average	0.9995	0.9995	0.9995	3922
+🎯 Classification Task and Labels
 
-==================================================
+A binary sequence classification task assigning one of two labels:
 
+MITRE Technique	MITRE ID	Description
+OS Credential Dumping	T1003.002	Accessing Registry hives (SAM/SECURITY) often using reg.exe or similar.
+💻 Technical Implementation
+Base Model & Fine-Tuning Details
+Component	Value	Notes
+Base Model	roberta-base	Robust transformer architecture by Facebook/Meta.
+PEFT Method	BitFit	Only bias terms are trainable — fast training, tiny checkpoint size.
+Precision	BF16	Reduced memory usage + increased training speed.
+Training Data Distribution
 
+Dataset included 20,000 high-quality generated samples, with injected hard negatives to limit false positives.
 
-## 🎯 Classification Task and Labels
+Training: 80%
 
-The model is trained as a multi-class sequence classifier to assign one of four labels to an input log snippet.
+Validation: 10%
 
-| MITRE Technique | MITRE ID | Description |
-| :--- | :--- | :--- |
-| Credential Dumping | **T1003.002** |	Focuses on accessing sensitive data stored in Registry Hives (specifically the SAM and SECURITY hives) or the LSA secrets. |
+Test (Held-Out): 10%
 
------
+🚀 Usage & Deployment
 
-## 💻 Technical Implementation
+The merged, production-ready model is located in:
 
-### Base Model
+final_roberta_model/
 
-  * **Model:** `microsoft/deberta-v3-base`
-  * **Method:** LoRA (Low-Rank Adaptation) for efficient fine-tuning.
-  * **Precision:** $\text{BF}16$ (Bfloat16)
-
-### Training Data Distribution
-
-The model was trained on a dataset of **20,000 generated samples** split as follows:
-
-  * **Training Set:** $80\%$
-  * **Validation Set:** $10\%$
-  * **Test Set (Held-Out):** $10\%$
-
------
-
-## 🚀 Usage and Deployment
-
-The final, merged model is available in the `final_deberta_model` directory and is ready for inference.
-
-### 1\. Requirements
-
-Install the necessary libraries:
-
-```bash
+1. Requirements
 pip install -r requirements.txt
-```
 
-### 2\. Python Inference Example
-
-You can load and use the model directly via the Hugging Face `transformers` library:
-
-```python
+2. Python Inference Example
 import torch
-from transformers import AutoModelForSequenceClassification, DebertaV2TokenizerFast
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 # 1. Load the merged model and tokenizer
-MODEL_PATH = "./final_deberta_model" 
-tokenizer = DebertaV2TokenizerFast.from_pretrained(MODEL_PATH)
+MODEL_PATH = "./final_roberta_model"
+tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 model = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
+
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model.to(device)
 
-# 2. Input Data
-log_entry = "cmd.exe /c reg query HKLM\SECURITY\SAM\Domains\Account"
+# 2. Input Example (T1003.002 attempt)
+log_entry = "cmd.exe /c reg query HKLM\\SECURITY\\SAM\\Domains\\Account"
 
 # 3. Predict
 inputs = tokenizer(log_entry, return_tensors="pt", max_length=128, truncation=True).to(device)
@@ -91,42 +72,43 @@ inputs = tokenizer(log_entry, return_tensors="pt", max_length=128, truncation=Tr
 with torch.no_grad():
     logits = model(**inputs).logits
 
-predicted_class_id = torch.argmax(logits, dim=1).item()
+probabilities = torch.softmax(logits, dim=1)
+confidence_score = torch.max(probabilities).item()
+predicted_class_id = torch.argmax(probabilities, dim=1).item()
 predicted_label = model.config.id2label[predicted_class_id]
 
-# Output
 print(f"Log: {log_entry}")
-print(f"Predicted MITRE ID: {predicted_label}") 
-# Example output: Predicted MITRE ID: T1003.002
-```
+print(f"Predicted MITRE ID: {predicted_label} (Confidence: {confidence_score:.4f})")
 
-### 3\. API Deployment
 
-For production, the model is served via a lightweight Flask API (see `app.py`):
+Example output:
 
-```bash
-POST site.com/api
+Predicted MITRE ID: T1003.002 (Confidence: 0.9990)
+
+3. API Deployment
+
+The model is served through a lightweight Flask API:
+
+POST https://site.com/api/predict
+
+
+JSON Body:
 
 {
     "text": "The user ran a new command prompt that queried the C:\\Users directory."
 }
-```
 
-The model automatically manages the `torch_dtype` and runs on the available GPU for low-latency responses (average latency below $2 \text{ ms}$).
 
------
+GPU acceleration is automatically used when available.
 
-## 📚 Project Structure
-
-```
-├── .venv/                         # Ignored by .gitignore
-├── final_deberta_model/           # **Production-ready merged model weights**
+📚 Project Structure
+├── .venv/                      # Ignored virtual environment
+├── final_roberta_model/        # Production-ready merged model
 ├── data/
 │   ├── train.csv
 │   ├── validation.csv
-│   └── test.csv                   # Held-out test data
-├── app.py                         # Flask API for inference
+│   └── test.csv                # Held-out test data
+├── app.py                      # Flask API for inference
 ├── requirements.txt
-├── test_evaluation.py             # Script for generating final metrics
-└── train_classifier.py            # LoRA fine-tuning script
-```
+├── test_evaluation.py          # Evaluation + metrics generation
+└── train_classifier.py         # BitFit fine-tuning script
