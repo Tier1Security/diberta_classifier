@@ -1,6 +1,6 @@
 -----
 
-# 🛡️ MITRE ATT&CK classifier built on DeBERTa-v3
+# 🛡️ MITRE ATT&CK classifier built on RoBERTa BitFit
 
 This model is a fine-tuned DeBERTa-v3 text classifier designed to detect cybersecurity threats. It analyzes text to categorize it as either benign or a specific MITRE ATT&CK technique, such as credential dumping or process discovery.
 
@@ -8,17 +8,23 @@ This model is a fine-tuned DeBERTa-v3 text classifier designed to detect cyberse
 
 This model achieved **perfect classification** on a dedicated, held-out test set, demonstrating robust generalization across the defined MITRE techniques.
 
-| **Metric** | **Value** |
-| :--- | :--- |
-| **eval_loss** | 0.017877502366900444 |
-| **eval_model_preparation_time** | 0.0024 |
-| **eval_accuracy** | 1.0 |
-| **eval_precision** | 1.0 |
-| **eval_recall** | 1.0 |
-| **eval_f1** | 1.0 |
-| **eval_runtime** | 1.3101 |
-| **eval_samples_per_second** | 1526.604 |
-| **eval_steps_per_second** | 24.426 |
+--- Confusion Matrix ---
+|           |   Predicted Benign |   Predicted T1003.002 |
+|:----------|-------------------:|----------------------:|
+| Benign    |               1923 |                     2 |
+| T1003.002 |                  0 |                  1997 |
+
+--- Classification Report (Per-Class Metrics) ---
+              precision    recall  f1-score   support
+
+      Benign     1.0000    0.9990    0.9995      1925
+   T1003.002     0.9990    1.0000    0.9995      1997
+
+    accuracy                         0.9995      3922
+   macro avg     0.9995    0.9995    0.9995      3922
+weighted avg     0.9995    0.9995    0.9995      3922
+
+==================================================
 
 ### Inference Performance
 
