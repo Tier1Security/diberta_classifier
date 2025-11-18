@@ -1,0 +1,42 @@
+nohup: ignoring input
+Using merged model directory: models/merged_roberta_bitfit_model
+Loading merged model and tokenizer from: models/merged_roberta_bitfit_model...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Model loaded successfully on device: cuda
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://162.243.44.88:5001
+Press CTRL+C to quit
+
+Received input for prediction: 'reg.exe'
+Prediction: 'T1003.002' with probability: 0.7656
+127.0.0.1 - - [18/Nov/2025 02:40:23] "POST /predict HTTP/1.1" 200 -
+
+Received input for prediction: 'reg.exe save'
+Prediction: 'T1003.002' with probability: 0.9766
+127.0.0.1 - - [18/Nov/2025 02:40:32] "POST /predict HTTP/1.1" 200 -
+
+Received input for prediction: 'reg.exe save hklm\security C:\security.save'
+Prediction: 'T1003.002' with probability: 1.0000
+127.0.0.1 - - [18/Nov/2025 02:40:45] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2025 02:44:46] "POST /predict HTTP/1.1" 400 -
+
+Received input for prediction: 'reg save HKLM\SOFTWARE C:\temp\software_full.reg'
+Prediction: 'T1003.002' with probability: 0.9883
+127.0.0.1 - - [18/Nov/2025 02:44:56] "POST /predict HTTP/1.1" 200 -
+
+Received input for prediction: 'reg save HKLM\SOFTWARE C:\temp\software_full.reg'
+Prediction: 'T1003.002' with probability: 0.9883
+127.0.0.1 - - [18/Nov/2025 03:14:05] "POST /predict HTTP/1.1" 200 -
+
+Received input for prediction: 'reg save HKLM\SOFTWARE C:\temp\software_full.reg'
+Prediction: 'T1003.002' with probability: 0.9883
+127.0.0.1 - - [18/Nov/2025 03:14:20] "POST /predict HTTP/1.1" 200 -
+
+Received input for prediction: 'reg save HKLM\SOFTWARE C:\temp\software_full.reg'
+Prediction: 'T1003.002' with probability: 0.9883
+127.0.0.1 - - [18/Nov/2025 03:19:06] "POST /predict HTTP/1.1" 200 -
+127.0.0.1 - - [18/Nov/2025 03:20:36] "POST /predict HTTP/1.1" 400 -

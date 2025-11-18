@@ -35,12 +35,27 @@ RESULT_OUTPUT_DIR = "results/final_test_results"
 set_seed(42)
 
 # --- Define Labels for Classification (Must match training) ---
-labels = ["Benign", "T1003.002", "T1087.001", "T1049"] 
+labels = ["Benign", "T1003.002"] 
 id2label = {i: label for i, label in enumerate(labels)}
 label2id = {label: i for i, label in enumerate(labels)}
 
 # --- 2. LOAD TOKENIZER & PREPROCESSING ---
-tokenizer = DebertaV2TokenizerFast.from_pretrained(BASE_MODEL_ID)
+# Try to load tokenizer from the adapter/merged model path if available, else fall back to BASE_MODEL_ID
+from transformers import AutoTokenizer, AutoConfig
+import pathlib
+
+adapter_path_candidate = pathlib.Path(ADAPTER_PATH)
+merged_candidate = pathlib.Path("models/merged_roberta_bitfit_model")
+
+if adapter_path_candidate.exists():
+    tokenizer_source = str(adapter_path_candidate)
+elif merged_candidate.exists():
+    tokenizer_source = str(merged_candidate)
+else:
+    tokenizer_source = BASE_MODEL_ID
+
+print(f"Loading tokenizer from {tokenizer_source}...")
+tokenizer = AutoTokenizer.from_pretrained(tokenizer_source)
 
 def preprocess_function(examples):
     # Tokenize the text column
@@ -54,27 +69,59 @@ print(f"Loading test dataset from {TEST_DATA_FILE}...")
 # Load the test set. Use split="train" if the CSV is not split in the file itself.
 raw_test_dataset = load_dataset('csv', data_files=TEST_DATA_FILE, split="train")
 
+# --- Filter dataset for binary classification ---
+print("Filtering dataset for 'Benign' and 'T1003.002' classes...")
+raw_test_dataset = raw_test_dataset.filter(lambda example: example['label'] in [0, 1])
+
 print("Preprocessing test dataset...")
 # Remove columns not needed by the model's forward method
 processed_test_dataset = raw_test_dataset.map(preprocess_function, batched=True, remove_columns=raw_test_dataset.column_names)
 
 
 # --- 4. LOAD BASE MODEL AND ADAPTER (PEFT) ---
-print(f"Loading base model: {BASE_MODEL_ID}...")
-base_model = AutoModelForSequenceClassification.from_pretrained(
-    BASE_MODEL_ID,
-    num_labels=len(labels),
-    id2label=id2label,
-    label2id=label2id,
-    torch_dtype=torch.bfloat16,
-    device_map="auto",
-)
+# --- 4. LOAD MODEL (PEFT adapter or merged full model) ---
+selected_model_path = None
+if adapter_path_candidate.exists():
+    selected_model_path = str(adapter_path_candidate)
+elif merged_candidate.exists():
+    selected_model_path = str(merged_candidate)
 
-print(f"Loading LoRA adapter from: {ADAPTER_PATH}...")
-# Attach the saved LoRA weights to the base model
-model = PeftModel.from_pretrained(base_model, ADAPTER_PATH)
-# Merge the adapter weights into the base model weights for final inference/deployment
-model = model.merge_and_unload() 
+if selected_model_path is None:
+    print(f"No local model found at {ADAPTER_PATH} or models/merged_roberta_bitfit_model; loading base model: {BASE_MODEL_ID}...")
+    # Load base model from the hub
+    model = AutoModelForSequenceClassification.from_pretrained(
+        BASE_MODEL_ID,
+        num_labels=len(labels),
+        id2label=id2label,
+        label2id=label2id,
+        torch_dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
+        device_map="auto" if torch.cuda.is_available() else None,
+    )
+else:
+    print(f"Loading model from: {selected_model_path}...")
+    # Attempt to load as a PEFT adapter attached to a base model first
+    try:
+        base_model = AutoModelForSequenceClassification.from_pretrained(
+            BASE_MODEL_ID,
+            num_labels=len(labels),
+            id2label=id2label,
+            label2id=label2id,
+            torch_dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
+            device_map="auto" if torch.cuda.is_available() else None,
+        )
+        print(f"Attempting to load PEFT adapter from: {selected_model_path}...")
+        model = PeftModel.from_pretrained(base_model, selected_model_path)
+        model = model.merge_and_unload()
+    except Exception as e:
+        print(f"PEFT load failed ({e}). Falling back to loading full model from {selected_model_path}...")
+        model = AutoModelForSequenceClassification.from_pretrained(
+            selected_model_path,
+            num_labels=len(labels),
+            id2label=id2label,
+            label2id=label2id,
+            torch_dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
+            device_map="auto" if torch.cuda.is_available() else None,
+        )
 
 # --- 5. METRICS CALCULATION (Same as training) ---
 accuracy_metric = evaluate.load("accuracy")
@@ -88,10 +135,10 @@ def compute_metrics(eval_pred):
     predictions = np.argmax(predictions, axis=1)
     
     accuracy = accuracy_metric.compute(predictions=predictions, references=labels)
-    # Use 'weighted' average for the multiclass classification
-    precision = precision_metric.compute(predictions=predictions, references=labels, average="weighted")
-    recall = recall_metric.compute(predictions=predictions, references=labels, average="weighted")
-    f1 = f1_metric.compute(predictions=predictions, references=labels, average="weighted")
+    # Use 'binary' average for the binary classification
+    precision = precision_metric.compute(predictions=predictions, references=labels, average="binary")
+    recall = recall_metric.compute(predictions=predictions, references=labels, average="binary")
+    f1 = f1_metric.compute(predictions=predictions, references=labels, average="binary")
     mcc = mcc_metric.compute(predictions=predictions, references=labels)
     
     cm = confusion_matrix(labels, predictions)

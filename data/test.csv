@@ -1,2001 +1,927 @@
 text,label
-reg.exe export hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg unload HKLM\TempHive,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\system C:\sam.save,1
-reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\sam C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKCU\Environment,0
-reg restore HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg unload HKLM\TempHive,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\security C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\sam C:\sam.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Control Panel\Desktop,0
-reg query HKCU\Control Panel\Desktop,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-reg query HKCU\Environment,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg unload HKLM\TempHive,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe export hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg unload HKLM\TempHive,0
-reg unload HKLM\TempHive,0
-reg unload HKLM\TempHive,0
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\security C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg delete HKCU\Software\MyApp /f,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\security C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\sam C:\sam.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg query HKCU\Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg delete HKCU\Software\MyApp /f,0
-reg.exe save hklm\sam C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg unload HKLM\TempHive,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe save hklm\security C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Control Panel\Desktop,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg unload HKLM\TempHive,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-reg unload HKLM\TempHive,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe export hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg delete HKCU\Software\MyApp /f,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg unload HKLM\TempHive,0
-reg restore HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg unload HKLM\TempHive,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\system C:\sam.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg restore HKCU\Software\MyApp_backup,0
-reg unload HKLM\TempHive,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg unload HKLM\TempHive,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg unload HKLM\TempHive,0
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Environment,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg unload HKLM\TempHive,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg restore HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg delete HKCU\Software\MyApp /f,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg.exe export hklm\sam C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg unload HKLM\TempHive,0
-reg unload HKLM\TempHive,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-reg query HKLM\Software\Microsoft,0
-reg unload HKLM\TempHive,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg unload HKLM\TempHive,0
-reg.exe save hklm\system C:\sam.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Environment,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg.exe export hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\sam C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Environment,0
-reg.exe export hklm\system C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\sam C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\security C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe export hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\sam C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg.exe save hklm\security C:\sam.save,1
-reg.exe save hklm\security C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg delete HKCU\Software\MyApp /f,0
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe export hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKCU\Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKCU\Control Panel\Desktop,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg unload HKLM\TempHive,0
-reg query HKLM\Software\Microsoft,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe save hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-reg.exe save hklm\sam C:\sam.save,1
-reg.exe save hklm\security C:\sam.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg unload HKLM\TempHive,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg restore HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Environment,0
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKCU\Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\system C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKCU\Control Panel\Desktop,0
-reg unload HKLM\TempHive,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg restore HKCU\Software\MyApp_backup,0
-reg restore HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg.exe save hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-reg query HKCU\Environment,0
-reg restore HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg unload HKLM\TempHive,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKCU\Control Panel\Desktop,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\security C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Environment,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-reg.exe save hklm\system C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg.exe export hklm\security C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe export hklm\security C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg unload HKLM\TempHive,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\security C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg delete HKCU\Software\MyApp /f,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg query HKCU\Control Panel\Desktop,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg unload HKLM\TempHive,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg unload HKLM\TempHive,0
-reg query HKCU\Control Panel\Desktop,0
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe save hklm\system C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Environment,0
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe save hklm\security C:\sam.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg query HKLM\Software\Microsoft,0
-reg unload HKLM\TempHive,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-reg unload HKLM\TempHive,0
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg unload HKLM\TempHive,0
-reg query HKCU\Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe export hklm\system C:\sam.save,1
-reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\sam C:\sam.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKCU\Environment,0
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\security C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Environment,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\system C:\sam.save,1
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg.exe save hklm\security C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\system C:\sam.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKCU\Control Panel\Desktop,0
-reg delete HKCU\Software\MyApp /f,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg delete HKCU\Software\MyApp /f,0
-reg.exe export hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg unload HKLM\TempHive,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg unload HKLM\TempHive,0
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg unload HKLM\TempHive,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\security C:\sam.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg query HKLM\Software\Microsoft,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam C:\sam.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe save hklm\sam C:\sam.save,1
-reg query HKCU\Environment,0
-reg query HKCU\Control Panel\Desktop,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe save hklm\security C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Environment,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKCU\Control Panel\Desktop,0
-reg query HKCU\Control Panel\Desktop,0
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg unload HKLM\TempHive,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg query HKCU\Environment,0
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Environment,0
-reg query HKCU\Environment,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe save hklm\security C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg unload HKLM\TempHive,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Environment,0
-reg query HKLM\Software\Microsoft,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe save hklm\security C:\sam.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\system C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\system C:\sam.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg query HKCU\Control Panel\Desktop,0
-reg delete HKCU\Software\MyApp /f,0
-reg unload HKLM\TempHive,0
-reg unload HKLM\TempHive,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg.exe export hklm\sam C:\sam.save,1
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg unload HKLM\TempHive,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg.exe export hklm\sam C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe export hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg.exe export hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg delete HKCU\Software\MyApp /f,0
-reg unload HKLM\TempHive,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\security C:\sam.save,1
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg unload HKLM\TempHive,0
-reg.exe save hklm\sam C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe export hklm\security C:\Temp\dump.save,1
-reg.exe save hklm\security C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg unload HKLM\TempHive,0
-reg query HKCU\Environment,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg delete HKCU\Software\MyApp /f,0
-reg delete HKCU\Software\MyApp /f,0
-reg restore HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe save hklm\system C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg delete HKCU\Software\MyApp /f,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe export hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security C:\Temp\dump.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\Temp\dump.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-cmd.exe /c reg.exe save hklm\system C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-reg delete HKCU\Software\MyApp /f,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg query HKCU\Environment,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg unload HKLM\TempHive,0
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-reg.exe save hklm\security C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\System\CurrentControlSet\Services,0
-reg.exe save hklm\sam C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\security C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
-reg query HKLM\Software\Microsoft,0
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\system C:\Temp\dump.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKCU\Environment,0
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-cmd.exe /c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\sam C:\sam.save,1
-powershell -c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg unload HKLM\TempHive,0
-reg query HKCU\Control Panel\Desktop,0
-cmd.exe /c reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg delete HKCU\Software\MyApp /f,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKCU\Environment,0
-reg delete HKCU\Software\MyApp /f,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKCU\Environment,0
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\security C:\Temp\dump.save,1
-powershell -c reg query HKCU\Volatile Environment,0
-reg copy HKCU\Software\MyApp HKCU\Software\MyApp_backup,0
-reg query HKCU\Environment,0
-powershell -c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg restore HKCU\Software\MyApp_backup,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg query HKCU\Control Panel\Desktop,0
-reg delete HKCU\Software\MyApp /f,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\security %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-powershell -c reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg.exe save hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg.exe export hklm\security C:\sam.save,1
-reg.exe save hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe export hklm\system %TEMP%\registry_backup.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\security C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg.exe save hklm\system %TEMP%\registry_backup.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg restore HKCU\Software\MyApp_backup,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-powershell -c reg query HKCU\Volatile Environment,0
-reg query HKLM\System\CurrentControlSet\Services,0
-reg query HKCU\Environment,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg unload HKLM\TempHive,0
-cmd.exe /c reg.exe save hklm\sam C:\sam.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe export hklm\security C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg unload HKLM\TempHive,0
-reg compare HKLM\Software\MyCompany HKLM\Software\YourCompany,0
-reg query HKCU\Environment,0
-reg query HKLM\System\CurrentControlSet\Services,0
-powershell -c reg.exe save hklm\sam C:\sam.save,1
-reg query HKCU\Control Panel\Desktop,0
-reg.exe save hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe save hklm\system %TEMP%\registry_backup.save,1
-powershell -c reg.exe save hklm\security C:\sam.save,1
-reg.exe export hklm\security %TEMP%\registry_backup.save,1
-powershell -c reg.exe export hklm\system C:\sam.save,1
-reg.exe save hklm\system C:\sam.save,1
-cmd.exe /c reg.exe export hklm\security C:\sam.save,1
-reg query HKLM\Software\Microsoft,0
-cmd.exe /c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg restore HKCU\Software\MyApp_backup,0
-cmd.exe /c reg.exe export hklm\sam C:\Temp\dump.save,1
-cmd.exe /c reg.exe export hklm\system C:\Temp\dump.save,1
-powershell -c reg.exe save hklm\sam C:\Temp\dump.save,1
-reg.exe export hklm\sam %TEMP%\registry_backup.save,1
-reg query HKLM\Software\Microsoft,0
-reg query HKCU\Control Panel\Desktop,0
-powershell -c reg.exe export hklm\sam C:\Temp\dump.save,1
-reg add HKCU\Environment /v MY_VAR /d C:\MyPath,0
-reg.exe save hklm\security C:\sam.save,1
-cmd.exe /c reg.exe export hklm\sam C:\sam.save,1
-reg add HKCU\Software\MyApp /v Setting /d Value,0
+"REG.Exe  copY  ""hkU\SYSteM\CuRreNTcontROLSEt\SErvIces""  ""Hku\SoFTware\GoOgle\ChroME_689""",0
+"Reg   UnLOAD   ""HKEy_cUrReNt_useR\soFTWaRE\CLaSsEs\SubKEY76""   /F",0
+"rEG.Exe   ADd   ""Hkey_lOcaL_MAChInE\sOfTWarE\microsoft\wINdoWs\CURreNtvERSiON\sUBkEy89""      /t REG_dwOrd",0
+Cmd.eXE /C Start /b reG.eXE   SAvE HkLm\sYsTEm   %tEmP%\sEC_BAckup.dAT /y,1
+c:\WinDoWS\sySTEm32\cMd.exE /K rEG  Save hKEY_lOCaL_MaCHINE\SySteM \.\c$aCkUp.REg  /y,1
+"REG   coPy   ""hKeY_cuRrenT_USer\cOnTRoL pANEL\dESkTOp\subkey59""   ""hkEY_cURrENt_uSeR\enVIronmEnt_254""",0
+"cmd /c powershell -c ""reg.exe export  hkey_local_machine\security  c:\windows\temp\sam.save   /y""",1
+"reg.EXe CopY ""hkEy_loCAl_MAchiNe\soFTwarE\MyApp\SETtiNGs"" ""HKEy_LOCAL_MaCHiNe\SOFtWARe\ClaSSeS_572""",0
+cmd.eXE /c reg   expORt  HKey_LOCal_macHIne\sam  c:\uSErs\puBlIC\RegISTRy_EXpOrT.ReG /y,1
+"reg add ""hkey_local_machine\software\google\chrome"" /f  /d ""1.0.0""",0
+"cmD /c POwErSHell -C ""REg   exPORt HKLM\sysTEM  C:\USers\PUbLic\regIsTRY_EXPOrt.Reg /Y""",1
+"sTArt /b REg ReSToRE ""hKEy_loCal_mAcHINE\HKEy_LOcal_mAChinE\sofTwArE\WoW6432noDe"" ""HkeY_LOcAL_MACHiNE\sofTwARe\mYApp\setTINGS_407""",0
+POwerShELl -ExEc bYpAss -w hidden -C rEg.eXE SAve   HKLm\SAM  \.\C$AckUP.Reg,1
+cmd.exe /c reg.exe  export hklm\security  \.\c$ackup.reg  /y,1
+"rEg.EXe  ADd  ""HKEy_cUrrenT_USEr\soFtWaRE\mIcROsofT\WiNDOWS\cuRreNtveRSIoN""    /T Reg_Sz  /d ""1.0.0""",0
+"reG Copy ""HKeY_loCaL_MaCHINE\SoFTwarE\POlIcIEs\mYCORP\SUbKEy53"" ""HKey_locAl_maChiNE\ControL PAnel\desktop_471""",0
+reg.Exe sAvE   HkEY_lOcAl_mACHiNe\Sam   c:\tEMP\sYsTEM.HiVE   /Y,1
+"reg unload ""hkey_local_machine\software\policies\mycorp\subkey44"" /v version",0
+c:\wINDoWS\sySteM32\CMd.eXe /K rEG.exe sAvE   hkEY_lOCaL_machINE\sECURitY   \.\C$aCKUP.Reg,1
+PoWersheLl -EXeC ByPaSs -W hiddeN -C REG   Export  hKlM\sAM  %temp%\sEC_bACkuP.DaT,1
+poWErShELl -ComMANd reg   ExporT  hKEy_LOCaL_machinE\sam   \.\c$AcKup.reG /Y,1
+"CMd /C rEG   QUery   ""HkeY_uSErS\SOFTWArE\GoOglE\chRoMe\SuBKeY55""   /V lastUPdaTE",0
+pwsh -noprofile -c reg.exe  export hklm\system %temp%\sec_backup.dat   /y,1
+cmd.exe /c start /b reg  export   hklm\system   c:\windows\temp\sam.save,1
+"CmD /C PowERsHELL -C ""ReG   EXporT HKEy_LOCAl_maCHINe\SYstem %TemP%\sec_bAcKUp.dAT /Y""",1
+"reg  restore  ""hkey_users\software\google\chrome\subkey64""  ""hkey_users\software\policies\mycorp_504""",0
+"reg   compare   ""hku\software\classes""   ""hku\control panel\desktop_426""",0
+"pOWERsHElL -C Reg.EXe   coPY   ""hKeY_USerS\HkEy_LOcAL_maCHInE\SOfTware\PoLIciEs\MICrOSOft""   ""HKey_usErS\SofTwArE\mYApp\sETtinGS_877""",0
+C:\WindOWS\SYStem32\CMD.eXE /k REg  saVE  HKLm\SeCuRIty  c:\wiNdOWs\TEMp\SaM.SAvE /Y,1
+"poWershElL -C ReG  SavE  ""HKEY_lOCal_MacHinE\HKeY_lOCAl_MachiNE\SYStem\cURRentcOntROLSeT\ConTRol""  ""D:\backUP\rEGisTry_HIvE.daT""  /y",0
+c:\WinDOwS\sYstEm32\cMd.exe /k REg saVe   hkLM\sYsTem   \\LocalHosT\c$\__DuMp\SaM.BAk,1
+poWerSHelL -COMmand REg.EXE eXporT   Hkey_lOcAL_mAChinE\seCuritY  C:\USErS\puBLIC\RegISTRY_ExpOrt.Reg   /y,1
+"reg.exe delete ""hkey_users\hkey_local_machine\software\wow6432node\subkey38""",0
+c:\wINdOws\SYsteM32\CMd.eXE /k REG   ExPorT HKEY_LoCaL_MAChinE\SaM c:\uSErS\pUBlIc\RegIstRY_ExPort.REg,1
+reg.exe save   hklm\sam c:\users\public\registry_export.reg   /y,1
+C:\WiNDOwS\sYSTEm32\Cmd.exE /K reg.EXE save hkeY_lOCaL_mAchine\SECUrITy  C:\USERS\pUbliC\REgISTRY_exPort.reg,1
+"powershell -c reg   unload   ""hku\hkey_local_machine\software\wow6432node\subkey52""   /v lastupdate",0
+Cmd.exe /c stART /B Reg exPOrt HKlm\sAM \.\C$ACkuP.reG,1
+pOwerSHElL -ExeC BYPASS -w HIddeN -c Reg   SAVE   hklM\sam  c:\USErs\puBlIc\rEGISTry_ExPorT.REg,1
+powershell -exec bypass -w hidden -c reg.exe  save  hklm\sam %temp%\sec_backup.dat /y,1
+cmd.ExE /c StARt /B REg.eXE  sAvE HKLm\SYsTEm  C:\usERs\pUBLIC\reGiSTRY_eXPOrT.reg,1
+Reg.ExE  expoRT hkLm\SysTEM  C:\WiNdoWS\TeMp\SAm.SAvE,1
+rEG.ExE  saVE   hKlm\SySteM %teMP%\seC_Backup.dAT,1
+cmd.exe /C Reg.EXE  sAVe  HKeY_LOcAL_MachiNE\SecUriTy   %TeMP%\SEC_bACKUp.dAt,1
+"Reg.exE   savE   ""HKey_locAl_MAChinE\HKey_lOCaL_machInE\sofTWARE\WOw6432nOdE""   ""C:\UserS\PuBLiC\ChroMe_daTA.BAk""   /Y",0
+"PowErsHEll -C REg savE ""hkeY_LOCAl_machine\HkeY_local_mAChiNe\sySTem\CUrrENtcoNtrOlsEt\cOntrOL"" ""%teMp%\Non_sENsiTIVE.hIVE""",0
+"CMd /C Reg   DELete   ""HkEY_cuRrEnt_uSER\SyStEM\CURReNtcONtrOLset\SErvIcEs\sUbkEY22""   /v paTh",0
+pwsh -noprofile -c reg.exe   export hklm\security c:\users\public\registry_export.reg,1
+"StarT /b REg  cOPY  ""hKEy_CURRENT_User\SYSteM\CurReNtCONtrOLsET\ServiCeS""  ""HKeY_CurReNT_uSER\HKeY_local_MachINe\SysTEm\curreNtcONtRoLset\coNtrOl_568""",0
+PowErSHeLL -coMmAND REG  SAve   Hklm\System \.\C$aCkUp.Reg,1
+"REG Query ""Hkcu\HKEy_LoCaL_mAChine\sOFTware\wOW6432noDE\suBKEy58""",0
+"reG  REStorE  ""hKCU\softWaRE\MyaPp\SEttinGs\SubkeY28""  ""hkcu\SofTwAre\MICrOSOFT\WInDOWS\CuRrenTVeRSIon_545""",0
+"reG.EXe   delEtE   ""HKCU\sofTWARe\GOOgle\chROME""   /v laSTupDATE",0
+POWeRshElL -comMaNd REg  EXpORt hklm\seCuriTy %tEmP%\sec_BACKuP.dat,1
+"reg.exe  save  ""hkey_local_machine\hkey_local_machine\software\policies\microsoft\subkey74""  ""c:\windows\temp\software_dump.dat""",0
+rEG SaVE Hkey_local_mAcHInE\SAM  c:\tEmp\SyStEm.HivE,1
+"rEg  ADD  ""hkeY_LoCAl_mAchiNE\sofTwARe\goOGLE\cHroMe""  /V verSION  /t reG_dwORD  /d ""C:\PRograM fiLes\aPp""",0
+CMD.exE /c stART /b reg.exE EXPOrT   HkEY_lOCal_machine\SAm  C:\TEMP\SYSteM.hIve,1
+rEg SavE hkLM\SECuRITY  \.\c$ACkUp.ReG,1
+"CmD /c ReG.EXe   uNloAD   ""HkeY_usERs\hKeY_LOcAL_MAChinE\soFtWAre\wOW6432nOde""   /V versIoN",0
+"reG.Exe  save  ""HKeY_locAl_MAChInE\sOFtwARE\gOoGLe\chromE\SubKEY88""  ""D:\BackuP\rEgIstrY_hIVe.dAT""  /y",0
+"cMD /C REG.EXE comPARE ""HkeY_lOCAL_machINE\SoftwARE\MyaPp\seTtingS\SUBKEY45"" ""hkey_LoCaL_macHiNe\envIronment_214""",0
+"cmd /c powershell -c ""reg   export hkey_local_machine\system c:\temp\system.hive""",1
+"reG savE ""hkey_UseRS\sOftware\POLiCiEs\mYcOrp"" ""%tEMp%\NoN_SeNsitiVe.hiVe"" /Y",0
+"ReG  ComParE  ""HKey_uSers\SyStem\cURRENtconTRolSEt\seRViCeS\SubKEy9""  ""HKEY_UseRS\SofTwArE\mICroSOFt\WinDOWS\currEnTverSION_683""",0
+powershell -command reg export  hkey_local_machine\security c:\users\public\registry_export.reg,1
+pWSh -noprOfile -C reg SaVE   HKEY_LOCal_MACHinE\sAM   c:\temp\SySteM.HIVe   /Y,1
+"reg   copy   ""hkey_local_machine\software\google\chrome\subkey84""   ""hkey_local_machine\hkey_local_machine\software\policies\microsoft_955""",0
+"reG cOpy ""HKEY_LoCAl_MACHINE\HKEY_lOCAL_MachiNE\SofTwaRe\woW6432NODe"" ""hKeY_lOCAL_MaCHiNe\conTRoL pAnEL\dESktop_264""",0
+"cMd /c Reg.EXE  saVe  ""hKeY_lOCAl_maChiNe\hKEy_LoCAL_mAchINE\SoFtWare\wOw6432nOde\SUbKEy36""  ""c:\temP\USeR_sEttings.ReG""",0
+"reg.exe  add  ""hkey_users\environment""  /f",0
+"reg  copy  ""hkey_users\environment""  ""hkey_users\software\policies\mycorp_564""",0
+wmic.exe,0
+powershell -exec bypass -w hidden -c reg.exe export  hklm\security  %temp%\sec_backup.dat,1
+"STart /B REg   cOPY   ""hkU\hkey_LOCal_maCHinE\sofTwArE\poLICiEs\micRosoFt\sUbKEY51""   ""Hku\sOftwaRE\MicrOSoft\WINDows\cuRreNTvErsIon_497""",0
+"reg.exe   save   ""hkey_local_machine\hkey_local_machine\software\policies\microsoft""   ""c:\temp\user_settings.reg""",0
+c:\windows\system32\cmd.exe /k reg.exe   export   hkey_local_machine\system   c:\windows\temp\sam.save  /y,1
+"reg.exe query ""hkcu\software\policies\mycorp"" /f",0
+c:\windows\system32\cmd.exe /k reg export hkey_local_machine\security   c:\temp\system.hive /y,1
+"cmD /C POWErsHElL -C ""rEG.exE  Save   HKlM\sECurity  c:\WiNdows\tEmp\SAm.SavE /y""",1
+PwSH -NoprOfile -c Reg   eXpORT   hKeY_loCaL_MachINE\SysTeM  \.\C$aCKup.reG,1
+reg saVE   hKlM\sAM  c:\UserS\PuBLic\rEGIstRy_ExPort.REG,1
+PwsH -NoPRofiLe -C Reg.exE ExpoRT  hKLm\SECuritY  c:\WIndoWs\tEMP\SAm.sAVE,1
+pOWersHELl -cOmMand rEG.exe  ExPOrT  Hkey_local_MaChiNE\SecURITY   \.\c$aCkuP.REg   /y,1
+"Reg.exe COmpAre ""HkeY_CUrRent_USeR\SOFTWAre\MicrosOfT\wiNDOws\curRENTVeRsiOn\SubKEy89"" ""hKey_CuRreNT_UsER\SySTeM\curREnTcOntroLset\servicEs_778""",0
+cMD.eXe /c Start /b reg  savE   Hklm\sYsTeM C:\TeMP\SysTeM.HIVE,1
+"cmD /C pOwErShElL -C ""Reg.ExE  EXporT  hkEY_lOcAl_MAchIne\SAm %TEMp%\sec_baCKUp.daT /Y""",1
+reg.exe export hklm\security \\localhost\c$\__dump\sam.bak,1
+PoWeRsHeLL -ComMand REg.Exe SaVe  hkEy_LocAL_MaChine\sYstem   \.\C$acKup.REG  /Y,1
+CMD.exE /C sTARt /b REg   savE  HKlM\sAm C:\TeMp\SysTEm.HiVe  /Y,1
+PowErshelL -cOMMaNd REG expORT Hkey_lOCAL_MaChINe\SystEm \.\C$AcKUp.REg,1
+PoWeRsHElL -eXEC bypass -w hidDeN -c REg  saVe   HKeY_LOcAl_mACHINe\SYstEM   \\lOcalHOst\C$\__DUmp\sAm.bak /Y,1
+"rEg   coPY   ""HKEY_cURRENT_USEr\HKEy_lOcAL_MaCHinE\soFTWaRE\POLicIES\MIcrosoft""   ""Hkey_cuRrEnt_UsER\EnViRONMenT_664""",0
+"reg add ""hkey_local_machine\control panel\desktop""  /t reg_sz /d 1",0
+pWSh -noProfILE -c rEg  ExpORT   hKLM\sYSTeM  \.\c$ackUP.Reg  /Y,1
+"reg   save   ""hkey_local_machine\hkey_local_machine\software\policies\microsoft""   ""c:\windows\temp\software_dump.dat""",0
+reG.exE sAVe   Hkey_loCal_machiNe\saM  c:\usERS\PUblIC\rEgistRY_EXpORT.reG,1
+"reg.eXe  REsToRE  ""HkEY_cuRrEnt_USEr\SofTwArE\MyapP\seTTINGs""  ""Hkey_cUrrent_USer\hkeY_lOcAl_MAChinE\sYSTEM\curReNtcONtRolset\ConTrol_146""",0
+C:\WIndowS\SYsTEM32\CMd.eXE /k REG.exE   sAVE  hKEY_lOCAl_MACHine\SeCurITy %TemP%\sEc_backUP.DAT,1
+tasklist.exe,0
+CMD.ExE /C REg.EXE  SAVe   HkLM\secUrITy \.\c$aCKup.Reg /Y,1
+c:\windows\system32\cmd.exe /k reg.exe export  hkey_local_machine\security   c:\temp\system.hive,1
+"STart /b rEG.ExE QUeRy ""hKEy_CurRENT_uSeR\hKeY_LOcAl_mAChinE\sYStem\currEntcoNtrolsEt\CoNtrOL"" /V vERSiON",0
+pOwERSHEll -exEC BYPasS -W HiddeN -c rEg   SAVe   hKLm\SysteM   \.\c$Ackup.Reg,1
+"CMd /c rEg comPAre ""HkCu\soFtWaRE\policieS\mYCOrP\SUBkeY23"" ""hkcu\SOfTwARe\GoOgLE\ChRoMe_454""",0
+cMD.exe /C starT /B rEG  EXport   Hkey_LocAL_macHine\SyStem   %temp%\SeC_BAckUp.dat  /Y,1
+"reg   restore   ""hkey_current_user\software\google\chrome""   ""hkey_current_user\system\currentcontrolset\services_509""",0
+pwsh -noprofile -c reg.exe export hklm\security  c:\windows\temp\sam.save,1
+powershell -exec bypass -w hidden -c reg.exe export hklm\sam c:\users\public\registry_export.reg   /y,1
+CmD.exe /c ReG   EXpOrT  hkeY_Local_machinE\sYStEm c:\TeMP\sYStem.HiVE  /Y,1
+"POWERSHeLl -c rEG.EXE COMPARE ""hkU\SOFtwarE\myaPP\SetTiNgs"" ""hku\hkEy_LoCAl_mAcHInE\sOFTWARE\WoW6432NodE_941""",0
+REg.exe   sAVe   hkEy_LocAl_MAChINE\SAm C:\UsErS\PubliC\REGIstry_ExpOrt.REg,1
+PoWErSHeLL -eXEC byPass -w HiDdeN -C reg.EXe  SAvE  hKey_LOCAl_MAcHIne\seCUrITY   c:\WiNDOws\TEmP\saM.Save /Y,1
+poWeRshELl -EXeC bYpaSS -W HIDDen -c Reg EXPOrt  hkEy_LOCaL_MAchINe\SAm   C:\temP\sySTeM.HiVe /y,1
+"cMd /c REG.EXE  CopY  ""HKey_USErS\COntrol PanEl\deskTOp\SUBKeY77""  ""hkey_USerS\HkEy_lOCAL_maChine\sySTEm\CURRentcoNtrolset\controL_322""",0
+PowERShelL -COmMaND Reg ExPorT   Hkey_LocAl_MacHiNE\sySTeM c:\usErs\pUbLic\regIsTry_eXpORt.rEg,1
+Reg.EXE  saVE hklm\SAM  C:\Temp\sYSTEM.hiVe   /y,1
+"reg   coMPARe   ""HKU\sOFtware\MYAPP\seTTINgS""   ""HkU\systEm\CurReNTCoNtROlsEt\sERviceS_214""",0
+"CMd /c poweRsHElL -C ""rEG   eXport   Hkey_LoCAl_maChiNe\secUritY  C:\tEMP\sYSTem.HiVE   /Y""",1
+pOWErShELL -CoMMAND REG   EXpoRT  hKlM\secURIty   c:\windowS\tEMp\Sam.sAvE  /Y,1
+pOwErsHeLl -ExEC byPaSS -w hiDdEn -c REG.Exe   EXport  HklM\SeCURity   c:\tEMP\sYsTeM.HivE   /y,1
+"reg.exe   compare   ""hku\software\myapp\settings""   ""hku\software\google\chrome_683""",0
+"reg  query  ""hkey_current_user\software\classes\subkey16""",0
+PWSh -NOPRoFIle -C reG.EXe  ExporT   HKeY_LOcaL_macHinE\sAM \\localHOSt\c$\__DUmP\saM.BAK /Y,1
+poWErsHeLl -ExEc ByPasS -w HIdDEN -c Reg.EXe sAVE hkey_LOCAl_mACHIne\sAM   c:\userS\PUbLic\RegIsTrY_ExpOrT.reG,1
+cmd.exe /c start /b reg.exe   export hklm\system   c:\users\public\registry_export.reg   /y,1
+PWSh -noPROFiLe -C rEG.ExE   EXpoRT hKeY_Local_maChinE\sAM c:\USeRs\pUBLiC\ReGIstRy_eXporT.ReG   /y,1
+"reg   unload   ""hkcu\hkey_local_machine\software\wow6432node\subkey29""",0
+REG   SaVe hkEy_lOcaL_maCHinE\sam \\lOcALhOST\c$\__dUmp\SAM.BAK /y,1
+"cmd /c reg  query  ""hku\hkey_local_machine\system\currentcontrolset\control""  /v lastupdate",0
+"rEg.eXE QuERy ""hKey_uSErs\hkEY_LocAL_MachinE\SysteM\cUrrenTConTroLSeT\ConTROL\subkEy3"" /F",0
+powershell -exec bypass -w hidden -c reg export  hklm\system c:\windows\temp\sam.save  /y,1
+cmd.exe /c reg save hkey_local_machine\security  c:\users\public\registry_export.reg,1
+cmd.exe /c REG.exe eXporT   hKlM\SaM  %TeMP%\sec_bacKup.DAT /y,1
+reg save,0
+"REG.eXE unLoAd ""hKU\HkeY_lOcAL_machiNE\SysTEM\CURrEnTcOntRolseT\coNtrOL\suBKeY57"" /V pAth",0
+"cmd /c powershell -c ""reg  export hkey_local_machine\security  c:\temp\system.hive   /y""",1
+"cmd /c powershell -c ""reg   save  hklm\security  c:\users\public\registry_export.reg   /y""",1
+reg  Save   hKLM\SysTeM \\LoCALHoST\c$\__dUmp\SAM.BaK,1
+"Reg.EXe  rEStore  ""HkEy_CurREnT_USEr\sysTem\cURRentconTRolSeT\SErVICes\sUBKEy78""  ""Hkey_CUrrenT_uSER\ContrOl paNEl\DeSKtOp_423""",0
+"reg   restore   ""hkey_local_machine\control panel\desktop\subkey37""   ""hkey_local_machine\software\classes_187""",0
+cmD.eXe /C reg   SAve HKlM\sAM   C:\uSers\PUblic\regIstRy_ExPORT.ReG,1
+PWsH -noPROfilE -c REg.exe  ExPORt   hKEy_locaL_machiNe\sAM %teMp%\Sec_BaCkUp.dat /y,1
+"sTaRt /B REg.eXE CoMPARE ""hKU\hKey_LoCAL_MAcHIne\sysTEM\cuRrentcONTRoLsET\cONtRol\SUbKey59"" ""HkU\CoNTROl PAnEl\desKtOP_536""",0
+"reg.exE unloAd ""HKcu\hKEY_loCAL_mAChINe\sofTWARE\pOLicIEs\micrOsOFT"" /V paTH",0
+"rEG.eXe  aDd  ""hKCu\EnVIROnmeNt""    /T rEG_dWord  /d 1",0
+c:\windows\system32\cmd.exe /k reg.exe export   hkey_local_machine\system   \.\c$ackup.reg   /y,1
+rEg  eXPOrt   hklM\sam   \\LOcaLHOSt\c$\__duMP\sAM.baK   /Y,1
+"STaRT /b ReG  DEleTe  ""hku\conTrol pAnEL\DEsKtOP""  /v lAStupDATe",0
+pwsH -nOPrOfile -c rEG  SaVE Hklm\Sam  C:\winDOWs\TEmp\SAm.sAVE   /y,1
+CMD.exe /c staRt /b REg sAve HkeY_LoCal_MACHInE\SYStem  C:\USeRs\pUbLIC\RegiSTRy_eXPORt.ReG   /Y,1
+C:\wiNDOWs\sySTem32\CmD.eXe /k Reg   SaVE HKEY_lOcAL_mAChINe\sam   \\loCaLhOST\C$\__DUMP\Sam.bak   /y,1
+REG.Exe saVe  HkeY_Local_mAcHiNE\SEcUriTY  %TemP%\sec_BacKUP.DAT,1
+"Reg.exE  unlOAd  ""hkEy_LoCAl_mACHINe\soFtwaRE\gOoGlE\cHrOme\SubKeY86""  /V Path",0
+PowErShELl -COMmAND rEg  sAve hklm\seCuRitY  \\LoCalHoSt\C$\__dumP\sam.bak,1
+"rEG QUERY ""hkEY_USers\HKey_LoCAl_mAchIne\soFtwAre\wow6432nodE\sUBkeY77"" /v PatH",0
+"Cmd /c PoWErshelL -C ""rEG eXport   hkey_loCAL_MachINE\SaM   C:\USErS\pUbLIC\ReGiSTRy_exPOrT.rEG  /y""",1
+"reg.Exe QUERy ""HKeY_useRs\SofTwAre\MIcROsoFT\wiNDOws\cUrreNTveRSiON"" /V PAtH",0
+REG.exe eXPOrt   HkLM\SaM   \.\c$acKUp.REg /y,1
+CMd.EXE /c Reg.eXE   SAVe  hKLm\System  c:\Temp\SYSTEm.HIVE,1
+CMD.ExE /C stARt /B REG.Exe  eXPORt  HklM\SYsteM %TEmP%\SEC_bAcKuP.Dat,1
+"reg   SaVE   ""hkEY_LOcal_mACHINe\HkeY_LoCAl_mAchinE\sYSteM\currEnTcONTrOlsET\cONTroL\suBkEy14""   ""d:\bAcKuP\reGIStrY_hIve.DAT""",0
+powershell -exec bypass -w hidden -c reg save hklm\system  c:\windows\temp\sam.save   /y,1
+reG.EXe SaVE   hKlm\saM \.\C$ACkuP.REg  /Y,1
+"rEg  add  ""hKey_UserS\SoFtWaRE\MYAPp\SEtTiNgs\subkey54""  /v LaSTuPdaTE  /T reg_DWOrD  /D ""1.0.0""",0
+"reg  unload  ""hkey_local_machine\software\microsoft\windows\currentversion\subkey31""  /v lastupdate",0
+C:\WiNdoWs\SysTeM32\CMd.eXe /k Reg  SAVE HKlm\sEcUriTY  c:\USeRs\PuBLic\rEgisTrY_eXPORt.rEg /Y,1
+"reg  query  ""hkey_local_machine\control panel\desktop\subkey79""",0
+PoWErshell -COmMand reG ExpORT hKey_LOcAL_MAcHIne\SecUriTy \.\C$AcKup.rEG   /y,1
+"reg COmpArE ""hkEY_lOCAl_machIne\soFTWaRE\PoLIcIes\MYcORp"" ""hKEy_LoCaL_maCHIne\hKeY_LocaL_macHInE\sOFtwARe\polIciES\miCrOsofT_257""",0
+"REg.ExE DeLEte ""hKU\soFTwARe\MicROsofT\WINdowS\CurRenTveRSIoN\SuBkey29"" /V VeRsioN",0
+c:\WINdOWs\SysTem32\Cmd.Exe /k ReG.EXE   Save  HklM\SAM C:\usERS\PUbLIc\ReGISTRy_eXPoRT.ReG  /y,1
+pwSH -NOPrOFiLe -c reG  ExPort  Hklm\seCURITY  %TeMP%\seC_baCkUp.daT,1
+"Reg dELeTe ""hkU\sYsTeM\CURRENTCoNTrolSeT\seRVIceS""",0
+"CMD /c ReG   query   ""hKEy_UseRs\SOftwArE\cLasSEs\sUBkeY77""   /v laStUpDATe",0
+cmD.eXe /C sTarT /b rEG  exPoRt hKey_lOCaL_mACHiNe\sECurItY \.\c$AcKup.reg,1
+cMD.eXE /c REG.eXe  EXpoRT  hkeY_LOCAl_MachInE\sAm %teMP%\seC_bacKuP.dAT /Y,1
+pwsh -noprofile -c reg  save hklm\system \\localhost\c$\__dump\sam.bak,1
+C:\WIndows\SYsteM32\cmD.exe /K rEg  savE  Hkey_lOCal_MachInE\sam \\lOcaLhOsT\C$\__DuMP\sam.bAk,1
+"REG cOMPARe ""Hkey_USers\hkeY_loCAl_macHIne\sOftwArE\POlIcIes\miCrOSoFt\SubKEY7"" ""hkEY_UseRs\HKEY_locAL_maCHiNE\SofTWAre\poLiCieS\MiCROSofT_253""",0
+"STArt /B ReG.eXE uNloaD ""HKEy_UsErs\HkEy_lOCal_maCHine\sOFTWaRE\wOw6432node"" /V VERsIOn",0
+"cmd /C POwErshELL -C ""rEG saVE  Hkey_LOCAL_MachINE\sYsTEM   %tEmp%\SEc_bAckuP.dAt""",1
+"reg query ""hkey_current_user\software\microsoft\windows\currentversion\subkey83"" /f",0
+CMd.exE /C StARt /b ReG ExPorT hkLM\Sam   c:\USErS\PUBLIC\regIstrY_eXPorT.reG /Y,1
+c:\WIndoWS\sYstem32\cmd.exe /K rEG.Exe ExPORt  HKLM\system \.\c$AckuP.rEG,1
+"CmD /C ReG.Exe  delETE  ""hKeY_UserS\sOFtWAre\clASSes\sUbKEY60""  /V PAtH",0
+"reg.exe   delete   ""hkey_current_user\system\currentcontrolset\services""   /v path",0
+attrib -h -s C:\temp\my_file.txt,0
+pwsH -NoPRoFIle -c reG  EXporT hklm\sECuRiTY   C:\useRs\pUbLIc\rEgiSTry_ExPoRT.REg,1
+"cmd /c powershell -c ""reg.exe   export  hklm\system  c:\users\public\registry_export.reg /y""",1
+"POWERSheLl -C rEg.Exe   Query   ""HKCu\HKeY_lOCAl_MaCHInE\sOftWarE\wOw6432NodE""   /V lAstuPdaTe",0
+cmd.exe /c start /b reg.exe   save  hklm\sam   \.\c$ackup.reg /y,1
+CMD.eXE /C Reg   ExPorT HKeY_Local_maChINe\SeCURity \\LoCalhOsT\C$\__Dump\Sam.Bak  /Y,1
+"powershell -c reg add ""hkey_users\software\google\chrome"" /v lastupdate /t reg_dword",0
+PoweRSHEll -COMmand rEG.eXE   savE   HkEy_LOcaL_MacHINE\saM   c:\UsERs\PUBlIc\reGIstRY_expORT.rEG /y,1
+"start /b reg.exe  restore  ""hkey_current_user\software\classes\subkey2""  ""hkey_current_user\software\myapp\settings_791""",0
+"cmd /C PowersHELL -C ""reg.ExE eXpORT  hKLm\seCURiTy C:\UserS\PUbLiC\REGIstRy_eXPort.REG   /y""",1
+"start /b reg.exe   unload   ""hkey_current_user\hkey_local_machine\system\currentcontrolset\control\subkey100""   /f",0
+reg exPorT hkeY_LOcal_MAchINe\Sam %Temp%\sEc_BAcKUP.DAt,1
+cmd.exe /c start /b reg.exe export   hklm\system  \.\c$ackup.reg,1
+"powERSHeLl -C rEg.Exe  queRy  ""HkEy_uSErS\hKey_loCal_mAcHINe\SoftwaRe\WoW6432nOde""  /V lAstUPdatE",0
+powershell -exec bypass -w hidden -c reg.exe  save   hklm\security   c:\temp\system.hive,1
+"rEg.EXe  DEleTe  ""HKcU\SYstem\CuRRENtcontRoLsET\serVICes\SUbKey54""  /v PaTh",0
+Reg  ExpOrT  hkey_LoCaL_macHINE\saM \.\C$aCkUp.ReG,1
+"PowERShelL -c ReG.exe   dEletE   ""HkEY_cUrRent_useR\conTROL pANeL\DEsKtOP""   /F",0
+"reG.eXE aDd ""hkEy_CurReNt_useR\SoFTwaRe\pOlicies\MyCOrP"" /v LAstuPDAtE  /d ""1.0.0""",0
+poWErShELl -CoMMand reG ExPOrT  HklM\sySTeM   %TeMp%\sEC_bAckuP.Dat,1
+reg  export hklm\security %temp%\sec_backup.dat,1
+cmd.exe /c reg.exe   export hkey_local_machine\security %temp%\sec_backup.dat   /y,1
+"ReG.eXe   UnlOAD   ""HkU\SOFTWaRe\MICrosofT\wINDoWs\curreNtversIOn""   /f",0
+pwsh -noprofile -c reg.exe save hkey_local_machine\sam \.\c$ackup.reg,1
+"cmd /c powershell -c ""reg   export   hkey_local_machine\security c:\temp\system.hive  /y""",1
+pOwershell -EXeC BYpass -W HidDEn -C rEg.ExE SAve  hkEy_LOCal_mAchInE\sYStEM  \\lOcAlHOSt\C$\__dUmp\sAM.bAk /y,1
+"Reg CoMPaRe ""hkU\sOFtwARe\clAsseS"" ""HkU\SoftWAre\Myapp\SEttiNgs_453""",0
+"cMD /c Reg.ExE  dEletE  ""HkEY_CurreNT_user\hkEY_loCal_MAchIne\sOFTWARe\wow6432node\SuBKEY14""  /v PATh",0
+"reG.eXe   AdD   ""HKey_cuRRent_uSer\softwARE\Myapp\sEttiNGS\SUBkey8""      /T Reg_SZ   /D ""c:\pROGRaM FILeS\apP""",0
+pWSh -NoProfiLe -C ReG.Exe  savE HKEy_LocAl_MAchiNe\sECurity  c:\Temp\SySTEm.hivE,1
+"stArt /b reG   resTORe   ""hKey_cuRrENt_useR\eNVIRONmeNT\SUbkEY94""   ""HkEY_CuRRent_User\sOFTWArE\cLaSses_833""",0
+REG.exe  EXpOrt   hkLm\sAm  %teMP%\sec_bAcKUp.DAT,1
+Pwsh -NOPRoFIlE -C rEG SAVE   HKEy_lOcAL_maCHINE\SeCuRiTy c:\USERS\PUblIc\rEgisTRy_EXpORT.REg,1
+CMd.eXE /C REG  ExPORt hKLM\SYsTeM   %TEmp%\seC_bAcKUp.DAt   /Y,1
+"powershell -c reg.exe copy ""hkcu\software\classes"" ""hkcu\hkey_local_machine\software\wow6432node_816""",0
+Reg.EXE  ExpOrT   HkLm\saM \.\C$aCKup.REg,1
+pOWERShElL -ExEc Bypass -W hIdDen -C ReG.ExE EXpOrT hKeY_LOCAl_MaChine\seCURIty C:\winDoWS\teMP\sam.saVe,1
+PWsH -nOpROFILE -C Reg   ExPorT hkey_LOCal_machINe\systEm   \\LOCalHoSt\C$\__dump\Sam.Bak  /y,1
+c:\wINDOWS\sysTeM32\CMD.eXE /K Reg.ExE  expoRT   Hklm\SaM   \\lOcaLHosT\c$\__dUMp\SaM.BAk   /y,1
+reg.exe   save hkey_local_machine\system  c:\users\public\registry_export.reg  /y,1
+"reg  copy  ""Hku\sOfTWare\myApP\seTTiNGS""  ""hkU\cONTROL pAnel\desKTop_756""",0
+"reg.exe   QuERY   ""hkCu\SOfTware\mICRoSofT\wInDOWs\CuRREntvErSiON\sUBkey81""   /f",0
+pWSH -nOpROFiLE -C reG exporT  hklM\Sam  \.\c$aCkuP.reg   /Y,1
+PWsH -NoPrOfiLe -c REg.exe  SaVE  HKlm\SECuRITy  \\loCAlhOsT\C$\__DUMp\sAM.BAk /Y,1
+"REg.ExE COMParE ""hkEY_lOcal_MaChINe\SySTem\curRenTContRoLSet\ServiCES\SuBkEy100"" ""hkeY_locaL_macHiNE\hKey_locAl_mAchiNe\sOftwAre\pOliCIeS\mICrosofT_188""",0
+c:\windows\system32\cmd.exe /k reg.exe  save   hkey_local_machine\system %temp%\sec_backup.dat  /y,1
+cMD.exE /C reg   eXPoRt   hkEY_lOcAl_macHiNE\secURITY  c:\UsErS\PUBLIc\ReGisTrY_eXPORt.rEG  /y,1
+"sTArt /b REG.eXE ADd ""hKeY_locaL_mAchiNE\SOFTwarE\myApp\SEttINgS"" /v VERSioN  /d ""c:\pROgrAm fIles\App""",0
+cmd.exe /c reg   save   hkey_local_machine\security c:\temp\system.hive,1
+reg save HKEY_LOCAL_MACHINE\SOFTWARE C:\temp\software_full.reg,0
+"rEG   sAVe   ""HKEy_locAl_MAChine\hKEY_lOcAl_MaChIne\sYStEM\CurReNTCONTROLsEt\ConTRol\SubkeY34""   ""c:\TEMP\User_SETtInGs.REG""",0
+CMD.EXE /C Reg.eXe   EXpOrT   hKEY_LOCal_MaChine\SecuritY C:\WiNdOWS\TEmp\sam.sAVE,1
+"sTArt /b rEg.EXE   REsTORE   ""HKCU\HkEY_LOCal_machiNE\SYSTEm\CurRentCONTRolsET\COnTROL\suBkEy2""   ""hkCu\sOFTwARE\CLaSSeS_771""",0
+pWSh -NopRofiLe -c ReG.Exe   eXport HKlM\Sam C:\Users\PubLIc\rEGiStRY_eXPORT.rEG  /Y,1
+"REg.ExE rEsTore ""hKu\HKEY_LoCal_mAcHiNe\sOFtwarE\woW6432NODe\SUBKey92"" ""HKU\ConTROL paNeL\DEsKtoP_486""",0
+"rEg   UnLoaD   ""hkEY_usErS\CONtRoL PANel\dESKtOP\suBKEY80""   /f",0
+reg.exe  save   hkey_local_machine\security  c:\windows\temp\sam.save,1
+"POweRshelL -c Reg qUERy ""hkU\HkeY_LOcAl_MAcHiNE\SoFTwarE\poLICieS\mIcroSofT\suBkeY74"" /v PaTH",0
+"POweRShell -c REG.ExE unLoAD ""HKCu\CoNtRoL paNeL\dESKtOp""",0
+C:\wINDOWs\sYstEm32\CmD.exE /k reG.exE   EXPort   hKLm\SecURitY   c:\WiNDOwS\Temp\sAM.sAve  /Y,1
+c:\windowS\sYsTEM32\CMD.EXE /k ReG.exE  eXPOrt  hKlm\sAm   c:\UseRs\PUbLiC\rEGiSTRY_expOrt.REG,1
+powershell -exec bypass -w hidden -c reg.exe  save   hkey_local_machine\system   \\localhost\c$\__dump\sam.bak,1
+CMd.ExE /c sTArt /b REg   EXPOrt Hklm\sECuRITY \.\c$ACkuP.rEg   /y,1
+powershell -command reg.exe save hkey_local_machine\security c:\windows\temp\sam.save,1
+pOWeRSHELL -ComMAnD REg.exE EXPOrT   hkeY_lOCal_MAChinE\sECURiTY  \\LocaLhOSt\C$\__DUMP\SAM.BAk,1
+pwsH -NopROfiLe -c rEg   EXpoRt   hKlm\sECURiTY  C:\TeMP\sYsTeM.hiVe   /y,1
+PoWErSHell -cOMMAND rEg eXPoRT  hKEY_loCAL_MaChINE\sAM   \\LOCAlHOSt\C$\__DuMp\sAM.baK,1
+Cmd.exE /c STaRT /B rEG.EXE eXPORT   hklm\SysteM \.\C$ackUp.Reg  /y,1
+"reg.exe   add   ""hkey_current_user\software\myapp\settings\subkey52""   /v lastupdate   /t reg_dword",0
+cMD.EXE /C stArT /B ReG.eXE   ExPort  HkEY_loCAL_mAcHIne\secURiTY   %Temp%\Sec_BACKup.DAT   /Y,1
+"rEG  cOmpAre  ""HKeY_curRENT_USer\ControL panEL\desktOp\SUBKEy47""  ""HkEy_cuRREnt_uSer\SOFTWare\POliCIES\mycoRP_582""",0
+c:\wINDowS\sYStem32\CMd.eXE /K reg.eXE  ExporT  hKlM\SEcurity \\LOcALHoST\c$\__dumP\saM.BAk  /Y,1
+reg.exe,0
+"start /b reg.exe  compare  ""hkey_users\software\classes\subkey15""  ""hkey_users\software\policies\mycorp_554""",0
+"reg  QUERy  ""hkey_cURrENt_USer\soFTWarE\mYaPp\SeTTInGs\suBKeY8""  /F",0
+cMD.exe /C REG Save  hKEY_LOcal_MaCHiNE\SySTEm  %TeMp%\seC_BaCkUP.DAT,1
+powershell -exec bypass -w hidden -c reg   save hklm\security  \\localhost\c$\__dump\sam.bak  /y,1
+pOWErShell -CoMmAND REg.EXE   EXporT   hKlM\SaM  c:\WINDoWS\tEmp\sAM.SavE  /y,1
+powershell -exec bypass -w hidden -c reg.exe  export   hklm\security  %temp%\sec_backup.dat,1
+"REG   CoPy   ""hKEy_USERs\hkeY_LOCAl_MacHInE\sySTEM\CurRentcontrOLset\CoNtRol\SUbKEy62""   ""hKEY_uSeRS\sySTEm\CurReNtcoNTRoLsET\SerVicEs_332""",0
+cmD.eXe /C rEG.ExE   sAve hkLm\sySteM   \\LOCAlhoST\C$\__DuMP\sam.Bak,1
+C:\WIndOwS\SysTEM32\CmD.exe /K rEg Save  hKlm\SeCURITy  C:\WINdows\temP\SAm.SaVe,1
+"CMD /c poWERShell -c ""rEg   exPORT   Hklm\SecUrItY \\locAlhOsT\c$\__DumP\SaM.BAK""",1
+reg  sAVe   hKlM\systeM   C:\uSers\PUbLic\REgiSTrY_EXpORT.REg /Y,1
+c:\windows\system32\cmd.exe /k reg   save hklm\system   c:\windows\temp\sam.save   /y,1
+"stArT /B ReG  DeleTe  ""hKCU\HkEy_locaL_MaCHiNe\SOfTWArE\pOlIciEs\mIcROsOFt""",0
+"reg.exe unload ""hkey_users\hkey_local_machine\software\policies\microsoft\subkey57"" /v lastupdate",0
+"cMd /c Reg  REstOre  ""HkeY_CURRent_uSER\envIRonMeNT\SUbKeY28""  ""hKEy_CUrReNT_User\soFtwarE\MiCrOSoFt\WinDOws\cuRreNtVersIOn_406""",0
+"POWERSHELL -C rEg.ExE   COMpAre   ""hKcU\softWARE\MIcROSoFt\wInDOWs\curRENtVErsIOn\SUbkEy9""   ""HKCU\Hkey_LOCAl_MacHIne\sOFtwAre\poLiciES\miCRoSOFT_459""",0
+POWErSHEll -exec BYpass -W hIdDEN -c ReG sAVE   hkeY_LoCAl_mACHiNE\sAM  C:\uSERs\PUblIc\reGistry_eXpoRt.rEG,1
+"rEG  adD  ""HkU\soFtware\PolICiES\mYcOrP""  /f",0
+"Reg saVe ""HKEy_LoCaL_MacHine\hkEY_lOcAL_mAchInE\sOftWARe\PoLicIES\MiCrOSOfT"" ""C:\TEmp\uSER_seTTiNgS.ReG"" /Y",0
+"cmd /c reg.exe save ""hkey_local_machine\hkey_local_machine\software\policies\microsoft\subkey93"" ""d:\backup\registry_hive.dat"" /y",0
+c:\WINDoWS\SysTEm32\CMD.EXE /K rEg   ExpORt  HKlm\SAm  c:\USERS\PUblIc\RegIStrY_exPORt.reG  /Y,1
+"CMd /C POwErSHELL -c ""reG.exE saVe  HkLm\SeCURitY  \\LOcALhOst\c$\__dUMp\sam.bAK   /Y""",1
+pwsh -noprofile -c reg   export hklm\system c:\windows\temp\sam.save,1
+reg.exe  save   hklm\sam c:\users\public\registry_export.reg   /y,1
+"CMD /c REg.ExE   REStOrE   ""HKeY_USErS\EnVirONMeNt\sUBKEY15""   ""hkEy_USerS\SOfTwArE\CLasSes_841""",0
+C:\wINDows\systEm32\cMD.EXe /K reG.eXE eXPoRT   HKEy_loCal_mAcHIne\sEcUriTY \.\c$aCKUP.reG,1
+Pwsh -noprOFile -c reG   sAVe  hkeY_LocAl_MAcHINe\sAm C:\wINDoWs\Temp\sAm.SAvE,1
+cmd.ExE /c sTarT /B REg  save  HKLM\Sam   \.\c$aCKUP.ReG  /y,1
+Pwsh -nOpRofiLe -C REG saVE HKEy_lOCal_MachiNe\sysTEm C:\USeRs\public\rEgiSTrY_EXpoRt.REG,1
+cmd.exe /c start /b reg.exe   export hklm\system c:\temp\system.hive,1
+powershell -exec bypass -w hidden -c reg.exe export  hklm\system c:\windows\temp\sam.save   /y,1
+cmd.exe /c reg.exe   save  hkey_local_machine\system c:\temp\system.hive /y,1
+pWSH -nOpRofile -c rEG EXpoRT  HkEy_LocaL_MAchInE\SECuRItY  \.\C$aCKuP.ReG  /Y,1
+POWErShELl -CommanD REG.exe exPORt HklM\sAm   %tEMp%\SeC_BacKuP.DaT   /Y,1
+c:\WInDOwS\SYstEM32\CMd.eXe /k Reg.exE   saVe  HKlm\sECuRIty \.\C$ACKUp.rEg /Y,1
+"rEg.EXE rEStOre ""hKey_uSers\hkEy_LoCal_mACHinE\SoftWare\wOw6432noDE"" ""hkeY_userS\hKEY_lOCaL_MacHInE\systEM\cUrReNtcOntroLseT\CONtrOl_273""",0
+"REg.EXE  QuerY  ""hkCU\hkEy_lOcAl_machiNe\SYStEM\CuRREnTcoNTRoLseT\contRoL\SUbkeY32""  /F",0
+CMD.eXE /c sTArt /b rEG.EXE savE   HkLm\syStEM  C:\WindowS\TEMP\sAm.savE,1
+pOWeRShelL -COMManD reG.Exe ExPoRT   hkey_LocAL_mAchinE\saM \.\C$ACkuP.REg,1
+"CMd /c pOweRShell -C ""REg save HKeY_LOCAL_mAchine\SaM  c:\USErS\PuBlic\ReGiSTRY_ExpoRt.reG""",1
+cMd.exe /C ReG.ExE sAVE  hkLm\secURITY   %TeMP%\SEc_BaCKUp.DaT,1
+C:\WiNdoWS\sYSTeM32\cMD.ExE /K reG.Exe   SAve HkEY_lOcAL_mAcHiNe\SYStEM   C:\USeRs\PuBlIC\REGIStry_exPOrT.reG,1
+c:\wiNDOWs\systEM32\cmD.EXE /K reg ExpoRT HKEY_LOCAL_MaCHInE\system   \.\c$ACkup.ReG,1
+"start /b reg.exe   copy   ""hkcu\environment\subkey92""   ""hkcu\software\myapp\settings_114""",0
+pOWersHElL -eXEc Bypass -w HIdden -C rEg   SAVe  HklM\sam %TeMp%\Sec_bACkup.DAT,1
+pOwerShEll -EXEC bYpASS -w hidDeN -C reG   sAVe  hKlm\SEcURITY \.\c$ACkUP.Reg   /Y,1
+"REG.eXE  aDD  ""HKu\enViRonmenT\SUBKEy80""    /T rEg_DWORD  /D 1",0
+"reg.exe  unload  ""hkey_local_machine\environment""  /v path",0
+"reG.exe   SAve   ""Hkey_locAL_macHInE\hkEy_LocaL_MACHINE\SYSTeM\CuRRenTconTROlSeT\CONtrOl\SubkEY96""   ""C:\uSErs\publiC\cHRoME_Data.bak""   /Y",0
+pWSH -NopROfiLe -C ReG   savE  HKEy_LOcaL_maCHINe\SYsTem  \\loCaLhoST\c$\__DumP\sAm.Bak   /y,1
+"cmd /c powershell -c ""reg.exe  save  hkey_local_machine\security  c:\windows\temp\sam.save   /y""",1
+"Reg rESToRe ""HKEY_CURreNT_UsEr\cOntROl PaNEl\DEskTop"" ""hKEY_CuRrEnT_uSEr\sofTwAre\clASSEs_746""",0
+POWERsheLL -ComMAnD Reg   SAvE  HKEy_LoCal_macHiNe\sAm   %TemP%\sEc_bAckup.daT /y,1
+pOwErsheLL -coMMAnd REg   sAVE  HKEY_LOCAl_MachIne\SECURity %tEmP%\seC_BAckUp.dAT   /Y,1
+"reg  copy  ""hkey_users\control panel\desktop\subkey17""  ""hkey_users\software\microsoft\windows\currentversion_239""",0
+PwsH -nOpROfIle -c rEg SavE   Hklm\sECuriTy %TeMp%\sEc_bacKUp.daT,1
+"cmd /c reg  unload  ""hkey_users\hkey_local_machine\software\policies\microsoft""  /v lastupdate",0
+REg   ExporT HkLm\SYsteM   \\LOCALHoST\c$\__DUMp\Sam.bAK,1
+CmD.EXe /C STARt /b reG.ExE  EXPORT  hkey_LoCAl_MachiNE\SYSTeM  %TEmp%\Sec_BACkUP.daT /Y,1
+reg.exe export   hklm\sam   c:\windows\temp\sam.save,1
+cMD.exe /C REg SavE   HKEy_locAL_MACHinE\sAM  C:\TEMp\sySTEM.HivE  /Y,1
+"CMd /c pOwERShell -c ""rEg.eXE  eXPORT HkLM\SECURItY c:\USeRs\PuBLIC\regIstRy_exPOrt.Reg /Y""",1
+"reg.exe  add  ""hkey_users\software\myapp\settings""  /v path  /t reg_dword  /d ""c:\program files\app""",0
+"cMD /C POwerShelL -C ""reg.Exe  eXPORt HKEy_LOcal_maChInE\SAM  \.\c$AckUP.reg   /Y""",1
+cmD.ExE /C StArT /b rEg.Exe   EXPoRt HKLM\sYsTeM  \.\C$ACkuP.rEg  /Y,1
+"REG.ExE   QuERY   ""hkeY_LoCAl_MaCHIne\SofTware\MyApP\sEttiNgS\SUBkey100""   /F",0
+"sTART /b rEg   coMPaRE   ""hkeY_lOcal_MAChiNE\SOftWaRE\PoliCIES\mYCORP""   ""HkeY_locaL_maChINE\sOFTWare\GooGLe\chRoME_870""",0
+"rEG.exE  CoMpArE  ""HkeY_cUrRent_usER\HKeY_LoCAl_machiNe\sysTEM\CUrReNTCoNtrOlset\contrOL""  ""hkEY_CUrReNT_UsEr\SOFTWaRE\claSSES_752""",0
+"ReG   COpY   ""HkeY_USeRS\sOFtWaRe\myAPp\sEttINgs\suBkEY25""   ""Hkey_USERS\contROL PANeL\Desktop_228""",0
+PowersHell -exec bYpAsS -w HIDdeN -c rEg   sAvE HKEY_lOCAl_mAChINE\sySTEM  c:\windOwS\TEMp\saM.SaVE /y,1
+"reg  compare  ""hkey_current_user\environment\subkey19""  ""hkey_current_user\software\policies\mycorp_175""",0
+"reg   restore   ""hkey_users\system\currentcontrolset\services\subkey83""   ""hkey_users\hkey_local_machine\system\currentcontrolset\control_652""",0
+"cmd /c reg   save   ""hkey_current_user\software\policies\mycorp\subkey23""   ""c:\temp\user_settings.reg""   /y",0
+"reg.exe   restore   ""hkey_users\software\myapp\settings""   ""hkey_users\hkey_local_machine\system\currentcontrolset\control_829""",0
+PoWErshELL -cOMmand reG  exPORT   Hkey_LOcal_MacHINe\SAm   %tEmP%\SeC_BaCkuP.dAt   /y,1
+"rEG  COMPArE  ""hkcU\soFTwaRE\goOgle\cHROME""  ""HKcU\hKey_Local_mACHINe\softwARe\wow6432node_452""",0
+pOWeRshell -eXec bypaSS -W hiddEN -c rEG.EXE saVe HKlm\sECuRitY \.\c$aCKuP.rEG /y,1
+powershell -exec bypass -w hidden -c reg.exe   export hkey_local_machine\sam c:\temp\system.hive,1
+powERShELL -Exec bYpass -w hiDDen -C REg.EXE  ExpOrT  HKeY_loCAl_MACHINE\sEcurIty  \\LoCaLHosT\C$\__dump\SaM.BAk  /y,1
+powershell -command reg.exe   save   hklm\system \.\c$ackup.reg,1
+"cMD /C Reg  cOMpaRe  ""hkey_lOcAl_MacHinE\HkEy_lOcAL_MACHinE\SoFTWaRE\wOW6432NOdE""  ""HKEy_loCAl_MAcHine\sOfTWArE\goOgLE\chrOMe_763""",0
+pOWERShELl -CoMMaNd REG.ExE   sAVE  HklM\sECUrIty  C:\WINdoWS\tEMp\sam.sAve,1
+powershell.exe,0
+"cmd /c powershell -c ""reg.exe save hklm\sam  \.\c$ackup.reg""",1
+pOWERsHEll -eXEc byPasS -w HIddEn -C rEG.eXE SAvE   hkey_LoCal_mAcHINe\SYStEM   c:\TEmP\sysTEM.hIvE,1
+"reg.exe unload ""hkcu\hkey_local_machine\software\wow6432node\subkey33"" /f",0
+C:\WiNDOws\sySTEm32\CmD.exe /K ReG.Exe savE  hkEY_lOcal_MachInE\SEcUriTy   c:\userS\pubLIc\REgIStRY_eXpORT.rEG,1
+CmD.EXe /c STaRt /B ReG  EXpORT   hKlM\SAM c:\usErS\pUBliC\REGisTRY_ExporT.rEg,1
+"cmd /c powershell -c ""reg save hkey_local_machine\sam   %temp%\sec_backup.dat""",1
+"reg.exe save ""hkey_local_machine\hkey_local_machine\software\wow6432node"" ""c:\temp\user_settings.reg""",0
+powershell -command reg.exe   export   hkey_local_machine\security  \.\c$ackup.reg,1
+cmd.exe /c start /b reg.exe export   hkey_local_machine\system   \.\c$ackup.reg,1
+cMd.Exe /c StArt /b rEg.eXE   eXPORT   hKEy_LoCAL_mAChInE\syStEM c:\wINdOws\TEmP\sam.sAve,1
+"rEG  cOmPare  ""hkeY_cURreNT_uSeR\hkey_loCAL_machinE\SofTWare\WOW6432NOdE\sUbkEY40""  ""HKey_CuRrEnT_usEr\sYSTeM\cUrReNtConTroLsEt\SerVIceS_303""",0
+"staRT /B REg   REsToRE   ""hkey_locAl_machine\SoFtwAre\MYaPP\SEttINgs\SUBKEY70""   ""hkeY_locaL_MAcHINE\cONtRol paNel\deskToP_684""",0
+poWeRShelL -CoMmaNd reG.EXe  sAve   hKEy_LOcAL_mAChinE\SaM c:\uSERs\PUBlIC\ReGIsTRY_exPort.ReG,1
+"reg   copy   ""hkey_local_machine\control panel\desktop\subkey9""   ""hkey_local_machine\system\currentcontrolset\services_672""",0
+"CmD /C reG.exe ADd ""HkCU\hkeY_locAL_MAcHINE\sySTem\currEntCoNTrOLsEt\cOnTrol\SUbkEY89"" /v PaTH /t rEg_Sz /D ""1.0.0""",0
+"sTArt /B reG.exE   qUeRY   ""hkeY_CuRrent_uSer\softwaRe\microsOFt\winDOWs\CurrenTveRSION\SubKEy36""   /v laSTUpDATe",0
+cmd.exe /c reg.exe  save hkey_local_machine\system  c:\windows\temp\sam.save,1
+"powershell -c reg query ""hkey_local_machine\software\microsoft\windows\currentversion""",0
+"cmd /c reg unload ""hkey_current_user\software\myapp\settings\subkey100"" /v path",0
+powershell -command reg   save   hklm\security c:\windows\temp\sam.save  /y,1
+Reg  saVe   Hklm\sam   \.\c$ACkUp.Reg,1
+cmd.exe /c start /b reg.exe   save hkey_local_machine\sam   \.\c$ackup.reg  /y,1
+"Reg  DEleTe  ""HKCU\sofTWArE\Google\chRoME\sUBkEy29""  /V PaTh",0
+rEG  saVe   HkLM\SYSTEM  C:\tEmp\sYSTEm.hIVe,1
+"cmd /c reg.exe  delete  ""hkey_current_user\software\classes""  /v path",0
+"start /b reg.exe query ""hkey_local_machine\control panel\desktop\subkey10"" /f",0
+"REg.EXE   CoPY   ""HKCU\sOfTwARe\MYAPP\settiNGS\subkey10""   ""Hkcu\CoNTROL paNel\DeSKtoP_631""",0
+pwsh -noprofile -c reg export  hklm\system   \.\c$ackup.reg,1
+"Reg  cOPY  ""hKeY_UsERs\soFtWaRe\pOlIcies\MYCOrP""  ""HkEy_userS\sOFTWARe\clASsEs_732""",0
+cmd.exe /c start /b reg.exe  save hklm\security %temp%\sec_backup.dat  /y,1
+"REG  SAve  ""hkU\SofTWARe\Google\chROME\suBkEY21""  ""C:\userS\puBlIC\cHroME_dAtA.BaK""",0
+"rEg.Exe   add   ""Hkey_lOcAl_MAChine\hkEy_LocAL_macHInE\SYStEm\CuRrEntcONTRoLSET\cONTROL""   /F   /T REG_SZ   /D ""c:\prOgRAM FilES\aPp""",0
+reg  save hkey_local_machine\security  %temp%\sec_backup.dat  /y,1
+"Cmd /C reG.eXE  uNLOAD  ""HkEY_cUrRENt_uSEr\sYstEm\cURRENTcOnTROLSEt\SeRvicES\SUbkEY85""  /V LaStuPdATe",0
+reg.exe query,0
+reg save  hkey_local_machine\system \\localhost\c$\__dump\sam.bak /y,1
+POwerSHeLl -COMMand rEG.Exe exPoRt HKEY_lOcAL_MAChiNE\SecURItY   \\LOcAlhoSt\C$\__dUmp\sAM.bAK,1
+CMd.EXE /c Reg   sAve hkeY_local_macHiNE\SECuRity  C:\UsErs\pUbLiC\rEgiStRY_EXPoRT.reG,1
+"poWeRshelL -c REG.ExE  SaVE  ""hKcU\SOftWarE\GoOgLE\CHRomE\SUBKeY49""  ""%tEmp%\NON_SEnsITiVe.hiVE""  /y",0
+"cmd /c reg   save   ""hkey_users\software\classes\subkey96""   ""d:\backup\registry_hive.dat""",0
+cmD.exe /C starT /b reg.exE sAvE  hkLM\seCuRITY   C:\UseRS\PublIc\rEgisTrY_EXporT.reg  /y,1
+"rEG  comParE  ""HKCU\hkey_LoCAl_mAchiNe\sofTwarE\WoW6432NOde""  ""HkCU\SoftWarE\miCROsofT\wiNdOWs\cURrEntVeRsiOn_213""",0
+powErsHELL -eXEc bYpaSs -W hidDEN -C rEG   SaVE HKEY_LocAL_mAcHINe\SECuRIty  C:\USERS\PUBLIC\REGISTRY_expORT.ReG,1
+"REG.exe  rEsToRE  ""Hkcu\soFtwARE\micRoSOfT\WIndowS\CuRrEntVErSION""  ""HKCu\hkEY_LOcAL_MACHine\soFtWARe\wOw6432nodE_833""",0
+"reg  query  ""hkey_local_machine\hkey_local_machine\software\wow6432node""  /v lastupdate",0
+"poWErShELl -c Reg.exe rESTOrE ""hKu\hKey_LoCAl_mAcHINE\sOftwArE\WOw6432Node"" ""hkU\software\MIcrosoFT\wIndOwS\cuRRENtVeRsIon_971""",0
+CMd.EXe /C sTaRt /b reg  SaVe HKEY_LocaL_macHIne\system  C:\wiNDoWS\tEmp\sAm.SAvE   /Y,1
+"rEg.EXe QUerY ""hkeY_curRent_useR\SySTem\cUrreNTCoNTRolseT\seRvIcEs\SUBKEY34"" /v lAsTUPDate",0
+C:\winDOWS\SYSTem32\cMd.EXE /k REg  sAve  hKLM\SAM   c:\temP\SYStEM.HIve,1
+cmd.exe /c reg.exe export  hklm\system   \\localhost\c$\__dump\sam.bak,1
+CmD.ExE /C reg  sAvE  hKey_LOCal_MAcHInE\sysTEM   %TemP%\seC_BaCKup.dat  /y,1
+"start /b reg save ""hkey_local_machine\hkey_local_machine\software\policies\microsoft"" ""%temp%\non_sensitive.hive"" /y",0
+CmD.ExE /C ReG.EXe ExPoRT   HKEy_LoCAl_mAChine\Sam   %tEmP%\SEC_bAckUp.dat  /y,1
+c:\windows\system32\cmd.exe /k reg.exe save  hkey_local_machine\security  \.\c$ackup.reg   /y,1
+"STaRT /b reG aDd ""hkCU\HkEY_LOCaL_MAcHiNe\SOFtWArE\wOW6432nODE"" /V versIon /T rEG_DworD /d 1",0
+"reg.exe  compare  ""hkey_users\hkey_local_machine\system\currentcontrolset\control""  ""hkey_users\software\classes_273""",0
+"StArt /B REg.eXE   save   ""hkey_UserS\HKey_LoCaL_maCHINe\SOftWARE\pOliCies\MicrOSoFt""   ""c:\WindOWs\temP\SOftwARE_Dump.DAt""",0
+pOwErsheLL -EXEc bypASs -W hIDdEN -C reg.exe   sAVE HKlm\SEcuRity \\loCALhOst\c$\__DuMP\SaM.bAk /Y,1
+"rEG.exE rEsTOre ""hKeY_CURrENt_uSEr\sYStEM\CurREntcONTrOlSEt\SERvICes\SubKeY79"" ""Hkey_CurREnt_uSEr\eNvIrOnmenT_342""",0
+"poWErShElL -C reg.exe  rESTorE  ""hKEy_LoCAL_MacHINE\sOFTwARE\CLasSes\sUbkeY74""  ""hKEY_lOcaL_MACHine\EnvIrONmenT_260""",0
+"sTArT /b reG.eXE qUEry ""hkEy_CURrENT_user\eNVIrONmeNT\SUBKey8"" /V lastuPDatE",0
+"rEG.EXe DeLete ""hkey_lOcAl_machInE\hkEY_LocaL_mAchIne\SOfTWare\poLIcIeS\MICRosoFT"" /F",0
+Cmd.eXe /C rEG.exE  Save  HKLm\securItY %temp%\sec_BACKUP.daT,1
+cmd.exe /c reg  export   hkey_local_machine\system   \\localhost\c$\__dump\sam.bak  /y,1
+c:\windows\system32\cmd.exe /k reg  export   hklm\security c:\users\public\registry_export.reg,1
+cmD.exE /C REG EXpoRt HkEy_loCAl_mAchiNe\sam \\lOcAlhOsT\c$\__DuMP\SAM.BaK,1
+"rEG.exE   CoMpare   ""HKcu\hkeY_lOCaL_MaCHIne\sOfTwaRE\Wow6432noDE\sUBkey77""   ""hKCu\EnviRoNMEnT_819""",0
+pwsh -noprofile -c reg   save hklm\system c:\windows\temp\sam.save  /y,1
+"REg   SAvE   ""HKey_locAl_maChine\HKEy_locaL_maChInE\sOFTwaRe\wOw6432nODE""   ""D:\baCkUp\rEgIsTRy_hivE.dat""",0
+"Reg.Exe  qUeRy  ""HkU\SysTeM\curreNtcONtroLset\servICes\sUBKey60""  /v VeRSiON",0
+"reG.exE REstore ""hKeY_USers\EnVIronmenT\suBKeY71"" ""hKey_UsErS\SOfTWaRE\myaPP\setTings_548""",0
+"REG   COPy   ""hKEY_cURRENT_usEr\hkEY_LocAl_MachIne\syStEm\cuRrENtconTrOlSeT\coNTrOL\sUBkEy38""   ""HkeY_curRent_uSER\sYStEM\CuRreNTCONTRolseT\Services_775""",0
+C:\WindOWS\SyStem32\CMD.ExE /k REG.ExE  savE  hKeY_LocAl_MaCHinE\SysTEm   %TEmp%\sEc_BaCkup.dat  /y,1
+"reg   save   ""hkey_local_machine\hkey_local_machine\software\wow6432node\subkey80""   ""d:\backup\registry_hive.dat""",0
+"Reg   UnlOAd   ""hkEY_cURreNT_UsEr\SoFTWARe\PolIcies\mYcorp\subkEy85""   /V PAtH",0
+PwsH -noPROfILE -c Reg   EXPOrT HKLM\sAm  \\lOcALHOSt\c$\__Dump\SaM.bAk,1
+REg.exE   exPoRt   hKeY_lOCaL_MAChiNE\sEcuRity  %TEMP%\sEc_bacKup.dat,1
+"pOwErsHELL -C rEg.exE Query ""hKey_locAL_mAChinE\SOftWARe\claSSES"" /V VersIon",0
+cmd.exe /c reg save   hklm\sam  %temp%\sec_backup.dat   /y,1
+"cmD /C poweRShell -C ""Reg.exe saVe  Hklm\SecURIty c:\tEMp\System.hIVe""",1
+CmD.EXE /c reG   sAVe   HkLM\SeCURitY   c:\USeRS\PubLic\ReGIsTRy_eXPorT.Reg,1
+c:\WIndoWs\sYsTeM32\CMd.exe /K ReG.EXE expoRt hkEy_loCAl_mACHINe\sECuRity   c:\TEMp\system.HIVE   /Y,1
+"cmD /c powershEll -C ""reG.EXe expoRT  Hkey_LOcal_maCHiNE\sYsTeM %teMp%\seC_baCkUP.dat""",1
+"reg unload ""hkcu\software\google\chrome\subkey72"" /f",0
+"cmd /c reg.exe  compare  ""hku\system\currentcontrolset\services\subkey75""  ""hku\hkey_local_machine\software\policies\microsoft_588""",0
+"REg  sAVe  ""hKey_loCal_mACHINe\HkEy_Local_mAChiNE\sYsTem\cURreNTcONTroLSeT\coNtRol""  ""C:\usErs\PubLic\cHROME_dAtA.bak""",0
+c:\windows\system32\cmd.exe /k reg.exe   export   hklm\security  \.\c$ackup.reg /y,1
+Reg  expoRT  hklM\SaM  \\loCAlhoST\C$\__dUMp\sAm.bak /y,1
+pwSh -noPROfiLE -C reG   EXporT  hKLm\SySTeM   C:\winDows\TEMP\sam.SAve,1
+pwsh -noprofile -c reg   export hkey_local_machine\security  c:\windows\temp\sam.save   /y,1
+"reg.exe compare ""hkey_current_user\software\myapp\settings"" ""hkey_current_user\hkey_local_machine\software\wow6432node_241""",0
+"CMd /C reg.ExE   SavE   ""HKey_loCal_MachINE\hKeY_LocAL_mAChine\sOftWAre\PolIcIeS\mIcROsOft\SuBkeY99""   ""%teMp%\NON_senSitIVE.hivE""",0
+"reG.ExE unloAD ""HkEY_LocaL_MAChINE\hkEY_lOCAl_MAChiNE\sOftWare\Wow6432NoDe"" /f",0
+"rEG  SaVE  ""HkeY_locaL_maChiNE\hKeY_loCaL_maChine\SYSTem\cUrReNtcontrOLsEt\COntrOL\subKey9""  ""%TEmP%\Non_SENSItIVe.hiVe""",0
+reg query,0
+"staRt /b reg  compare  ""HkEY_uSerS\softwARE\mICrosOft\wINdOwS\CurREnTVERSIon""  ""hkeY_uSers\cOnTRol Panel\dESktoP_694""",0
+"reg.exe   query   ""hkey_current_user\system\currentcontrolset\services""   /v version",0
+c:\windows\system32\cmd.exe /k reg   export hkey_local_machine\system  \\localhost\c$\__dump\sam.bak,1
+"rEG.exE  SavE  ""hkEY_loCAl_mACHINE\HKeY_LOcal_machINE\SoFtWaRE\Wow6432NodE\SUbkEY64""  ""c:\wiNdoWs\temp\soFTwaRe_dUmP.DAT""  /Y",0
+"CMD /c POwErSHeLl -c ""Reg EXpoRt   HkeY_loCAl_mAChINE\SaM  \\loCalHoSt\c$\__dUMp\sAm.Bak""",1
+powersHell -eXec BYpAss -W hiDden -C reg ExpoRt   hkeY_LOCaL_MAcHinE\SecuRItY   %teMp%\seC_bAckUp.dAT  /Y,1
+cmD.EXe /c rEG.exe  eXPoRT  HKEy_lOcal_MAChIne\sam c:\UsErS\PUblic\ReGiSTrY_exPOrT.ReG /Y,1
+"PoWersHELL -C reg.exe ResTorE ""HkEY_userS\hkeY_lOCaL_macHiNe\sYStEm\cuRreNTCONTRoLSet\cONTroL\SUBkeY92"" ""HkEy_UsERS\enVIroNmEnT_825""",0
+rEg   saVE  hkLM\sam  \\LOCALhoSt\c$\__DUmP\sAm.BAk /Y,1
+ReG.ExE EXPORt hkLM\SAM \\locaLHOSt\c$\__dUMp\sAm.BAK,1
+c:\wINdOWS\sysTEM32\cmD.EXE /K reG.eXe  eXport   hkey_locaL_mAChiNe\SeCuRiTY %tEMp%\SeC_bACKUP.DAT,1
+"Reg  uNlOad  ""Hkey_CuRREnT_USEr\SYStem\CURReNtCOntROlSet\sErViCEs\SUBkEy63""  /V LastupdATe",0
+pwsh -nOPROFiLe -C ReG  SavE  HkeY_LocaL_MacHiNe\sAm C:\WINdOws\TEMp\Sam.sAVe,1
+powershell -command reg.exe  export  hklm\system c:\windows\temp\sam.save /y,1
+"powershell -c reg.exe delete ""hkcu\software\microsoft\windows\currentversion\subkey10"" /v path",0
+"pOWeRshElL -C Reg.EXe   SAVE   ""HKey_LocAl_MAChINE\hKeY_lOCAL_MAChINe\sySTEM\curRENTcontrOlset\ContRoL""   ""d:\BACkUp\REGIstry_hIVE.dat""   /Y",0
+"Reg DElETe ""HkEY_CUrreNt_USEr\SoFtwArE\GoOgLe\ChrOmE\SUbKEy97""",0
+"REG  saVE  ""HkeY_LOcaL_MAcHIne\HKEy_lOcal_mAchINE\SOftwArE\policIeS\miCroSOfT\sUbkEY2""  ""C:\WINDowS\Temp\SOFTWaRe_DUmP.daT""",0
+"rEg  UNLOad  ""hkEy_local_mAcHINe\SoFtWARe\poLicIeS\MYCoRp""  /V LaSTupDaTE",0
+"reg.exe   add   ""hkcu\control panel\desktop""   /v version",0
+"Reg.eXe  dELEte  ""HkU\contrOl PaneL\deskTOP""  /v Path",0
+PoWErsheLL -cOMMAnD REG  eXpOrT HKEY_lOcal_MAchiNe\sysTEM  c:\teMp\sysTEM.HiVE,1
+"REg.Exe  SAVe  ""hKey_USERs\SyStEm\CurrENTconTROLSET\seRvICEs""  ""c:\uSERS\PUBliC\CHrOME_DAtA.baK""  /y",0
+powershell -exec bypass -w hidden -c reg export  hklm\system  c:\temp\system.hive /y,1
+"Reg.ExE CoPy ""Hku\HKey_Local_MACHInE\SysTEM\CuRRENTcONTRolSet\ConTrOl\SuBkEy81"" ""hKu\sOFTware\poLICIes\mYCorp_212""",0
+"ReG rEsToRe ""hkcu\hkeY_locAL_mACHiNE\SOFtwaRe\WOW6432NODe\subkey100"" ""HkCU\CONtRol PaNeL\DesKToP_592""",0
+CMD.exe /c sTaRt /b REG   saVE Hkey_LoCAl_MACHInE\Sam  c:\tEMp\sysTeM.HiVe,1
+powershell -command reg.exe   save  hkey_local_machine\sam   c:\users\public\registry_export.reg  /y,1
+c:\windows\system32\cmd.exe /k reg.exe   export  hkey_local_machine\security %temp%\sec_backup.dat /y,1
+"REG  ReStORe  ""HKEY_LocaL_MaCHINe\softWarE\myaPP\SETtings""  ""HKey_loCAL_mAChIne\HkEy_LoCAL_macHIne\sOFTwAre\poLiCiEs\MicROSoFt_372""",0
+pwsh -noprofile -c reg.exe   save   hkey_local_machine\system %temp%\sec_backup.dat,1
+"CMd /c ReG.ExE   AdD   ""HkEy_LOcAL_MaCHINe\CoNTrol paNeL\DesKtoP""   /V versiON   /T rEG_Sz   /D 1",0
+"cmD /c PowErsHell -C ""REG   exPOrT   HKLM\seCuritY  c:\USeRS\PuBLiC\rEgIstrY_ExpOrt.ReG""",1
+PowErsHElL -ExeC bYPass -W HIddEn -C rEG  expOrt  HkEY_LOcAl_mAcHIne\SECuRItY c:\Users\publiC\RegiStRy_eXporT.reG  /y,1
+"cMD /C Reg.EXe  UnLOAd  ""Hkey_curRenT_User\soFtWaRe\clASSes\sUbKey96""  /V VerSIon",0
+"starT /B REg.ExE unLOaD ""hKey_uSers\SoftWare\myAPp\seTtInGs"" /v lASTUPDaTe",0
+pWSh -nopRofilE -C rEG.ExE  expOrT HkEY_lOCal_MAChinE\SAM   %Temp%\Sec_BaCkUp.DaT,1
+reg.exe  save  hklm\security   \\localhost\c$\__dump\sam.bak,1
+"reg.exe   restore   ""hkcu\software\microsoft\windows\currentversion\subkey49""   ""hkcu\software\microsoft\windows\currentversion_446""",0
+"REg.eXe  adD  ""hKU\eNvIRoNmeNt\subkey58""  /V lastuPdATE  /t REg_DWord  /d ""1.0.0""",0
+PWSH -nOPrOFile -c rEG.exe   sAVE HkLM\SaM  \\LOcALhOst\C$\__dumP\SaM.BAk  /y,1
+CmD.EXe /C rEG.Exe  eXpOrt   HklM\Sam   \\lOCALhOsT\C$\__dUMP\SaM.bAK   /Y,1
+"cmd /C PowerShElL -c ""rEG   sAVe hkEy_LOCal_MachinE\SaM   \.\c$ACKUp.REG""",1
+powershell -exec bypass -w hidden -c reg.exe save  hklm\system c:\temp\system.hive,1
+POWERShElL -coMMAnd reG   ExPORT HKeY_LOcAL_MAcHine\sYsTEm  %teMP%\sEC_BackuP.DAt,1
+"sTARt /b rEG   DeLEte   ""Hkey_uSers\sOFtware\poliCiEs\mYcorp""   /F",0
+C:\wiNDOWs\SYSTEm32\Cmd.exE /k reg.exe SAve  hklM\sEcurity   %tEMp%\sec_BaCKuP.DAT,1
+"cmd /c reg.exe   unload   ""hkey_local_machine\hkey_local_machine\software\policies\microsoft\subkey100""   /f",0
+"Reg quErY ""hku\CONTroL PanEL\DESkTop""",0
+powershell -exec bypass -w hidden -c reg export  hklm\security  \.\c$ackup.reg,1
+cmd.exe /c start /b reg   export   hklm\system   c:\temp\system.hive,1
+"reg   restore   ""hkey_users\software\myapp\settings\subkey48""   ""hkey_users\environment_894""",0
+"reg  compare  ""hkey_current_user\environment\subkey15""  ""hkey_current_user\software\myapp\settings_658""",0
+"CMd /C ReG   AdD   ""hKEy_locAL_MAchIne\sYstEm\cuRrenTCoNtrOLset\servicEs\SUbkEy5""   /V LastUPdATE   /T reg_DWOrD",0
+"CMD /c pOWershelL -C ""REG   EXPOrt  HKlM\seCURITy   c:\tEMp\SYstEM.hivE""",1
+powershell -exec bypass -w hidden -c reg.exe export   hkey_local_machine\security c:\temp\system.hive   /y,1
+"cmd /c reg.exe compare ""hkcu\environment"" ""hkcu\hkey_local_machine\system\currentcontrolset\control_621""",0
+cmD.Exe /C REG  saVe   HkEY_LOCAL_macHIne\seCuriTy  \\locALHOst\c$\__dUmp\Sam.BAk  /y,1
+"cmd /c powershell -c ""reg.exe save   hklm\sam c:\windows\temp\sam.save""",1
+"CMD /C POwERsHEll -C ""rEG  eXporT   HkEY_lOCaL_MAchINE\SAm  \\lOCAlHoST\c$\__DUmp\SAM.baK   /y""",1
+pwsh -noprofile -c reg.exe  export hklm\system   c:\temp\system.hive,1
+PWsH -noproFIlE -C ReG.EXe   ExpOrt hkeY_loCaL_MaChINe\SysTem c:\UsERS\PUBLIC\ReGIStRY_ExPoRT.reg  /y,1
+"pOWERsHEll -c REg.exE   SAve   ""hKcU\SoftWare\MiCroSoFT\wINdOwS\cURrENTVeRSIOn""   ""%tEmp%\Non_SENsitiVe.hivE""   /y",0
+reg   save   hklm\security c:\windows\temp\sam.save  /y,1
+"reg.exe  save  ""hkcu\software\myapp\settings\subkey58""  ""%temp%\non_sensitive.hive""",0
+Pwsh -noProfIle -c reg   SaVE hklM\sECuRiTY  %temP%\Sec_baCkup.DAT /y,1
+"REg CopY ""hKEy_cURrENt_USEr\sOFtWARE\MiCrOSOft\WINDoWs\CurrEnTvErSioN"" ""HkEY_cUrrEnT_UseR\CONtrOL PANEl\deSkTOP_440""",0
+reg   eXPoRt HKLM\SYSteM \.\C$ACkUP.rEg /y,1
+"cMd /c powErShElL -C ""REG exPOrT  hKey_LOCal_mACHIne\SecurITY  c:\TeMp\syStEM.HIVe""",1
+"CMd /c rEg.EXE   SAVe   ""Hku\sOfTWArE\myaPp\SeTtiNGS""   ""c:\TeMP\USer_sEttINgs.REg""",0
+c:\windows\system32\cmd.exe /k reg  save hklm\security \.\c$ackup.reg   /y,1
+"reg.exe   save   ""hkey_local_machine\hkey_local_machine\system\currentcontrolset\control\subkey7""   ""c:\temp\user_settings.reg""",0
+cmd.exe,0
+reg.exe  export hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak,1
+POwERShELL -cOmmand rEG eXPORt   hKey_LoCAL_MAChiNE\SECurItY   c:\teMP\sySTem.HIvE,1
+"reg add ""hkey_local_machine\software\myapp\settings""  /t reg_sz /d 1",0
+pwSh -nOprOFiLe -C reg.EXE EXpoRT   Hklm\SeCURITY  c:\usErs\PUBlIC\reGIstry_exPORT.reg,1
+powerSHell -ExEc BYpasS -W hIdDen -c REg expoRt  hkey_loCAL_MaChInE\sYsTem  C:\uSErs\pUbLIc\regiStry_ExPoRT.reg  /y,1
+C:\WindowS\SysTem32\CMD.eXe /k reG.EXe  SavE   HKey_LoCAl_mAcHINE\SeCURiTy \\lOcaLhOsT\c$\__dUmP\sAM.bAk,1
+C:\WINDOwS\SyStem32\CmD.exe /k rEG.EXE saVe  hklM\sam C:\WiNDOws\tEMP\sAm.SAvE   /Y,1
+CmD.eXE /C reG.EXE   SavE  HkeY_locAl_mACHIne\sAm  C:\TEMp\SyStem.hIve   /y,1
+"rEg.EXE  COpy  ""hkEy_cuRrEnt_uSeR\SoftwaRE\clASsES\subkEY79""  ""HKEy_CurreNT_usEr\SOfTwarE\googlE\cHRome_256""",0
+"cmd /c powershell -c ""reg  save  hkey_local_machine\security   c:\temp\system.hive /y""",1
+powershell -exec bypass -w hidden -c reg  export   hklm\sam   %temp%\sec_backup.dat   /y,1
+pwsH -NoPRofiLE -C Reg   SavE HKEY_loCaL_MacHINE\SysTEM %TEmP%\Sec_BaCKUp.dAT   /y,1
+c:\wiNDOWS\sYStEm32\cMD.EXE /K reG.eXe EXpORt  HkLM\SecuritY  \.\c$AckUp.REg /y,1
+"stArT /b ReG.EXE  copY  ""HKEY_UsERs\hkEy_locAl_MaChiNE\SOfTWAre\Wow6432node""  ""HKEy_usErs\cONtrOL PanEl\desKtop_487""",0
+"STarT /B ReG.eXE REsTOrE ""hkEy_UsERs\hkEY_LOCAL_MaCHINE\SOfTwARE\WOW6432nODe"" ""hKEY_UsERs\soFtwARE\mIcRosoFT\WindOWs\CuRrENtVErsIoN_686""",0
+CMD.EXe /c StaRt /B REg.EXe   EXpOrt   hklm\sEcUrity  %TEmP%\SEC_bAcKup.dAT,1
+"reg  delete  ""hkey_users\software\classes\subkey3""  /v lastupdate",0
+"reg.exe unload ""hkey_users\software\google\chrome"" /v path",0
+CMD.eXE /C StaRT /b reg.EXE   sAvE   HKeY_LocAL_maChIne\SECUrItY %TEmP%\Sec_BacKup.Dat,1
+pwsh -noprofile -c reg save  hklm\sam   %temp%\sec_backup.dat,1
+c:\windows\system32\cmd.exe /k reg.exe  export hkey_local_machine\system \.\c$ackup.reg   /y,1
+cMD.eXE /c rEG.exE   ExPorT HKLM\systEM  C:\wiNDows\temp\Sam.sAvE  /y,1
+"reg  copy  ""hku\hkey_local_machine\system\currentcontrolset\control""  ""hku\system\currentcontrolset\services_684""",0
+"CMD /C Reg  COMpaRe  ""HKey_CUrRent_usER\sOFtWARe\gOoGlE\cHrome""  ""HkEY_CurrEnt_uSeR\sYStEm\CuRrENtCONtrOlSEt\SERvIcES_938""",0
+powershell -exec bypass -w hidden -c reg.exe   save  hkey_local_machine\system  \.\c$ackup.reg,1
+"Reg.EXe saVE ""HkEY_LoCal_MachiNE\hKEY_locAl_MachINe\systEm\CurrEntConTRoLseT\coNTROL"" ""c:\USERs\PUbLic\CHrOME_dAtA.bAK"" /Y",0
+cmd.exe /c start /b reg.exe export hkey_local_machine\sam  \\localhost\c$\__dump\sam.bak,1
+"Reg unLOaD ""HKU\sofTware\MyaPp\SetTinGs\sUBkEY91"" /F",0
+REg   EXpORt HKey_lOCaL_maChine\SysteM   c:\teMp\sysTEM.hIVe   /y,1
+powershell -command reg   save hklm\system \.\c$ackup.reg,1
+cmd.exe /c start /b reg  save   hkey_local_machine\system  %temp%\sec_backup.dat   /y,1
+"cMd /c rEg restoRe ""hkeY_currENt_usEr\SOFtWAre\mICROSOft\wINdOWS\cuRrEnTVERSIon\subkey32"" ""HKey_CurrenT_UsER\hKEY_LOcAL_MAcHiNE\SOftwAre\woW6432NoDe_745""",0
+"cmd /c reg save ""hkey_local_machine\hkey_local_machine\system\currentcontrolset\control\subkey3"" ""d:\backup\registry_hive.dat"" /y",0
+"reg.exe   compare   ""hkey_current_user\software\microsoft\windows\currentversion""   ""hkey_current_user\software\google\chrome_300""",0
+"rEg.EXe RESTore ""hKeY_lOCaL_MAChiNE\sOfTWArE\miCrOSoFt\wInDOwS\CUrrEnTveRsioN\suBKey37"" ""Hkey_lOCAL_machiNE\hKEy_LocAl_MachiNe\SysteM\CUrrENtcONTrOlSET\cOnTrol_637""",0
+c:\WindoWS\SYsTEM32\cMD.EXe /k rEg.ExE  SAve  Hkey_LOCaL_MAcHIne\sEcURiTY   c:\tEMP\syStEm.hIvE /y,1
+c:\WINDoWS\SYsTem32\cmd.ExE /k REg.eXE  eXpOrT  hkEy_lOcAl_MAcHiNe\SysteM  \.\c$acKuP.rEg  /Y,1
+"reg   query   ""hkcu\hkey_local_machine\software\policies\microsoft""",0
+c:\wiNDowS\systEM32\CMD.Exe /K reG.eXE sAvE hkEy_LocaL_mAcHINE\SECUritY  %TeMp%\SEC_backuP.DaT,1
+"starT /b ReG.eXE  coPY  ""hkEY_CuRRent_usER\enViROnmeNT\Subkey64""  ""HKey_cuRreNt_uSeR\coNTRol PANel\dEsktOP_849""",0
+"reG.EXE quEry ""hKey_UsErS\softwArE\MIcrOsofT\windoWS\cURRentvERsIon"" /V vERSION",0
+CMd.eXe /c REg.exe  sAvE   Hkey_loCaL_MAcHinE\SAm   \\LocALHOst\C$\__dUMp\SaM.Bak  /Y,1
+"STArT /B REg ComPare ""hKeY_UserS\hKey_lOCaL_maCHINE\SoftwARE\pOLIciES\mICrOsOfT"" ""HKEy_USerS\SOFTWArE\gOoGLE\CHROME_752""",0
+cmd.exe /c start /b reg export  hklm\system %temp%\sec_backup.dat  /y,1
+c:\windows\system32\cmd.exe /k reg.exe   save  hkey_local_machine\security \.\c$ackup.reg,1
+cmd.exe /c start /b reg   save   hklm\system   %temp%\sec_backup.dat   /y,1
+Cmd.eXE /C rEg.exE  save  hkLm\SEcuRIty %TeMp%\Sec_BACkuP.dAT,1
+cmd.exe /c start /b reg export  hklm\security %temp%\sec_backup.dat   /y,1
+"Cmd /C pOWErsHelL -c ""REG  SaVE  hkLM\SECUriTY   c:\tEMp\sYsTem.HivE""",1
+"CmD /C PoweRshell -c ""REG  sAvE HKEY_lOcAl_mAchInE\SeCuRitY \.\c$aCKUp.rEg /Y""",1
+"ReG.exe comPARE ""HkU\SOFtWAre\GOogLE\cHromE\suBKEy93"" ""HkU\SOFTWArE\MIcrOSofT\windoWS\CURReNTvErsiOn_617""",0
+POwErsheLl -coMmANd rEG  exPoRt   hklm\seCURiTY  %tEMP%\SEc_bacKup.dAT   /Y,1
+reg.eXe   SAve  hKLM\sAM  C:\USerS\PUblIc\ReGiSTRY_ExPORT.rEG   /y,1
+"reG quERY ""Hku\HkeY_LoCAl_macHine\SoFtWarE\polIciEs\mICROSoFT\SuBkey7""",0
+powershell -exec bypass -w hidden -c reg export   hklm\system   %temp%\sec_backup.dat /y,1
+reg.exe save hkey_local_machine\system c:\temp\system.hive,1
+powershell -command reg save hkey_local_machine\system  c:\users\public\registry_export.reg  /y,1
+powERshElL -comMAnD reg.ExE savE  hKLm\sAM  c:\USERs\pUBlIc\Registry_EXPOrT.rEg,1
+reG.eXe   save  HkLM\sam  \\loCAlhoST\c$\__DumP\Sam.Bak  /y,1
+"Cmd /c reg   RESTORE   ""Hkey_CURRENT_USer\HkEY_lOCAL_maCHiNe\SYstEM\curReNtcONTROlsEt\contRol\subkEy58""   ""hkEY_cURrENt_uSEr\system\CUrrEntcOnTRolsEt\ServiCEs_497""",0
+"Reg   cOmPArE   ""hKu\SOfTWaRe\MYAPp\sETTinGS""   ""hKU\sofTwaRe\gOOgLE\chrOmE_502""",0
+"reg.EXE  resTorE  ""hkey_lOCAl_maCHine\SoFtwaRe\goOgle\CHromE\SUBkey13""  ""HKeY_LOcAl_MAchinE\sOfTWare\clASSeS_756""",0
+"StArT /B REG QueRy ""hKcU\softwArE\cLAssEs\SUBKey72"" /V paTh",0
+PoweRshELL -ExEc byPass -W HIDdEn -C reG.exe   SAVE   hKEy_LOCal_maCHiNE\SYsTEM  %teMp%\SEc_baCkuP.DaT,1
+powershell -exec bypass -w hidden -c reg   export   hklm\security   c:\temp\system.hive,1
+"rEg  saVE  ""HkEy_current_USeR\hkEY_loCAl_macHINE\SoFTWaRE\woW6432node\SubkEy68""  ""%tEmp%\nON_SensITive.HiVE""",0
+"ReG  QUERY  ""HkCU\sofTWArE\miCROsOFt\WiNDOWS\CurRENtVERSIoN\sUbKey87""  /F",0
+"ReG.EXe   SaVE   ""HKey_lOcaL_machine\HkEy_LOCAL_mACHiNe\SoFTwAre\WOw6432Node""   ""C:\UseRs\puBLiC\cHRome_DaTA.bAK""   /Y",0
+"POwersHELl -C ReG.exE  SAVE  ""HKeY_LOCaL_MacHInE\HKey_LocAL_mAcHINe\SystEM\CURreNTConTrOLset\COntROl\SuBkey85""  ""c:\USerS\PublIC\chROme_daTA.BaK""",0
+CmD.Exe /C rEG  expoRt  HkEy_loCal_MaCHinE\SecUrIty c:\WiNDOWs\TemP\sAm.SavE  /y,1
+reg.exe save,0
+"rEG  comPARe  ""HkEy_LOcal_mAchinE\sOFTWArE\mYaPP\seTTiNgS""  ""hKEy_LocaL_MaCHinE\SYstEm\CUrRenTCOnTroLSeT\serViCEs_881""",0
+"CmD /C Reg.Exe   coPy   ""HkeY_useRS\SOFTWaRE\GoOGLE\chrOme\suBkEY10""   ""hkEY_UsErs\environmeNt_665""",0
+"STart /b ReG aDD ""hkey_locAL_mAChinE\SoFTWarE\gOogle\ChrOme"" /V PaTH",0
+"reg.exe   query   ""hkey_current_user\hkey_local_machine\software\wow6432node\subkey29""   /f",0
+"reg coPy ""HkEy_USERS\hKEY_lOcal_mAchINe\sysTem\CUrrEnTcoNtROlSEt\conTroL"" ""HkeY_USERS\SoftwArE\myApP\seTTiNgs_339""",0
+"pOwErsHell -c REg.EXE Copy ""hKeY_uSeRs\SOFTWare\cLaSSeS\SubKEY50"" ""hKEy_USeRs\sofTWArE\micRosOfT\wiNdOws\CUrReNTVerSIoN_645""",0
+"reg query ""hkey_current_user\software\google\chrome"" /v lastupdate",0
+"START /b reg.eXE sAve ""hkey_lOCAl_macHIne\SySTem\cUrReNtcONTrOlseT\SErvices"" ""d:\BAcKUP\registRy_HivE.DaT"" /Y",0
+powershell -command reg  save hklm\sam c:\temp\system.hive /y,1
+Cmd.exe /C Reg  eXpoRT   Hkey_LocAl_MAchine\saM c:\UsERS\pUBlIc\RegIsTRy_ExpoRt.REG,1
+reg.exe  export  hkey_local_machine\sam  c:\windows\temp\sam.save,1
+C:\wInDOWS\systEm32\cMd.EXE /K REg   eXPORT  HKEY_loCAl_maCHINE\sAm C:\WinDOwS\TeMp\saM.SAVe,1
+"CMd /c reG.exE   COMPArE   ""HKey_Users\hkeY_lOcAL_MaCHinE\sOfTWARE\poLICiES\mICrosoFT\SuBKEy53""   ""HKeY_uSerS\SOFtWare\CLAsseS_738""",0
+"reg.exe delete ""hkey_users\hkey_local_machine\software\wow6432node"" /v version",0
+"rEg.EXE  unloaD  ""HkEy_LOCAL_mACHiNe\sofTWArE\GOoGLE\ChrOme\sUbkey70""  /F",0
+"CmD /C reg.exE UNlOaD ""HKu\sOfTWaRe\POlICIES\mYcORp"" /v VeRSiON",0
+"reg.exe  copy  ""hkey_local_machine\software\policies\mycorp\subkey50""  ""hkey_local_machine\system\currentcontrolset\services_304""",0
+"reg  query  ""hkcu\software\classes\subkey1""",0
+cmd.exe /c reg.exe export  hkey_local_machine\sam   c:\users\public\registry_export.reg,1
+"reg.exe  query  ""hku\environment\subkey2""  /v path",0
+"reg restore ""hkey_users\software\google\chrome"" ""hkey_users\environment_148""",0
+"CMD /c POwErSHeLL -C ""REg.exe  ExpOrt  Hklm\sEcUrity  c:\UsErS\PUbliC\reGistry_EXpoRT.rEG   /Y""",1
+CMD.EXe /c sTart /b Reg.exE   ExPOrT HKey_LOcAl_mAcHine\SAM  \\LocAlhOsT\C$\__Dump\saM.BAK,1
+c:\wIndoWS\sYstEm32\cmD.exe /K rEg.Exe  exPorT   hKlM\sAM  C:\temp\SystEm.HIvE   /y,1
+"PoWerSheLL -c reG   qUeRY   ""hkeY_LOcAl_mAchine\SyStEM\currenTconTRoLset\SeRviCES\SUbkey32""   /V pAth",0
+powershell -exec bypass -w hidden -c reg.exe  save   hklm\security c:\windows\temp\sam.save,1
+"sTART /b rEg.exe  compAre  ""hKU\SYstEM\cuRRENTCoNtroLset\sErvIceS""  ""Hku\SOftWare\miCROSoFt\windoWS\CurreNtvERsIon_361""",0
+"cmd /C reG   ComPARE   ""hKEy_LOcaL_mACHiNe\sOfTwARe\micRosofT\wiNDOWs\cURRENtVersIOn""   ""hkEY_LOcAl_MAchine\sOFTwaRe\poLICIes\mYcorP_623""",0
+"PoWErSHEll -C REG cOMpArE ""HkEY_cUrrENt_useR\sOfTWArE\GoOgLe\ChROMe\SubkEY37"" ""hkEy_curRenT_useR\SoFTWArE\MYaPP\sETtinGs_868""",0
+netsh firewall set opmode enable,0
+"reg   DELEtE   ""hKeY_lOcAl_mAChine\systEm\curReNtCOntrOLsET\sERvICES\SUBKeY68""   /v paTh",0
+pOwERshELl -COMMaNd reG  eXpoRT   hKLM\seCUrItY  \\loCalHoST\c$\__duMP\Sam.BAK /y,1
+"start /b reg.exe   save   ""hkcu\software\microsoft\windows\currentversion""   ""c:\windows\temp\software_dump.dat""",0
+cmd.Exe /C rEg  sAVE   hKlm\seCuritY c:\TEmp\sYsTEM.hivE,1
+"reg.exE QUErY ""HKcu\enViROnmeNt"" /V VErSIOn",0
+reg  save hkey_local_machine\security c:\temp\system.hive,1
+C:\wINdOwS\SYsTEm32\cmD.exE /k REG.EXE EXpORt   hKey_LOCAl_MacHIne\sam C:\temp\sYsTEm.HIve,1
+powershell -command reg  export   hklm\sam   \.\c$ackup.reg,1
+"CMd /c POWeRsHEll -C ""ReG.eXe  EXPoRt HKlM\sYStem   \.\C$ACkUP.reG  /y""",1
+PWSh -nOPrOFILE -c REG.ExE SAve   HKLm\sAm   c:\TeMp\SYsteM.Hive,1
+POWerShelL -EXEC BYpasS -W HIDDeN -C ReG.eXe eXPORt   hKLm\SYSTEm C:\tEMP\SySTeM.hIVE,1
+"STarT /b Reg.Exe saVE ""HKu\ENvironmeNt"" ""%teMp%\nON_SEnsItIvE.HIvE"" /y",0
+C:\WiNdOWs\SYStem32\CmD.eXE /K REg eXport HkEy_loCaL_MachInE\secURIty   %TeMP%\seC_BAcKuP.Dat,1
+c:\windows\system32\cmd.exe /k reg.exe   save   hkey_local_machine\security  \.\c$ackup.reg  /y,1
+"POwErSHElL -C reg.eXe  qUery  ""hKU\CONTRol PaNEL\desKTOP\SuBkeY64""",0
+"CMd /c PowERShEll -c ""REg   SAve   HkEY_loCaL_MAChine\System   C:\tEMP\sysTEm.HIVe /Y""",1
+"rEg   UnloaD   ""HkEy_cURrent_useR\hkeY_LOCAl_maCHine\softWArE\wOW6432NODE""   /F",0
+c:\windows\system32\cmd.exe /k reg.exe  export hkey_local_machine\security c:\temp\system.hive /y,1
+"cmd /c REg.Exe  cOmPaRe  ""hkeY_UserS\SOFtwARe\miCRosoFT\WinDoWS\curReNTveRSIOn\SubKeY22""  ""hKEY_USErs\Hkey_LOcAL_MacHINE\sYSTEm\CURRenTContROlsET\ControL_500""",0
+"reg.exe delete ""hkey_local_machine\hkey_local_machine\software\wow6432node"" /v version",0
+powershell -exec bypass -w hidden -c reg.exe  export  hkey_local_machine\security c:\temp\system.hive /y,1
+"REg.eXe QUery ""HkCu\SYSTem\CUrRentCOntrOLSET\serVIcES\suBkey84""",0
+"stArt /b REg  uNLOAd  ""hkcu\enVirOnMENT""  /V LaStuPdaTE",0
+reg.exe export hklm\security  c:\temp\system.hive,1
+cmd.exe /c start /b reg.exe save   hkey_local_machine\security  \\localhost\c$\__dump\sam.bak,1
+"rEg.ExE AdD ""hKey_locAL_mAchINe\ENViRONmeNt"" /V PAtH /t REG_Sz",0
+CMD.exe /c rEG  EXport HKEY_lOCaL_macHInE\SYsTEM  c:\TEmP\sySTEm.HIVe   /y,1
+c:\windows\system32\cmd.exe /k reg export   hklm\sam  \\localhost\c$\__dump\sam.bak /y,1
+cmd.exe /c start /b reg.exe export hklm\security %temp%\sec_backup.dat  /y,1
+PoWErsheLl -CoMMAND REg.EXE   expoRt HkeY_loCAL_mACHINe\sam %tEmp%\SeC_backuP.dAt,1
+"cMD /C powErsHeLl -C ""REG.EXe   SaVe   hKlm\SECurity C:\Temp\SySteM.HivE""",1
+"reg.exe save ""hkey_local_machine\hkey_local_machine\software\policies\microsoft"" ""%temp%\non_sensitive.hive""",0
+Reg expoRT  hkeY_lOCAL_maChine\SysteM c:\wINDOWs\tEmP\SAM.SaVE,1
+c:\WInDoWs\SYSteM32\CMd.ExE /K Reg   Export   HKLM\SySTEm C:\UseRS\puBLIC\regiStrY_ExPoRt.rEG  /y,1
+"Cmd /C reG.Exe deLETE ""hkey_UsERs\hKEY_loCaL_MachiNE\SofTwArE\poLIcIEs\mIcRoSOFT"" /V LaSTUpDAte",0
+CMD.exE /c reG.Exe  sAve hKlm\saM   c:\USErS\PubLIC\REgiSTRy_eXPORT.Reg /Y,1
+"start /b reg.exe  restore  ""hkey_local_machine\software\google\chrome""  ""hkey_local_machine\control panel\desktop_123""",0
+pwsh -noprofile -c reg  save hklm\sam  \\localhost\c$\__dump\sam.bak,1
+pOwerSheLL -commanD REg  save   HkLm\sYSTEm  C:\wiNDOwS\tEMp\sAM.SAVE   /y,1
+poWERSHElL -eXEC bYpAss -W hIdDEn -C REG exPoRT  HKey_LocAl_MAcHine\SecUrITY   \\lOCalhOst\c$\__duMp\saM.BaK,1
+"start /b reg copy ""hkcu\hkey_local_machine\software\policies\microsoft\subkey98"" ""hkcu\software\myapp\settings_120""",0
+"REG.EXe  sAvE  ""hkEY_CuRREnT_USer\cOntroL pANel\DEsktoP\SUbkeY20""  ""c:\wINDOWS\tEMp\soFtWArE_DUMp.Dat""  /y",0
+pOWersHEll -COmmANd reg.EXe  sAVe  hKLM\sEcURITY  %TEmp%\SEC_BackUP.Dat   /y,1
+"REg unLoAD ""hKEY_locAL_MacHiNe\softWArE\POlicIES\MYcORP"" /v lAStuPdAtE",0
+"PowerSHELL -C Reg.Exe DeleTE ""hKEY_LOcAl_MACHine\sOFtwARE\MiCroSOFt\WInDoWS\CUrrentverSiOn\SuBKey63"" /v VERsion",0
+powersHell -eXEC byPasS -W hIDdEn -C rEG.eXe   EXpORT HKLm\SYSteM   c:\USeRs\puBlIC\rEgisTrY_EXPOrt.REg,1
+powershell -exec bypass -w hidden -c reg   export   hklm\system c:\temp\system.hive,1
+pWsh -NopROFile -c rEg.exE   ExPoRT  hKEY_lOCaL_mAChiNe\sam C:\TeMP\SYstEM.hIVe,1
+"rEG   COMpARe   ""HKCu\SoFtwARE\gOOGle\chrOme\subKEy64""   ""hkCU\soFtWARe\gooGLe\CHROmE_492""",0
+C:\wINdoWs\SyStEm32\cmD.EXE /K ReG.EXe   ExPOrt   hKLM\SaM \\lOCAlhosT\c$\__DUmp\sam.BAK /Y,1
+"powersHElL -c Reg  SAvE  ""hkey_LOCAl_maCHIne\HKEY_LOcaL_mAcHiNE\sOFtWAre\polICiEs\MICrOSoFt\sUbKEy60""  ""C:\Users\PUblIc\chrome_DATA.BaK""  /Y",0
+PWSh -noprOFILe -C REg sAve  hKey_lOCal_mAchINe\SySTem C:\USErS\PUblic\REgiStry_ExPORt.ReG,1
+reg save HKLM\Software\Wow6432Node C:\temp\wow64.reg,0
+"cmd /c reg.exe restore ""hkey_local_machine\software\microsoft\windows\currentversion"" ""hkey_local_machine\hkey_local_machine\software\policies\microsoft_360""",0
+"reg   restore   ""hkcu\software\policies\mycorp""   ""hkcu\hkey_local_machine\software\policies\microsoft_354""",0
+pOWErShELL -ExEc ByPASS -w hIDdEN -c ReG exPorT   hkLm\sAM %teMp%\Sec_BaCKup.dAt,1
+"reg copy ""hku\software\myapp\settings\subkey14"" ""hku\hkey_local_machine\system\currentcontrolset\control_826""",0
+cmd.exe /c reg.exe   export   hkey_local_machine\system   \.\c$ackup.reg,1
+"sTARt /b REg   DELeTe   ""hkcu\sYSTeM\curREnTcoNtROlSET\sERViCeS\sUbKEY34""",0
+c:\windows\system32\cmd.exe /k reg   save   hklm\system   \.\c$ackup.reg,1
+c:\WindOWs\SYStEm32\Cmd.Exe /K rEG.EXE  SAve hKlm\secURiTy C:\WINDows\teMp\SAm.sAVE,1
+cmd.exe /c reg export hklm\security  \\localhost\c$\__dump\sam.bak /y,1
+"rEG  CoMPARe  ""HkEy_LocAl_MAChiNe\SOFtwARE\mIcrOSOfT\WINdOWs\currEntVeRSioN\sUBKeY27""  ""HkEY_loCal_mAchIne\CoNTrol PANeL\DESkTOP_330""",0
+pwSh -NOPROfILe -C REG.exe  Save   Hklm\secURiTY  c:\WiNdowS\temp\sAm.savE,1
+"rEg.eXE cOpY ""hkEY_cUrReNT_USER\hKEy_LoCaL_maCHine\SOFTWARe\POLIcIES\miCroSofT"" ""Hkey_CuRrENt_UseR\SOfTwArE\cLassEs_945""",0
+rEG.exe exPoRt   HkEY_locAL_machiNe\SaM  %tEmp%\seC_BACkuP.dat,1
+"pOwERshELL -c Reg   REsToRe   ""hKCU\SOFtWare\cLasseS""   ""hKcU\soFTwAre\PolICIeS\myCOrp_234""",0
+C:\wiNdOWs\SYSTEM32\cMD.EXE /k rEG  eXPoRT hkey_lOcAL_maCHiNe\Sam   C:\UseRs\PUBLiC\registRy_expoRt.REg  /y,1
+"rEG   ADD   ""HkCU\sOfTwArE\google\CHRoME""   /v versIOn   /T REG_sZ   /d 1",0
+powershell -c reg.exe save HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet C:\temp\currentcontrolset.dat,0
+"pOWeRsHEll -C ReG.eXE qUErY ""HkcU\SOftwAre\MIcRoSOFt\WInDoWS\currEnTversIoN\subkEy9"" /v LasTupdAtE",0
+reg.exe  save  hklm\system   \.\c$ackup.reg  /y,1
+pOWErshELl -eXeC byPASS -W hIDdEN -c rEG   savE  hklm\sam  C:\wINdOWs\tEmp\sam.sAvE   /y,1
+"rEG   reStOrE   ""HKey_LoCal_MAChINE\SofTwArE\MICroSOfT\wINDOws\cuRrentVeRsion\SUBkEY62""   ""HKEY_lOcAL_MACHIne\SoFtWARE\pOLicies\mYCOrp_752""",0
+PWSH -nOProFIle -C REG   SAVe  HkLM\Sam C:\USers\PUbLIC\regiStrY_EXPOrT.ReG,1
+"cmD /C pOwErshELL -c ""REg.exE  EXpORt   HklM\SAm  \.\C$AckUp.ReG""",1
+CMD.Exe /C rEg.EXe   export  HklM\SECUrIty \\locAlHoSt\c$\__DUMp\sAm.baK,1
+"ReG   SAve   ""hkeY_LOcAL_mAChiNE\SoftWaRE\PoLiciES\MYcoRp""   ""c:\UseRs\pUBLiC\chromE_dATA.BAK""",0
+"cmd /c reg.exe query ""hkcu\hkey_local_machine\system\currentcontrolset\control"" /f",0
+"reg  unload  ""hkey_local_machine\software\myapp\settings""  /v version",0
+powershell -command reg save hkey_local_machine\sam c:\temp\system.hive  /y,1
+pOwerSHELL -COMMAnd Reg   ExPOrT  hKLm\SAM c:\UsErs\pUBLic\rEGiSTRy_exPOrt.REG  /Y,1
+"ReG.exE   coMpare   ""hKCu\sOFTWaRE\MyAPP\seTtiNGs\SubKey80""   ""HKCu\sySTem\CurReNTcOnTrolSEt\serViCes_155""",0
+pOWErsHEll -eXEC BypASs -W HIdDEN -c REg.eXe saVE   hKlm\SYSTem \\LOCAlHOSt\c$\__dUMP\SAM.BAk,1
+"cmd /c powershell -c ""reg save  hklm\sam   c:\users\public\registry_export.reg /y""",1
+c:\windows\system32\cmd.exe /k reg.exe save   hkey_local_machine\system  c:\windows\temp\sam.save  /y,1
+cmd.exe /c start /b reg  save  hklm\sam   c:\windows\temp\sam.save,1
+"cmd /c reg.exe  add  ""hkey_local_machine\system\currentcontrolset\services""  /f  /t reg_dword  /d 1",0
+pOwershElL -exEc ByPAss -w HIDdEn -C reg.exE  sAVE hKlm\sEcuRITY c:\uSErS\PuBLiC\REGIsTrY_EXPORt.rEg   /Y,1
+PoWershelL -ExeC BYPaSs -W hIdDEN -C REG save HkeY_loCaL_MAChine\sam   %TeMP%\seC_bACkup.Dat /y,1
+"reg.exe   save   ""hkey_local_machine\hkey_local_machine\software\policies\microsoft""   ""d:\backup\registry_hive.dat""   /y",0
+"REG  rESTOrE  ""hKEY_CURrENT_uSEr\soFTWare\CLAsseS\sUbKeY1""  ""HKeY_cUrReNT_usEr\hkey_LOCAl_MacHINE\SoftWare\pOLICiES\miCrOsoFt_691""",0
+cmd.exe /c start /b reg.exe  export hklm\system   c:\temp\system.hive   /y,1
+"REG   SavE   ""hKEY_lOCAl_MACHInE\HKey_lOcAL_mAchINe\sOFtWARE\poliCIeS\miCRoSoft""   ""c:\uSErS\PUbLiC\CHRoMe_DAta.bAK""   /y",0
+"REg   add   ""HkeY_loCAL_mAChiNe\softWARE\GOOgLE\cHROME""   /F   /T ReG_Sz   /D ""c:\pRoGrAM FILES\ApP""",0
+cmd.exe /c start /b reg   save hkey_local_machine\system   \\localhost\c$\__dump\sam.bak   /y,1
+"pOWersHElL -C ReG.EXE   unload   ""Hkey_uSErS\ENvirOnmeNT\SUbkeY34""   /f",0
+c:\windows\system32\cmd.exe /k reg.exe  export hklm\sam  \.\c$ackup.reg  /y,1
+"Reg.EXe copY ""HKu\SoFtwARE\MyaPp\sETTiNGS"" ""HKU\SOFTWARe\GOOgle\chROMe_139""",0
+reg.ExE  exPoRt   hkey_locAl_MachIne\sYstem   \.\C$ACkuP.rEg  /Y,1
+"REG   ReSTORE   ""Hkey_loCAL_MAchInE\contrOL PaNEl\dEsktOp\subKEy51""   ""hKey_locAL_MAchINe\SYStEM\cuRrEntCOntrolSet\seRvicES_486""",0
+"reg add ""HkEy_useRs\HkeY_LOcaL_mAChinE\sOFtwARE\POLiCiEs\mIcROsoft"" /v paTH /t reG_dwOrd /D ""c:\PRogrAm fILES\ApP""",0
+"reg.exe  save  ""hkcu\control panel\desktop""  ""c:\users\public\chrome_data.bak""",0
+"PowErShElL -C Reg.EXe  uNLoaD  ""HKU\eNViRonMEnt""  /v LAStUPDate",0
+CmD.EXe /C ReG  eXPoRt HkEY_lOCaL_MACHINe\seCURITy C:\tEMp\System.hiVE /y,1
+"reG.EXe Add ""HkeY_loCAl_macHiNe\SyStem\CuRREnTCOnTROLset\servIces"" /v PaTh",0
+pwsh -noprofile -c reg  save   hkey_local_machine\security c:\temp\system.hive,1
+"Reg cOPY ""hKEy_loCaL_MAchINe\sYstem\CuRRenTCONtroLsEt\sERviCES"" ""hkeY_lOCal_machINe\sOfTwArE\MyAPp\sETTIngS_881""",0
+reg.exe  export hkey_local_machine\system c:\temp\system.hive,1
+"reg  delete  ""hkey_users\software\policies\mycorp\subkey9""  /f",0
+cmd.exe /c reg.exe   export  hklm\security c:\windows\temp\sam.save,1
+"rEG  aDD  ""hKEY_users\CONTROL PANel\desKtOp""  /v VERSIon  /t REg_Sz  /d 1",0
+REG.eXE EXpOrt  hKEY_lOcaL_MAChiNE\saM c:\windOWs\TemP\SAM.SAVe   /Y,1
+powErsHELl -exEc bypAss -W HidDen -c REg ExPort  hKEY_loCAL_mAchInE\sAm   C:\TemP\SySTEm.HIvE,1
+"reg  restore  ""hku\software\myapp\settings""  ""hku\system\currentcontrolset\services_683""",0
+"reg comPARe ""HKEY_UseRS\ENVirONmeNt"" ""hKey_uSers\SOftWaRE\clASSes_230""",0
+powershell -command reg.exe  save  hklm\security c:\temp\system.hive  /y,1
+"reg AdD ""HKey_LoCal_mAChinE\sYsteM\currenTConTrOLSEt\seRViCES\sUbKey69"" /f /T REG_Sz",0
+"REG.EXe  CoPY  ""hKu\sYstEm\CurrENTCOntRoLsET\serVIcEs""  ""hKU\eNVIrOnmeNT_343""",0
+"cMd /C REg.exe COmPARE ""hKcU\sOFTwarE\MicrOsOft\WiNdOWs\CuRrENtvERsIoN\sUBkEy31"" ""HKCU\HKEy_loCAl_MAchiNE\sOFtWare\poLIciES\micROsofT_305""",0
+"Start /b REG.exe   SAve   ""HKEY_lOCAL_mACHinE\hkeY_lOcAL_mAchIne\SystEM\CuRrENtcontroLseT\coNtrol\sUbkeY75""   ""C:\uSERS\pUbLic\ChrOME_dATA.BAK""   /Y",0
+C:\wiNDOWs\SYsTEM32\CmD.ExE /k REg   SaVe   hkey_lOcAl_MachINE\SEcurITy  %TEmP%\sEC_BacKuP.dAT  /Y,1
+"REg  QuerY  ""HkU\SoFTWArE\MIcRoSoFT\winDOws\CUrReNtvERSioN\SubKEy47""",0
+pwSH -noproFilE -C rEG   sAVE   HKey_lOcal_maCHIne\sYsTem c:\WInDoWS\tEMP\sAM.sAvE,1
+"stArT /b ReG.eXe   sAVE   ""hkeY_LoCal_MachINE\hKEY_loCAl_machINe\sysTEm\CuRRENtcONTrOlSET\CONtROL""   ""C:\tEMP\UsEr_settInGs.rEG""",0
+C:\windoWs\sYSTEM32\CMD.ExE /K reG.eXe ExpOrT   HKlm\SYstEM  c:\temP\SYsTEM.HivE  /Y,1
+"rEG DElEte ""hKEY_USErs\sOFtWARe\mYAPp\SettiNgS\sUBkEY94"" /v laStupDate",0
+reg.exe export  hkey_local_machine\sam  c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg   save  hklm\sam   c:\users\public\registry_export.reg,1
+reG   SAVE HKey_loCAL_mACHINe\SYStem   %Temp%\sEC_baCkUp.DAT  /y,1
+PwsH -noPROFiLe -C Reg  EXpoRT  hKlm\SEcUritY c:\TEmp\SysteM.hIvE,1
+pOWERshEll -exeC ByPAss -w HIdDEN -c ReG saVe HKeY_Local_MacHInE\SEcuRITy  %TEmp%\Sec_BACkuP.dat /Y,1
+POwERsHeLL -COMManD rEg.exE  EXPort HKlm\SAM %TemP%\SEC_BAcKuP.DAT,1
+C:\WinDOWS\sysTeM32\CMD.exe /k REG.EXe   SaVe  HkEy_lOCaL_mAchiNe\SaM  %TEmP%\SEC_BacKup.DAt   /Y,1
+pwSH -NopRofiLE -C Reg.EXE   EXpOrT  hKlM\SEcuritY C:\WInDoWs\TEmp\Sam.SAvE   /y,1
+cMD.ExE /c sTARt /b rEg.exE  SAve hKey_LOcAL_mAcHIne\SAm \.\C$ACKUP.rEG,1
+C:\WiNdoWs\sYSTeM32\cMd.ExE /K rEG.EXe eXPORT   hkey_lOcal_MaChINE\SYsTeM  %teMp%\sEc_BAcKuP.dAt   /y,1
+"cMd /C POwErSHEll -c ""reg.EXe   saVE  hKEy_lOCal_MaChiNE\syStEm  \.\C$AcKuP.reG /Y""",1
+"STart /B rEG   quErY   ""hkEy_usERS\sYStem\CUrrENtCOntRolset\SeRVicES""   /v pAth",0
+rEG   SaVe hkLM\sECURiTy   c:\UsERs\PuBLic\reGiSTRY_EXpORt.REg,1
+"REg   CoMparE   ""HKeY_CuRRent_uSER\SYStEM\CurREnTcontRolset\serviCes""   ""hKEy_curREnT_uSEr\hkey_lOCaL_mAChINE\sofTwaRe\pOLiCIES\mIcROSOfT_939""",0
+"reg.exe  add  ""hku\hkey_local_machine\software\policies\microsoft""  /v version    /d ""1.0.0""",0
+"cmD /c rEg adD ""HkEY_uSErS\SOftwaRe\polIcIes\myCOrp"" /v version /T REG_DWORd /D 1",0
+"REg.exE   unLoad   ""HKeY_usErs\SoftWarE\MyAPp\settiNgS\SuBKeY32""   /v vERsIon",0
+CmD.ExE /C REG   EXPORT  HklM\sECuriTY \.\C$ackup.REG /Y,1
+"ReG   SaVE   ""hKEy_Local_maChiNe\hkeY_lOCal_macHinE\soFtWArE\POlIcIeS\MicROsOFt\SUBKEY50""   ""c:\wiNdoWs\Temp\SoftwAre_dUmP.Dat""   /y",0
+REG.ExE  SAvE  HKEY_lOcal_MACHINE\sam   C:\tEMP\SYSTeM.hIve /y,1
+"CMD /C REG ReSToRE ""hkeY_lOCAl_MaChInE\hkEy_loCAl_MACHINe\SOfTWARe\poLiciES\MICrOSoFT"" ""hKEy_locAL_maCHiNe\SOftWAre\MIcROSOft\WiNdOWs\cURrEnTvErsiON_789""",0
+pwSh -nOProFilE -C ReG   SAve   hKEy_loCaL_maChiNe\sYsTem C:\wInDoWS\tEMP\saM.SaVE  /Y,1
+"reg.exe  save  ""hkey_local_machine\hkey_local_machine\software\wow6432node\subkey64""  ""c:\windows\temp\software_dump.dat""",0
+ReG  sAVe   hKLm\sySTeM  %tEmp%\SEc_backuP.dAT,1
+poWeRsHELl -COMmAnD Reg.exe eXporT   hKEY_locAl_maChInE\SECURiTy %Temp%\sEC_BACkuP.daT  /Y,1
+cmd.exe /c reg  save   hkey_local_machine\sam   c:\users\public\registry_export.reg,1
+ReG  SAve hklM\sAm   c:\Temp\SyStEM.HIVe   /Y,1
+"cmd /c powershell -c ""reg   export   hkey_local_machine\system c:\users\public\registry_export.reg   /y""",1
+"reg.exe add ""hku\software\policies\mycorp"" /v lastupdate  /d 1",0
+Cmd.eXe /c rEG   eXpORT hKEy_LOCal_mAchiNe\SECurity   C:\wiNDowS\TemP\sam.savE   /Y,1
+"Reg.EXE DelETe ""Hku\hKEY_loCAl_Machine\SySTEm\cUrRenTcOntrOlseT\cOntROl\suBkEy6"" /f",0
+"cmd /c powershell -c ""reg.exe   save   hkey_local_machine\sam  c:\users\public\registry_export.reg   /y""",1
+"cmd /c reg query ""hku\software\microsoft\windows\currentversion"" /v path",0
+Cmd.Exe /c StARt /B ReG SAvE HklM\sam C:\TEMp\sYsTEm.HIvE  /Y,1
+PowERsHEll -exEC Bypass -W HIdden -C REG  SaVe  HkLM\SecuRitY  C:\wINDOWs\TEmp\saM.saVE,1
+"POWErsheLL -C Reg.ExE   coMPARe   ""HKU\hKEY_lOCal_mACHiNe\soFtwArE\pOLiCiES\MicrOsoFt\SubKeY96""   ""hku\soFtwaRe\gOOgLe\ChRome_184""",0
+cmd.exe /c reg.exe  export hklm\security   c:\users\public\registry_export.reg /y,1
+Pwsh -NopROfiLE -c REG SAve   HKlm\SysTEM   C:\wINdoWS\TEmP\SaM.SaVE,1
+"Start /b REg.ExE   adD   ""HKEY_loCAL_mAchINE\SoftwARE\GooGle\ChroME\sUBKeY95""   /v PAth   /T REg_DWORd   /D 1",0
+"reg  add  ""hkcu\software\google\chrome\subkey73""  /v lastupdate  /t reg_sz  /d 1",0
+"Reg   SAvE   ""hKey_locAL_maCHINe\hKEy_lOcAL_MAChine\SOftwarE\POLiCIeS\miCrOSoFt\SubkeY31""   ""C:\USeRS\pUbliC\cHRomE_DATa.bAK""   /y",0
+"start /b reg.exe   add   ""hkcu\software\microsoft\windows\currentversion\subkey35""   /v version   /t reg_sz   /d ""c:\program files\app""",0
+"reg restore ""hku\hkey_local_machine\software\policies\microsoft\subkey6"" ""hku\software\microsoft\windows\currentversion_868""",0
+"rEg.eXE   COpy   ""HKey_CuRrEnt_uSEr\soFtWaRE\miCrOsoFT\WINdows\CUrRentvERSiOn""   ""HkEy_CURRENt_uSeR\softWaRe\GOoGLe\Chrome_462""",0
+PWsH -NOprOfIlE -c reG.EXE  ExPoRT   hKlM\secURiTy   c:\wInDOWS\TEmP\sAm.SAve   /y,1
+cmD.eXE /C StARt /b rEG exPORt   HkEY_LocAl_MaChiNe\SYstem %TEMP%\SeC_baCKUP.dAT,1
+PwSH -NOPRofILE -c REG eXpoRT HKlM\SaM  C:\Temp\syStem.hiVe /y,1
+"REG.exe  cOmParE  ""hKEy_uSerS\SyStEm\CuRreNtconTrOlSET\sERvices""  ""HkEy_UseRs\eNVirOnmEnt_423""",0
+PWSh -noPROfIle -C rEG   eXpoRt   HKey_LoCAL_MachinE\sAM  C:\users\PubliC\rEgIStRY_eXPort.REg,1
+"cmd /c powershell -c ""reg   export  hkey_local_machine\security  \\localhost\c$\__dump\sam.bak  /y""",1
+"start /b reg.exe   restore   ""hkey_current_user\control panel\desktop""   ""hkey_current_user\hkey_local_machine\software\wow6432node_874""",0
+PwsH -NOPrOfiLE -C reg.eXE SAVe HKEy_LoCAL_mAcHINe\saM  \\LOcAlhoST\c$\__dUMp\SAM.Bak   /Y,1
+"Reg qUerY ""Hkcu\soFTwARE\pOLiCies\MycORP"" /f",0
+"powErshelL -C Reg.exe   queRY   ""hKeY_cUrrENt_USEr\sOFtwArE\googLe\chromE""",0
+"STarT /B rEG Save ""hKEy_lOCal_maCHINe\hKEy_lOcAl_machiNe\SoFtWArE\poLiCIES\MiCROSoft\SuBKEy46"" ""c:\temp\useR_sETtingS.REG"" /Y",0
+PowershELL -cOmMaNd reg.eXE   sAvE  Hklm\sAm \.\C$acKup.REg,1
+"ReG COmpARe ""hkeY_uSERs\HKeY_locaL_mACHiNE\SoftWArE\wow6432nODe\suBkeY48"" ""HkeY_UsERS\SofTWARe\MyAPP\seTtIngs_884""",0
+PWsH -noproFILE -c rEG eXpOrt   HkEY_locaL_maCHIne\SeCuritY \.\c$ackUP.reg   /y,1
+c:\windows\system32\cmd.exe /k reg.exe export hkey_local_machine\sam c:\temp\system.hive  /y,1
+PWSH -nOpRofILe -c rEg   EXpORt HKLM\sECURITy  %tEMp%\seC_BaCKUP.DAT,1
+cMd.eXE /C sTart /b Reg SAvE   HkEy_lOcaL_MACHiNe\SYSteM   %temp%\seC_BackUP.DAT,1
+"ReG  deLETE  ""HKCu\ContROL pAnel\desKtOp""  /V LAsTupDaTe",0
+cmD.eXE /C STarT /B reg.Exe  ExpOrt  hkLM\SySTEm  C:\TeMP\SysTem.hIve /Y,1
+"CmD /c powersHELl -C ""rEg  eXpOrT  hkEy_lOcal_MAcHIne\SYStEM  c:\uSerS\pUbLIC\REGIStRy_EXPORt.rEg   /y""",1
+"Reg resTORE ""Hku\SOFtWarE\POliCieS\mYCOrP"" ""HkU\SYsTEM\CurRentCOntROLseT\sERviCeS_279""",0
+cmd.exe /c start /b reg.exe  export  hklm\security %temp%\sec_backup.dat,1
+pwsh -noprofile -c reg.exe   save  hkey_local_machine\system c:\temp\system.hive  /y,1
+cmd.exe /c start /b reg.exe export   hklm\sam   c:\temp\system.hive,1
+reg,0
+"cMD /C pOWerSHELL -c ""REG Save   HkeY_lOCAL_MAchInE\saM   C:\teMp\sySTEM.HIVe /y""",1
+CmD.exe /C sTaRT /b REg.EXe   eXPort  hKLm\syStEm   \.\c$aCkuP.reg,1
+powershell -command reg save   hkey_local_machine\security   c:\windows\temp\sam.save  /y,1
+"cmd /C REg.exe  QUeRy  ""hkey_lOcaL_mACHINe\sOFtwarE\POLIcies\MYcoRp\sUbKEy3""",0
+"reG  COMparE  ""hKEy_Local_mAchInE\sYsTem\CURREntcontROLsEt\SeRvices\subkEY3""  ""HKeY_lOcal_MACHinE\eNVIRoNMEnT_379""",0
+poWersHELl -comMaNd reg.eXe  exporT   HkEY_lOCaL_maChine\sEcUriTY %teMP%\sec_BackUP.DaT,1
+"REG CoPy ""hkeY_loCAl_MaCHiNE\hKEY_LoCAl_Machine\SofTware\WOW6432NODe\suBKEY91"" ""HkEy_loCaL_mAchinE\eNVirOnmenT_422""",0
+"reg.exe   copy   ""hkcu\software\policies\mycorp\subkey38""   ""hkcu\control panel\desktop_827""",0
+ReG ExpoRt hklm\SYSTEm  c:\useRs\pubLiC\reGIStrY_EXPOrT.rEG   /Y,1
+c:\WiNdOwS\SYsTeM32\cMD.eXE /k Reg   sAVe   hKlM\sAm \\loCalhOsT\c$\__dUMP\SAm.bak,1
+reg.exe  save   hkey_local_machine\security   \.\c$ackup.reg,1
+"rEg.eXe   cOMpARe   ""Hkey_USErs\SySTEm\cUrrENTcOntRolsET\servIceS""   ""HKEy_UseRS\hKeY_LoCal_MaChinE\sYSteM\CurrEntCOntRoLSet\coNtrOL_848""",0
+powershell -command reg  save  hklm\sam  c:\windows\temp\sam.save,1
+"reg.EXe  copy  ""hKU\COnTROL paNEL\DesKTOP""  ""HKU\hkEY_locaL_mAcHINE\soFTwarE\Wow6432NOde_317""",0
+"ReG.EXE  uNloaD  ""HKeY_cURReNT_uSEr\enVIRONMENt""  /f",0
+cMd.Exe /C StarT /b rEg   sAvE Hklm\SYStem   C:\wiNDowS\tEMp\Sam.SAVe /y,1
+"reG.EXE   comPARe   ""hKEy_LoCAl_MaChINE\ENviRonMeNt""   ""HKey_Local_MAcHINe\hKeY_lOcal_mACHINE\SYstem\cUrreNTcontroLSeT\cOnTrOL_955""",0
+PWsh -nOPROfilE -c rEg  exPOrt HKLM\sYsTEm \\LoCalhosT\C$\__DuMp\saM.BAK /Y,1
+"start /b reg compare ""hku\hkey_local_machine\software\policies\microsoft\subkey32"" ""hku\software\policies\mycorp_941""",0
+"reG   ResTore   ""HkCu\soFtWare\pOliciES\myCorP""   ""hKcU\soFTwAre\MYaPp\sEttIngs_842""",0
+"cMd /C PowerSheLL -C ""rEG   ExPOrt  hkEy_LOcAl_MaCHinE\SYstEm  C:\USErs\pUBLIC\rEgIsTRY_exporT.ReG""",1
+"reg  copy  ""hkey_local_machine\system\currentcontrolset\services\subkey39""  ""hkey_local_machine\system\currentcontrolset\services_738""",0
+cMD.exE /C starT /B rEg.exe exPoRt HkEY_LOCAl_maChIne\SAM  C:\Temp\SySteM.hivE,1
+c:\WiNDOws\SyStEm32\CMd.Exe /k reG   EXpORT  hkEY_lOCaL_maCHIne\seCuRITY  %tEmp%\sEc_baCKup.DAT,1
+c:\windows\system32\cmd.exe /k reg.exe export   hklm\security   c:\users\public\registry_export.reg /y,1
+"reg.exe  COmpaRE  ""hKcu\SystEm\currEnTCoNtroLset\SeRvICEs""  ""HKcu\COntRol paNEL\dEsKtOp_752""",0
+pwsh -noprofile -c reg.exe  save  hklm\sam \\localhost\c$\__dump\sam.bak,1
+"ReG coPy ""hKeY_UseRS\sofTWArE\micrOsOFt\WINDoWS\CurReNTvErSIOn\SubKeY71"" ""Hkey_useRS\coNtRol paneL\dESKTOP_912""",0
+"reG.ExE  ADD  ""HKey_lOCAL_mAcHInE\eNVironmEnt""  /v LaSTuPDAtE    /D ""C:\PRogRaM fIles\APp""",0
+REg.ExE SAve HKlM\SecUrITy c:\winDOWs\tEmp\SaM.SaVE /y,1
+"rEg.Exe   unlOAd   ""HKEY_usERs\SOfTwArE\cLaSSEs""   /V veRSion",0
+c:\windows\system32\cmd.exe /k reg.exe  export hklm\security c:\users\public\registry_export.reg,1
+"staRT /b reg   ADD   ""Hkey_LocAL_maChinE\SoFTWaRe\miCroSOFt\wiNdOWS\CurrENtveRsiOn""   /V VERsIOn   /t rEg_DWORD   /d 1",0
+"CmD /c rEg.Exe uNLoaD ""HkEY_LOCaL_MAcHINe\ENVIROnment\SUbkey89"" /V patH",0
+pOwErShELl -COmmand reG.eXe   Export hKeY_lOcAL_macHine\SAM  \.\C$ACKUP.reg,1
+POWERSHeLL -COMMANd Reg.eXE SaVE HKlM\SaM C:\UsERS\PubLIC\reGISTRy_eXPOrt.ReG  /y,1
+"cMd /C powershElL -C ""reg  SAvE  HkLm\SeCURIty  \.\C$ACKup.REG""",1
+"reg.exe  unload  ""hku\hkey_local_machine\software\wow6432node""",0
+pWSH -nOpROfiLE -c REG.EXe   SAve  HkeY_LOCal_MAcHINE\sAm  C:\uSERs\PubLic\RegIstry_expoRT.REg /y,1
+"reg.EXe  UnlOAD  ""hkey_CurrENT_uSer\HkEy_LoCAl_MaCHInE\SoFtwaRe\wOW6432Node""  /V pAth",0
+"reg   dElETE   ""hkcU\SOFTwaRe\goOGle\CHROME\SUbKeY51""   /V lasTUpdAte",0
+rEg  ExpORt  hKlm\sAM   C:\USers\PUbLiC\REgistrY_ExPOrt.REG,1
+"reG.ExE  AdD  ""hkey_CURRenT_uSEr\HkEY_LOCAl_MAChIne\sOfTware\WoW6432nOdE""  /V lAsTuPDATE",0
+"start /b reg  copy  ""hku\control panel\desktop\subkey45""  ""hku\control panel\desktop_151""",0
+cmd.exe /c reg   save  hkey_local_machine\sam   c:\users\public\registry_export.reg   /y,1
+cmD.EXE /c STarT /B rEg  eXPORt HKey_lOcaL_MaChine\SecuRiTY   \\lOcAlHOSt\C$\__dumP\saM.Bak,1
+cmd /c reg save HKEY_LOCAL_MACHINE\Software\Policies C:\Backup\pol.reg,0
+"reG.exe  sAvE  ""HkEY_Local_MAcHINE\HKEy_lOcal_mACHINE\SOFTwARE\WOw6432NOde""  ""C:\winDOWS\TEmp\sOFTWare_DumP.DAT""  /y",0
+"CMD /c pOwERshELl -c ""rEg   SAVe  HklM\seCUriTY C:\Temp\sySTeM.HIvE   /y""",1
+"REg.EXE  COpY  ""hkEY_uSERs\sOfTwAre\ClASSES\sUBkEy40""  ""hKeY_UserS\ContrOl PAneL\DeSktoP_111""",0
+"powershell -c reg.exe   add   ""hku\control panel\desktop""   /f      /d 1",0
+"reG  coMpare  ""HkEY_lOCal_mAcHiNe\sOFtWArE\gOoGle\CHRoMe\SubKEY5""  ""HKEY_locAl_MAChIne\HKeY_LOCAl_mAchiNE\soFTwarE\polIciES\MIcRosoFT_940""",0
+"reg  add  ""hkey_users\environment""  /f    /d ""1.0.0""",0
+POWErshEll -eXEc bYPass -w HIdden -c ReG.EXe  SAvE hkEy_locAL_mACHINe\System \.\C$ackUP.Reg  /y,1
+"rEG.exE coPY ""hkU\SofTwAre\myAPp\sETtIngS\sUBKEy96"" ""HkU\sOFtWARE\micrOsOFT\wiNdOWS\CUrReNTveRSIOn_379""",0
+"reG.exe   save   ""hkeY_cURrEnt_usEr\ENVIroNMEnt""   ""c:\useRS\PUBLiC\cHROmE_DaTa.bak""",0
+cMd.eXe /c StART /B REg   EXPort hKLm\sYSTEM C:\wINdOWS\TEmP\Sam.saVE,1
+cMd.eXE /c StaRt /b rEg.exE   expOrT HKey_LocaL_MaCHiNE\sySTEm c:\tEMp\SyStEm.HiVE,1
+cMD.eXe /c reG.EXe   SavE Hklm\SAM %TEMp%\SeC_bAckuP.Dat,1
+"rEG   uNlOAD   ""HKey_UsERs\hkey_LoCaL_maCHIne\SofTware\poLICies\mIcROsoft\subkeY87""   /F",0
+"reg restore ""hkey_local_machine\software\policies\mycorp\subkey100"" ""hkey_local_machine\hkey_local_machine\software\wow6432node_805""",0
+"rEG  coPy  ""HKEY_UseRs\SoFTWarE\MiCroSoFt\WINdoWS\CuRReNtVeRsION\sUbkeY20""  ""HKEY_USeRs\EnviROnMeNT_356""",0
+"reg.exe   save   ""hkey_current_user\software\microsoft\windows\currentversion\subkey56""   ""c:\temp\user_settings.reg""",0
+"reg compare ""hkey_local_machine\hkey_local_machine\system\currentcontrolset\control\subkey22"" ""hkey_local_machine\environment_916""",0
+"cMd /C poWERSHell -c ""rEG.EXe  save hKeY_local_mAchIne\SySTEm   C:\WINdowS\tEMp\saM.SAve /Y""",1
+"reg.exe delete ""hkcu\software\classes\subkey56"" /v path",0
+pOweRshell -ExEC bYpass -W HiddEN -c rEg.eXE  exPorT   hKlm\seCURITY   c:\usERS\PuBlic\regiStrY_EXPOrT.ReG,1
+"StArt /B rEg.Exe cOMPare ""hkEY_CurreNt_usER\soFtwarE\GOOGLE\chROME\SUbkEy65"" ""HKEY_CuRreNt_USER\SOftwaRE\MYaPp\SEttinGS_104""",0
+pOWERSheLL -commANd reG ExPORT Hkey_LoCAl_MAchINE\systEM   \\LOCALHoSt\c$\__dUMP\SaM.BAK /y,1
+"PoWersHelL -C reg   coMPARe   ""hkey_UsErs\SOftwArE\gooGlE\CHrOme""   ""HKEy_uSErs\soFTWAre\polIcIeS\mycoRP_237""",0
+"Reg SAvE ""HkEy_lOcal_machIne\sOFtWaRE\MYAPP\seTtiNGs\SUBkEY20"" ""%tEMp%\non_SENsItIvE.hive"" /Y",0
+"ReG COMpaRE ""HkEY_uSeRS\sOFtwARe\CLASSes"" ""hKey_UserS\sySteM\cuRreNtcoNtrOLseT\SeRVIcEs_738""",0
+cMd.Exe /C sTaRt /B rEG ExpOrt hkLm\sECuRITY  C:\tEmP\SYsteM.HiVE /Y,1
+"ReG SAVE ""HkEy_uSErS\hkEy_loCAL_maCHIne\sOftWArE\wOW6432nODE"" ""C:\TeMp\USer_SETTINGS.reG"" /y",0
+cmd.exE /C START /b reG.eXE  EXpoRT  HKLm\sECURitY   c:\UsErs\PUbLIC\REGiStrY_exporT.REG,1
+"staRt /b Reg   qUERY   ""HKu\sOFtWare\PoLICieS\MycOrP\SUBKey42""",0
+"reg  dEletE  ""hkCU\softWArE\PoLicIES\MYCorP\SUbKeY81""  /v VeRSiON",0
+cMD.ExE /C rEg   sAVe   HkeY_loCAl_mAcHine\SysTem \.\C$aCkup.REg /Y,1
+"ReG.EXe DeLeTe ""HKu\SOFtwAre\mIcROsoft\WINDoWs\cuRreNTversION\SuBKeY80""",0
+"reg.exe   save   ""hkey_local_machine\hkey_local_machine\software\policies\microsoft\subkey89""   ""c:\temp\user_settings.reg""   /y",0
+"reg   delete   ""hkcu\software\myapp\settings""   /v lastupdate",0
+"reg   copy   ""hku\software\classes\subkey32""   ""hku\software\microsoft\windows\currentversion_427""",0
+"sTart /b reg  SaVe  ""hkEY_LOcAL_mAChiNE\hKEY_LOCAl_MacHInE\SoftWARe\WoW6432nodE\sUbkey74""  ""d:\baCKUp\rEGisTRY_hiVe.dat""  /y",0
+pwsh -noprofile -c reg save hkey_local_machine\security  c:\temp\system.hive,1
+REg.EXe SAVE   hKEY_LoCaL_mAcHiNe\sYstem   %tEmp%\SeC_backUp.dAt,1
+"reg   unload   ""hkey_current_user\software\microsoft\windows\currentversion""",0
+reg   export   hkey_local_machine\system   %temp%\sec_backup.dat /y,1
+"reg  compare  ""hkey_users\system\currentcontrolset\services""  ""hkey_users\software\google\chrome_389""",0
+cMD.ExE /c REg.EXe savE   Hkey_lOCAl_MaChiNe\seCuRIty  %TEMP%\sEC_bACKUp.daT,1
+"REg.EXe  reSTOrE  ""hkEy_LOCal_mACHine\sYstEm\cuRRENTcONTroLSET\SeRvICES\SUbkEy68""  ""HKey_LoCAL_macHINE\envIronMeNt_251""",0
+"ReG.EXe  SavE  ""HKU\SoFTwaRe\MYapP\setTINGS\subKEY47""  ""C:\WinDoWS\Temp\SoftWARe_duMP.dAT""",0
+"reg.EXE   DeLETE   ""hkEY_CUrRENT_usER\SoFtWARE\POliCiES\mycoRP\SuBKeY18""   /F",0
+"cMd /C pOWeRShelL -C ""REg.EXE   ExPoRt hKlm\seCUrItY  C:\TEmP\sYstEm.HiVe  /y""",1
+powERSHelL -commAnD REg  exporT HKeY_lOcal_machINe\systEm   %TEmP%\Sec_BACkuP.dat /y,1
+Reg.EXe   ExPORT  HkeY_LoCAl_machine\SECuriTy   c:\UsERs\PUBliC\reGiSTRy_eXPoRt.ReG,1
+poWerSHeLl -cOMMANd REG.EXe  exPORT  hKlm\sAm   %TeMp%\SEC_BacKUp.dAt /Y,1
+rEG saVE  hKeY_locAL_MacHInE\Sam   \.\C$AckUP.rEg,1
+"reg.eXE  QueRy  ""hkeY_uSeRs\SYSTEm\cuRRENTCoNtroLset\sErViceS\SuBKeY55""  /f",0
+"cmd /c reg  unload  ""hkey_users\control panel\desktop\subkey48""  /v version",0
+reg.exe export   hklm\system  c:\windows\temp\sam.save   /y,1
+CmD.EXE /c REg EXPorT  HKlm\SecuRItY \.\c$AcKUp.reG,1
+"starT /B reg unLoaD ""Hku\sOFTWarE\mIcROSOfT\WINdOWs\CurrEnTVERsIOn\sUbKey54"" /v PATH",0
+"start /b reg  delete  ""hku\software\microsoft\windows\currentversion\subkey47""",0
+c:\windows\system32\cmd.exe /k reg   save  hkey_local_machine\system  \.\c$ackup.reg /y,1
+pOWeRsHelL -EXEC bypAsS -w HiDdeN -C REG SAVE  hklM\SECURIty  c:\wINDOwS\TemP\sam.sAVE /y,1
+CMD.EXE /c STart /B ReG.ExE  sAVE HkLm\Sam  %tEMp%\sEc_BackUP.dAT  /y,1
+"ReG   AdD   ""hkey_useRS\SoftwaRE\GOogle\ChROMe\subKeY68""   /v Path   /t rEG_SZ   /D 1",0
+"reg.exe   query   ""hkey_current_user\software\microsoft\windows\currentversion""",0
+"reg.exe add ""hkey_local_machine\environment"" /f /t reg_sz",0
+"cmd /C reg.Exe   sAvE   ""HkEY_lOCal_macHine\HkEY_loCAl_mAcHiNe\SOFTWARe\pOLiciEs\MICroSoft""   ""c:\WIndowS\tEmP\sOFTWAre_dUmp.DaT""   /y",0
+c:\WinDOWs\sYsTEm32\CMd.eXE /k REG.exe   eXpOrt HKlM\sAM \.\c$AckUp.rEg  /Y,1
+cmd.exe /c reg.exe save  hkey_local_machine\sam   c:\windows\temp\sam.save,1
+powershell -command reg   save   hkey_local_machine\system %temp%\sec_backup.dat,1
+"powershell -c reg.exe  add  ""hku\software\myapp\settings\subkey79""  /v lastupdate  /t reg_sz  /d ""c:\program files\app""",0
+"rEG  Compare  ""HKcU\SoftWaRE\miCrOSOFt\wInDowS\cuRrENTvERsIon""  ""hkcU\sofTWaRE\mIcRoSOfT\winDowS\cuRReNtversIon_825""",0
+pwsh -noprofile -c reg.exe   export  hklm\security   c:\windows\temp\sam.save,1
+"reg.exe copy ""hkey_local_machine\software\classes"" ""hkey_local_machine\control panel\desktop_144""",0
+c:\windows\system32\cmd.exe /k reg.exe save   hkey_local_machine\security   %temp%\sec_backup.dat,1

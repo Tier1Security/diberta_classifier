@@ -5,8 +5,11 @@ from transformers import (
     AutoModelForSequenceClassification,
     TrainingArguments,
     Trainer,
-    set_seed
+    set_seed,
+    AutoTokenizer,
+    AutoConfig,
 )
+import pathlib
 from peft import PeftModel, PeftConfig # Import PeftModel for loading
 import numpy as np
 import evaluate
@@ -22,13 +25,47 @@ RESULT_OUTPUT_DIR = "results/unseen_test_results"
 # Set seed for reproducibility
 set_seed(42)
 
-# --- Define Labels for Classification (Must match training) ---
-labels = ["Benign", "T1003.002", "T1087.001", "T1049"] 
-id2label = {i: label for i, label in enumerate(labels)}
-label2id = {label: i for i, label in enumerate(labels)}
+# --- Define Labels for Classification (auto-detect from merged model if available) ---
+adapter_path_candidate = pathlib.Path(ADAPTER_PATH)
+merged_candidate = pathlib.Path("models/merged_roberta_bitfit_model")
+
+# Default fallback label set (used if we can't detect from model)
+default_labels = ["Benign", "T1003.002", "T1087.001", "T1049"]
+
+if merged_candidate.exists():
+    try:
+        cfg = AutoConfig.from_pretrained(str(merged_candidate))
+        if getattr(cfg, "id2label", None):
+            # cfg.id2label keys may be strings
+            id2label = {int(k): v for k, v in cfg.id2label.items()}
+            labels = [id2label[i] for i in sorted(id2label.keys())]
+            label2id = {label: i for i, label in enumerate(labels)}
+        else:
+            labels = default_labels
+            id2label = {i: label for i, label in enumerate(labels)}
+            label2id = {label: i for i, label in enumerate(labels)}
+    except Exception:
+        labels = default_labels
+        id2label = {i: label for i, label in enumerate(labels)}
+        label2id = {label: i for i, label in enumerate(labels)}
+else:
+    labels = default_labels
+    id2label = {i: label for i, label in enumerate(labels)}
+    label2id = {label: i for i, label in enumerate(labels)}
 
 # --- 2. LOAD TOKENIZER & PREPROCESSING ---
-tokenizer = DebertaV2TokenizerFast.from_pretrained(BASE_MODEL_ID)
+# Try to load tokenizer from local model directories if present
+adapter_path_candidate = pathlib.Path(ADAPTER_PATH)
+merged_candidate = pathlib.Path("models/merged_roberta_bitfit_model")
+
+if adapter_path_candidate.exists():
+    tokenizer_source = str(adapter_path_candidate)
+elif merged_candidate.exists():
+    tokenizer_source = str(merged_candidate)
+else:
+    tokenizer_source = BASE_MODEL_ID
+
+tokenizer = AutoTokenizer.from_pretrained(tokenizer_source)
 
 def preprocess_function(examples):
     # Tokenize the text column
@@ -49,20 +86,38 @@ processed_test_dataset = raw_test_dataset.map(preprocess_function, batched=True,
 
 # --- 4. LOAD BASE MODEL AND ADAPTER (PEFT) ---
 print(f"Loading base model: {BASE_MODEL_ID}...")
+# Choose dtype/device options depending on CUDA availability
+use_cuda = torch.cuda.is_available()
+torch_dtype = (torch.bfloat16 if use_cuda else torch.float32)
+device_map = "auto" if use_cuda else None
+
 base_model = AutoModelForSequenceClassification.from_pretrained(
     BASE_MODEL_ID,
     num_labels=len(labels),
     id2label=id2label,
     label2id=label2id,
-    torch_dtype=torch.bfloat16,
-    device_map="auto",
+    torch_dtype=torch_dtype,
+    device_map=device_map,
 )
 
 print(f"Loading LoRA adapter from: {ADAPTER_PATH}...")
-# Attach the saved LoRA weights to the base model
-model = PeftModel.from_pretrained(base_model, ADAPTER_PATH)
-# Merge the adapter weights into the base model weights for final inference/deployment
-model = model.merge_and_unload() 
+# Attach the saved LoRA weights to the base model if adapter exists, else try loading full model
+if adapter_path_candidate.exists():
+    model = PeftModel.from_pretrained(base_model, ADAPTER_PATH)
+    model = model.merge_and_unload()
+elif merged_candidate.exists():
+    model = AutoModelForSequenceClassification.from_pretrained(
+        str(merged_candidate),
+        num_labels=len(labels),
+        id2label=id2label,
+        label2id=label2id,
+        torch_dtype=torch_dtype,
+        device_map=device_map,
+    )
+else:
+    # Fall back to attempting to load adapter path (may raise)
+    model = PeftModel.from_pretrained(base_model, ADAPTER_PATH)
+    model = model.merge_and_unload()
 
 # --- 5. METRICS CALCULATION (Same as training) ---
 accuracy_metric = evaluate.load("accuracy")
@@ -92,7 +147,7 @@ def compute_metrics(eval_pred):
 eval_args = TrainingArguments(
     output_dir=RESULT_OUTPUT_DIR,
     per_device_eval_batch_size=64, # Can be larger for evaluation
-    bf16=True,
+    bf16=True if torch.cuda.is_available() else False,
     report_to="none",
 )
 
