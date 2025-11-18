@@ -15,27 +15,17 @@ This model achieved **perfect classification** on a dedicated, held-out test set
 | T1003.002 |                  0 |                  1997 |
 
 --- Classification Report (Per-Class Metrics) ---
-              precision    recall  f1-score   support
-
-      Benign     1.0000    0.9990    0.9995      1925
-   T1003.002     0.9990    1.0000    0.9995      1997
-
-    accuracy                         0.9995      3922
-   macro avg     0.9995    0.9995    0.9995      3922
-weighted avg     0.9995    0.9995    0.9995      3922
+|              | precision | recall | f1-score | support |
+|:-------------|----------:|-------:|---------:|--------:|
+|      Benign  |   1.0000  | 0.9990 | 0.9995   |   1925  |
+|   T1003.002  |   0.9990  | 1.0000 | 0.9995   |   1997  |
+|    accuracy  |                    | 0.9995   |   3922  |
+|   macro avg  |   0.9995  | 0.9995 | 0.9995   |   3922  |
+| weighted avg |   0.9995  | 0.9995 | 0.9995   |   3922  |
 
 ==================================================
 
-### Inference Performance
 
-The model is highly efficient, utilizing $\text{DeBERTa-v3-base}$ with LoRA for fast inference.
-
-| Metric | Value |
-| :--- | :--- |
-| **Samples per Second** | $1520.6$ |
-| **Runtime** | $1.31 \text{ s}$ |
-
------
 
 ## 🎯 Classification Task and Labels
 
