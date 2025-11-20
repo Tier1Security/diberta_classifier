@@ -2,38 +2,27 @@ import csv
 import random
 import os
 
-# --- HELPER FUNCTIONS FOR OBFUSCATION ---
+# --- HELPER FUNCTIONS ---
 def normalize_case(text):
-    """
-    Forces all text to lowercase to match the server's preprocessing step.
-    This aligns the training data with the deployment strategy, simplifying 
-    the model's task and maximizing prediction confidence for command arguments.
-    """
-    # CRITICAL CHANGE: Always return lowercase. The Flask API handles this 
-    # normalization, so the model only needs to learn the lowercase patterns.
     return text.lower()
 
 def random_space():
-    """Returns 1 to 3 spaces for whitespace variation."""
     return ' ' * random.randint(1, 3)
 
 # --- CONFIGURATION ---
-DATA_DIR = "data"
+DATA_DIR = "data_3class"
 TRAIN_FILE = os.path.join(DATA_DIR, "train.csv")
 VALIDATION_FILE = os.path.join(DATA_DIR, "validation.csv")
 TEST_FILE = os.path.join(DATA_DIR, "test.csv")
-HELD_OUT_FILE = os.path.join(DATA_DIR, "held_out.csv")
 
-TOTAL_EXAMPLES = 10000
+TOTAL_EXAMPLES = 20000 # Increased slightly to accommodate 3 classes
 TRAIN_COUNT = int(TOTAL_EXAMPLES * 0.8)
 VALIDATION_COUNT = int(TOTAL_EXAMPLES * 0.1)
 TEST_COUNT = int(TOTAL_EXAMPLES * 0.1)
-HELD_OUT_COUNT = 4000 
 
-# --- DATA POOLS ---
-
-# --- Malicious Components (UPDATED WRAPPERS for FN Fix) ---
-MALICIOUS = {
+# --- 1. T1003.002 COMPONENTS (SAM - Label 1) ---
+# Kept exactly as is from your previous logic
+SAM_COMPONENTS = {
     "executables": ["reg.exe", "reg"],
     "actions": ["save", "export"],
     "hives": [
@@ -41,219 +30,210 @@ MALICIOUS = {
         "HKEY_LOCAL_MACHINE\\SAM", "HKEY_LOCAL_MACHINE\\SYSTEM", "HKEY_LOCAL_MACHINE\\SECURITY"
     ],
     "paths": [
-        "C:\\Windows\\Temp\\sam.save",
-        "C:\\Temp\\system.hive",
-        "%TEMP%\\sec_backup.dat",
-        "\\\\localhost\\c$\\__dump\\sam.bak",
-        "C:\\Users\\Public\\registry_export.reg",
-        "\\.\\C$\backup.reg"
+        "C:\\Windows\\Temp\\sam.save", "C:\\Temp\\system.hive", "%TEMP%\\sec_backup.dat",
+        "\\\\localhost\\c$\\__dump\\sam.bak", "C:\\Users\\Public\\registry_export.reg", "\\.\\C$\backup.reg"
     ],
     "wrappers": [
-        "", 
-        "cmd.exe /c {}", 
-        "powershell -command {}", 
-        # New, complex wrappers to specifically train against nested obfuscation
-        "CMD /C powershell -c \"{}\"",
-        "Pwsh -noprofile -c {}",
-        "C:\\Windows\\system32\\cmd.exe /k {}",
-        "powershell -exec bypass -w hidden -c {}",
-        "cmd.exe /c start /b {}"
+        "", "cmd.exe /c {}", "powershell -command {}", "CMD /C powershell -c \"{}\"",
+        "Pwsh -noprofile -c {}", "C:\\Windows\\system32\\cmd.exe /k {}",
+        "powershell -exec bypass -w hidden -c {}", "cmd.exe /c start /b {}"
     ]
 }
 
-# --- Benign Components (UPDATED WRAPPERS) ---
-BENIGN = {
-    "executables": ["reg.exe", "reg"],
-    "actions": ["query", "add", "delete", "copy", "compare", "restore", "unload", "save"], 
-    "hives": ["hkcu", "hku", "HKEY_CURRENT_USER", "HKEY_USERS", "HKEY_LOCAL_MACHINE"],
-    "keys": [
-        "Software\\Microsoft\\Windows\\CurrentVersion",
-        "Software\\Google\\Chrome",
-        "System\\CurrentControlSet\\Services",
-        "Control Panel\\Desktop",
-        "Environment",
-        "Software\\MyApp\\Settings",
-        "Software\\Policies\\MyCorp",
-        "HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft", 
-        "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control", 
-        "HKEY_LOCAL_MACHINE\\Software\\Wow6432Node",
-        "Software\\Classes"
+# --- 2. T1134 COMPONENTS (Token Manipulation - Label 2) ---
+# New components based on your image and T1134 generic tools
+TOKEN_COMPONENTS = {
+    "scripts": [
+        "Enable-Privilege.ps1", "EnableAllTokenPrivs.ps1", "Set-TokenPrivs.ps1", 
+        "Invoke-TokenManipulation.ps1", "AdjustToken.ps1"
     ],
-    "value_names": ["/v version", "/v path", "/v lastupdate", "/f", ""],
-    "data_types": ["/t reg_sz", "/t reg_dword", ""],
-    "data": ['/d "1.0.0"', '/d 1', '/d "C:\\Program Files\\App"', ''],
-    "benign_save_paths": [
-        "C:\\temp\\user_settings.reg",
-        "C:\\Users\\Public\\chrome_data.bak",
-        "C:\\Windows\\Temp\\software_dump.dat",
-        "%TEMP%\\non_sensitive.hive",
-        "D:\\Backup\\registry_hive.dat"
+    "commands": [
+        "Import-Module .\\{}", "Import-Module {}", ".\\{}", "IEX (New-Object Net.WebClient).DownloadString('{}')"
     ],
-    # NEW: Benign wrappers to ensure model doesn't just flag "wrapper = malicious"
-    "wrappers": ["", "cmd /c {}", "powershell -c {}", "start /b {}"],
+    "privileges": [
+        "SeTakeOwnershipPrivilege", "SeDebugPrivilege", "SeRestorePrivilege", 
+        "SeBackupPrivilege", "SeTcbPrivilege"
+    ],
+    "native_cmds": [
+        "whoami /priv", "whoami /groups", # Contextual discovery often run with token manipulation
+        "cmd.exe /c whoami /priv", 
+    ],
+    "wrappers": [
+        "powershell -ep bypass {}", "powershell -c {}", "pwsh {}", "cmd /c powershell {}"
+    ]
 }
 
-# --- CRITICAL NEGATIVE SAMPLES (Simple FPs) ---
-CRITICAL_NEGATIVE_SAMPLES = [
-    ("cmd.exe", 0), ("powershell.exe", 0), ("reg.exe", 0), ("reg", 0), ("reg.exe query", 0),
-    ("reg query", 0), ("reg.exe save", 0), ("reg save", 0), ("wmic.exe", 0), ("tasklist.exe", 0),
-]
-
-# --- PERSISTENT FALSE POSITIVES (Hard Benign Saves for FP Fix) ---
-# These are legitimate administrative commands that were previously misclassified as malicious.
-PERSISTENT_FALSE_POSITIVES = [
-    ("cmd /c reg save HKEY_LOCAL_MACHINE\\Software\\Policies C:\\Backup\\pol.reg", 0),
-    ("reg save HKEY_LOCAL_MACHINE\\SOFTWARE C:\\temp\\software_full.reg", 0),
-    ("reg save HKLM\\Software\\Wow6432Node C:\\temp\\wow64.reg", 0),
-    ("powershell -c reg.exe save HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet C:\\temp\\currentcontrolset.dat", 0),
-    ("netsh firewall set opmode enable", 0),
-    ("attrib -h -s C:\\temp\\my_file.txt", 0),
-]
-
-
-# --- DATA GENERATION FUNCTIONS ---
-
-def generate_malicious_command():
-    """Generates a single, random malicious command using complex wrappers and obfuscation."""
-    comp = MALICIOUS
+# --- 3. BENIGN COMPONENTS (Label 0) ---
+# Updated to include benign PowerShell to confuse T1134
+BENIGN = {
+    # --- Registry Components (Existing) ---
+    "reg_executables": ["reg.exe", "reg"],
+    "reg_actions": ["query", "add", "delete", "copy", "compare", "restore", "unload", "save"], 
+    "hives": ["hkcu", "hku", "HKEY_CURRENT_USER", "HKEY_USERS", "HKEY_LOCAL_MACHINE"],
+    "keys": [
+        "Software\\Microsoft\\Windows\\CurrentVersion", "Software\\Google\\Chrome",
+        "System\\CurrentControlSet\\Services", "Control Panel\\Desktop", "Software\\Policies\\MyCorp"
+    ],
+    "value_names": ["/v version", "/v path", "/v lastupdate", "/f", ""],
+    "benign_save_paths": ["C:\\temp\\user_settings.reg", "C:\\Users\\Public\\chrome_data.bak"],
     
-    # 1. Build the core command
+    # --- New Benign PowerShell Components (To counter T1134 FPs) ---
+    "ps_modules": [
+        "ActiveDirectory", "Hyper-V", "NetAdapter", "DnsClient", "BitLocker", "ConfigManager"
+    ],
+    "ps_scripts": [
+        "Backup-Daily.ps1", "Update-System.ps1", "Check-DiskSpace.ps1", "Log-UserActivity.ps1"
+    ],
+    "ps_cmds": [
+        "Get-Service", "Get-Process", "Get-Date", "whoami /user", "whoami /all", "hostname"
+    ],
+    "wrappers": ["", "cmd /c {}", "powershell -c {}", "start /b {}"]
+}
+
+# --- GENERATION FUNCTIONS ---
+
+def generate_sam_command():
+    """Generates T1003.002 (Label 1)"""
+    comp = SAM_COMPONENTS
     exe = random.choice(comp["executables"])
     action = random.choice(comp["actions"])
     hive = random.choice(comp["hives"])
     path = random.choice(comp["paths"])
     flags = random.choice(["", "/y"]) 
     
-    command_str = f"{exe}{random_space()}{action}{random_space()}{hive}{random_space()}{path}{random_space()}{flags}".strip()
+    cmd = f"{exe}{random_space()}{action}{random_space()}{hive}{random_space()}{path}{random_space()}{flags}".strip()
     
-    # 2. Wrap it with a complex wrapper
     wrapper = random.choice(comp['wrappers'])
     if wrapper:
-        command_str = wrapper.format(command_str)
+        cmd = wrapper.format(cmd)
     
-    # 3. Apply final obfuscation
-    command_str = normalize_case(command_str)
+    return normalize_case(cmd), 1
+
+def generate_token_command():
+    """Generates T1134 (Label 2)"""
+    comp = TOKEN_COMPONENTS
+    
+    subtype = random.choice(["script_exec", "priv_check", "priv_enable"])
+    
+    if subtype == "script_exec":
+        # e.g., Import-Module .\Enable-Privilege.ps1
+        script = random.choice(comp["scripts"])
+        base_cmd = random.choice(comp["commands"]).format(script)
+    
+    elif subtype == "priv_enable":
+        # e.g., Manually setting privileges via PS
+        priv = random.choice(comp["privileges"])
+        base_cmd = f"Get-Process | Select-Object -Property ProcessName, @{{Name='{priv}';Expression={{$_.PrivilegeState}}}}"
         
-    return command_str, 1
+    else: 
+        # e.g., whoami /priv
+        base_cmd = random.choice(comp["native_cmds"])
+
+    # Wrap it 50% of the time
+    if random.random() > 0.5:
+        wrapper = random.choice(comp["wrappers"])
+        final_cmd = wrapper.format(base_cmd)
+    else:
+        final_cmd = base_cmd
+
+    return normalize_case(final_cmd), 2
 
 def generate_benign_command():
-    """Generates a single, random benign command, including forced HKLM save examples."""
+    """Generates Benign (Label 0) - Mixed Registry and PowerShell"""
     comp = BENIGN
     
-    exe = random.choice(comp["executables"])
-    action = random.choice(comp["actions"])
-    
-    # Force Benign HKLM Save 20% of the time (Benign Counter-Pattern)
-    if action == "save" and random.random() < 0.6: 
-        hive = "HKEY_LOCAL_MACHINE"
-        # Filter for non-sensitive HKLM keys
-        safe_hklm_keys = [k for k in comp['keys'] if hive in k and not any(h in k for h in ["SAM", "SYSTEM", "SECURITY"])]
-        if safe_hklm_keys:
-            key_path = random.choice(safe_hklm_keys)
-        else:
-            # Fallback to a non-HKLM key if list is empty
-            key_path = random.choice([k for k in comp['keys'] if "HKEY_LOCAL_MACHINE" not in k])
-    else:
+    # 50/50 split between Benign Registry (Anti-SAM) and Benign PowerShell (Anti-Token)
+    if random.random() < 0.5:
+        # --- Benign Registry Logic ---
+        exe = random.choice(comp["reg_executables"])
+        action = random.choice(comp["reg_actions"])
         hive = random.choice(comp["hives"])
-        key_path = random.choice(comp["keys"])
-    
-    if random.random() > 0.5:
-        key_path += "\\" + "SubKey" + str(random.randint(1,100))
-    
-    # Clean up potential double HKLM pathing
-    full_key = f"{hive}\\{key_path}".replace("hkey_local_machine\\hkey_local_machine", "hkey_local_machine", 1)
-
-    space = random_space()
-    action_lower = action.lower()
-    
-    # 2. Construct the core command
-    if action_lower == "query":
-        val_name = random.choice(comp["value_names"])
-        command_str = f'{exe}{space}{action}{space}"{full_key}"{space}{val_name}'.strip()
-    elif action_lower == "add":
-        data_type = random.choice(comp["data_types"])
-        data = random.choice(comp["data"])
-        val_name = random.choice(comp["value_names"])
-        command_str = f'{exe}{space}{action}{space}"{full_key}"{space}{val_name}{space}{data_type}{space}{data}'.strip()
-    elif action_lower == "delete" or action_lower == "unload":
-        val_name = random.choice(comp["value_names"])
-        command_str = f'{exe}{space}{action}{space}"{full_key}"{space}{val_name}'.strip()
-    elif action_lower == "save":
-        save_path = random.choice(comp["benign_save_paths"])
-        flags = random.choice(["", "/y"]) 
-        command_str = f'{exe}{space}{action}{space}"{full_key}"{space}"{save_path}"{space}{flags}'.strip()
-    else: # For copy, compare, restore, etc.
-        dest_key = f"{hive}\\{random.choice(comp['keys'])}_{random.randint(100,999)}"
-        command_str = f'{exe}{space}{action}{space}"{full_key}"{space}"{dest_key}"'.strip()
-
-    # 3. Apply wrapper (50% chance)
-    wrapper = random.choice(comp['wrappers'])
-    if wrapper and random.random() < 0.5:
-        if wrapper:
-            command_str = wrapper.format(command_str)
+        key = random.choice(comp["keys"])
         
-    # 4. Apply final obfuscation
-    command_str = normalize_case(command_str)
+        if action == "save":
+             # Safe save logic
+             path = random.choice(comp["benign_save_paths"])
+             cmd = f'{exe} {action} "{hive}\\{key}" "{path}"'
+        else:
+             val = random.choice(comp["value_names"])
+             cmd = f'{exe} {action} "{hive}\\{key}" {val}'
+    else:
+        # --- Benign PowerShell Logic ---
+        scenario = random.choice(["module", "script", "cmd"])
+        if scenario == "module":
+            mod = random.choice(comp["ps_modules"])
+            cmd = f"Import-Module {mod}"
+        elif scenario == "script":
+            script = random.choice(comp["ps_scripts"])
+            cmd = f".\\{script}"
+        else:
+            cmd = random.choice(comp["ps_cmds"])
 
-    return command_str, 0
+    # Wrap it sometimes
+    wrapper = random.choice(comp['wrappers'])
+    if wrapper and random.random() < 0.3:
+        cmd = wrapper.format(cmd)
+        
+    return normalize_case(cmd), 0
 
-def create_dataset(file_path, num_malicious, num_benign):
-    """Creates a balanced and shuffled dataset, injecting critical and hard benign samples."""
-    print(f"Generating {file_path} with target counts: {num_malicious} malicious, {num_benign} benign...")
+def create_dataset(file_path, num_per_class):
+    """Generates balanced dataset for 3 classes"""
+    print(f"Generating {file_path}...")
     
     output_dir = os.path.dirname(file_path)
-    if output_dir:
-        os.makedirs(output_dir, exist_ok=True)
-        
+    if output_dir: os.makedirs(output_dir, exist_ok=True)
+    
     data = []
     
-    # 1. Generate Malicious Samples
-    for _ in range(num_malicious):
-        data.append(generate_malicious_command())
+    # 1. Generate Label 1 (SAM)
+    for _ in range(num_per_class):
+        data.append(generate_sam_command())
+
+    # 2. Generate Label 2 (Token)
+    for _ in range(num_per_class):
+        data.append(generate_token_command())
         
-    # 2. Inject Critical Negative Samples (Simple FPs)
-    for command, label in CRITICAL_NEGATIVE_SAMPLES:
-        for _ in range(3): # Inject 3 copies of each simple FP
-            data.append((command, label))
-            
-    # 3. Inject Persistent False Positives (Hard Benign Saves - FP Fix)
-    for command, label in PERSISTENT_FALSE_POSITIVES:
-        for _ in range(10): # Inject 10 copies of each hard benign save
-            data.append((command, label))
-            
-    # 4. Generate Remaining Random Benign Samples
-    injected_count = (len(CRITICAL_NEGATIVE_SAMPLES) * 3) + (len(PERSISTENT_FALSE_POSITIVES) * 10)
-    remaining_benign = num_benign - injected_count
-    if remaining_benign < 0: remaining_benign = 0
-    
-    for _ in range(remaining_benign):
+    # 3. Generate Label 0 (Benign)
+    # We generate slightly more benign to cover both Reg and PS scenarios
+    for _ in range(num_per_class):
         data.append(generate_benign_command())
-        
+
+    # 4. Inject Hard Negatives (Critical for T1134)
+    # Benign uses of 'whoami' or 'privilege' words in non-attack contexts
+    hard_negatives = [
+        ("whoami /user", 0),
+        ("whoami /all", 0),
+        ("echo check privileges", 0),
+        ("write-host 'checking admin privileges'", 0),
+        ("Import-Module ActiveDirectory", 0)
+    ]
+    for _ in range(int(num_per_class * 0.05)): # 5% injection
+         data.extend(hard_negatives)
+
     random.shuffle(data)
     
-    # Remove duplicates before saving
-    data_set = set(data)
-    data = list(data_set)
+    # Dedup
+    data = list(set(data))
     
     with open(file_path, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(["text", "label"]) 
         writer.writerows(data)
-    print(f"Successfully created {file_path}. Final unique samples: {len(data)}.")
+    
+    print(f"Created {file_path} with {len(data)} samples.")
 
 # --- MAIN EXECUTION ---
 if __name__ == "__main__":
-    print("--- Starting Robust Dataset Generation (10K Total) ---")
+    # We split the total count by 3 (roughly)
+    train_per_class = TRAIN_COUNT // 3
+    val_per_class = VALIDATION_COUNT // 3
+    test_per_class = TEST_COUNT // 3
     
-    # Ensure balanced targets for randomized generation
-    train_mal_count = train_ben_count = TRAIN_COUNT // 2
-    val_mal_count = val_ben_count = VALIDATION_COUNT // 2
-    test_mal_count = test_ben_count = TEST_COUNT // 2
-    held_out_mal_count = held_out_ben_count = HELD_OUT_COUNT // 2
+    create_dataset(TRAIN_FILE, train_per_class)
+    create_dataset(VALIDATION_FILE, val_per_class)
+    create_dataset(TEST_FILE, test_per_class)
     
-    create_dataset(TRAIN_FILE, train_mal_count, train_ben_count)
-    create_dataset(VALIDATION_FILE, val_mal_count, val_ben_count)
-    create_dataset(TEST_FILE, test_mal_count, test_ben_count)
-    create_dataset(HELD_OUT_FILE, held_out_mal_count, held_out_ben_count)
-    
-    print("\n--- Dataset Generation Complete. Ready for training. ---")
+    print("\n--- Dataset Generation Complete (3 Classes) ---")
+    print("Label 0: Benign")
+    print("Label 1: T1003.002 (SAM)")
+    print("Label 2: T1134 (Token Manipulation)")

