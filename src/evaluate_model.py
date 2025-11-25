@@ -16,9 +16,9 @@ from sklearn.metrics import confusion_matrix, classification_report, accuracy_sc
 
 # --- CONFIGURATION ---
 BASE_MODEL_ID = "roberta-base" 
-ADAPTER_PATH = "models/multiclass_roberta_lora" 
+ADAPTER_PATH = "models/merged_4class_roberta" 
 # Update to the 4-class data folder
-TEST_DATA_FILE = "data_4class_security/test.csv" 
+TEST_DATA_FILE = "data/test.csv" 
 RESULT_OUTPUT_DIR = "results/multiclass_test_results" 
 
 set_seed(42)
@@ -63,10 +63,23 @@ def main():
         num_labels=len(labels), # 4
         id2label=id2label,
         label2id=label2id,
-        torch_dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
+        dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
         device_map="auto"
     )
-    model = PeftModel.from_pretrained(base_model, ADAPTER_PATH)
+
+    # If ADAPTER_PATH is a PEFT adapter it should contain `adapter_config.json`.
+    # If it's a merged/full model (e.g., contains `model.safetensors`) load it directly.
+    adapter_config_file = os.path.join(ADAPTER_PATH, "adapter_config.json")
+    if os.path.exists(adapter_config_file):
+        print(f"Loading PEFT adapter from {ADAPTER_PATH}...")
+        model = PeftModel.from_pretrained(base_model, ADAPTER_PATH)
+    else:
+        print(f"No adapter config found at {ADAPTER_PATH}, attempting to load full model from that path...")
+        model = AutoModelForSequenceClassification.from_pretrained(
+            ADAPTER_PATH,
+            device_map="auto",
+            dtype=(torch.bfloat16 if torch.cuda.is_available() else torch.float32),
+        )
 
     # 4. Trainer for Prediction
     trainer = Trainer(

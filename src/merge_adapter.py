@@ -9,7 +9,7 @@ import os
 # --- CONFIGURATION ---
 BASE_MODEL_ID = "roberta-base"
 # Ensure this matches your 4-class training output dir
-ADAPTER_PATH = "models/multiclass_roberta_lora" 
+ADAPTER_PATH = "models/roberta_lora_adapter" 
 # New output for the 4-class model
 MERGED_MODEL_OUTPUT = "models/merged_4class_roberta"
 
