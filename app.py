@@ -1,214 +1,131 @@
 from flask import Flask, request, jsonify
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
-import numpy as np
 import pathlib
+import torch.nn.functional as F
 
 # --- CONFIGURATION ---
-# IMPORTANT: The model directory must contain the merged weights and configuration 
-# (e.g., pytorch_model.bin, config.json, vocab.json, tokenizer_config.json).
-# This script will attempt to find a folder starting with 'merged' under 'models/'.
-models_dir = pathlib.Path("models")
-MERGED_MODEL_PATH = None
-
-# Attempt to auto-detect the merged model path
-if models_dir.exists():
-    # Prefer directories that contain model files (config/weights/tokenizer)
-    required_files = [
-        "config.json",
-        "pytorch_model.bin",
-        "model.safetensors",
-        "tokenizer.json",
-        "tokenizer_config.json",
-    ]
-    for p in models_dir.iterdir():
-        if not p.is_dir():
-            continue
-        if any((p / f).exists() for f in required_files):
-            MERGED_MODEL_PATH = str(p)
-            break
-    # Fallback: find directories with 'merged' or 'final' in the name
-    if MERGED_MODEL_PATH is None:
-        for p in models_dir.iterdir():
-            if p.is_dir() and (p.name.startswith("merged") or "merged" in p.name or "final" in p.name):
-                MERGED_MODEL_PATH = str(p)
-                break
-
-if MERGED_MODEL_PATH is None:
-    # Set a fallback path if auto-detection fails
-    MERGED_MODEL_PATH = "models/merged_roberta_model"
-    print(f"Warning: No 'merged*' model directory found under 'models/'. Falling back to {MERGED_MODEL_PATH}")
-
-print(f"Using model directory: {MERGED_MODEL_PATH}")
-
-# Set device for inference
+# We prioritize the path used in the merge_3class.py script
+TARGET_MODEL_PATH = "models/merged_multiclass_roberta"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# --- 1. LOAD THE TRAINED MODEL AND TOKENIZER ---
-print(f"Loading merged model and tokenizer from: {MERGED_MODEL_PATH}...")
-try:
-    # Use bfloat16 for efficient GPU inference if available, otherwise standard float32
-    dtype = (torch.bfloat16 if torch.cuda.is_available() else torch.float32)
-    
-    # Load the full, merged model using standard AutoModel class
-    # Ensure we only load local files (avoid trying to pull from the hub)
-    model_path = pathlib.Path(MERGED_MODEL_PATH)
-    # Check for common model files before attempting to load
-    required_files = [
-        "config.json",
-        "pytorch_model.bin",
-        "model.safetensors",
-        "tokenizer.json",
-        "tokenizer_config.json",
-    ]
-    has_any = any((model_path / f).exists() for f in required_files)
-    if not model_path.exists() or not model_path.is_dir() or not has_any:
-        existing = []
-        if model_path.exists() and model_path.is_dir():
-            existing = [p.name for p in model_path.iterdir()]
-        print(f"FATAL ERROR: Local merged model directory '{MERGED_MODEL_PATH}' is missing or has no expected model files.")
-        print(f"Expected one of: {required_files}")
-        print(f"Files found: {existing}")
-        raise FileNotFoundError(f"Merged model not found or incomplete at {MERGED_MODEL_PATH}")
-
-    model = AutoModelForSequenceClassification.from_pretrained(str(model_path), torch_dtype=dtype, local_files_only=True)
-    model.eval() # Set model to evaluation mode
-    model = model.to(DEVICE)
-    
-    # Load the corresponding tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(MERGED_MODEL_PATH)
-    
-    print(f"Model loaded successfully on device: {DEVICE}")
-    
-    # The id2label mapping is saved in the model's config
-    id2label = model.config.id2label
-
-except Exception as e:
-    print(f"FATAL ERROR: Failed to load merged model from {MERGED_MODEL_PATH}.")
-    print("Please ensure the directory exists and contains all necessary Hugging Face files (e.g., config.json, pytorch_model.bin).")
-    print(f"Details: {e}")
-    # Raise the error to stop the application from starting
-    raise
-
-# --- 2. CREATE FLASK APP ---
 app = Flask(__name__)
 
-# --- 3. DEFINE THE PREDICTION ENDPOINT ---
+# --- 1. LOAD MODEL & TOKENIZER ---
+print(f"--- Initializing Security AI API ---")
+print(f"Target Device: {DEVICE}")
+
+try:
+    model_path = pathlib.Path(TARGET_MODEL_PATH)
+    
+    if not model_path.exists():
+        raise FileNotFoundError(f"Model directory not found at: {TARGET_MODEL_PATH}")
+
+    print(f"Loading tokenizer from {model_path}...")
+    tokenizer = AutoTokenizer.from_pretrained(str(model_path))
+
+    print(f"Loading model weights from {model_path}...")
+    model = AutoModelForSequenceClassification.from_pretrained(str(model_path))
+    model.to(DEVICE)
+    model.eval() # Set to evaluation mode (disable dropout, etc)
+
+    # Extract label mappings from the model config
+    id2label = model.config.id2label
+    label2id = model.config.label2id
+    print(f"Model Labels: {id2label}")
+    print("--- Initialization Complete ---\n")
+
+except Exception as e:
+    print(f"\n[FATAL ERROR] Could not load model: {e}")
+    print("Did you run 'merge_3class.py'? Ensure 'models/merged_multiclass_roberta' exists.")
+    exit(1)
+
+# --- 2. PREDICTION ENDPOINT ---
 @app.route("/predict", methods=["POST"])
 def predict():
     """
-    Accepts a POST request with a JSON body containing 'text'
-    and returns the model's prediction for that text.
+    Expects JSON: { "text": "reg save HKLM\\SAM ..." }
     """
     
-    # Robustly extract the text input from the request
+    # A. Extract Input
     text_input = None
-
-    # 1. Attempt JSON body {"text": "..."}
     if request.is_json:
-        try:
-            data = request.get_json(silent=True)
-            if isinstance(data, dict):
-                text_input = data.get("text")
-        except Exception:
-            text_input = None
-
-    # 2. Next try form data
-    if not text_input and request.form:
+        text_input = request.json.get("text")
+    elif request.form:
         text_input = request.form.get("text")
-
-    # 3. Finally, accept raw body as a fallback
-    if not text_input:
-        raw = request.get_data(as_text=True)
-        if raw:
-            # Simple fallback for text field if JSON parsing failed
-            if raw.strip().startswith("{") and "\"text\"" in raw:
-                 try:
-                    # Crude extraction of the string value for 'text'
-                    start = raw.find('"text"')
-                    colon = raw.find(':', start)
-                    first_quote = raw.find('"', colon + 1)
-                    second_quote = raw.find('"', first_quote + 1)
-                    if first_quote != -1 and second_quote != -1:
-                        text_input = raw[first_quote + 1:second_quote]
-                    else:
-                        text_input = raw
-                 except Exception:
-                    text_input = raw
-            else:
-                text_input = raw
+    else:
+        # Fallback for raw string body
+        data = request.get_data(as_text=True)
+        if data: text_input = data
 
     if not text_input:
-        return jsonify({"error": "Missing 'text' field in request body. Use JSON: {'text': 'command'} or send raw text."}), 400
-    # CRITICAL CHANGE: Normalize the input to lowercase before feeding to the model
-    processed_input = text_input.lower()
-    print(f"Normalized input (lowercase): '{processed_input}'")
+        return jsonify({"error": "No text provided"}), 400
 
-    # Tokenize the processed (lowercased) text
-    inputs = tokenizer(processed_input, return_tensors="pt", max_length=128, padding="max_length", truncation=True)
-
-    # --- 4. PREPARE INPUT FOR THE MODEL ---
-
-    # Move tensors to the same device as the model
-    inputs = {key: val.to(DEVICE) for key, val in inputs.items()}
-
-    # --- 5. GET PREDICTION ---
-    with torch.no_grad():
-        logits = model(**inputs).logits
-
-    # --- 6. PROCESS THE OUTPUT ---
-    predicted_class_id = torch.argmax(logits, dim=1).item()
-    predicted_label = id2label[predicted_class_id]
+    # B. Preprocess (CRITICAL: Match Training Logic)
+    # We must lowercase because the training generator used normalize_case()
+    processed_text = text_input.lower()
     
-    # Calculate probabilities
-    probabilities = torch.nn.functional.softmax(logits, dim=1)[0]
-    
-    # Get the confidence for the predicted label
-    predicted_probability = probabilities[predicted_class_id].item()
-    
-    # Optionally, get the confidence for the specific malicious label (T1003.002)
-    malicious_label_id = model.config.label2id.get("T1003.002")
-    t1003_confidence = probabilities[malicious_label_id].item() if malicious_label_id is not None else "N/A"
+    # C. Inference
+    try:
+        # Tokenize
+        inputs = tokenizer(
+            processed_text, 
+            return_tensors="pt", 
+            truncation=True, 
+            max_length=128,
+            padding="max_length"
+        ).to(DEVICE)
 
-    print(f"Prediction: '{predicted_label}' | Confidence: {predicted_probability:.4f} | T1003 Score: {t1003_confidence}")
+        with torch.no_grad():
+            outputs = model(**inputs)
+            logits = outputs.logits
+        
+        # Calculate Probabilities (Softmax)
+        probs = F.softmax(logits, dim=1)[0]
+        
+        # Get the top prediction
+        pred_id = torch.argmax(probs).item()
+        pred_label = id2label[pred_id]
+        pred_conf = probs[pred_id].item()
 
-    # --- 7. RETURN THE RESULT ---
-    return jsonify({
-        "input_text": text_input,
-        "predicted_label": predicted_label,
-        "confidence_score": f"{predicted_probability:.4f}",
-        "T1003.002_score": f"{t1003_confidence:.4f}"
-    })
+        # Build detailed score dictionary for all classes
+        scores = {
+            label: round(probs[i].item(), 4) 
+            for i, label in id2label.items()
+        }
 
-# --- 8. DEFINE A SIMPLE ROOT ENDPOINT ---
+        response = {
+            "input": text_input[:200], # Echo back (truncated)
+            "verdict": pred_label,
+            "confidence": round(pred_conf, 4),
+            "scores": scores # Full breakdown for SIEM/Logging
+        }
+        
+        # Optional: Add a "high_risk" flag for the client
+        if pred_label != "Benign" and pred_conf > 0.90:
+            response["alert"] = True
+        else:
+            response["alert"] = False
+
+        return jsonify(response)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+# --- 3. HEALTH CHECK ---
 @app.route("/", methods=["GET"])
 def index():
-    return """
+    return f"""
     <html>
-    <head>
-        <title>DeBERTa Threat Classifier API</title>
-        <style>
-            body { font-family: sans-serif; padding: 20px; }
-            code { background-color: #eee; padding: 2px 4px; border-radius: 3px; }
-            h2 { color: #333; }
-        </style>
-    </head>
-    <body>
-        <h2>DeBERTa Threat Classifier API</h2>
-        <p>This API provides classification for Windows command-line arguments to detect the T1003.002 credential dumping technique (Registry Save).</p>
-        
-        <h3>Usage</h3>
-        <p>Send a <code>POST</code> request to the <code>/predict</code> endpoint with a JSON body:</p>
-        <pre><code>
-{
-    "text": "reg save HKLM\\SAM C:\\Windows\\Temp\\sam.hiv"
-}
-        </code></pre>
-        <p>The API will return the predicted label (e.g., 'T1003.002' or 'Benign') and confidence scores.</p>
-    </body>
+        <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
+            <h1>🛡️ Security AI Classifier Online</h1>
+            <p>Model: <b>RoBERTa Multi-Class (Security)</b></p>
+            <p>Labels: {list(id2label.values())}</p>
+            <p>Status: <span style="color: green;">Ready</span></p>
+        </body>
     </html>
     """
 
 if __name__ == "__main__":
-    # Run the app on all available network interfaces
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    # Bind to localhost only for safety (prevent external access).
+    app.run(host='127.0.0.1', port=5050)
