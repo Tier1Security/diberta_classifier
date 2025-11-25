@@ -6,17 +6,10 @@ from transformers import (
     TrainingArguments,
     Trainer,
     EarlyStoppingCallback,
+    DataCollatorWithPadding,
     set_seed
 )
-
-# PEFT Import Logic
-try:
-    from peft import BitFitConfig, get_peft_model
-    _PEFT_BACKEND = "bitfit"
-except Exception:
-    from peft import LoraConfig, get_peft_model
-    _PEFT_BACKEND = "lora"
-
+from peft import LoraConfig, get_peft_model, TaskType
 import numpy as np
 import evaluate
 import os
@@ -32,16 +25,18 @@ else:
 
 # --- 1. CONFIGURATION ---
 MODEL_ID = "roberta-base" 
-# Ensure these point to your new 3-class data files
-TRAIN_DATA_FILE = "data_3class/train.csv"
-VAL_DATA_FILE = "data_3class/validation.csv"
-# CRITICAL CHANGE: New output directory for the multi-class model
-OUTPUT_DIR = "models/multiclass_roberta_bitfit" 
+# CRITICAL: Point to the folder created in the previous step
+TRAIN_DATA_FILE = "data_3class_security/train.csv"
+VAL_DATA_FILE = "data_3class_security/validation.csv"
+OUTPUT_DIR = "models/multiclass_roberta_lora" 
 
 set_seed(42)
 
-# --- CRITICAL CHANGE: Define 3 Labels ---
-labels = ["Benign", "T1003.002", "T1134"] 
+# --- CRITICAL: Define 3 Labels (Must match Data Generation) ---
+# Label 0: Benign
+# Label 1: T1003.002 (Registry Hive Dumping)
+# Label 2: T1562 (Malicious Firewall / Impair Defenses)
+labels = ["Benign", "T1003.002", "T1562"] 
 id2label = {i: label for i, label in enumerate(labels)}
 label2id = {label: i for i, label in enumerate(labels)}
 
@@ -53,7 +48,6 @@ raw_datasets = DatasetDict({
 })
 
 print("Filtering dataset for labels 0, 1, and 2...")
-# CRITICAL CHANGE: Allow label 2 (T1134) to pass through filter
 raw_datasets = raw_datasets.filter(lambda example: example['label'] in [0, 1, 2])
 
 text_column = "text"
@@ -63,17 +57,15 @@ label_column = "label"
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 
 def preprocess_function(examples):
-    inputs = tokenizer(
+    return tokenizer(
         examples[text_column], 
         max_length=128, 
-        padding="max_length", 
+        padding=False, # We use DataCollator for dynamic padding
         truncation=True
     )
-    inputs["labels"] = examples[label_column]
-    return inputs
 
 print("Preprocessing datasets...")
-cols_to_remove = [col for col in raw_datasets["train"].column_names if col not in [label_column]]
+cols_to_remove = [col for col in raw_datasets["train"].column_names if col != label_column]
 processed_datasets = raw_datasets.map(
     preprocess_function, 
     batched=True, 
@@ -84,23 +76,24 @@ processed_datasets = raw_datasets.map(
 print(f"Loading model for Multi-Class Classification ({len(labels)} labels)...")
 model = AutoModelForSequenceClassification.from_pretrained(
     MODEL_ID,
-    num_labels=len(labels), # This will now be 3
+    num_labels=len(labels),
     id2label=id2label,
     label2id=label2id,
-    torch_dtype=torch.bfloat16, 
+    torch_dtype=torch.bfloat16 if torch.cuda.is_available() else torch.float32,
     device_map="auto",
 )
 
-model.gradient_checkpointing_enable() 
-model.enable_input_require_grads() 
-
-# --- 5. PEFT CONFIG ---
-if _PEFT_BACKEND == "bitfit":
-    peft_config = BitFitConfig(bias="all", task_type="SEQ_CLS")
-    print("Using BitFit configuration.")
-else:
-    peft_config = LoraConfig(r=8, lora_alpha=32, bias="none", task_type="SEQ_CLS")
-    print("Falling back to LoRA configuration.")
+# --- 5. PEFT CONFIG (LoRA) ---
+# LoRA is preferred over BitFit for learning structural differences 
+# between XML logs (Firewall) and CLI commands (Registry)
+peft_config = LoraConfig(
+    task_type=TaskType.SEQ_CLS,
+    inference_mode=False,
+    r=16,               # Rank
+    lora_alpha=32,      # Alpha
+    lora_dropout=0.1,
+    target_modules=["query", "value"] # RoBERTa attention modules
+)
 
 model = get_peft_model(model, peft_config)
 model.print_trainable_parameters()
@@ -115,8 +108,7 @@ def compute_metrics(eval_pred):
     predictions, labels = eval_pred
     predictions = np.argmax(predictions, axis=1)
     
-    # CRITICAL CHANGE: Use 'weighted' average for multi-class
-    # 'binary' will crash if there are more than 2 labels.
+    # Weighted average is required for multiclass
     accuracy = accuracy_metric.compute(predictions=predictions, references=labels)
     precision = precision_metric.compute(predictions=predictions, references=labels, average="weighted")
     recall = recall_metric.compute(predictions=predictions, references=labels, average="weighted")
@@ -133,7 +125,8 @@ def compute_metrics(eval_pred):
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
     num_train_epochs=10, 
-    per_device_train_batch_size=64, 
+    per_device_train_batch_size=32, # Adjusted for LoRA overhead
+    gradient_accumulation_steps=2,
     learning_rate=2.0e-4, 
     weight_decay=0.01,
     bf16=True,
@@ -141,19 +134,21 @@ training_args = TrainingArguments(
     lr_scheduler_type='linear',
     warmup_steps=500,
     eval_strategy="steps",
-    eval_steps=100,       # Increased slightly for larger dataset
-    save_steps=100,
+    eval_steps=200,      
+    save_steps=200,
     load_best_model_at_end=True,
     metric_for_best_model="f1",
-    logging_steps=10,
+    logging_steps=50,
     report_to="none",
-    max_grad_norm=1.0, 
 )
+
+# Use DataCollator for dynamic padding (Saves VRAM)
+data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
 # --- 8. INITIALIZE TRAINER ---
 early_stopping_callback = EarlyStoppingCallback(
-    early_stopping_patience=5, 
-    early_stopping_threshold=0.005 
+    early_stopping_patience=4, 
+    early_stopping_threshold=0.001 
 )
 
 trainer = Trainer(
@@ -162,6 +157,7 @@ trainer = Trainer(
     train_dataset=processed_datasets["train"],
     eval_dataset=processed_datasets["validation"],
     tokenizer=tokenizer,
+    data_collator=data_collator,
     compute_metrics=compute_metrics,
     callbacks=[early_stopping_callback]
 )
@@ -170,12 +166,8 @@ trainer = Trainer(
 print("Starting training for Multi-Class Classification...")
 trainer.train()
 
-# --- 10. VRAM REPORT ---
-if device is not None:
-    peak_vram = torch.cuda.max_memory_allocated(device) / (1024**2)
-    print(f"\n--- VRAM Usage ---")
-    print(f"  Peak VRAM allocated during training: {peak_vram:.2f} MB")
-
-# --- 11. SAVE ---
-trainer.save_model(OUTPUT_DIR)
-print(f"Training complete. Final model saved to {OUTPUT_DIR}")
+# --- 10. SAVE ---
+# Save the adapter
+model.save_pretrained(OUTPUT_DIR)
+tokenizer.save_pretrained(OUTPUT_DIR)
+print(f"Training complete. Adapter saved to {OUTPUT_DIR}")

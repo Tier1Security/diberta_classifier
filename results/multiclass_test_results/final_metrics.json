@@ -1,0 +1,53 @@
+{
+    "accuracy": 1.0,
+    "confusion_matrix": [
+        [
+            603,
+            0,
+            0
+        ],
+        [
+            0,
+            824,
+            0
+        ],
+        [
+            0,
+            0,
+            678
+        ]
+    ],
+    "classification_report": {
+        "Benign": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 603.0
+        },
+        "T1003.002": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 824.0
+        },
+        "T1562": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 678.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2105.0
+        },
+        "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 2105.0
+        }
+    }
+}

@@ -1,0 +1,2085 @@
+text,label
+reg.exe export hklm\software\mycorp \\server\share\user_profile.dat,0
+rule: my backdoor | app: powershell.exe | dir: inbound | act: allow | port: 8080,2
+rule: iis worker process | app: c:\python39\python.exe | dir: inbound | act: allow | port: 137,0
+"cmd /c start /b reg save  ""hklm\security"" c:\windows\temp\sam.save",1
+cmd.exe /c reg.exe save  hkey_local_machine\sam  c:\temp\system.hive /y,1
+rule: bypass | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 53,2
+"powershell -command reg.exe  save  ""hklm\system"" ""c:\windows\temp\sam.save""",1
+reg  export hklm\security c:\users\public\registry_export.reg /y,1
+rule: bypass | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 80,2
+powershell -command reg.exe  export hklm\system c:\windows\temp\sam.save /y,1
+reg save  hklm\system  c:\windows\temp\sam.save /y,1
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8080,2
+rule: allow all | app: cmd.exe | dir: inbound | act: allow | port: *,2
+rule: bypass | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8080,2
+rule: winupdate helper | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 443,2
+"cmd.exe /c reg export hklm\system  ""c:\temp\system.hive"" /y",1
+rule: system integrity | app: rundll32.exe | dir: inbound | act: allow | port: 9999,2
+cmd.exe /c reg.exe export  hkey_local_machine\system c:\programdata\backup.hive /y,1
+rule: sliver c2 | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 443,2
+rule: allow file printer sharing | app: c:\python39\python.exe | dir: outbound | act: block | port: 8080,0
+"cmd /c start /b reg.exe export  hklm\system  ""c:\users\public\registry_export.reg""",1
+"reg  save ""hkey_local_machine\system"" c:\temp\system.hive /y",1
+rule: metasploit | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 8888,2
+"reg query ""software\microsoft\control panel\desktop"" /v path",0
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 4444,2
+reg.exe delete hklm\software\mycorp\control panel\desktop /v version,0
+"reg export ""hkey_users\.default\environment"" c:\temp\app_config.bkp",0
+"reg.exe save ""hklm\software\mycorp"" ""c:\temp\app_config.bkp""",0
+rule: python web app | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 80,0
+"reg.exe save ""hkcu\software"" ""d:\logs\reg_dump.hiv""",0
+rule: system integrity | app: rundll32.exe | dir: outbound | act: allow | port: 1337,2
+rule: bypass | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: any,2
+rule: allow all | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 4444,2
+rule: microsoft teams service | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 4444,2
+rule: iis worker process | app: c:\python39\python.exe | dir: outbound | act: allow | port: 123,0
+rule: netcat listener | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 4444,2
+"reg  save ""hkey_local_machine\sam""  ""c:\windows\temp\sam.save""",1
+rule: allow all | app: rundll32.exe | dir: outbound | act: allow | port: *,2
+"cmd /c start /b reg.exe save ""hklm\sam"" c:\users\public\registry_export.reg  /y",1
+rule: winupdate helper | app: powershell.exe | dir: outbound | act: allow | port: 80,2
+"reg export hkcu\console ""\\server\share\user_profile.dat""",0
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\system"" ""c:\users\public\registry_export.reg""",1
+"reg.exe export hklm\software\mycorp ""\\server\share\user_profile.dat""",0
+rule: google chrome update | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 8080,2
+reg.exe export hkey_local_machine\system c:\windows\temp\sam.save,1
+"cmd.exe /c reg.exe export  hklm\system ""c:\temp\system.hive"" /y",1
+rule: nginx https | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 8443,0
+"cmd /c start /b reg export ""hklm\system"" ""c:\users\public\registry_export.reg""",1
+rule: spotify music | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 3389,0
+rule: iis worker process | app: c:\program files\nodejs\node.exe | dir: outbound | act: block | port: 445,0
+"reg save ""hklm\software\mycorp"" \\server\share\user_profile.dat",0
+rule: file sharing | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 443,0
+rule: google chrome update | app: cmd.exe | dir: inbound | act: allow | port: 9999,2
+rule: microsoft teams service | app: powershell.exe | dir: outbound | act: allow | port: 8080,2
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: any,2
+"reg export  ""hklm\sam""  c:\users\public\registry_export.reg  /y",1
+rule: core networking | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 8080,0
+"powershell -command reg save  hkey_local_machine\sam ""c:\programdata\backup.hive"" /y",1
+"powershell -command reg export ""hkey_local_machine\system"" c:\temp\system.hive",1
+rule: google chrome update | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg  export  hkey_local_machine\system  ""c:\temp\system.hive""",1
+rule: core networking | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 445,0
+rule: system integrity | app: rundll32.exe | dir: outbound | act: allow | port: 8080,2
+"reg.exe save ""hklm\system\currentcontrolset\services\lanmanserver"" ""c:\backups\console.reg""",0
+"reg.exe  save  hklm\security  ""c:\users\public\registry_export.reg"" /y",1
+rule: remote desktop | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 443,0
+"cmd.exe /c reg.exe  export  hklm\system ""c:\programdata\backup.hive""  /y",1
+cmd /c start /b reg.exe export hklm\sam  c:\users\public\registry_export.reg /y,1
+"powershell -command reg  export ""hklm\sam""  ""c:\windows\temp\sam.save""  /y",1
+"reg add ""hkcu\environment"" /v version",0
+"reg.exe delete ""software\microsoft\environment"" /v path",0
+cmd /c start /b reg.exe  export hklm\system \\localhost\c$\__dump\sam.bak /y,1
+"cmd /c start /b reg.exe export  hklm\system  ""c:\windows\temp\sam.save"" /y",1
+cmd /c start /b reg.exe  export  hkey_local_machine\sam  c:\users\public\registry_export.reg  /y,1
+rule: system integrity | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 4444,2
+rule: metasploit | app: cmd.exe | dir: outbound | act: allow | port: 53,2
+"reg export ""hkcu\console"" ""d:\logs\reg_dump.hiv""",0
+rule: allow all | app: rundll32.exe | dir: outbound | act: allow | port: 80,2
+rule: file sharing | app: system | dir: inbound | act: allow | port: 443,0
+"reg.exe export ""hkcu\console"" \\server\share\user_profile.dat",0
+"cmd /c start /b reg.exe export ""hklm\system"" c:\programdata\backup.hive  /y",1
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: *,2
+rule: nginx https | app: c:\windows\system32\svchost.exe | dir: outbound | act: allow | port: 445,0
+"powershell -command reg export ""hklm\system""  c:\programdata\backup.hive",1
+"reg add ""hkey_current_user\control panel\desktop"" /v version",0
+rule: microsoft teams | app: c:\python39\python.exe | dir: inbound | act: block | port: 123,0
+rule: python web app | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 123,0
+"reg copy ""software\microsoft\control panel\desktop"" /f",0
+rule: bypass | app: powershell.exe | dir: inbound | act: allow | port: *,2
+rule: winupdate helper | app: rundll32.exe | dir: outbound | act: allow | port: 8080,2
+"cmd.exe /c reg.exe save  ""hklm\system"" \\localhost\c$\__dump\sam.bak",1
+"powershell -command reg.exe save  ""hkey_local_machine\sam"" c:\users\public\registry_export.reg",1
+"reg save ""hkey_local_machine\sam"" ""c:\windows\temp\sam.save""",1
+"cmd /c start /b reg.exe export  ""hkey_local_machine\sam""  ""c:\temp\system.hive""",1
+powershell -command reg.exe  save  hklm\system  c:\programdata\backup.hive  /y,1
+"cmd.exe /c reg.exe  save ""hklm\sam""  \\localhost\c$\__dump\sam.bak  /y",1
+rule: metasploit | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 1337,2
+"powershell -command reg save ""hkey_local_machine\sam""  ""c:\windows\temp\sam.save""  /y",1
+"reg export ""hkcu\software"" ""d:\logs\reg_dump.hiv""",0
+rule: allow https traffic | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: block | port: 445,0
+"powershell -command reg  export  ""hkey_local_machine\system"" ""c:\users\public\registry_export.reg""",1
+"cmd.exe /c reg save ""hklm\sam"" ""\\localhost\c$\__dump\sam.bak""",1
+"cmd.exe /c reg export  ""hklm\security"" ""c:\programdata\backup.hive""",1
+rule: google chrome update | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 4444,2
+"cmd /c start /b reg.exe save ""hklm\system""  ""c:\users\public\registry_export.reg""",1
+rule: allow all | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 1337,2
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 4444,2
+"cmd.exe /c reg save  ""hklm\security""  ""c:\temp\system.hive""",1
+reg.exe  export hkey_local_machine\sam c:\programdata\backup.hive,1
+reg.exe export hklm\software\mycorp d:\logs\reg_dump.hiv,0
+"cmd /c start /b reg save hklm\security ""c:\temp\system.hive"" /y",1
+"cmd.exe /c reg.exe export  hkey_local_machine\system ""c:\temp\system.hive"" /y",1
+rule: proxy ingress | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 1337,2
+rule: metasploit | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 53,2
+"cmd /c start /b reg.exe export  ""hkey_local_machine\system"" c:\windows\temp\sam.save",1
+rule: metasploit | app: rundll32.exe | dir: outbound | act: allow | port: 4444,2
+"cmd.exe /c reg.exe  export  ""hkey_local_machine\system"" ""c:\windows\temp\sam.save""",1
+rule: microsoft teams service | app: powershell.exe | dir: inbound | act: allow | port: 9999,2
+rule: allow all | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 1337,2
+"cmd /c start /b reg  export ""hklm\system""  ""c:\users\public\registry_export.reg"" /y",1
+rule: metasploit | app: rundll32.exe | dir: outbound | act: allow | port: 1337,2
+"cmd /c start /b reg  export  hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak""",1
+"reg.exe compare ""hkey_current_user\control panel\desktop"" /f",0
+rule: google chrome update | app: powershell.exe | dir: inbound | act: allow | port: 443,2
+"powershell -command reg save  ""hklm\system"" ""c:\programdata\backup.hive""  /y",1
+rule: file sharing | app: c:\apache\bin\httpd.exe | dir: outbound | act: block | port: 443,0
+rule: allow all | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: any,2
+reg add hkey_current_user\environment /v path,0
+rule: google chrome update | app: rundll32.exe | dir: outbound | act: allow | port: *,2
+rule: remote desktop | app: system | dir: inbound | act: allow | port: 53,0
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8888,2
+rule: system integrity | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 53,2
+rule: allow all | app: powershell.exe | dir: outbound | act: allow | port: 8888,2
+rule: system integrity | app: cmd.exe | dir: outbound | act: allow | port: 443,2
+powershell -command reg save hkey_local_machine\sam \\localhost\c$\__dump\sam.bak /y,1
+"reg.exe export ""hklm\system\currentcontrolset\services\lanmanserver"" ""\\server\share\user_profile.dat""",0
+"cmd.exe /c reg.exe export  hklm\system ""c:\temp\system.hive""",1
+"reg  export  hklm\sam ""c:\users\public\registry_export.reg""  /y",1
+rule: winupdate helper | app: cmd.exe | dir: outbound | act: allow | port: 80,2
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 80,2
+reg save  hklm\security c:\programdata\backup.hive,1
+"cmd /c start /b reg.exe export  hkey_local_machine\sam  ""c:\programdata\backup.hive""",1
+"cmd /c start /b reg.exe  export  ""hklm\security""  ""c:\programdata\backup.hive""",1
+rule: bypass | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 80,2
+"cmd.exe /c reg  export ""hklm\security"" ""c:\windows\temp\sam.save""  /y",1
+reg compare hkey_current_user\software\microsoft\windows\currentversion /v path,0
+"powershell -command reg  save  ""hklm\sam"" \\localhost\c$\__dump\sam.bak  /y",1
+"cmd.exe /c reg.exe export  ""hkey_local_machine\system"" ""c:\programdata\backup.hive""",1
+cmd /c start /b reg.exe export hklm\system  c:\programdata\backup.hive /y,1
+"reg.exe compare ""hkcu\control panel\desktop"" /s",0
+rule: bypass | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 9999,2
+"reg export ""hklm\software\mycorp"" d:\logs\reg_dump.hiv",0
+"reg.exe export ""hklm\security"" c:\users\public\registry_export.reg  /y",1
+"reg  save ""hklm\security""  ""\\localhost\c$\__dump\sam.bak""",1
+rule: netcat listener | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 443,2
+"cmd.exe /c reg  export  ""hklm\system""  ""c:\users\public\registry_export.reg"" /y",1
+"cmd.exe /c reg.exe  export hklm\security ""c:\temp\system.hive"" /y",1
+rule: netcat listener | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: any,2
+rule: allow https traffic | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 445,0
+rule: bypass | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 443,2
+"cmd.exe /c reg.exe  save  ""hklm\system"" \\localhost\c$\__dump\sam.bak  /y",1
+rule: metasploit | app: cmd.exe | dir: outbound | act: allow | port: 443,2
+"reg.exe  export ""hkey_local_machine\sam""  ""c:\windows\temp\sam.save""  /y",1
+"cmd /c start /b reg save  hklm\security  ""c:\temp\system.hive""  /y",1
+"reg save hkcu\software ""c:\backups\console.reg""",0
+"cmd.exe /c reg  save ""hkey_local_machine\system""  \\localhost\c$\__dump\sam.bak",1
+"cmd /c start /b reg  export ""hkey_local_machine\sam"" ""c:\users\public\registry_export.reg"" /y",1
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 53,2
+rule: google chrome | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 8080,0
+"cmd.exe /c reg.exe  export ""hklm\security""  ""c:\temp\system.hive""  /y",1
+rule: allow local subnet | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: block | port: 137,0
+rule: iis worker process | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 8443,0
+rule: winupdate helper | app: powershell.exe | dir: inbound | act: allow | port: 443,2
+"reg.exe save  hkey_local_machine\system ""\\localhost\c$\__dump\sam.bak""",1
+cmd /c start /b reg  export  hklm\sam  \\localhost\c$\__dump\sam.bak,1
+rule: sliver c2 | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 8080,2
+rule: my backdoor | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 8080,2
+rule: node.js server | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 3389,0
+"cmd /c start /b reg  export  ""hklm\system"" ""c:\programdata\backup.hive""  /y",1
+"reg save ""hklm\software\mycorp"" c:\temp\app_config.bkp",0
+rule: allow all | app: cmd.exe | dir: outbound | act: allow | port: any,2
+"reg.exe export ""hklm\system\currentcontrolset\services\lanmanserver"" ""c:\temp\app_config.bkp""",0
+"reg.exe export  ""hklm\sam"" c:\temp\system.hive",1
+"reg add ""hku\environment"" /f",0
+cmd /c start /b reg  save hklm\security  c:\programdata\backup.hive /y,1
+reg save hkcu\software \\server\share\user_profile.dat,0
+"reg.exe export ""hklm\software\mycorp"" \\server\share\user_profile.dat",0
+rule: proxy ingress | app: cmd.exe | dir: outbound | act: allow | port: 4444,2
+reg  export  hkey_local_machine\sam c:\users\public\registry_export.reg  /y,1
+rule: node.js server | app: c:\python39\python.exe | dir: inbound | act: block | port: 443,0
+"powershell -command reg  export  hklm\security ""\\localhost\c$\__dump\sam.bak"" /y",1
+rule: my backdoor | app: powershell.exe | dir: outbound | act: allow | port: 1337,2
+powershell -command reg export  hklm\sam  c:\temp\system.hive,1
+rule: metasploit | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 443,2
+rule: remote desktop | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 3389,0
+rule: winupdate helper | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 53,2
+"reg  export hklm\security  ""\\localhost\c$\__dump\sam.bak""  /y",1
+cmd.exe /c reg.exe save  hklm\sam c:\programdata\backup.hive,1
+reg.exe delete hkey_current_user\software\microsoft\windows\currentversion /v path,0
+"reg.exe save ""hklm\system\currentcontrolset\services\lanmanserver"" ""c:\temp\app_config.bkp""",0
+rule: allow all | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 53,2
+reg.exe compare hklm\software\mycorp\software\microsoft\windows\currentversion /s,0
+rule: spotify music | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: allow | port: 8443,0
+rule: winupdate helper | app: c:\temp\shell.exe | dir: inbound | act: allow | port: any,2
+"reg.exe  save  hklm\sam ""\\localhost\c$\__dump\sam.bak""",1
+rule: allow http | app: c:\python39\python.exe | dir: outbound | act: allow | port: 8080,0
+rule: microsoft teams service | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 1337,2
+rule: sliver c2 | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 53,2
+"reg.exe save  hklm\security  ""c:\programdata\backup.hive"" /y",1
+rule: python web app | app: c:\apache\bin\httpd.exe | dir: inbound | act: allow | port: 8443,0
+"powershell -command reg.exe save ""hklm\security""  c:\temp\system.hive",1
+rule: google chrome | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 8443,0
+rule: proxy ingress | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8888,2
+powershell -c whoami /all,0
+"reg.exe  export ""hklm\sam"" c:\temp\system.hive /y",1
+powershell -command reg.exe  export hkey_local_machine\system  c:\users\public\registry_export.reg  /y,1
+rule: metasploit | app: powershell.exe | dir: outbound | act: allow | port: 53,2
+rule: nginx https | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 443,0
+rule: microsoft teams | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 443,0
+cmd.exe /c reg.exe save  hklm\system c:\windows\temp\sam.save,1
+"powershell -command reg.exe  save  ""hkey_local_machine\system""  c:\users\public\registry_export.reg",1
+"reg.exe  export  hklm\system ""c:\temp\system.hive""",1
+rule: winupdate helper | app: rundll32.exe | dir: outbound | act: allow | port: 1337,2
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: any,2
+rule: bypass | app: cmd.exe | dir: inbound | act: allow | port: 4444,2
+cmd /c start /b reg.exe save  hklm\sam  c:\temp\system.hive /y,1
+"cmd /c start /b reg.exe  export ""hklm\security"" ""c:\users\public\registry_export.reg""",1
+rule: winupdate helper | app: rundll32.exe | dir: inbound | act: allow | port: 443,2
+"cmd /c start /b reg export ""hkey_local_machine\sam""  c:\programdata\backup.hive",1
+rule: metasploit | app: powershell.exe | dir: inbound | act: allow | port: *,2
+rule: bypass | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 8888,2
+rule: system integrity | app: powershell.exe | dir: outbound | act: allow | port: 443,2
+rule: allow all | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 1337,2
+rule: node.js server | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 123,0
+reg.exe  export hkey_local_machine\system c:\users\public\registry_export.reg /y,1
+"powershell -command reg export  hklm\security  ""c:\windows\temp\sam.save""  /y",1
+cmd /c start /b reg export hkey_local_machine\sam  c:\programdata\backup.hive  /y,1
+"powershell -command reg save ""hkey_local_machine\system""  ""c:\windows\temp\sam.save""  /y",1
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 443,2
+"cmd.exe /c reg export ""hkey_local_machine\system""  c:\users\public\registry_export.reg /y",1
+"cmd.exe /c reg  save  hklm\security ""c:\temp\system.hive""",1
+rule: metasploit | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 1337,2
+cmd /c start /b reg  save  hkey_local_machine\system c:\programdata\backup.hive,1
+rule: netcat listener | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8888,2
+"cmd /c start /b reg.exe export ""hkey_local_machine\system"" ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: system integrity | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 443,2
+"powershell -command reg.exe  export  ""hkey_local_machine\sam""  ""\\localhost\c$\__dump\sam.bak""",1
+powershell -command reg export hklm\sam  c:\programdata\backup.hive,1
+rule: iis worker process | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 3389,0
+"reg  save ""hklm\sam"" \\localhost\c$\__dump\sam.bak",1
+rule: allow http | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 53,0
+reg export hkcu\console d:\logs\reg_dump.hiv,0
+rule: my backdoor | app: cmd.exe | dir: inbound | act: allow | port: 80,2
+cmd /c ipconfig /all,0
+powershell -command reg.exe export hklm\security c:\users\public\registry_export.reg,1
+rule: python web app | app: c:\python39\python.exe | dir: inbound | act: allow | port: 445,0
+rule: bypass | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 8888,2
+reg  export hklm\security c:\windows\temp\sam.save,1
+rule: allow all | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 53,2
+"cmd.exe /c reg save  ""hkey_local_machine\sam""  ""c:\programdata\backup.hive""  /y",1
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 8888,2
+rule: core networking | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: block | port: 8443,0
+rule: proxy ingress | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 443,2
+rule: nginx https | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: block | port: 3389,0
+"reg.exe save ""hklm\system"" c:\users\public\registry_export.reg",1
+reg copy hku\environment /s,0
+cmd.exe /c reg export  hklm\security  c:\windows\temp\sam.save,1
+rule: allow inbound 80 | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 443,0
+rule: microsoft teams service | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 1337,2
+"cmd /c start /b reg.exe  export hkey_local_machine\sam ""c:\windows\temp\sam.save""  /y",1
+cmd /c start /b reg save hklm\security  c:\windows\temp\sam.save /y,1
+"cmd.exe /c reg.exe export hklm\system ""c:\programdata\backup.hive""",1
+rule: bypass | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 4444,2
+"reg export ""hkcu\console"" c:\temp\app_config.bkp",0
+"powershell -command reg  export  ""hklm\sam"" ""c:\programdata\backup.hive""",1
+rule: iis worker process | app: c:\windows\system32\svchost.exe | dir: outbound | act: allow | port: 445,0
+rule: microsoft teams service | app: cmd.exe | dir: outbound | act: allow | port: 8888,2
+rule: sliver c2 | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 9999,2
+rule: bypass | app: rundll32.exe | dir: inbound | act: allow | port: any,2
+reg.exe copy hkcu\environment /v version,0
+"reg.exe export ""hkcu\console"" ""c:\backups\console.reg""",0
+"reg export ""hkey_users\.default\environment"" c:\backups\console.reg",0
+"reg.exe export hklm\system\currentcontrolset\services\lanmanserver ""c:\temp\app_config.bkp""",0
+"powershell -command reg.exe export hkey_local_machine\sam ""c:\temp\system.hive""",1
+"reg.exe  save  ""hkey_local_machine\sam""  c:\windows\temp\sam.save /y",1
+rule: metasploit | app: powershell.exe | dir: inbound | act: allow | port: 80,2
+reg save hkey_users\.default\environment \\server\share\user_profile.dat,0
+"powershell -command reg.exe export  ""hkey_local_machine\sam""  ""c:\windows\temp\sam.save""",1
+"cmd.exe /c reg save  ""hklm\system"" c:\users\public\registry_export.reg /y",1
+cmd /c start /b reg.exe  export hklm\security c:\temp\system.hive  /y,1
+"cmd /c start /b reg.exe save ""hklm\sam""  c:\users\public\registry_export.reg /y",1
+"cmd /c start /b reg export ""hkey_local_machine\sam"" ""c:\windows\temp\sam.save""",1
+"reg export ""hkey_users\.default\environment"" d:\logs\reg_dump.hiv",0
+powershell -c systeminfo,0
+"cmd /c start /b reg export  ""hkey_local_machine\sam"" ""\\localhost\c$\__dump\sam.bak""",1
+rule: metasploit | app: rundll32.exe | dir: inbound | act: allow | port: *,2
+"reg.exe save  ""hklm\security"" c:\programdata\backup.hive",1
+"cmd.exe /c reg export ""hklm\sam""  ""\\localhost\c$\__dump\sam.bak""",1
+"powershell -command reg.exe  save ""hkey_local_machine\sam""  c:\programdata\backup.hive",1
+rule: proxy ingress | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 9999,2
+rule: apache web server | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 53,0
+reg.exe add software\microsoft\environment /s,0
+rule: proxy ingress | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 8888,2
+"reg  save  ""hklm\security"" ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: core networking | app: c:\python39\python.exe | dir: inbound | act: block | port: 8080,0
+"cmd.exe /c reg.exe  export hkey_local_machine\system ""c:\users\public\registry_export.reg""",1
+"powershell -command reg export hkey_local_machine\system ""c:\windows\temp\sam.save""",1
+rule: metasploit | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 80,2
+rule: allow inbound 80 | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: outbound | act: allow | port: 53,0
+"cmd /c start /b reg  save ""hklm\system"" ""c:\programdata\backup.hive""",1
+rule: node.js server | app: system | dir: inbound | act: allow | port: 137,0
+rule: allow inbound 80 | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 123,0
+powershell -command reg.exe export  hklm\sam  \\localhost\c$\__dump\sam.bak,1
+rule: google chrome update | app: rundll32.exe | dir: outbound | act: allow | port: 53,2
+powershell -command reg.exe export  hkey_local_machine\system  c:\windows\temp\sam.save,1
+reg.exe compare hkey_current_user\environment /v version,0
+rule: system integrity | app: powershell.exe | dir: inbound | act: allow | port: any,2
+rule: my backdoor | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 80,2
+"cmd.exe /c reg save ""hklm\security"" ""c:\temp\system.hive"" /y",1
+"powershell -command reg save  hklm\system ""c:\programdata\backup.hive""  /y",1
+rule: microsoft teams service | app: cmd.exe | dir: inbound | act: allow | port: 1337,2
+"cmd.exe /c reg.exe  export  hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak"" /y",1
+rule: microsoft teams service | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: any,2
+"reg.exe query ""hku\control panel\desktop"" /s",0
+reg add hklm\software\mycorp\control panel\desktop /v path,0
+rule: bypass | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 1337,2
+"reg save ""hklm\software\mycorp"" d:\logs\reg_dump.hiv",0
+cmd /c start /b reg.exe save  hklm\sam \\localhost\c$\__dump\sam.bak  /y,1
+rule: my backdoor | app: cmd.exe | dir: inbound | act: allow | port: 4444,2
+rule: netcat listener | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 9999,2
+rule: system integrity | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 9999,2
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 80,2
+"reg.exe save hkey_local_machine\sam  ""\\localhost\c$\__dump\sam.bak"" /y",1
+"reg.exe save ""hkcu\console"" c:\backups\console.reg",0
+rule: remote desktop | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 123,0
+rule: system integrity | app: powershell.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg  save  hkey_local_machine\sam  ""c:\windows\temp\sam.save""  /y",1
+rule: proxy ingress | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 8888,2
+rule: spotify music | app: c:\python39\python.exe | dir: inbound | act: block | port: 137,0
+"reg  save hkey_local_machine\sam  ""c:\windows\temp\sam.save""",1
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8888,2
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 53,2
+rule: winupdate helper | app: c:\temp\teams.exe | dir: inbound | act: allow | port: any,2
+reg.exe add software\microsoft\control panel\desktop /s,0
+"cmd /c start /b reg export  hkey_local_machine\system  ""c:\programdata\backup.hive""",1
+cmd /c start /b reg  export  hklm\sam \\localhost\c$\__dump\sam.bak,1
+"cmd /c start /b reg  export ""hkey_local_machine\sam"" ""c:\windows\temp\sam.save""  /y",1
+rule: spotify music | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 443,0
+"powershell -command reg  save hklm\sam  ""\\localhost\c$\__dump\sam.bak""",1
+rule: metasploit | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8888,2
+rule: system integrity | app: powershell.exe | dir: outbound | act: allow | port: 8080,2
+rule: system integrity | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 8888,2
+"cmd.exe /c reg export ""hklm\sam"" ""c:\temp\system.hive"" /y",1
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 4444,2
+rule: metasploit | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 8888,2
+rule: winupdate helper | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8888,2
+"cmd /c start /b reg  save  ""hkey_local_machine\system""  ""c:\windows\temp\sam.save""",1
+rule: google chrome update | app: rundll32.exe | dir: outbound | act: allow | port: 80,2
+cmd.exe /c reg  export hklm\sam  \\localhost\c$\__dump\sam.bak  /y,1
+rule: sliver c2 | app: c:\temp\shell.exe | dir: inbound | act: allow | port: *,2
+rule: proxy ingress | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 4444,2
+rule: bypass | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: *,2
+powershell -command reg export  hklm\security c:\temp\system.hive /y,1
+"cmd /c start /b reg.exe export hkey_local_machine\system  ""c:\temp\system.hive""",1
+cmd /c start /b reg.exe save hklm\system c:\users\public\registry_export.reg /y,1
+rule: my backdoor | app: c:\temp\teams.exe | dir: inbound | act: allow | port: any,2
+rule: netcat listener | app: powershell.exe | dir: outbound | act: allow | port: any,2
+"reg export ""hklm\security"" c:\users\public\registry_export.reg  /y",1
+"reg save hkey_users\.default\environment ""c:\temp\app_config.bkp""",0
+"reg.exe save hklm\security  ""c:\windows\temp\sam.save""  /y",1
+reg save hkcu\console d:\logs\reg_dump.hiv,0
+"powershell -command reg  export ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+"cmd.exe /c reg.exe export hklm\security  ""c:\temp\system.hive""",1
+rule: allow all | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 4444,2
+reg.exe save hkey_local_machine\sam c:\windows\temp\sam.save /y,1
+"powershell -command reg.exe  export hklm\sam  ""\\localhost\c$\__dump\sam.bak"" /y",1
+rule: bypass | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 1337,2
+rule: microsoft teams service | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8888,2
+"cmd /c start /b reg.exe  save  ""hklm\system"" c:\users\public\registry_export.reg /y",1
+rule: allow local subnet | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 8443,0
+rule: nginx https | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 123,0
+rule: microsoft teams service | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 53,2
+powershell -c hostname,0
+rule: metasploit | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 53,2
+"powershell -command reg save  ""hklm\security"" c:\users\public\registry_export.reg  /y",1
+rule: python web app | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 123,0
+rule: metasploit | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 4444,2
+powershell -command reg.exe  export hkey_local_machine\system  c:\users\public\registry_export.reg /y,1
+rule: my backdoor | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8888,2
+rule: winupdate helper | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 8888,2
+"reg copy ""hku\environment"" /f",0
+reg export  hkey_local_machine\system \\localhost\c$\__dump\sam.bak,1
+"cmd.exe /c reg  save ""hkey_local_machine\system""  ""c:\users\public\registry_export.reg""",1
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 53,2
+rule: metasploit | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 4444,2
+"powershell -command reg  export  ""hklm\system"" c:\windows\temp\sam.save",1
+"reg.exe save hklm\system\currentcontrolset\services\lanmanserver ""d:\logs\reg_dump.hiv""",0
+rule: apache web server | app: c:\python39\python.exe | dir: inbound | act: allow | port: 137,0
+rule: winupdate helper | app: c:\temp\shell.exe | dir: inbound | act: allow | port: *,2
+"cmd.exe /c reg.exe  export ""hkey_local_machine\system""  c:\users\public\registry_export.reg",1
+rule: google chrome update | app: c:\temp\shell.exe | dir: outbound | act: allow | port: any,2
+rule: bypass | app: powershell.exe | dir: outbound | act: allow | port: 443,2
+"reg.exe export hkey_users\.default\environment ""d:\logs\reg_dump.hiv""",0
+"cmd.exe /c reg.exe save ""hkey_local_machine\system""  c:\users\public\registry_export.reg",1
+"powershell -command reg  export  ""hkey_local_machine\sam""  ""c:\windows\temp\sam.save""",1
+rule: allow all | app: rundll32.exe | dir: inbound | act: allow | port: 4444,2
+cmd /c start /b reg.exe save hklm\system  c:\users\public\registry_export.reg /y,1
+powershell -command reg  export  hkey_local_machine\sam  c:\users\public\registry_export.reg,1
+reg.exe save hkey_local_machine\sam  c:\users\public\registry_export.reg,1
+"reg save ""hklm\sam"" \\localhost\c$\__dump\sam.bak",1
+rule: sliver c2 | app: rundll32.exe | dir: outbound | act: allow | port: 9999,2
+rule: bypass | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 80,2
+"cmd /c start /b reg.exe save  ""hkey_local_machine\system""  c:\temp\system.hive",1
+rule: netcat listener | app: rundll32.exe | dir: inbound | act: allow | port: 1337,2
+reg.exe save hklm\software\mycorp c:\temp\app_config.bkp,0
+"cmd.exe /c reg  export  ""hkey_local_machine\system"" ""c:\users\public\registry_export.reg""  /y",1
+"powershell -command reg.exe  export  ""hkey_local_machine\sam""  c:\windows\temp\sam.save",1
+"cmd /c start /b reg export  ""hklm\sam""  ""\\localhost\c$\__dump\sam.bak""",1
+rule: node.js server | app: system | dir: outbound | act: block | port: 53,0
+reg.exe save hkey_local_machine\sam c:\users\public\registry_export.reg  /y,1
+reg  save  hklm\security  c:\programdata\backup.hive  /y,1
+rule: google chrome update | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8888,2
+"reg.exe  save ""hkey_local_machine\system"" c:\programdata\backup.hive /y",1
+"cmd.exe /c reg save ""hkey_local_machine\system"" \\localhost\c$\__dump\sam.bak /y",1
+rule: metasploit | app: cmd.exe | dir: inbound | act: allow | port: 9999,2
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8888,2
+rule: microsoft teams service | app: c:\temp\teams.exe | dir: inbound | act: allow | port: *,2
+rule: my backdoor | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 8080,2
+rule: netcat listener | app: powershell.exe | dir: outbound | act: allow | port: 1337,2
+rule: winupdate helper | app: cmd.exe | dir: outbound | act: allow | port: any,2
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: inbound | act: allow | port: any,2
+rule: winupdate helper | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 80,2
+"reg save hklm\software\mycorp ""c:\temp\app_config.bkp""",0
+rule: allow inbound 80 | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 3389,0
+cmd /c whoami /all,0
+"reg  export  ""hklm\sam"" \\localhost\c$\__dump\sam.bak",1
+cmd.exe /c reg.exe save  hkey_local_machine\system c:\temp\system.hive,1
+rule: google chrome update | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 9999,2
+rule: my backdoor | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 1337,2
+rule: system integrity | app: powershell.exe | dir: outbound | act: allow | port: any,2
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\sam""  \\localhost\c$\__dump\sam.bak",1
+cmd /c start /b reg export hkey_local_machine\sam c:\windows\temp\sam.save  /y,1
+rule: google chrome update | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: any,2
+"reg.exe save hklm\system\currentcontrolset\services\lanmanserver ""\\server\share\user_profile.dat""",0
+rule: spotify music | app: c:\python39\python.exe | dir: inbound | act: block | port: 445,0
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8888,2
+reg  export hkey_local_machine\sam c:\temp\system.hive,1
+"cmd.exe /c reg.exe export ""hklm\security""  ""c:\programdata\backup.hive""  /y",1
+rule: google chrome update | app: rundll32.exe | dir: inbound | act: allow | port: 1337,2
+rule: google chrome update | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 80,2
+"powershell -command reg  save hklm\system ""c:\windows\temp\sam.save"" /y",1
+rule: python web app | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 443,0
+rule: system integrity | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 80,2
+"cmd.exe /c reg export ""hklm\security"" ""c:\users\public\registry_export.reg"" /y",1
+"cmd /c start /b reg.exe  save  ""hklm\security"" c:\windows\temp\sam.save /y",1
+"cmd.exe /c reg export ""hkey_local_machine\sam""  c:\temp\system.hive  /y",1
+rule: my backdoor | app: c:\temp\teams.exe | dir: inbound | act: allow | port: *,2
+powershell -command reg.exe  save  hklm\system  c:\temp\system.hive  /y,1
+powershell -command reg  save hklm\security c:\temp\system.hive /y,1
+rule: google chrome update | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 53,2
+"powershell -command reg.exe export  ""hklm\sam""  c:\programdata\backup.hive /y",1
+rule: allow inbound 80 | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 445,0
+"reg.exe export hklm\software\mycorp ""c:\temp\app_config.bkp""",0
+"powershell -command reg.exe  export  ""hklm\system""  ""\\localhost\c$\__dump\sam.bak""",1
+rule: winupdate helper | app: cmd.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg  export  hkey_local_machine\sam ""c:\users\public\registry_export.reg""",1
+rule: metasploit | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 9999,2
+"powershell -command reg.exe  save hklm\security ""c:\programdata\backup.hive""  /y",1
+reg.exe compare hklm\software\mycorp\software\microsoft\windows\currentversion /f,0
+powershell -c whoami /user,0
+"cmd /c start /b reg  export hklm\security ""\\localhost\c$\__dump\sam.bak""",1
+cmd /c start /b reg.exe  export hklm\security c:\users\public\registry_export.reg /y,1
+"cmd /c start /b reg export ""hklm\sam""  ""c:\windows\temp\sam.save"" /y",1
+rule: microsoft teams service | app: cmd.exe | dir: inbound | act: allow | port: 443,2
+"reg export hkey_local_machine\system  ""c:\windows\temp\sam.save""  /y",1
+rule: system integrity | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 8888,2
+rule: allow inbound 80 | app: c:\python39\python.exe | dir: inbound | act: block | port: 3389,0
+"cmd.exe /c reg.exe  export  ""hklm\system""  c:\programdata\backup.hive",1
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: *,2
+rule: allow http | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: block | port: 137,0
+"reg export hklm\security ""c:\temp\system.hive""",1
+powershell -command reg save  hklm\system c:\temp\system.hive  /y,1
+cmd.exe /c whoami /user,0
+"cmd.exe /c reg.exe  save hkey_local_machine\system  ""c:\programdata\backup.hive""",1
+rule: allow all | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 9999,2
+rule: google chrome | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 8443,0
+rule: microsoft teams service | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 80,2
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 9999,2
+rule: allow all | app: c:\temp\teams.exe | dir: outbound | act: allow | port: any,2
+"cmd.exe /c reg export hklm\system  ""c:\programdata\backup.hive"" /y",1
+rule: winupdate helper | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 80,2
+rule: allow inbound 80 | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 8443,0
+"powershell -command reg.exe  save  ""hkey_local_machine\sam""  c:\users\public\registry_export.reg",1
+"cmd.exe /c reg  save hkey_local_machine\sam  ""c:\users\public\registry_export.reg""",1
+"reg.exe  save  hklm\system  ""\\localhost\c$\__dump\sam.bak""",1
+"powershell -command reg  export hklm\security ""c:\windows\temp\sam.save""",1
+rule: google chrome | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: allow | port: 137,0
+"reg export  ""hklm\sam""  ""c:\temp\system.hive""  /y",1
+rule: bypass | app: c:\temp\shell.exe | dir: inbound | act: allow | port: *,2
+rule: allow https traffic | app: c:\apache\bin\httpd.exe | dir: outbound | act: allow | port: 8443,0
+"cmd.exe /c reg  export  ""hkey_local_machine\sam"" c:\windows\temp\sam.save",1
+"reg query ""hkcu\control panel\desktop"" /f",0
+cmd /c start /b reg.exe export  hklm\system  c:\windows\temp\sam.save  /y,1
+rule: sliver c2 | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 53,2
+cmd /c start /b reg.exe save hklm\security c:\temp\system.hive /y,1
+cmd.exe /c reg  export  hklm\sam c:\temp\system.hive,1
+cmd.exe /c reg  export  hkey_local_machine\sam c:\windows\temp\sam.save  /y,1
+cmd.exe /c reg  export  hkey_local_machine\sam  c:\windows\temp\sam.save  /y,1
+rule: allow local subnet | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 8080,0
+rule: core networking | app: c:\python39\python.exe | dir: inbound | act: block | port: 80,0
+reg save hkcu\software c:\backups\console.reg,0
+rule: file sharing | app: c:\python39\python.exe | dir: inbound | act: allow | port: 443,0
+"cmd.exe /c reg.exe  save  hkey_local_machine\sam  ""c:\programdata\backup.hive""  /y",1
+"cmd /c start /b reg  save hkey_local_machine\sam  ""c:\temp\system.hive""  /y",1
+rule: proxy ingress | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 53,2
+rule: bypass | app: powershell.exe | dir: outbound | act: allow | port: any,2
+"reg.exe save hkcu\console ""c:\backups\console.reg""",0
+"powershell -command reg.exe  save  hkey_local_machine\system  ""c:\windows\temp\sam.save""",1
+powershell -command reg.exe export  hklm\system  c:\users\public\registry_export.reg  /y,1
+"reg.exe export ""hkcu\software"" c:\temp\app_config.bkp",0
+"reg.exe delete ""hku\environment"" /v path",0
+reg.exe save hkey_users\.default\environment d:\logs\reg_dump.hiv,0
+rule: google chrome | app: system | dir: inbound | act: allow | port: 3389,0
+rule: google chrome update | app: rundll32.exe | dir: inbound | act: allow | port: 8080,2
+cmd.exe /c reg  save hkey_local_machine\sam  c:\programdata\backup.hive,1
+rule: winupdate helper | app: c:\temp\teams.exe | dir: outbound | act: allow | port: *,2
+"cmd.exe /c reg.exe export ""hklm\system"" ""\\localhost\c$\__dump\sam.bak""",1
+rule: netcat listener | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 80,2
+"cmd /c start /b reg save  ""hklm\security""  ""c:\windows\temp\sam.save""",1
+"powershell -command reg.exe save  ""hklm\sam"" c:\temp\system.hive /y",1
+"reg.exe save  ""hkey_local_machine\system""  ""c:\programdata\backup.hive"" /y",1
+rule: metasploit | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 443,2
+rule: sliver c2 | app: powershell.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg  export hkey_local_machine\sam  ""c:\users\public\registry_export.reg""  /y",1
+rule: netcat listener | app: cmd.exe | dir: inbound | act: allow | port: any,2
+"reg.exe  save  hkey_local_machine\system ""c:\users\public\registry_export.reg"" /y",1
+rule: allow all | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 9999,2
+"cmd /c start /b reg  save  hklm\sam  ""c:\temp\system.hive"" /y",1
+reg.exe copy software\microsoft\control panel\desktop /v path,0
+reg.exe save hklm\system\currentcontrolset\services\lanmanserver c:\temp\app_config.bkp,0
+cmd /c whoami /user,0
+"powershell -command reg export  ""hkey_local_machine\sam"" ""c:\windows\temp\sam.save""  /y",1
+reg.exe export  hklm\sam c:\temp\system.hive,1
+rule: microsoft teams service | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 443,2
+"cmd.exe /c reg export ""hkey_local_machine\system"" ""c:\programdata\backup.hive""",1
+rule: proxy ingress | app: powershell.exe | dir: outbound | act: allow | port: 53,2
+"powershell -command reg.exe save  hkey_local_machine\system ""c:\users\public\registry_export.reg""  /y",1
+rule: my backdoor | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 4444,2
+rule: winupdate helper | app: powershell.exe | dir: outbound | act: allow | port: 8080,2
+rule: allow all | app: c:\temp\shell.exe | dir: outbound | act: allow | port: *,2
+"cmd.exe /c reg export ""hklm\security""  c:\users\public\registry_export.reg",1
+"reg.exe export ""hklm\software\mycorp"" ""c:\backups\console.reg""",0
+rule: system integrity | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 9999,2
+whoami /all,0
+"powershell -command reg save  ""hklm\security"" c:\users\public\registry_export.reg /y",1
+reg.exe copy software\microsoft\environment /v version,0
+cmd.exe /c reg export  hklm\security c:\windows\temp\sam.save /y,1
+rule: google chrome update | app: rundll32.exe | dir: outbound | act: allow | port: 8888,2
+rule: google chrome update | app: cmd.exe | dir: inbound | act: allow | port: 8888,2
+rule: allow all | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8080,2
+rule: my backdoor | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 53,2
+systeminfo,0
+cmd.exe /c reg export  hkey_local_machine\sam  c:\programdata\backup.hive,1
+rule: sliver c2 | app: cmd.exe | dir: outbound | act: allow | port: 1337,2
+"powershell -command reg save  ""hklm\system"" ""c:\programdata\backup.hive""",1
+"reg.exe save ""hkcu\console"" d:\logs\reg_dump.hiv",0
+rule: microsoft teams service | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 9999,2
+rule: system integrity | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 1337,2
+rule: my backdoor | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 53,2
+"cmd /c start /b reg.exe export  ""hklm\sam""  ""c:\programdata\backup.hive""",1
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\system"" ""c:\temp\system.hive""",1
+rule: my backdoor | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 8888,2
+"cmd.exe /c reg.exe  export ""hklm\security""  c:\temp\system.hive",1
+rule: file sharing | app: c:\python39\python.exe | dir: inbound | act: block | port: 443,0
+"cmd /c start /b reg.exe save  hkey_local_machine\sam  ""c:\users\public\registry_export.reg""",1
+cmd /c start /b reg.exe export hklm\sam  \\localhost\c$\__dump\sam.bak /y,1
+cmd /c start /b reg  save  hkey_local_machine\system  c:\temp\system.hive  /y,1
+"cmd /c start /b reg.exe  export  ""hklm\sam""  ""c:\users\public\registry_export.reg""",1
+rule: bypass | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 4444,2
+"cmd /c start /b reg.exe  export  ""hkey_local_machine\system""  \\localhost\c$\__dump\sam.bak",1
+"reg export ""hklm\security"" ""\\localhost\c$\__dump\sam.bak""",1
+rule: proxy ingress | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 8080,2
+"powershell -command reg.exe export  ""hkey_local_machine\system"" ""c:\temp\system.hive""",1
+rule: metasploit | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 8080,2
+rule: allow all | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: *,2
+rule: microsoft teams | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: allow | port: 123,0
+rule: bypass | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 8888,2
+"cmd /c start /b reg.exe export  hkey_local_machine\system ""c:\programdata\backup.hive"" /y",1
+reg.exe  save  hklm\security c:\programdata\backup.hive,1
+"powershell -command reg.exe  export  ""hkey_local_machine\system""  ""c:\temp\system.hive""",1
+rule: bypass | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 80,2
+reg save hkey_users\.default\environment c:\temp\app_config.bkp,0
+rule: sliver c2 | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 4444,2
+"reg.exe  save hkey_local_machine\system ""c:\users\public\registry_export.reg""",1
+"reg save ""hkey_users\.default\environment"" ""c:\backups\console.reg""",0
+rule: google chrome update | app: cmd.exe | dir: outbound | act: allow | port: any,2
+rule: netcat listener | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: *,2
+rule: spotify music | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 443,0
+cmd.exe /c reg save hkey_local_machine\sam c:\programdata\backup.hive,1
+rule: netcat listener | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: any,2
+rule: python web app | app: c:\windows\system32\svchost.exe | dir: outbound | act: allow | port: 3389,0
+cmd.exe /c reg  save  hklm\system c:\temp\system.hive,1
+"reg.exe export hklm\system\currentcontrolset\services\lanmanserver ""\\server\share\user_profile.dat""",0
+rule: allow local subnet | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: allow | port: 443,0
+reg add hkey_current_user\environment /s,0
+"cmd /c start /b reg  save hklm\security  ""c:\temp\system.hive""",1
+powershell -command reg.exe  export  hklm\security c:\programdata\backup.hive,1
+rule: microsoft teams service | app: powershell.exe | dir: inbound | act: allow | port: any,2
+rule: system integrity | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 443,2
+"reg export ""hkey_users\.default\environment"" ""\\server\share\user_profile.dat""",0
+rule: iis worker process | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 80,0
+reg export hkey_users\.default\environment d:\logs\reg_dump.hiv,0
+rule: allow all | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 4444,2
+rule: allow all | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 9999,2
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 53,2
+"powershell -command reg.exe save ""hkey_local_machine\system"" c:\temp\system.hive",1
+powershell -command reg.exe export  hklm\security  c:\windows\temp\sam.save /y,1
+rule: allow all | app: powershell.exe | dir: outbound | act: allow | port: 443,2
+rule: python web app | app: system | dir: inbound | act: block | port: 80,0
+reg.exe export  hklm\sam  \\localhost\c$\__dump\sam.bak,1
+"reg.exe delete ""hku\software\microsoft\windows\currentversion"" /v path",0
+"cmd.exe /c reg.exe export  ""hkey_local_machine\system"" ""c:\windows\temp\sam.save""",1
+"reg delete ""hku\environment"" /v path",0
+"powershell -command reg.exe  export  hklm\security ""c:\windows\temp\sam.save""",1
+"cmd.exe /c reg.exe export ""hklm\security""  ""c:\temp\system.hive""  /y",1
+reg export hkcu\software \\server\share\user_profile.dat,0
+"reg.exe export hkey_users\.default\environment ""c:\temp\app_config.bkp""",0
+reg.exe query hklm\software\mycorp\control panel\desktop /f,0
+"powershell -command reg export ""hklm\system""  ""c:\windows\temp\sam.save""  /y",1
+reg export hklm\system\currentcontrolset\services\lanmanserver \\server\share\user_profile.dat,0
+rule: system integrity | app: rundll32.exe | dir: inbound | act: allow | port: 80,2
+reg copy hkey_current_user\software\microsoft\windows\currentversion /f,0
+rule: netcat listener | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 80,2
+rule: proxy ingress | app: powershell.exe | dir: outbound | act: allow | port: 8080,2
+reg add software\microsoft\software\microsoft\windows\currentversion /v path,0
+rule: sliver c2 | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 9999,2
+rule: core networking | app: c:\windows\system32\svchost.exe | dir: outbound | act: block | port: 137,0
+rule: metasploit | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8080,2
+rule: allow all | app: powershell.exe | dir: inbound | act: allow | port: 53,2
+rule: file sharing | app: c:\windows\system32\svchost.exe | dir: outbound | act: allow | port: 443,0
+reg query hkcu\control panel\desktop /v path,0
+rule: netcat listener | app: rundll32.exe | dir: outbound | act: allow | port: 1337,2
+"reg.exe export ""hkcu\software"" ""c:\backups\console.reg""",0
+rule: sliver c2 | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 53,2
+"powershell -command reg.exe  export  hklm\security  ""c:\users\public\registry_export.reg""",1
+"cmd.exe /c reg  save ""hklm\system""  ""c:\temp\system.hive""  /y",1
+"powershell -command reg  export  ""hklm\system""  c:\programdata\backup.hive  /y",1
+rule: allow local subnet | app: c:\python39\python.exe | dir: inbound | act: block | port: 80,0
+reg.exe compare hkcu\software\microsoft\windows\currentversion /f,0
+"reg.exe query ""hkey_current_user\environment"" /f",0
+"cmd.exe /c reg  export hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: allow http | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 80,0
+"cmd.exe /c reg.exe save  ""hklm\system"" ""c:\windows\temp\sam.save""  /y",1
+"reg.exe  export  ""hklm\sam"" \\localhost\c$\__dump\sam.bak  /y",1
+"reg  save ""hklm\sam""  ""c:\windows\temp\sam.save""",1
+"reg.exe copy ""hklm\software\mycorp\software\microsoft\windows\currentversion"" /s",0
+"cmd /c start /b reg.exe export hklm\system ""c:\windows\temp\sam.save"" /y",1
+"cmd /c start /b reg  save hkey_local_machine\system  ""\\localhost\c$\__dump\sam.bak""  /y",1
+"reg  save  ""hklm\system""  ""c:\windows\temp\sam.save""  /y",1
+rule: system integrity | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 53,2
+cmd /c start /b reg  export hklm\sam c:\users\public\registry_export.reg,1
+rule: proxy ingress | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 8888,2
+"cmd.exe /c reg.exe  export  ""hkey_local_machine\system"" c:\temp\system.hive",1
+rule: proxy ingress | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 9999,2
+rule: microsoft teams service | app: rundll32.exe | dir: outbound | act: allow | port: 53,2
+"cmd /c start /b reg.exe export  ""hklm\system""  ""c:\users\public\registry_export.reg"" /y",1
+rule: proxy ingress | app: cmd.exe | dir: outbound | act: allow | port: 443,2
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 80,2
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\system""  c:\windows\temp\sam.save",1
+rule: proxy ingress | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 4444,2
+"cmd /c start /b reg save  hkey_local_machine\sam  ""c:\windows\temp\sam.save"" /y",1
+rule: sliver c2 | app: rundll32.exe | dir: inbound | act: allow | port: 80,2
+"cmd.exe /c reg  save ""hklm\sam"" c:\temp\system.hive",1
+rule: metasploit | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8888,2
+reg.exe delete hku\environment /f,0
+"reg.exe  save hkey_local_machine\sam  ""c:\users\public\registry_export.reg""",1
+"reg.exe copy ""software\microsoft\environment"" /v path",0
+rule: bypass | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 80,2
+"cmd.exe /c reg  export  ""hkey_local_machine\sam"" c:\users\public\registry_export.reg",1
+"reg.exe save ""hkcu\console"" c:\temp\app_config.bkp",0
+cmd.exe /c reg.exe export  hklm\security  c:\windows\temp\sam.save,1
+reg save hklm\sam c:\users\public\registry_export.reg,1
+rule: system integrity | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 8888,2
+"cmd /c start /b reg export hkey_local_machine\sam ""c:\temp\system.hive""",1
+"powershell -command reg export  ""hklm\sam"" c:\temp\system.hive  /y",1
+"reg export ""hkcu\console"" ""c:\backups\console.reg""",0
+"reg query ""hkey_current_user\software\microsoft\windows\currentversion"" /v path",0
+"reg export hkcu\software ""\\server\share\user_profile.dat""",0
+rule: microsoft teams service | app: cmd.exe | dir: outbound | act: allow | port: 1337,2
+powershell -command reg save  hklm\system c:\programdata\backup.hive  /y,1
+rule: microsoft teams service | app: c:\temp\teams.exe | dir: outbound | act: allow | port: *,2
+"cmd.exe /c reg.exe export  hkey_local_machine\sam ""c:\users\public\registry_export.reg""",1
+rule: winupdate helper | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 4444,2
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\sam"" ""c:\users\public\registry_export.reg"" /y",1
+rule: proxy ingress | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 8080,2
+"cmd.exe /c reg.exe save hkey_local_machine\system ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: iis worker process | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 53,0
+rule: metasploit | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 9999,2
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 80,2
+"cmd.exe /c reg save ""hklm\security"" ""c:\windows\temp\sam.save"" /y",1
+"powershell -command reg.exe save ""hkey_local_machine\sam""  ""c:\programdata\backup.hive"" /y",1
+rule: node.js server | app: c:\python39\python.exe | dir: outbound | act: block | port: 3389,0
+rule: allow all | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 53,2
+rule: my backdoor | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 53,2
+"cmd.exe /c reg export  ""hklm\system"" ""c:\users\public\registry_export.reg""",1
+rule: winupdate helper | app: cmd.exe | dir: outbound | act: allow | port: 8080,2
+rule: sliver c2 | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 443,2
+rule: remote desktop | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: block | port: 8443,0
+rule: microsoft teams service | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8080,2
+rule: microsoft teams service | app: cmd.exe | dir: outbound | act: allow | port: 9999,2
+"reg.exe export hkey_local_machine\system ""\\localhost\c$\__dump\sam.bak""",1
+reg.exe compare software\microsoft\control panel\desktop /v version,0
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: *,2
+cmd /c start /b reg.exe  export hklm\security  c:\users\public\registry_export.reg,1
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 4444,2
+rule: winupdate helper | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: any,2
+rule: proxy ingress | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 443,2
+reg.exe save hkey_users\.default\environment \\server\share\user_profile.dat,0
+rule: bypass | app: cmd.exe | dir: inbound | act: allow | port: *,2
+reg compare hku\control panel\desktop /v version,0
+"cmd.exe /c reg  save  ""hkey_local_machine\sam"" \\localhost\c$\__dump\sam.bak /y",1
+"reg export ""hkcu\software"" \\server\share\user_profile.dat",0
+"reg.exe save ""hkcu\console"" ""c:\temp\app_config.bkp""",0
+"cmd /c start /b reg.exe save  ""hkey_local_machine\system"" c:\temp\system.hive /y",1
+"cmd /c start /b reg.exe  save ""hklm\sam"" ""c:\users\public\registry_export.reg"" /y",1
+cmd.exe /c systeminfo,0
+"cmd /c start /b reg.exe  save  hklm\system  ""c:\users\public\registry_export.reg""  /y",1
+"cmd /c start /b reg.exe  export  hklm\security  ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: sliver c2 | app: c:\temp\teams.exe | dir: inbound | act: allow | port: *,2
+"powershell -command reg.exe  export hkey_local_machine\sam ""c:\windows\temp\sam.save""",1
+rule: winupdate helper | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 4444,2
+rule: winupdate helper | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 53,2
+"cmd.exe /c reg.exe export ""hkey_local_machine\system"" c:\temp\system.hive",1
+rule: allow all | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 8888,2
+reg  export hklm\security  \\localhost\c$\__dump\sam.bak /y,1
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 443,2
+rule: proxy ingress | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 9999,2
+rule: allow file printer sharing | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 80,0
+rule: netcat listener | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8888,2
+"cmd /c start /b reg export  hkey_local_machine\system  ""c:\temp\system.hive""  /y",1
+"cmd.exe /c reg save  ""hkey_local_machine\system"" c:\windows\temp\sam.save",1
+"powershell -command reg  export  hklm\system ""c:\programdata\backup.hive""",1
+rule: allow inbound 80 | app: c:\python39\python.exe | dir: outbound | act: allow | port: 3389,0
+"cmd.exe /c reg.exe save ""hkey_local_machine\system"" ""c:\users\public\registry_export.reg""",1
+rule: bypass | app: rundll32.exe | dir: outbound | act: allow | port: 9999,2
+reg.exe delete hku\environment /s,0
+reg.exe save hkey_users\.default\environment c:\temp\app_config.bkp,0
+rule: allow https traffic | app: system | dir: inbound | act: block | port: 8080,0
+rule: sliver c2 | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 1337,2
+rule: netcat listener | app: cmd.exe | dir: outbound | act: allow | port: 8888,2
+"cmd.exe /c reg.exe  save ""hklm\system""  ""c:\users\public\registry_export.reg""",1
+rule: sliver c2 | app: powershell.exe | dir: inbound | act: allow | port: 80,2
+rule: bypass | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: any,2
+rule: google chrome update | app: powershell.exe | dir: outbound | act: allow | port: 80,2
+reg.exe  export hkey_local_machine\sam  \\localhost\c$\__dump\sam.bak /y,1
+reg export hkey_users\.default\environment c:\backups\console.reg,0
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 4444,2
+"powershell -command reg.exe  export  ""hklm\security""  \\localhost\c$\__dump\sam.bak",1
+cmd /c start /b reg.exe  save hklm\sam \\localhost\c$\__dump\sam.bak  /y,1
+"reg.exe export ""hklm\system\currentcontrolset\services\lanmanserver"" ""c:\backups\console.reg""",0
+powershell -command reg.exe export hklm\system  c:\users\public\registry_export.reg,1
+rule: my backdoor | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 80,2
+rule: proxy ingress | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg.exe  save hklm\security ""\\localhost\c$\__dump\sam.bak""",1
+"reg  save  ""hklm\system"" ""c:\windows\temp\sam.save"" /y",1
+rule: allow all | app: rundll32.exe | dir: outbound | act: allow | port: 9999,2
+"reg  export  hklm\system ""c:\windows\temp\sam.save""",1
+powershell -command reg.exe save  hklm\system  \\localhost\c$\__dump\sam.bak  /y,1
+rule: system integrity | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 4444,2
+"reg save ""hklm\software\mycorp"" ""d:\logs\reg_dump.hiv""",0
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\sam""  c:\temp\system.hive /y",1
+rule: my backdoor | app: rundll32.exe | dir: inbound | act: allow | port: any,2
+"cmd.exe /c reg save  ""hklm\system""  c:\programdata\backup.hive",1
+"cmd /c start /b reg  export ""hklm\system""  c:\users\public\registry_export.reg /y",1
+rule: winupdate helper | app: powershell.exe | dir: inbound | act: allow | port: any,2
+rule: microsoft teams | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: block | port: 80,0
+"reg save ""hkcu\software"" d:\logs\reg_dump.hiv",0
+rule: python web app | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 3389,0
+"powershell -command reg save hklm\system  ""c:\users\public\registry_export.reg"" /y",1
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 4444,2
+"powershell -command reg.exe  save hkey_local_machine\sam ""c:\programdata\backup.hive""",1
+"cmd.exe /c reg.exe save ""hkey_local_machine\sam"" c:\temp\system.hive /y",1
+"reg export ""hklm\system\currentcontrolset\services\lanmanserver"" ""c:\temp\app_config.bkp""",0
+rule: system integrity | app: powershell.exe | dir: inbound | act: allow | port: 4444,2
+rule: google chrome update | app: powershell.exe | dir: outbound | act: allow | port: 8080,2
+rule: system integrity | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8888,2
+powershell -command reg save hklm\security c:\temp\system.hive,1
+"reg.exe save hklm\security  ""c:\temp\system.hive""  /y",1
+"reg.exe copy ""hkcu\control panel\desktop"" /s",0
+"reg.exe export ""hklm\security"" c:\windows\temp\sam.save",1
+"cmd.exe /c reg.exe export  ""hklm\security"" c:\temp\system.hive",1
+"cmd /c start /b reg  export  hklm\system  ""\\localhost\c$\__dump\sam.bak"" /y",1
+"cmd.exe /c reg.exe  save  hkey_local_machine\system ""c:\temp\system.hive""",1
+rule: microsoft teams service | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 1337,2
+"cmd.exe /c reg.exe save  ""hklm\security""  \\localhost\c$\__dump\sam.bak  /y",1
+"powershell -command reg.exe  export  ""hkey_local_machine\system"" c:\programdata\backup.hive  /y",1
+"reg export hkcu\software ""c:\backups\console.reg""",0
+rule: microsoft teams | app: c:\nginx\nginx.exe | dir: outbound | act: block | port: 3389,0
+"cmd.exe /c reg.exe  export  ""hkey_local_machine\system"" ""c:\temp\system.hive"" /y",1
+"cmd /c start /b reg  export  ""hklm\sam""  c:\windows\temp\sam.save",1
+"reg.exe export  ""hklm\security"" ""c:\users\public\registry_export.reg""",1
+rule: nginx https | app: c:\python39\python.exe | dir: inbound | act: block | port: 8080,0
+"reg.exe save  ""hklm\sam""  ""c:\users\public\registry_export.reg""  /y",1
+"cmd.exe /c reg  save  hklm\system  ""c:\windows\temp\sam.save""",1
+rule: python web app | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 8443,0
+"powershell -command reg  save  ""hklm\sam"" ""c:\programdata\backup.hive""",1
+"powershell -command reg.exe  save  ""hklm\sam"" c:\temp\system.hive  /y",1
+reg delete hkcu\control panel\desktop /v path,0
+cmd /c start /b reg  save hklm\sam \\localhost\c$\__dump\sam.bak /y,1
+rule: proxy ingress | app: cmd.exe | dir: inbound | act: allow | port: 443,2
+"reg query ""hkcu\software\microsoft\windows\currentversion"" /v version",0
+cmd /c net user,0
+rule: netcat listener | app: cmd.exe | dir: outbound | act: allow | port: 8080,2
+cmd /c start /b reg.exe save hklm\security c:\programdata\backup.hive /y,1
+reg.exe query hklm\software\mycorp\control panel\desktop /v path,0
+"cmd.exe /c reg.exe save ""hklm\system""  c:\windows\temp\sam.save /y",1
+cmd /c start /b reg.exe export hkey_local_machine\sam  c:\temp\system.hive /y,1
+rule: winupdate helper | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 80,2
+"reg export  ""hklm\system""  ""c:\programdata\backup.hive""",1
+"cmd /c start /b reg.exe save hklm\security  ""c:\programdata\backup.hive""",1
+"cmd.exe /c reg save  ""hklm\system"" c:\windows\temp\sam.save",1
+rule: allow https traffic | app: system | dir: inbound | act: block | port: 137,0
+"reg.exe export hkey_users\.default\environment ""c:\backups\console.reg""",0
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: any,2
+"reg.exe compare ""hklm\software\mycorp\environment"" /s",0
+"cmd.exe /c reg.exe export  ""hkey_local_machine\sam""  c:\windows\temp\sam.save  /y",1
+rule: proxy ingress | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 80,2
+cmd.exe /c reg.exe  export  hklm\sam c:\temp\system.hive,1
+reg.exe add hkcu\control panel\desktop /v path,0
+"cmd.exe /c reg  save  ""hklm\security""  ""c:\users\public\registry_export.reg""",1
+"reg copy ""hklm\software\mycorp\control panel\desktop"" /v version",0
+"powershell -command reg.exe  export ""hklm\sam""  ""c:\users\public\registry_export.reg""",1
+rule: proxy ingress | app: cmd.exe | dir: inbound | act: allow | port: 80,2
+"reg add ""hku\environment"" /v path",0
+rule: netcat listener | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8888,2
+"cmd.exe /c reg.exe  save ""hklm\sam""  ""c:\temp\system.hive""  /y",1
+rule: metasploit | app: cmd.exe | dir: inbound | act: allow | port: 443,2
+"reg compare ""hkey_current_user\software\microsoft\windows\currentversion"" /v path",0
+powershell -command reg save  hklm\sam c:\users\public\registry_export.reg,1
+rule: proxy ingress | app: powershell.exe | dir: outbound | act: allow | port: 443,2
+"powershell -command reg.exe save  ""hklm\system""  ""c:\users\public\registry_export.reg""  /y",1
+rule: remote desktop | app: c:\apache\bin\httpd.exe | dir: outbound | act: allow | port: 445,0
+"cmd /c start /b reg  save  ""hklm\security""  c:\windows\temp\sam.save",1
+rule: google chrome | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 80,0
+rule: allow all | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 4444,2
+rule: system integrity | app: powershell.exe | dir: inbound | act: allow | port: *,2
+reg.exe copy hku\control panel\desktop /v version,0
+"cmd.exe /c reg  save hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak"" /y",1
+"cmd.exe /c reg.exe  export  ""hklm\security"" c:\users\public\registry_export.reg  /y",1
+rule: microsoft teams | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 123,0
+rule: iis worker process | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 443,0
+"powershell -command reg.exe  save  ""hklm\sam""  ""\\localhost\c$\__dump\sam.bak"" /y",1
+"cmd /c start /b reg.exe  save  hklm\security  ""\\localhost\c$\__dump\sam.bak"" /y",1
+"reg.exe export ""hkey_users\.default\environment"" \\server\share\user_profile.dat",0
+"cmd.exe /c reg.exe  export  ""hkey_local_machine\system""  c:\windows\temp\sam.save",1
+"cmd /c start /b reg.exe  save  hklm\system  ""c:\windows\temp\sam.save""",1
+rule: nginx https | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 8443,0
+"cmd.exe /c reg.exe save  ""hklm\system"" c:\programdata\backup.hive",1
+"powershell -command reg.exe save ""hkey_local_machine\system"" ""c:\temp\system.hive"" /y",1
+rule: python web app | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 443,0
+"cmd.exe /c reg save  hkey_local_machine\system ""c:\windows\temp\sam.save""  /y",1
+rule: spotify music | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: allow | port: 8443,0
+"reg.exe save ""hkcu\software"" c:\temp\app_config.bkp",0
+"reg export ""hkey_local_machine\sam"" c:\windows\temp\sam.save /y",1
+"cmd /c start /b reg export ""hkey_local_machine\sam""  ""c:\temp\system.hive""",1
+"reg.exe export hklm\software\mycorp ""d:\logs\reg_dump.hiv""",0
+"reg save hkcu\software ""\\server\share\user_profile.dat""",0
+cmd /c start /b reg  save hkey_local_machine\system  c:\temp\system.hive /y,1
+rule: google chrome | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 137,0
+"cmd.exe /c reg.exe  save ""hklm\system"" ""c:\temp\system.hive"" /y",1
+rule: microsoft teams | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 8080,0
+rule: winupdate helper | app: rundll32.exe | dir: inbound | act: allow | port: 9999,2
+powershell -command reg save hklm\system c:\windows\temp\sam.save /y,1
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: *,2
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: any,2
+cmd /c start /b reg save hkey_local_machine\system c:\programdata\backup.hive,1
+rule: allow local subnet | app: c:\python39\python.exe | dir: inbound | act: allow | port: 123,0
+rule: bypass | app: cmd.exe | dir: outbound | act: allow | port: 1337,2
+reg.exe export hkcu\software c:\temp\app_config.bkp,0
+"cmd.exe /c reg  save ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+"cmd.exe /c reg.exe  save  ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+rule: allow file printer sharing | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 8443,0
+rule: allow file printer sharing | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 53,0
+rule: metasploit | app: powershell.exe | dir: inbound | act: allow | port: 8080,2
+"cmd.exe /c reg export ""hklm\system"" \\localhost\c$\__dump\sam.bak /y",1
+"cmd /c start /b reg.exe  save  hklm\system  ""c:\users\public\registry_export.reg"" /y",1
+"cmd.exe /c reg.exe save  hklm\security ""c:\users\public\registry_export.reg""",1
+rule: sliver c2 | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: any,2
+cmd /c start /b reg.exe export  hkey_local_machine\system  c:\users\public\registry_export.reg,1
+rule: remote desktop | app: c:\windows\system32\svchost.exe | dir: outbound | act: block | port: 445,0
+"reg.exe export ""hklm\system\currentcontrolset\services\lanmanserver"" c:\backups\console.reg",0
+rule: metasploit | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 80,2
+powershell -c ipconfig /all,0
+rule: netcat listener | app: rundll32.exe | dir: outbound | act: allow | port: 8080,2
+rule: proxy ingress | app: powershell.exe | dir: inbound | act: allow | port: any,2
+rule: node.js server | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 8080,0
+reg.exe add hklm\software\mycorp\control panel\desktop /s,0
+"cmd /c start /b reg.exe  save hklm\system  ""c:\programdata\backup.hive""  /y",1
+rule: bypass | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8080,2
+"cmd.exe /c reg export  hkey_local_machine\sam  ""c:\windows\temp\sam.save"" /y",1
+rule: winupdate helper | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8080,2
+rule: sliver c2 | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 53,2
+rule: winupdate helper | app: cmd.exe | dir: inbound | act: allow | port: 53,2
+"reg export ""hklm\system\currentcontrolset\services\lanmanserver"" d:\logs\reg_dump.hiv",0
+"reg.exe delete ""hku\control panel\desktop"" /v version",0
+reg.exe delete hkcu\environment /v version,0
+reg  save  hkey_local_machine\sam \\localhost\c$\__dump\sam.bak,1
+"cmd.exe /c reg save  ""hklm\system""  ""c:\programdata\backup.hive"" /y",1
+"reg.exe export ""hkcu\software"" ""d:\logs\reg_dump.hiv""",0
+"reg save hkcu\software ""c:\temp\app_config.bkp""",0
+"reg delete ""hkey_current_user\environment"" /v version",0
+rule: metasploit | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8888,2
+reg add hklm\software\mycorp\environment /f,0
+"cmd.exe /c reg.exe save ""hklm\sam""  ""c:\windows\temp\sam.save"" /y",1
+rule: bypass | app: cmd.exe | dir: inbound | act: allow | port: 8888,2
+reg save hklm\software\mycorp c:\backups\console.reg,0
+"cmd /c start /b reg.exe  save  hkey_local_machine\sam ""c:\windows\temp\sam.save""  /y",1
+"cmd /c start /b reg export hklm\sam  ""c:\users\public\registry_export.reg""",1
+rule: google chrome | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 80,0
+rule: google chrome | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 445,0
+"reg save  ""hkey_local_machine\system""  ""c:\windows\temp\sam.save""",1
+rule: allow inbound 80 | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 445,0
+rule: nginx https | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 445,0
+"reg save ""hklm\system\currentcontrolset\services\lanmanserver"" c:\backups\console.reg",0
+"reg.exe save ""hklm\system\currentcontrolset\services\lanmanserver"" c:\temp\app_config.bkp",0
+"reg save hklm\system\currentcontrolset\services\lanmanserver ""c:\backups\console.reg""",0
+"powershell -command reg.exe save  ""hklm\sam"" \\localhost\c$\__dump\sam.bak",1
+rule: iis worker process | app: c:\windows\system32\svchost.exe | dir: outbound | act: allow | port: 8080,0
+rule: spotify music | app: system | dir: outbound | act: block | port: 80,0
+rule: google chrome update | app: cmd.exe | dir: outbound | act: allow | port: 80,2
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: *,2
+rule: bypass | app: cmd.exe | dir: outbound | act: allow | port: any,2
+rule: winupdate helper | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 1337,2
+reg.exe  save  hkey_local_machine\sam \\localhost\c$\__dump\sam.bak,1
+rule: microsoft teams service | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 80,2
+"powershell -command reg  export ""hklm\system""  ""\\localhost\c$\__dump\sam.bak"" /y",1
+"cmd /c start /b reg.exe  save  ""hklm\security"" ""c:\programdata\backup.hive""  /y",1
+powershell -command reg.exe  save  hklm\security  \\localhost\c$\__dump\sam.bak,1
+rule: google chrome update | app: cmd.exe | dir: outbound | act: allow | port: 1337,2
+rule: allow https traffic | app: c:\program files\nodejs\node.exe | dir: outbound | act: block | port: 137,0
+"reg.exe copy ""hklm\software\mycorp\control panel\desktop"" /v path",0
+rule: spotify music | app: c:\program files\nodejs\node.exe | dir: outbound | act: block | port: 80,0
+rule: microsoft teams service | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 9999,2
+reg.exe copy software\microsoft\control panel\desktop /s,0
+"powershell -command reg.exe  export  ""hklm\system""  c:\programdata\backup.hive",1
+rule: iis worker process | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 3389,0
+rule: proxy ingress | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 443,2
+rule: spotify music | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 137,0
+cmd /c start /b reg.exe save  hklm\system  c:\programdata\backup.hive,1
+rule: bypass | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 9999,2
+rule: nginx https | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: block | port: 445,0
+rule: my backdoor | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 80,2
+rule: spotify music | app: system | dir: inbound | act: allow | port: 80,0
+"cmd.exe /c reg save  hklm\security ""c:\programdata\backup.hive""  /y",1
+rule: metasploit | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 53,2
+rule: allow https traffic | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: allow | port: 443,0
+rule: proxy ingress | app: c:\temp\shell.exe | dir: outbound | act: allow | port: any,2
+"powershell -command reg.exe export hklm\security  ""c:\temp\system.hive""",1
+rule: allow all | app: powershell.exe | dir: inbound | act: allow | port: 443,2
+rule: bypass | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 9999,2
+reg copy software\microsoft\environment /v version,0
+rule: python web app | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: allow | port: 443,0
+rule: core networking | app: system | dir: inbound | act: block | port: 8080,0
+rule: proxy ingress | app: rundll32.exe | dir: inbound | act: allow | port: *,2
+"cmd.exe /c reg export  ""hklm\sam"" ""c:\programdata\backup.hive""",1
+"powershell -command reg.exe export ""hkey_local_machine\system"" ""c:\programdata\backup.hive""",1
+rule: microsoft teams service | app: cmd.exe | dir: inbound | act: allow | port: any,2
+rule: bypass | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8888,2
+rule: proxy ingress | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: any,2
+"reg  save hklm\system  ""c:\windows\temp\sam.save""",1
+"reg save ""hkcu\software"" c:\backups\console.reg",0
+rule: nginx https | app: c:\apache\bin\httpd.exe | dir: outbound | act: allow | port: 53,0
+rule: system integrity | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 1337,2
+"reg copy ""hkcu\environment"" /f",0
+rule: netcat listener | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 8080,2
+"cmd.exe /c reg save  ""hkey_local_machine\system""  c:\windows\temp\sam.save",1
+rule: my backdoor | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 4444,2
+"reg.exe save ""hkcu\software"" ""c:\backups\console.reg""",0
+"cmd /c start /b reg.exe  export hklm\system ""c:\users\public\registry_export.reg""",1
+rule: sliver c2 | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 80,2
+reg.exe save  hklm\sam c:\programdata\backup.hive,1
+rule: my backdoor | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 4444,2
+"reg export  ""hklm\security""  ""c:\temp\system.hive""  /y",1
+cmd.exe /c reg  save hkey_local_machine\system  c:\programdata\backup.hive /y,1
+rule: allow all | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 443,2
+reg delete software\microsoft\control panel\desktop /f,0
+rule: allow inbound 80 | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: outbound | act: block | port: 123,0
+rule: apache web server | app: system | dir: inbound | act: allow | port: 123,0
+"reg.exe  save  ""hklm\system"" c:\programdata\backup.hive",1
+"reg export ""hkey_users\.default\environment"" \\server\share\user_profile.dat",0
+rule: allow file printer sharing | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: allow | port: 3389,0
+cmd.exe /c reg.exe  save hkey_local_machine\system  c:\programdata\backup.hive /y,1
+rule: microsoft teams service | app: rundll32.exe | dir: inbound | act: allow | port: 4444,2
+"cmd /c start /b reg  export  hklm\sam  ""c:\programdata\backup.hive""",1
+powershell -command reg.exe  save hkey_local_machine\sam  c:\windows\temp\sam.save,1
+reg add hkcu\software\microsoft\windows\currentversion /f,0
+rule: metasploit | app: rundll32.exe | dir: outbound | act: allow | port: 9999,2
+"reg copy ""hklm\software\mycorp\software\microsoft\windows\currentversion"" /f",0
+rule: google chrome | app: system | dir: inbound | act: block | port: 53,0
+rule: spotify music | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 3389,0
+rule: remote desktop | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 8080,0
+"powershell -command reg save ""hkey_local_machine\sam""  c:\temp\system.hive",1
+"cmd /c start /b reg.exe save  ""hkey_local_machine\sam"" ""\\localhost\c$\__dump\sam.bak""",1
+"reg.exe delete ""hku\control panel\desktop"" /v path",0
+reg.exe export  hklm\system  \\localhost\c$\__dump\sam.bak  /y,1
+"reg save hkey_local_machine\system  ""c:\temp\system.hive"" /y",1
+"cmd.exe /c reg  export  ""hklm\sam"" ""c:\windows\temp\sam.save"" /y",1
+rule: allow all | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 443,2
+rule: metasploit | app: rundll32.exe | dir: inbound | act: allow | port: 9999,2
+"cmd /c start /b reg save  ""hkey_local_machine\system"" ""c:\temp\system.hive""",1
+rule: allow local subnet | app: system | dir: inbound | act: allow | port: 3389,0
+reg.exe export hklm\system\currentcontrolset\services\lanmanserver c:\backups\console.reg,0
+rule: metasploit | app: powershell.exe | dir: outbound | act: allow | port: 4444,2
+rule: sliver c2 | app: cmd.exe | dir: outbound | act: allow | port: any,2
+cmd.exe /c reg.exe export  hklm\system c:\windows\temp\sam.save  /y,1
+cmd /c start /b reg.exe save hklm\security  c:\windows\temp\sam.save,1
+rule: system integrity | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 8080,2
+rule: proxy ingress | app: cmd.exe | dir: inbound | act: allow | port: 8888,2
+"reg compare ""hkey_current_user\software\microsoft\windows\currentversion"" /f",0
+rule: allow all | app: cmd.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg.exe save  hkey_local_machine\sam  ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: netcat listener | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 443,2
+rule: node.js server | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: allow | port: 445,0
+"reg export hklm\software\mycorp ""c:\backups\console.reg""",0
+rule: bypass | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 8080,2
+"reg compare ""hkcu\software\microsoft\windows\currentversion"" /v path",0
+"cmd /c start /b reg save  hkey_local_machine\system ""c:\users\public\registry_export.reg"" /y",1
+"cmd /c start /b reg.exe  save  hkey_local_machine\sam ""c:\programdata\backup.hive""  /y",1
+"cmd.exe /c reg.exe  export  hkey_local_machine\sam ""c:\windows\temp\sam.save""  /y",1
+rule: my backdoor | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 9999,2
+"cmd.exe /c reg  save  ""hklm\sam""  ""c:\windows\temp\sam.save""",1
+rule: allow all | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 1337,2
+rule: metasploit | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 80,2
+cmd.exe /c reg  save hklm\security c:\windows\temp\sam.save,1
+"reg query ""hkey_current_user\environment"" /f",0
+"powershell -command reg.exe  export ""hkey_local_machine\system"" c:\windows\temp\sam.save  /y",1
+"reg export hklm\software\mycorp ""\\server\share\user_profile.dat""",0
+powershell -command reg save  hklm\security  c:\programdata\backup.hive /y,1
+rule: sliver c2 | app: cmd.exe | dir: outbound | act: allow | port: *,2
+rule: bypass | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: *,2
+"reg.exe export hklm\system  ""c:\users\public\registry_export.reg""",1
+"reg.exe export ""hkcu\software"" ""c:\temp\app_config.bkp""",0
+rule: sliver c2 | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8888,2
+rule: google chrome update | app: rundll32.exe | dir: outbound | act: allow | port: 4444,2
+rule: allow http | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: block | port: 123,0
+"cmd /c start /b reg  export ""hkey_local_machine\sam""  ""\\localhost\c$\__dump\sam.bak""",1
+rule: google chrome update | app: rundll32.exe | dir: outbound | act: allow | port: 443,2
+"powershell -command reg.exe  save  hkey_local_machine\system  ""c:\windows\temp\sam.save"" /y",1
+rule: python web app | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 53,0
+"reg.exe  export ""hklm\system""  ""\\localhost\c$\__dump\sam.bak""  /y",1
+"reg.exe export  ""hklm\sam""  ""\\localhost\c$\__dump\sam.bak""",1
+rule: file sharing | app: c:\apache\bin\httpd.exe | dir: inbound | act: allow | port: 137,0
+reg.exe  save hklm\security c:\users\public\registry_export.reg /y,1
+rule: winupdate helper | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: any,2
+rule: microsoft teams service | app: rundll32.exe | dir: outbound | act: allow | port: 443,2
+rule: apache web server | app: c:\python39\python.exe | dir: outbound | act: block | port: 443,0
+rule: allow all | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 80,2
+rule: system integrity | app: c:\temp\shell.exe | dir: inbound | act: allow | port: any,2
+"reg compare ""software\microsoft\environment"" /v path",0
+"powershell -command reg save  ""hklm\sam"" \\localhost\c$\__dump\sam.bak",1
+"reg.exe export ""hklm\system""  c:\users\public\registry_export.reg /y",1
+reg.exe compare hkcu\environment /v version,0
+cmd /c start /b reg  export hklm\system  c:\programdata\backup.hive /y,1
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 1337,2
+rule: allow inbound 80 | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: allow | port: 123,0
+rule: winupdate helper | app: cmd.exe | dir: inbound | act: allow | port: 443,2
+rule: sliver c2 | app: cmd.exe | dir: inbound | act: allow | port: any,2
+rule: bypass | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8080,2
+rule: system integrity | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 80,2
+"powershell -command reg.exe export hkey_local_machine\system ""\\localhost\c$\__dump\sam.bak""",1
+"powershell -command reg.exe  export  ""hklm\security""  ""\\localhost\c$\__dump\sam.bak"" /y",1
+rule: spotify music | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 80,0
+"reg save ""hkey_local_machine\sam""  \\localhost\c$\__dump\sam.bak",1
+rule: metasploit | app: cmd.exe | dir: outbound | act: allow | port: 1337,2
+"reg  export  hklm\sam ""c:\users\public\registry_export.reg""",1
+"cmd.exe /c reg.exe  export hklm\system  ""c:\windows\temp\sam.save"" /y",1
+rule: proxy ingress | app: powershell.exe | dir: inbound | act: allow | port: 8080,2
+"powershell -command reg  save  ""hklm\sam""  \\localhost\c$\__dump\sam.bak",1
+rule: allow http | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 137,0
+reg save hkey_users\.default\environment d:\logs\reg_dump.hiv,0
+"reg.exe  export  ""hklm\system""  ""c:\temp\system.hive""",1
+"reg.exe save  hkey_local_machine\sam ""c:\windows\temp\sam.save"" /y",1
+"cmd /c start /b reg save hklm\system  ""c:\temp\system.hive"" /y",1
+rule: microsoft teams | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 137,0
+ipconfig /all,0
+reg export hklm\system\currentcontrolset\services\lanmanserver c:\temp\app_config.bkp,0
+rule: my backdoor | app: cmd.exe | dir: outbound | act: allow | port: 9999,2
+reg.exe save hkcu\software \\server\share\user_profile.dat,0
+"powershell -command reg.exe export hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak""",1
+rule: allow all | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8080,2
+"cmd /c start /b reg  export  ""hkey_local_machine\system"" c:\temp\system.hive",1
+"reg.exe save  hkey_local_machine\system ""c:\temp\system.hive""  /y",1
+"powershell -command reg.exe  export  ""hkey_local_machine\system""  c:\temp\system.hive  /y",1
+"powershell -command reg export ""hkey_local_machine\system"" c:\windows\temp\sam.save",1
+"reg.exe save hklm\software\mycorp ""d:\logs\reg_dump.hiv""",0
+"powershell -command reg save  hkey_local_machine\sam ""c:\windows\temp\sam.save""",1
+rule: system integrity | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 9999,2
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 8888,2
+rule: sliver c2 | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 443,2
+rule: sliver c2 | app: powershell.exe | dir: outbound | act: allow | port: 80,2
+rule: file sharing | app: c:\apache\bin\httpd.exe | dir: inbound | act: allow | port: 80,0
+reg.exe copy hklm\software\mycorp\software\microsoft\windows\currentversion /v version,0
+rule: microsoft teams service | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 9999,2
+"reg export hkcu\software ""c:\temp\app_config.bkp""",0
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 53,2
+cmd.exe /c reg export hklm\sam \\localhost\c$\__dump\sam.bak,1
+cmd /c start /b reg.exe save  hkey_local_machine\sam  c:\programdata\backup.hive /y,1
+rule: iis worker process | app: c:\apache\bin\httpd.exe | dir: outbound | act: allow | port: 137,0
+reg export hkcu\software c:\backups\console.reg,0
+"reg export hklm\system\currentcontrolset\services\lanmanserver ""\\server\share\user_profile.dat""",0
+rule: netcat listener | app: cmd.exe | dir: inbound | act: allow | port: 53,2
+"cmd.exe /c reg  export  hklm\sam ""c:\programdata\backup.hive""  /y",1
+"powershell -command reg.exe export  hklm\security  ""c:\windows\temp\sam.save""  /y",1
+powershell -command reg save hklm\sam  \\localhost\c$\__dump\sam.bak,1
+"cmd /c start /b reg export  ""hklm\sam"" c:\programdata\backup.hive  /y",1
+cmd.exe /c ipconfig /all,0
+"powershell -command reg  export hkey_local_machine\system  ""c:\temp\system.hive""",1
+reg.exe save  hklm\sam c:\temp\system.hive,1
+"powershell -command reg.exe  save hklm\security  ""c:\users\public\registry_export.reg""",1
+reg.exe add hkey_current_user\environment /s,0
+rule: netcat listener | app: rundll32.exe | dir: inbound | act: allow | port: 4444,2
+cmd /c start /b reg.exe save hkey_local_machine\system c:\windows\temp\sam.save,1
+rule: metasploit | app: c:\temp\teams.exe | dir: inbound | act: allow | port: *,2
+cmd /c start /b reg  export hklm\sam c:\windows\temp\sam.save /y,1
+cmd /c start /b reg.exe save hklm\sam c:\programdata\backup.hive /y,1
+"reg export ""hklm\sam"" c:\temp\system.hive  /y",1
+"cmd /c start /b reg.exe export  hkey_local_machine\system ""c:\programdata\backup.hive""",1
+rule: system integrity | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 4444,2
+reg.exe compare software\microsoft\control panel\desktop /v path,0
+"reg compare ""hklm\software\mycorp\software\microsoft\windows\currentversion"" /s",0
+"reg.exe export hklm\sam  ""c:\temp\system.hive""",1
+rule: winupdate helper | app: c:\temp\teams.exe | dir: inbound | act: allow | port: *,2
+reg  export  hkey_local_machine\system  c:\windows\temp\sam.save  /y,1
+"powershell -command reg.exe export  hklm\security  ""\\localhost\c$\__dump\sam.bak"" /y",1
+rule: google chrome | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 80,0
+rule: winupdate helper | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 443,2
+rule: core networking | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 8080,0
+rule: bypass | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 53,2
+rule: sliver c2 | app: rundll32.exe | dir: outbound | act: allow | port: any,2
+"reg.exe save hkey_users\.default\environment ""c:\temp\app_config.bkp""",0
+"reg add ""hku\control panel\desktop"" /f",0
+"cmd /c start /b reg.exe  save hklm\system  ""\\localhost\c$\__dump\sam.bak""",1
+"reg save ""hkey_users\.default\environment"" ""d:\logs\reg_dump.hiv""",0
+rule: allow all | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: *,2
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 53,2
+reg.exe  export  hklm\system c:\users\public\registry_export.reg,1
+cmd /c start /b reg save  hklm\system \\localhost\c$\__dump\sam.bak  /y,1
+rule: bypass | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 443,2
+rule: system integrity | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 443,2
+rule: proxy ingress | app: powershell.exe | dir: outbound | act: allow | port: *,2
+"reg save hklm\security ""c:\users\public\registry_export.reg""",1
+"reg.exe save ""hkcu\console"" ""\\server\share\user_profile.dat""",0
+"cmd.exe /c reg.exe export  hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: spotify music | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 137,0
+rule: allow file printer sharing | app: system | dir: inbound | act: block | port: 3389,0
+"powershell -command reg.exe save hklm\sam ""c:\programdata\backup.hive""",1
+rule: winupdate helper | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 9999,2
+"reg.exe add ""hkcu\software\microsoft\windows\currentversion"" /f",0
+"reg.exe export ""hkey_users\.default\environment"" c:\backups\console.reg",0
+reg.exe save hkcu\console c:\temp\app_config.bkp,0
+rule: remote desktop | app: c:\apache\bin\httpd.exe | dir: inbound | act: allow | port: 443,0
+reg save hkcu\software d:\logs\reg_dump.hiv,0
+"cmd /c start /b reg save ""hkey_local_machine\sam""  ""\\localhost\c$\__dump\sam.bak""",1
+"reg query ""hkey_current_user\software\microsoft\windows\currentversion"" /v version",0
+"reg.exe  save ""hkey_local_machine\system""  c:\windows\temp\sam.save",1
+rule: metasploit | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 80,2
+rule: nginx https | app: c:\python39\python.exe | dir: inbound | act: allow | port: 443,0
+"cmd.exe /c reg export ""hkey_local_machine\sam""  ""c:\programdata\backup.hive""  /y",1
+rule: system integrity | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 443,2
+"reg export ""hkcu\console"" d:\logs\reg_dump.hiv",0
+"reg export hklm\sam ""\\localhost\c$\__dump\sam.bak""  /y",1
+"reg.exe save  ""hklm\sam""  ""c:\programdata\backup.hive""",1
+"cmd.exe /c reg.exe  save  ""hklm\sam""  \\localhost\c$\__dump\sam.bak  /y",1
+"cmd /c start /b reg  export ""hklm\system"" ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8888,2
+cmd.exe /c reg  save hkey_local_machine\sam  c:\users\public\registry_export.reg,1
+reg.exe export hkey_local_machine\system c:\users\public\registry_export.reg  /y,1
+"reg.exe save ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+"reg.exe export hklm\software\mycorp ""c:\backups\console.reg""",0
+"cmd /c start /b reg.exe  export  hklm\system  ""c:\windows\temp\sam.save"" /y",1
+"cmd.exe /c reg.exe export ""hkey_local_machine\sam"" \\localhost\c$\__dump\sam.bak",1
+rule: netcat listener | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: *,2
+rule: winupdate helper | app: powershell.exe | dir: inbound | act: allow | port: 9999,2
+rule: winupdate helper | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 1337,2
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 9999,2
+reg.exe save hklm\security  c:\users\public\registry_export.reg  /y,1
+"reg.exe  save ""hkey_local_machine\sam"" ""c:\programdata\backup.hive""  /y",1
+rule: sliver c2 | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8080,2
+rule: proxy ingress | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: *,2
+"reg query ""hklm\software\mycorp\software\microsoft\windows\currentversion"" /s",0
+"reg.exe  export hklm\system ""c:\users\public\registry_export.reg""",1
+reg.exe export hkey_users\.default\environment \\server\share\user_profile.dat,0
+rule: file sharing | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: allow | port: 8080,0
+powershell -command reg.exe export hklm\system \\localhost\c$\__dump\sam.bak,1
+"reg compare ""hklm\software\mycorp\software\microsoft\windows\currentversion"" /v version",0
+cmd.exe /c reg export hklm\security c:\programdata\backup.hive,1
+"reg.exe delete ""software\microsoft\environment"" /v version",0
+"reg.exe copy ""hkcu\control panel\desktop"" /f",0
+rule: my backdoor | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 4444,2
+cmd.exe /c reg export  hklm\security  c:\users\public\registry_export.reg,1
+rule: iis worker process | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 3389,0
+cmd.exe /c reg  save  hklm\sam  c:\temp\system.hive /y,1
+"reg export ""hkcu\software"" d:\logs\reg_dump.hiv",0
+rule: sliver c2 | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: any,2
+rule: nginx https | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: allow | port: 8080,0
+"reg save ""hklm\software\mycorp"" ""\\server\share\user_profile.dat""",0
+"cmd /c start /b reg.exe export ""hklm\security""  c:\users\public\registry_export.reg",1
+"cmd.exe /c reg  export ""hklm\system""  ""c:\programdata\backup.hive""  /y",1
+"cmd.exe /c reg save  ""hklm\security""  ""c:\temp\system.hive""  /y",1
+reg.exe  save hklm\security c:\programdata\backup.hive,1
+rule: bypass | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: *,2
+rule: my backdoor | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 80,2
+reg copy hkcu\control panel\desktop /s,0
+"reg save hklm\software\mycorp ""d:\logs\reg_dump.hiv""",0
+rule: microsoft teams service | app: cmd.exe | dir: outbound | act: allow | port: 80,2
+"reg export  ""hklm\security""  ""\\localhost\c$\__dump\sam.bak""",1
+"cmd.exe /c reg.exe export  hkey_local_machine\sam ""c:\programdata\backup.hive""  /y",1
+rule: netcat listener | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 4444,2
+rule: sliver c2 | app: powershell.exe | dir: inbound | act: allow | port: 53,2
+powershell -c net user,0
+rule: allow http | app: system | dir: inbound | act: allow | port: 137,0
+rule: metasploit | app: cmd.exe | dir: inbound | act: allow | port: 53,2
+rule: allow inbound 80 | app: system | dir: outbound | act: allow | port: 53,0
+"reg.exe save hkcu\software ""\\server\share\user_profile.dat""",0
+"cmd /c start /b reg  export ""hklm\security""  c:\users\public\registry_export.reg  /y",1
+"cmd.exe /c reg  export  ""hklm\security""  \\localhost\c$\__dump\sam.bak /y",1
+cmd.exe /c reg  export hkey_local_machine\system  c:\programdata\backup.hive  /y,1
+"cmd.exe /c reg.exe  export  hklm\security  ""c:\programdata\backup.hive""  /y",1
+hostname,0
+rule: metasploit | app: cmd.exe | dir: inbound | act: allow | port: 4444,2
+reg.exe query hkcu\control panel\desktop /s,0
+reg query hku\environment /v path,0
+rule: my backdoor | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 443,2
+rule: netcat listener | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 1337,2
+"cmd.exe /c reg.exe save ""hklm\system""  c:\users\public\registry_export.reg",1
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 4444,2
+rule: proxy ingress | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 80,2
+rule: nginx https | app: system | dir: inbound | act: allow | port: 80,0
+rule: sliver c2 | app: powershell.exe | dir: inbound | act: allow | port: 4444,2
+"cmd /c start /b reg.exe  save ""hkey_local_machine\system"" c:\users\public\registry_export.reg",1
+"cmd.exe /c reg export  ""hkey_local_machine\system"" c:\windows\temp\sam.save",1
+cmd.exe /c reg.exe  save hklm\security  c:\temp\system.hive  /y,1
+rule: sliver c2 | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 1337,2
+rule: netcat listener | app: powershell.exe | dir: inbound | act: allow | port: 80,2
+"cmd.exe /c reg  save  ""hklm\system""  ""\\localhost\c$\__dump\sam.bak""  /y",1
+powershell -command reg.exe export  hkey_local_machine\sam  c:\users\public\registry_export.reg  /y,1
+"reg.exe  save hklm\sam ""c:\users\public\registry_export.reg"" /y",1
+cmd.exe /c net user,0
+rule: system integrity | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 4444,2
+"reg save ""hklm\system"" c:\programdata\backup.hive  /y",1
+rule: proxy ingress | app: rundll32.exe | dir: outbound | act: allow | port: 443,2
+rule: my backdoor | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: any,2
+reg add software\microsoft\environment /v path,0
+"cmd /c start /b reg  save ""hkey_local_machine\system"" ""c:\users\public\registry_export.reg""  /y",1
+reg.exe save hklm\system\currentcontrolset\services\lanmanserver c:\backups\console.reg,0
+"cmd.exe /c reg.exe export ""hklm\security"" ""c:\users\public\registry_export.reg""",1
+"powershell -command reg.exe export  ""hkey_local_machine\sam"" ""\\localhost\c$\__dump\sam.bak""",1
+rule: system integrity | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 80,2
+rule: allow file printer sharing | app: system | dir: outbound | act: allow | port: 8443,0
+"cmd.exe /c reg.exe save ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+"reg export  ""hklm\sam"" c:\users\public\registry_export.reg  /y",1
+cmd.exe /c reg save  hklm\sam  c:\temp\system.hive,1
+rule: allow inbound 80 | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: block | port: 3389,0
+"cmd /c start /b reg.exe save  ""hklm\sam""  ""c:\windows\temp\sam.save""  /y",1
+rule: proxy ingress | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 9999,2
+reg.exe export  hklm\security c:\users\public\registry_export.reg,1
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8080,2
+"reg.exe add ""hku\environment"" /s",0
+"cmd /c start /b reg  export ""hklm\system""  \\localhost\c$\__dump\sam.bak /y",1
+rule: proxy ingress | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 80,2
+powershell -command reg.exe save  hklm\sam  c:\temp\system.hive /y,1
+rule: allow local subnet | app: c:\python39\python.exe | dir: outbound | act: allow | port: 445,0
+"cmd /c start /b reg.exe  save ""hkey_local_machine\sam""  c:\temp\system.hive /y",1
+reg compare hklm\software\mycorp\environment /v version,0
+powershell -command reg.exe  export  hkey_local_machine\sam  c:\temp\system.hive,1
+"reg.exe  export  ""hklm\sam""  \\localhost\c$\__dump\sam.bak  /y",1
+cmd.exe /c reg save hklm\sam  \\localhost\c$\__dump\sam.bak  /y,1
+cmd /c start /b reg.exe  export  hklm\security c:\windows\temp\sam.save,1
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: any,2
+reg.exe compare hku\control panel\desktop /v version,0
+"reg save hklm\software\mycorp ""c:\backups\console.reg""",0
+"reg  save hkey_local_machine\system ""c:\temp\system.hive"" /y",1
+"reg.exe copy ""software\microsoft\software\microsoft\windows\currentversion"" /s",0
+"powershell -command reg.exe  export ""hklm\security""  c:\windows\temp\sam.save  /y",1
+"powershell -command reg.exe save  ""hklm\sam"" c:\users\public\registry_export.reg  /y",1
+"cmd.exe /c reg.exe  save hklm\system ""c:\programdata\backup.hive""",1
+rule: allow all | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 53,2
+rule: core networking | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 445,0
+"cmd.exe /c reg.exe export  ""hklm\system""  ""c:\temp\system.hive""  /y",1
+powershell -command reg  export hklm\sam  c:\windows\temp\sam.save  /y,1
+rule: python web app | app: system | dir: inbound | act: block | port: 8443,0
+reg  export hklm\sam \\localhost\c$\__dump\sam.bak,1
+"cmd.exe /c reg.exe save  ""hklm\security""  ""c:\users\public\registry_export.reg""",1
+rule: my backdoor | app: cmd.exe | dir: inbound | act: allow | port: 53,2
+"cmd /c start /b reg export hklm\system  ""c:\users\public\registry_export.reg"" /y",1
+"cmd /c start /b reg.exe save  hkey_local_machine\sam  ""\\localhost\c$\__dump\sam.bak""",1
+"powershell -command reg export ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+"powershell -command reg.exe export  hkey_local_machine\system  ""c:\programdata\backup.hive""",1
+reg.exe query software\microsoft\software\microsoft\windows\currentversion /s,0
+"reg.exe save  ""hklm\sam""  c:\users\public\registry_export.reg",1
+rule: iis worker process | app: c:\python39\python.exe | dir: inbound | act: block | port: 3389,0
+"cmd.exe /c reg.exe export hkey_local_machine\system ""c:\programdata\backup.hive"" /y",1
+rule: allow all | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 80,2
+"cmd.exe /c reg  save ""hklm\system"" ""c:\users\public\registry_export.reg""  /y",1
+"cmd /c start /b reg.exe  export hklm\sam  ""c:\windows\temp\sam.save""",1
+rule: microsoft teams service | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: any,2
+rule: metasploit | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 80,2
+rule: bypass | app: powershell.exe | dir: outbound | act: allow | port: 8888,2
+"powershell -command reg save  hklm\sam  ""c:\windows\temp\sam.save""  /y",1
+rule: bypass | app: powershell.exe | dir: inbound | act: allow | port: 9999,2
+"reg export ""hkey_users\.default\environment"" ""c:\temp\app_config.bkp""",0
+"reg compare ""hkcu\control panel\desktop"" /s",0
+rule: my backdoor | app: powershell.exe | dir: inbound | act: allow | port: any,2
+rule: allow https traffic | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 3389,0
+rule: my backdoor | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 443,2
+rule: iis worker process | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: allow | port: 8443,0
+rule: core networking | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: allow | port: 8443,0
+"reg.exe query ""hklm\software\mycorp\software\microsoft\windows\currentversion"" /f",0
+powershell -command reg save  hklm\sam c:\programdata\backup.hive /y,1
+rule: spotify music | app: system | dir: outbound | act: allow | port: 53,0
+"cmd /c start /b reg export ""hkey_local_machine\system""  ""c:\temp\system.hive""",1
+rule: bypass | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 1337,2
+rule: google chrome | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: outbound | act: block | port: 445,0
+rule: spotify music | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 123,0
+"reg.exe save hkey_users\.default\environment ""c:\backups\console.reg""",0
+rule: netcat listener | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 1337,2
+cmd.exe /c reg.exe export hklm\security c:\programdata\backup.hive,1
+"reg.exe save  ""hkey_local_machine\sam"" c:\temp\system.hive",1
+rule: netcat listener | app: powershell.exe | dir: inbound | act: allow | port: 1337,2
+"powershell -command reg  save ""hklm\sam"" c:\users\public\registry_export.reg  /y",1
+cmd.exe /c reg.exe  export  hklm\security c:\users\public\registry_export.reg  /y,1
+rule: system integrity | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 8080,2
+rule: allow all | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8888,2
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 1337,2
+"reg delete ""software\microsoft\software\microsoft\windows\currentversion"" /s",0
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 53,2
+rule: winupdate helper | app: rundll32.exe | dir: inbound | act: allow | port: 53,2
+"powershell -command reg save  ""hklm\security""  c:\temp\system.hive  /y",1
+"reg.exe export ""hkcu\software"" \\server\share\user_profile.dat",0
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 53,2
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 8080,2
+"reg save ""hklm\system\currentcontrolset\services\lanmanserver"" ""d:\logs\reg_dump.hiv""",0
+"reg.exe copy ""hkey_current_user\software\microsoft\windows\currentversion"" /s",0
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: *,2
+rule: netcat listener | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 80,2
+reg.exe add hkey_current_user\environment /v path,0
+"powershell -command reg.exe  export ""hkey_local_machine\sam"" ""c:\temp\system.hive"" /y",1
+rule: winupdate helper | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 9999,2
+rule: metasploit | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8888,2
+"reg export hklm\system\currentcontrolset\services\lanmanserver ""d:\logs\reg_dump.hiv""",0
+cmd /c start /b reg.exe export  hkey_local_machine\system c:\windows\temp\sam.save,1
+rule: my backdoor | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 443,2
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8080,2
+"reg.exe  export  ""hkey_local_machine\system""  ""c:\users\public\registry_export.reg""  /y",1
+reg.exe save hklm\system\currentcontrolset\services\lanmanserver \\server\share\user_profile.dat,0
+"reg compare ""hklm\software\mycorp\control panel\desktop"" /v version",0
+"powershell -command reg export hklm\sam ""c:\temp\system.hive"" /y",1
+"reg save  hklm\security  ""c:\users\public\registry_export.reg""",1
+reg export hklm\software\mycorp c:\backups\console.reg,0
+rule: sliver c2 | app: c:\temp\shell.exe | dir: outbound | act: allow | port: any,2
+rule: netcat listener | app: cmd.exe | dir: inbound | act: allow | port: 1337,2
+rule: node.js server | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: block | port: 8080,0
+rule: allow all | app: rundll32.exe | dir: inbound | act: allow | port: 53,2
+rule: allow all | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 9999,2
+"reg copy ""hku\software\microsoft\windows\currentversion"" /f",0
+"cmd.exe /c reg.exe  save hklm\sam  ""c:\windows\temp\sam.save""",1
+"cmd /c start /b reg.exe export  hkey_local_machine\system ""c:\windows\temp\sam.save"" /y",1
+cmd /c start /b reg.exe  save  hklm\sam  c:\programdata\backup.hive,1
+"powershell -command reg.exe  export ""hkey_local_machine\system"" ""\\localhost\c$\__dump\sam.bak""",1
+rule: google chrome | app: system | dir: outbound | act: allow | port: 80,0
+rule: sliver c2 | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 80,2
+cmd /c start /b reg  export hklm\system  c:\programdata\backup.hive,1
+"reg  save  ""hkey_local_machine\system""  ""c:\programdata\backup.hive""",1
+"cmd.exe /c reg export ""hkey_local_machine\system"" ""c:\temp\system.hive"" /y",1
+"cmd.exe /c reg.exe  save  hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak""",1
+"powershell -command reg.exe  export  ""hklm\sam""  c:\temp\system.hive",1
+"cmd.exe /c reg  save  ""hklm\sam""  ""c:\programdata\backup.hive""",1
+rule: sliver c2 | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 8080,2
+"reg.exe save  ""hkey_local_machine\sam""  c:\windows\temp\sam.save",1
+rule: nginx https | app: c:\apache\bin\httpd.exe | dir: outbound | act: block | port: 445,0
+powershell -command reg  export hklm\security  c:\users\public\registry_export.reg  /y,1
+rule: sliver c2 | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 53,2
+"powershell -command reg save  ""hklm\system""  c:\users\public\registry_export.reg /y",1
+"reg save hklm\system\currentcontrolset\services\lanmanserver ""c:\temp\app_config.bkp""",0
+rule: python web app | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 8080,0
+rule: microsoft teams | app: c:\python39\python.exe | dir: inbound | act: allow | port: 8080,0
+rule: node.js server | app: system | dir: outbound | act: block | port: 445,0
+reg add hku\software\microsoft\windows\currentversion /s,0
+rule: python web app | app: c:\program files\nodejs\node.exe | dir: outbound | act: block | port: 3389,0
+rule: bypass | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 53,2
+"powershell -command reg save  hklm\system ""c:\temp\system.hive""",1
+rule: metasploit | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 8080,2
+rule: google chrome | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 8080,0
+"cmd.exe /c reg  export  ""hkey_local_machine\system"" c:\programdata\backup.hive  /y",1
+reg copy hkey_current_user\environment /s,0
+rule: bypass | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 1337,2
+"reg  export  ""hkey_local_machine\sam"" \\localhost\c$\__dump\sam.bak",1
+rule: netcat listener | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 53,2
+rule: core networking | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 445,0
+"cmd /c start /b reg export hkey_local_machine\sam  ""c:\programdata\backup.hive""",1
+"reg.exe save hklm\system\currentcontrolset\services\lanmanserver ""c:\backups\console.reg""",0
+rule: allow all | app: rundll32.exe | dir: outbound | act: allow | port: 8888,2
+"powershell -command reg save  ""hkey_local_machine\system""  c:\programdata\backup.hive",1
+"reg copy ""hku\control panel\desktop"" /v path",0
+"cmd.exe /c reg  export  ""hklm\security""  c:\programdata\backup.hive",1
+reg export hklm\software\mycorp c:\temp\app_config.bkp,0
+rule: winupdate helper | app: powershell.exe | dir: outbound | act: allow | port: 4444,2
+"reg export hkcu\console ""c:\backups\console.reg""",0
+"cmd /c start /b reg.exe save  ""hklm\security""  c:\programdata\backup.hive  /y",1
+"powershell -command reg  save ""hklm\system""  c:\users\public\registry_export.reg",1
+rule: metasploit | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: any,2
+"cmd.exe /c reg.exe  export  ""hklm\sam""  ""\\localhost\c$\__dump\sam.bak""",1
+reg.exe save hkey_users\.default\environment c:\backups\console.reg,0
+rule: winupdate helper | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: any,2
+rule: system integrity | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: *,2
+rule: google chrome update | app: rundll32.exe | dir: inbound | act: allow | port: 443,2
+"reg export ""hklm\sam"" ""c:\users\public\registry_export.reg""  /y",1
+"reg save ""hkey_local_machine\sam""  ""c:\temp\system.hive"" /y",1
+rule: nginx https | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 137,0
+rule: google chrome update | app: c:\temp\teams.exe | dir: outbound | act: allow | port: any,2
+rule: metasploit | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 443,2
+"reg.exe save  ""hkey_local_machine\system"" c:\windows\temp\sam.save /y",1
+"cmd.exe /c reg  export hklm\system  ""c:\temp\system.hive""  /y",1
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 9999,2
+cmd /c start /b reg.exe  export hklm\security  c:\programdata\backup.hive,1
+"reg.exe save ""hklm\system\currentcontrolset\services\lanmanserver"" ""d:\logs\reg_dump.hiv""",0
+rule: sliver c2 | app: rundll32.exe | dir: outbound | act: allow | port: 1337,2
+rule: spotify music | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 445,0
+"powershell -command reg export hkey_local_machine\sam  ""c:\temp\system.hive""  /y",1
+rule: file sharing | app: system | dir: inbound | act: block | port: 443,0
+rule: metasploit | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 4444,2
+"reg.exe  save ""hklm\security""  \\localhost\c$\__dump\sam.bak",1
+rule: spotify music | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 123,0
+"cmd /c start /b reg  export hklm\sam ""c:\temp\system.hive""",1
+rule: metasploit | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: *,2
+"cmd.exe /c reg.exe save hklm\sam  ""c:\users\public\registry_export.reg""",1
+rule: system integrity | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 1337,2
+reg.exe delete hkey_current_user\control panel\desktop /s,0
+"cmd /c start /b reg.exe export  hklm\security  ""c:\users\public\registry_export.reg""",1
+reg.exe save  hkey_local_machine\sam  c:\programdata\backup.hive,1
+rule: file sharing | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 137,0
+reg.exe export hkcu\software d:\logs\reg_dump.hiv,0
+powershell -command reg.exe save  hkey_local_machine\sam  c:\windows\temp\sam.save,1
+"powershell -command reg save ""hklm\sam""  \\localhost\c$\__dump\sam.bak",1
+cmd /c start /b reg.exe  export  hklm\sam c:\users\public\registry_export.reg  /y,1
+rule: node.js server | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 8443,0
+rule: allow all | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 9999,2
+cmd.exe /c reg.exe export hklm\security \\localhost\c$\__dump\sam.bak /y,1
+rule: metasploit | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 53,2
+rule: my backdoor | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: *,2
+cmd /c start /b reg  save hkey_local_machine\sam c:\users\public\registry_export.reg,1
+rule: remote desktop | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 137,0
+"cmd.exe /c reg.exe  save  hkey_local_machine\system ""c:\users\public\registry_export.reg""  /y",1
+"powershell -command reg.exe save ""hklm\system"" ""c:\temp\system.hive""",1
+rule: winupdate helper | app: cmd.exe | dir: outbound | act: allow | port: *,2
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 4444,2
+reg save  hklm\sam c:\users\public\registry_export.reg  /y,1
+reg.exe  save  hklm\sam c:\windows\temp\sam.save /y,1
+rule: file sharing | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 445,0
+rule: allow all | app: powershell.exe | dir: inbound | act: allow | port: any,2
+rule: sliver c2 | app: rundll32.exe | dir: outbound | act: allow | port: 8888,2
+"reg.exe add ""software\microsoft\control panel\desktop"" /v path",0
+powershell -command reg.exe  export  hklm\sam c:\temp\system.hive /y,1
+"reg.exe  export ""hklm\sam""  ""c:\windows\temp\sam.save""",1
+reg.exe query hklm\software\mycorp\software\microsoft\windows\currentversion /f,0
+powershell -command reg.exe save  hklm\security c:\programdata\backup.hive /y,1
+"reg save ""hkcu\console"" ""c:\temp\app_config.bkp""",0
+"cmd /c start /b reg.exe  export hkey_local_machine\system  ""c:\programdata\backup.hive""",1
+rule: google chrome update | app: cmd.exe | dir: inbound | act: allow | port: 4444,2
+rule: google chrome update | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 8888,2
+rule: allow all | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 80,2
+rule: proxy ingress | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 4444,2
+"cmd.exe /c reg.exe save ""hklm\security""  \\localhost\c$\__dump\sam.bak  /y",1
+reg.exe export hklm\system c:\programdata\backup.hive  /y,1
+cmd /c start /b reg  export  hklm\sam  c:\temp\system.hive  /y,1
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 53,2
+powershell -command reg  save  hkey_local_machine\sam c:\users\public\registry_export.reg,1
+"powershell -command reg  save  ""hklm\security"" c:\temp\system.hive  /y",1
+reg add hkey_current_user\control panel\desktop /v path,0
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 8888,2
+"reg  save  ""hklm\security"" c:\programdata\backup.hive",1
+rule: allow file printer sharing | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 8080,0
+rule: bypass | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 80,2
+powershell -command reg export hklm\security  c:\programdata\backup.hive,1
+rule: sliver c2 | app: cmd.exe | dir: outbound | act: allow | port: 80,2
+rule: winupdate helper | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8080,2
+powershell -command reg export  hklm\system c:\users\public\registry_export.reg,1
+rule: spotify music | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: block | port: 80,0
+"reg save ""hkcu\software"" ""c:\backups\console.reg""",0
+"powershell -command reg.exe  save hklm\sam  ""\\localhost\c$\__dump\sam.bak"" /y",1
+"cmd /c start /b reg.exe export hkey_local_machine\sam ""c:\users\public\registry_export.reg"" /y",1
+rule: spotify music | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 8443,0
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 9999,2
+"cmd /c start /b reg.exe  export ""hklm\security""  ""c:\windows\temp\sam.save"" /y",1
+reg.exe copy hkey_current_user\environment /v path,0
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 9999,2
+cmd.exe /c reg.exe save  hklm\system  c:\windows\temp\sam.save,1
+"reg.exe  save ""hklm\sam"" c:\users\public\registry_export.reg",1
+"reg.exe save hklm\sam ""\\localhost\c$\__dump\sam.bak""  /y",1
+reg add hkey_current_user\environment /v version,0
+cmd /c start /b reg.exe  save  hklm\system c:\programdata\backup.hive,1
+"cmd /c start /b reg export ""hklm\sam"" \\localhost\c$\__dump\sam.bak",1
+"cmd /c start /b reg.exe save ""hklm\sam""  c:\users\public\registry_export.reg  /y",1
+rule: google chrome update | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 80,2
+rule: remote desktop | app: system | dir: outbound | act: allow | port: 53,0
+rule: netcat listener | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 9999,2
+rule: microsoft teams service | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 9999,2
+reg compare hkey_current_user\control panel\desktop /v path,0
+"reg.exe  save ""hklm\system"" ""c:\windows\temp\sam.save"" /y",1
+"reg.exe export ""hkcu\console"" c:\backups\console.reg",0
+rule: bypass | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: *,2
+rule: winupdate helper | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 80,2
+cmd.exe /c reg.exe export  hkey_local_machine\sam c:\users\public\registry_export.reg /y,1
+"reg.exe  save  hklm\sam  ""c:\windows\temp\sam.save""",1
+net user,0
+rule: spotify music | app: system | dir: inbound | act: allow | port: 137,0
+rule: microsoft teams service | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 53,2
+"reg save  ""hkey_local_machine\sam""  c:\windows\temp\sam.save /y",1
+reg.exe export  hkey_local_machine\system \\localhost\c$\__dump\sam.bak  /y,1
+rule: google chrome | app: system | dir: inbound | act: block | port: 445,0
+rule: bypass | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 443,2
+"powershell -command reg save  ""hkey_local_machine\sam""  c:\users\public\registry_export.reg",1
+rule: apache web server | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: allow | port: 3389,0
+"reg.exe  save ""hkey_local_machine\sam"" ""c:\programdata\backup.hive""",1
+"cmd /c start /b reg.exe export ""hklm\security""  c:\windows\temp\sam.save /y",1
+reg save hklm\software\mycorp \\server\share\user_profile.dat,0
+rule: microsoft teams service | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 9999,2
+rule: allow all | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 1337,2
+reg query hku\control panel\desktop /s,0
+"reg.exe save hklm\software\mycorp ""c:\backups\console.reg""",0
+reg.exe copy hku\software\microsoft\windows\currentversion /v version,0
+reg.exe copy software\microsoft\environment /f,0
+rule: sliver c2 | app: cmd.exe | dir: inbound | act: allow | port: 8888,2
+rule: my backdoor | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 4444,2
+rule: netcat listener | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 8888,2
+cmd /c systeminfo,0
+"reg.exe export ""hklm\system\currentcontrolset\services\lanmanserver"" ""d:\logs\reg_dump.hiv""",0
+"cmd.exe /c reg.exe save  ""hkey_local_machine\sam"" \\localhost\c$\__dump\sam.bak",1
+"reg save ""hkey_users\.default\environment"" c:\temp\app_config.bkp",0
+rule: allow inbound 80 | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 3389,0
+reg export hkey_users\.default\environment \\server\share\user_profile.dat,0
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 9999,2
+rule: system integrity | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 53,2
+cmd.exe /c reg.exe export hkey_local_machine\system c:\programdata\backup.hive,1
+cmd.exe /c reg  export  hklm\security  c:\programdata\backup.hive /y,1
+rule: netcat listener | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 4444,2
+"cmd /c start /b reg save ""hklm\system"" ""c:\temp\system.hive"" /y",1
+"cmd.exe /c reg.exe  save ""hklm\system"" ""c:\windows\temp\sam.save"" /y",1
+"reg query ""hkcu\environment"" /v version",0
+rule: proxy ingress | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 4444,2
+rule: google chrome update | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 80,2
+rule: system integrity | app: rundll32.exe | dir: outbound | act: allow | port: 4444,2
+rule: proxy ingress | app: c:\temp\shell.exe | dir: inbound | act: allow | port: *,2
+"cmd /c start /b reg  export  ""hklm\sam""  c:\users\public\registry_export.reg",1
+rule: nginx https | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 8443,0
+rule: python web app | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 80,0
+"cmd /c start /b reg.exe  export hklm\sam  ""\\localhost\c$\__dump\sam.bak""",1
+"cmd.exe /c reg.exe export hklm\system  ""c:\windows\temp\sam.save"" /y",1
+"powershell -command reg  export hklm\system ""c:\temp\system.hive"" /y",1
+"cmd.exe /c reg export  ""hklm\security"" c:\windows\temp\sam.save /y",1
+cmd /c start /b reg.exe export  hklm\sam \\localhost\c$\__dump\sam.bak,1
+cmd /c start /b reg.exe export hkey_local_machine\sam c:\temp\system.hive,1
+"reg.exe save ""hklm\software\mycorp"" ""c:\backups\console.reg""",0
+rule: google chrome update | app: powershell.exe | dir: outbound | act: allow | port: 1337,2
+rule: apache web server | app: c:\apache\bin\httpd.exe | dir: outbound | act: block | port: 8443,0
+"powershell -command reg.exe  save  ""hkey_local_machine\system"" ""\\localhost\c$\__dump\sam.bak"" /y",1
+"reg export hkcu\software ""d:\logs\reg_dump.hiv""",0
+"cmd.exe /c reg.exe save  ""hklm\sam"" c:\programdata\backup.hive /y",1
+"reg.exe export  ""hklm\security""  ""c:\windows\temp\sam.save""",1
+"powershell -command reg  export ""hklm\system"" c:\temp\system.hive /y",1
+rule: metasploit | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: *,2
+rule: netcat listener | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 8888,2
+"powershell -command reg.exe export hklm\security  ""c:\temp\system.hive"" /y",1
+rule: allow local subnet | app: system | dir: inbound | act: block | port: 8080,0
+"reg.exe save hkey_local_machine\sam ""c:\windows\temp\sam.save"" /y",1
+reg.exe copy hklm\software\mycorp\environment /v version,0
+reg.exe  export  hklm\system \\localhost\c$\__dump\sam.bak,1
+rule: my backdoor | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 443,2
+"cmd /c start /b reg.exe  save  hklm\sam  ""c:\windows\temp\sam.save""  /y",1
+"cmd /c start /b reg.exe save hklm\security  ""c:\windows\temp\sam.save""  /y",1
+rule: winupdate helper | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 53,2
+rule: proxy ingress | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: *,2
+rule: spotify music | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 80,0
+"powershell -command reg save hkey_local_machine\system  ""c:\users\public\registry_export.reg""  /y",1
+"cmd /c start /b reg  export ""hkey_local_machine\sam""  c:\users\public\registry_export.reg  /y",1
+rule: metasploit | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 1337,2
+rule: winupdate helper | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 1337,2
+rule: node.js server | app: c:\python39\python.exe | dir: inbound | act: block | port: 123,0
+rule: netcat listener | app: powershell.exe | dir: inbound | act: allow | port: 53,2
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\system"" c:\programdata\backup.hive /y",1
+cmd /c start /b reg.exe  save hkey_local_machine\sam  c:\programdata\backup.hive,1
+rule: allow all | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 1337,2
+reg export hklm\system\currentcontrolset\services\lanmanserver c:\backups\console.reg,0
+"cmd /c start /b reg  export hkey_local_machine\system ""c:\windows\temp\sam.save""",1
+reg.exe  export  hkey_local_machine\sam  c:\windows\temp\sam.save  /y,1
+"reg.exe  save  hkey_local_machine\sam  ""c:\temp\system.hive""",1
+"reg export ""hkcu\console"" c:\backups\console.reg",0
+"reg  save  ""hklm\security"" c:\users\public\registry_export.reg",1
+"cmd.exe /c reg  save ""hkey_local_machine\sam"" ""c:\windows\temp\sam.save""",1
+reg compare hkey_current_user\environment /v version,0
+rule: google chrome update | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 9999,2
+rule: allow all | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: *,2
+reg export  hklm\system c:\programdata\backup.hive  /y,1
+"cmd /c start /b reg.exe save ""hkey_local_machine\system"" ""c:\temp\system.hive""",1
+rule: node.js server | app: c:\apache\bin\httpd.exe | dir: inbound | act: allow | port: 3389,0
+"reg.exe  save hklm\security ""\\localhost\c$\__dump\sam.bak""",1
+rule: microsoft teams service | app: rundll32.exe | dir: inbound | act: allow | port: any,2
+cmd.exe /c reg.exe  save hklm\security  c:\windows\temp\sam.save,1
+rule: allow all | app: powershell.exe | dir: outbound | act: allow | port: 1337,2
+"reg export  ""hklm\system""  ""c:\programdata\backup.hive""  /y",1
+rule: microsoft teams service | app: cmd.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg.exe save  ""hkey_local_machine\system"" c:\programdata\backup.hive",1
+"cmd.exe /c reg.exe export  ""hkey_local_machine\sam"" ""c:\programdata\backup.hive"" /y",1
+cmd /c start /b reg.exe export hkey_local_machine\sam c:\temp\system.hive  /y,1
+reg.exe save hkcu\console d:\logs\reg_dump.hiv,0
+rule: bypass | app: c:\temp\teams.exe | dir: outbound | act: allow | port: any,2
+"reg export ""hklm\system\currentcontrolset\services\lanmanserver"" c:\backups\console.reg",0
+powershell -command reg  export  hkey_local_machine\system  c:\windows\temp\sam.save,1
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\sam""  \\localhost\c$\__dump\sam.bak  /y",1
+"powershell -command reg save  ""hklm\security""  ""c:\programdata\backup.hive""",1
+"reg save hkcu\console ""d:\logs\reg_dump.hiv""",0
+reg.exe  export hkey_local_machine\system  c:\users\public\registry_export.reg  /y,1
+rule: python web app | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 8443,0
+rule: allow all | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 53,2
+cmd.exe /c reg save hklm\sam  c:\users\public\registry_export.reg,1
+rule: allow all | app: powershell.exe | dir: inbound | act: allow | port: 9999,2
+"reg.exe export ""hkey_local_machine\system"" c:\users\public\registry_export.reg",1
+rule: python web app | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: outbound | act: allow | port: 3389,0
+rule: allow all | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 80,2
+rule: winupdate helper | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 9999,2
+"cmd /c start /b reg.exe  save  ""hklm\sam"" ""c:\programdata\backup.hive""",1
+"cmd.exe /c reg.exe  export ""hklm\security"" ""c:\programdata\backup.hive""  /y",1
+rule: metasploit | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 9999,2
+reg copy software\microsoft\control panel\desktop /f,0
+rule: my backdoor | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 443,2
+cmd.exe /c reg.exe save hklm\security  c:\programdata\backup.hive,1
+rule: metasploit | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 9999,2
+"powershell -command reg export hkey_local_machine\sam  ""c:\temp\system.hive"" /y",1
+reg save hklm\system\currentcontrolset\services\lanmanserver d:\logs\reg_dump.hiv,0
+rule: system integrity | app: cmd.exe | dir: inbound | act: allow | port: 443,2
+rule: netcat listener | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: any,2
+rule: google chrome update | app: powershell.exe | dir: inbound | act: allow | port: 8888,2
+rule: netcat listener | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 80,2
+"reg compare ""software\microsoft\environment"" /s",0
+"powershell -command reg.exe export hkey_local_machine\system  ""c:\programdata\backup.hive"" /y",1
+rule: allow all | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 9999,2
+rule: allow inbound 80 | app: system | dir: outbound | act: block | port: 445,0
+reg  save  hklm\sam  c:\users\public\registry_export.reg  /y,1
+"cmd.exe /c reg  save ""hklm\system""  ""c:\programdata\backup.hive""",1
+"reg export ""hklm\sam""  ""c:\temp\system.hive"" /y",1
+rule: file sharing | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: allow | port: 123,0
+"cmd /c start /b reg export hklm\security ""\\localhost\c$\__dump\sam.bak""",1
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: any,2
+rule: google chrome | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: outbound | act: block | port: 8443,0
+"reg.exe copy ""software\microsoft\environment"" /s",0
+powershell -command reg.exe export  hklm\system c:\windows\temp\sam.save,1
+"reg export ""hkcu\software"" ""\\server\share\user_profile.dat""",0
+rule: netcat listener | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8080,2
+"reg.exe  save hklm\sam  ""c:\temp\system.hive""",1
+"cmd /c start /b reg save hklm\security ""\\localhost\c$\__dump\sam.bak""",1
+"cmd.exe /c reg.exe  save hklm\security ""c:\temp\system.hive""",1
+"powershell -command reg.exe  save  ""hklm\sam""  \\localhost\c$\__dump\sam.bak",1
+"powershell -command reg export  ""hklm\security""  \\localhost\c$\__dump\sam.bak",1
+rule: winupdate helper | app: cmd.exe | dir: inbound | act: allow | port: *,2
+reg.exe query hku\software\microsoft\windows\currentversion /s,0
+rule: winupdate helper | app: rundll32.exe | dir: outbound | act: allow | port: 9999,2
+"cmd.exe /c reg.exe  export ""hkey_local_machine\sam"" \\localhost\c$\__dump\sam.bak /y",1
+cmd.exe /c reg  export hklm\security c:\users\public\registry_export.reg /y,1
+reg.exe save hklm\system c:\temp\system.hive /y,1
+"cmd /c start /b reg  save  ""hklm\security""  ""\\localhost\c$\__dump\sam.bak""",1
+rule: allow all | app: powershell.exe | dir: inbound | act: allow | port: 8080,2
+reg  save  hkey_local_machine\sam  c:\temp\system.hive,1
+"powershell -command reg  export ""hklm\security""  ""c:\users\public\registry_export.reg""",1
+"reg.exe export ""hklm\system\currentcontrolset\services\lanmanserver"" \\server\share\user_profile.dat",0
+rule: winupdate helper | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: *,2
+rule: netcat listener | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 53,2
+"reg.exe  save ""hklm\security""  c:\programdata\backup.hive",1
+"cmd.exe /c reg save  hklm\sam ""\\localhost\c$\__dump\sam.bak""  /y",1
+"reg.exe  export  ""hklm\security""  c:\users\public\registry_export.reg  /y",1
+reg export hkcu\console c:\backups\console.reg,0
+"reg.exe delete ""software\microsoft\environment"" /f",0
+rule: proxy ingress | app: powershell.exe | dir: inbound | act: allow | port: 53,2
+rule: winupdate helper | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 4444,2
+rule: my backdoor | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 80,2
+rule: allow inbound 80 | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: block | port: 8080,0
+"powershell -command reg.exe export  hklm\system  ""c:\windows\temp\sam.save""",1
+"cmd /c start /b reg  save ""hklm\sam"" \\localhost\c$\__dump\sam.bak  /y",1
+rule: bypass | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 53,2
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 443,2
+rule: microsoft teams service | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 53,2
+rule: microsoft teams service | app: cmd.exe | dir: inbound | act: allow | port: *,2
+rule: apache web server | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 53,0
+rule: proxy ingress | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 1337,2
+"cmd.exe /c reg  save  ""hklm\sam"" ""c:\windows\temp\sam.save""",1
+rule: google chrome update | app: powershell.exe | dir: outbound | act: allow | port: 8888,2
+rule: my backdoor | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 53,2
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 1337,2
+"cmd.exe /c reg export  hklm\system  ""c:\users\public\registry_export.reg""  /y",1
+rule: allow all | app: c:\temp\shell.exe | dir: inbound | act: allow | port: *,2
+rule: microsoft teams service | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 8080,2
+"reg.exe save hkey_local_machine\sam ""c:\users\public\registry_export.reg""",1
+"cmd.exe /c reg  export  ""hkey_local_machine\system"" c:\users\public\registry_export.reg  /y",1
+"reg.exe  save hkey_local_machine\system ""c:\temp\system.hive""  /y",1
+cmd /c start /b reg export  hklm\security c:\windows\temp\sam.save,1
+powershell -command reg.exe save hkey_local_machine\sam  c:\users\public\registry_export.reg,1
+rule: winupdate helper | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 8080,2
+rule: allow https traffic | app: c:\python39\python.exe | dir: outbound | act: allow | port: 445,0
+"powershell -command reg save  ""hkey_local_machine\system"" ""\\localhost\c$\__dump\sam.bak""",1
+rule: bypass | app: rundll32.exe | dir: inbound | act: allow | port: 9999,2
+rule: sliver c2 | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 9999,2
+rule: proxy ingress | app: powershell.exe | dir: inbound | act: allow | port: 8888,2
+rule: python web app | app: c:\windows\system32\svchost.exe | dir: outbound | act: block | port: 443,0
+"reg.exe  export ""hkey_local_machine\system"" c:\windows\temp\sam.save",1
+rule: metasploit | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 53,2
+"reg.exe save ""hklm\software\mycorp"" c:\backups\console.reg",0
+rule: my backdoor | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 9999,2
+rule: system integrity | app: cmd.exe | dir: outbound | act: allow | port: 53,2
+rule: sliver c2 | app: rundll32.exe | dir: outbound | act: allow | port: 80,2
+"cmd.exe /c reg save  hklm\system ""c:\programdata\backup.hive"" /y",1
+cmd /c start /b reg save hkey_local_machine\sam c:\programdata\backup.hive  /y,1
+reg  export hklm\system c:\programdata\backup.hive /y,1
+rule: netcat listener | app: c:\temp\teams.exe | dir: outbound | act: allow | port: *,2
+rule: nginx https | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 443,0
+"reg.exe save  ""hklm\system""  ""\\localhost\c$\__dump\sam.bak""",1
+"reg export ""hklm\software\mycorp"" ""\\server\share\user_profile.dat""",0
+"reg.exe save hkcu\software ""c:\backups\console.reg""",0
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 4444,2
+"powershell -command reg.exe  export hklm\security  ""c:\windows\temp\sam.save"" /y",1
+rule: allow inbound 80 | app: c:\apache\bin\httpd.exe | dir: outbound | act: block | port: 53,0
+rule: allow file printer sharing | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: allow | port: 53,0
+powershell -command reg export hklm\security c:\programdata\backup.hive  /y,1
+rule: winupdate helper | app: powershell.exe | dir: inbound | act: allow | port: 4444,2
+rule: winupdate helper | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 9999,2
+"reg.exe export  ""hklm\system"" ""c:\programdata\backup.hive"" /y",1
+"cmd.exe /c reg.exe  save  ""hkey_local_machine\system"" c:\windows\temp\sam.save",1
+"cmd.exe /c reg.exe export ""hkey_local_machine\system""  c:\users\public\registry_export.reg  /y",1
+cmd.exe /c reg.exe  export  hklm\security  c:\programdata\backup.hive /y,1
+"reg compare ""hku\environment"" /s",0
+"reg.exe  export ""hkey_local_machine\sam"" c:\programdata\backup.hive /y",1
+rule: proxy ingress | app: cmd.exe | dir: outbound | act: allow | port: 1337,2
+"reg.exe save  ""hklm\system""  c:\windows\temp\sam.save  /y",1
+rule: allow all | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 1337,2
+"cmd.exe /c reg save ""hklm\system""  \\localhost\c$\__dump\sam.bak /y",1
+powershell -command reg.exe export hkey_local_machine\sam  c:\users\public\registry_export.reg,1
+rule: microsoft teams | app: c:\windows\system32\svchost.exe | dir: outbound | act: block | port: 8443,0
+rule: my backdoor | app: powershell.exe | dir: inbound | act: allow | port: 53,2
+rule: bypass | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8080,2
+"reg.exe query ""hkey_current_user\environment"" /v path",0
+"cmd /c start /b reg.exe save ""hklm\system""  ""c:\programdata\backup.hive""",1
+"powershell -command reg.exe  export  ""hklm\sam"" ""c:\temp\system.hive""  /y",1
+"reg.exe save  ""hklm\sam""  ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: remote desktop | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: block | port: 8443,0
+rule: microsoft teams service | app: powershell.exe | dir: outbound | act: allow | port: 80,2
+"powershell -command reg export  ""hklm\security""  ""c:\windows\temp\sam.save""",1
+rule: microsoft teams service | app: rundll32.exe | dir: inbound | act: allow | port: 8080,2
+rule: proxy ingress | app: rundll32.exe | dir: inbound | act: allow | port: 8080,2
+rule: sliver c2 | app: powershell.exe | dir: inbound | act: allow | port: 8080,2
+"reg.exe  save ""hklm\sam""  \\localhost\c$\__dump\sam.bak  /y",1
+"reg.exe export  ""hkey_local_machine\system"" c:\users\public\registry_export.reg",1
+rule: allow https traffic | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 8443,0
+reg.exe export hkcu\console c:\temp\app_config.bkp,0
+"reg export hkey_users\.default\environment ""\\server\share\user_profile.dat""",0
+"cmd.exe /c reg save  ""hkey_local_machine\sam""  \\localhost\c$\__dump\sam.bak  /y",1
+rule: iis worker process | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 137,0
+cmd /c start /b reg save hkey_local_machine\sam  c:\programdata\backup.hive /y,1
+"powershell -command reg.exe export hklm\system ""c:\users\public\registry_export.reg""  /y",1
+rule: winupdate helper | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 8888,2
+rule: microsoft teams service | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8080,2
+"cmd.exe /c reg save  ""hklm\sam"" ""c:\windows\temp\sam.save"" /y",1
+rule: microsoft teams service | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 4444,2
+"reg.exe save  ""hklm\security"" c:\windows\temp\sam.save",1
+rule: microsoft teams service | app: rundll32.exe | dir: outbound | act: allow | port: 1337,2
+"cmd /c start /b reg export ""hklm\sam""  \\localhost\c$\__dump\sam.bak  /y",1
+rule: bypass | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 8888,2
+rule: microsoft teams service | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: *,2
+reg.exe save hklm\system\currentcontrolset\services\lanmanserver d:\logs\reg_dump.hiv,0
+cmd /c start /b reg.exe save  hklm\system c:\temp\system.hive /y,1
+"powershell -command reg.exe  save ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+"powershell -command reg.exe save  hkey_local_machine\sam  ""c:\temp\system.hive"" /y",1
+rule: bypass | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 53,2
+rule: my backdoor | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: any,2
+rule: allow all | app: rundll32.exe | dir: outbound | act: allow | port: 443,2
+cmd.exe /c reg save hkey_local_machine\system c:\programdata\backup.hive  /y,1
+"reg export ""hkcu\software"" c:\backups\console.reg",0
+reg  save  hklm\security  c:\users\public\registry_export.reg  /y,1
+rule: allow all | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 8888,2
+"reg.exe copy ""hku\environment"" /f",0
+rule: microsoft teams service | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 1337,2
+powershell -command reg.exe  export hklm\security  c:\temp\system.hive,1
+"reg export ""hkcu\software"" ""c:\backups\console.reg""",0
+rule: allow all | app: powershell.exe | dir: inbound | act: allow | port: *,2
+"reg.exe export hkcu\console ""c:\temp\app_config.bkp""",0
+cmd /c hostname,0
+"reg.exe export ""hkcu\console"" d:\logs\reg_dump.hiv",0
+rule: metasploit | app: rundll32.exe | dir: outbound | act: allow | port: *,2
+cmd /c start /b reg  export hklm\system  c:\windows\temp\sam.save,1
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: outbound | act: allow | port: *,2
+"powershell -command reg  save  hkey_local_machine\system ""c:\programdata\backup.hive""  /y",1
+rule: netcat listener | app: rundll32.exe | dir: inbound | act: allow | port: 80,2
+rule: google chrome update | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: *,2
+rule: allow https traffic | app: c:\apache\bin\httpd.exe | dir: inbound | act: allow | port: 443,0
+rule: netcat listener | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 8888,2
+rule: microsoft teams service | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: any,2
+rule: netcat listener | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 8888,2
+rule: sliver c2 | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 53,2
+rule: google chrome update | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: any,2
+"reg save hkey_users\.default\environment ""c:\backups\console.reg""",0
+rule: winupdate helper | app: powershell.exe | dir: inbound | act: allow | port: 80,2
+reg.exe export hklm\system\currentcontrolset\services\lanmanserver c:\temp\app_config.bkp,0
+"cmd /c start /b reg  save  ""hkey_local_machine\system"" \\localhost\c$\__dump\sam.bak",1
+"reg.exe export hkey_users\.default\environment ""\\server\share\user_profile.dat""",0
+"reg.exe export hkcu\console ""\\server\share\user_profile.dat""",0
+"cmd.exe /c reg export hkey_local_machine\sam ""c:\windows\temp\sam.save"" /y",1
+reg save hklm\software\mycorp c:\temp\app_config.bkp,0
+rule: apache web server | app: c:\program files\microsoft teams\current\teams.exe | dir: outbound | act: block | port: 80,0
+"reg  save  ""hklm\system""  c:\windows\temp\sam.save",1
+rule: my backdoor | app: c:\temp\teams.exe | dir: outbound | act: allow | port: any,2
+rule: microsoft teams service | app: cmd.exe | dir: outbound | act: allow | port: any,2
+"reg.exe export  ""hklm\system"" c:\programdata\backup.hive",1
+"reg export ""hklm\system\currentcontrolset\services\lanmanserver"" ""c:\backups\console.reg""",0
+"powershell -command reg.exe  export  hkey_local_machine\sam  ""c:\windows\temp\sam.save""",1
+rule: sliver c2 | app: cmd.exe | dir: outbound | act: allow | port: 8080,2
+"reg.exe export ""hkcu\console"" c:\temp\app_config.bkp",0
+rule: google chrome | app: c:\python39\python.exe | dir: outbound | act: allow | port: 8443,0
+rule: my backdoor | app: rundll32.exe | dir: outbound | act: allow | port: 8080,2
+powershell -command reg.exe  save hkey_local_machine\sam  c:\temp\system.hive,1
+rule: sliver c2 | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 4444,2
+"cmd.exe /c reg.exe  save  ""hklm\sam""  c:\windows\temp\sam.save",1
+"cmd /c start /b reg  export ""hkey_local_machine\sam"" c:\windows\temp\sam.save  /y",1
+rule: bypass | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: any,2
+rule: allow all | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: *,2
+rule: my backdoor | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 8080,2
+"reg export  ""hklm\system"" c:\windows\temp\sam.save",1
+rule: apache web server | app: c:\python39\python.exe | dir: inbound | act: allow | port: 3389,0
+"powershell -command reg.exe  export ""hkey_local_machine\sam"" ""c:\windows\temp\sam.save"" /y",1
+rule: google chrome update | app: powershell.exe | dir: inbound | act: allow | port: 80,2
+"powershell -command reg.exe save ""hklm\sam""  c:\users\public\registry_export.reg /y",1
+"reg.exe  save ""hkey_local_machine\sam""  c:\users\public\registry_export.reg",1
+"cmd /c start /b reg.exe  save  ""hkey_local_machine\sam""  \\localhost\c$\__dump\sam.bak /y",1
+rule: allow all | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 53,2
+reg.exe query hkey_current_user\software\microsoft\windows\currentversion /v version,0
+rule: system integrity | app: cmd.exe | dir: outbound | act: allow | port: 80,2
+powershell -command reg export  hklm\sam  c:\programdata\backup.hive /y,1
+rule: microsoft teams service | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 8888,2
+rule: metasploit | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8080,2
+"reg.exe save ""hkey_users\.default\environment"" c:\temp\app_config.bkp",0
+rule: metasploit | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 4444,2
+"reg.exe export hkey_local_machine\system ""c:\users\public\registry_export.reg""  /y",1
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 9999,2
+rule: file sharing | app: c:\python39\python.exe | dir: inbound | act: allow | port: 8080,0
+rule: spotify music | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 137,0
+"cmd.exe /c reg save  ""hkey_local_machine\sam"" ""c:\programdata\backup.hive""",1
+cmd.exe /c hostname,0
+rule: system integrity | app: cmd.exe | dir: outbound | act: allow | port: 1337,2
+rule: netcat listener | app: cmd.exe | dir: inbound | act: allow | port: 4444,2
+rule: winupdate helper | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: any,2
+"reg.exe add ""hkey_current_user\environment"" /f",0
+reg.exe query hkey_current_user\environment /f,0
+rule: netcat listener | app: cmd.exe | dir: outbound | act: allow | port: 9999,2
+reg.exe save hklm\software\mycorp c:\backups\console.reg,0
+whoami /user,0
+"reg export hkey_users\.default\environment ""d:\logs\reg_dump.hiv""",0
+"cmd.exe /c reg.exe save hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak"" /y",1
+"reg export  ""hkey_local_machine\system""  ""c:\programdata\backup.hive""  /y",1
+rule: microsoft teams service | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 1337,2
+"cmd.exe /c reg  export ""hklm\security""  ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: my backdoor | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: any,2
+"reg  export hkey_local_machine\system ""\\localhost\c$\__dump\sam.bak"" /y",1
+rule: microsoft teams service | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 8888,2
+reg save hkcu\software c:\temp\app_config.bkp,0
+"powershell -command reg.exe save  hklm\system ""c:\temp\system.hive"" /y",1
+rule: system integrity | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 8080,2
+rule: microsoft teams service | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 4444,2
+"cmd.exe /c reg.exe save  hklm\system ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: iis worker process | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 8080,0
+rule: allow all | app: rundll32.exe | dir: outbound | act: allow | port: 1337,2
+rule: bypass | app: c:\temp\shell.exe | dir: inbound | act: allow | port: any,2
+rule: google chrome update | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 53,2
+rule: microsoft teams service | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8888,2
+"cmd /c start /b reg.exe save hklm\sam  ""c:\windows\temp\sam.save""",1
+reg delete software\microsoft\software\microsoft\windows\currentversion /f,0
+"cmd.exe /c reg.exe  save  ""hklm\system""  ""c:\temp\system.hive"" /y",1
+rule: system integrity | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: any,2
+"cmd /c start /b reg.exe save hklm\security  ""\\localhost\c$\__dump\sam.bak""  /y",1
+reg.exe export hklm\software\mycorp c:\temp\app_config.bkp,0
+"reg save ""hkcu\console"" ""\\server\share\user_profile.dat""",0
+rule: remote desktop | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: allow | port: 443,0
+"powershell -command reg.exe  save  hklm\sam ""c:\users\public\registry_export.reg""",1
+rule: allow all | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 4444,2
+rule: proxy ingress | app: powershell.exe | dir: inbound | act: allow | port: 1337,2
+"cmd.exe /c reg.exe save ""hkey_local_machine\sam"" ""c:\temp\system.hive"" /y",1
+"reg.exe save ""hkey_users\.default\environment"" ""c:\backups\console.reg""",0
+rule: system integrity | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 80,2
+"reg export ""hklm\system\currentcontrolset\services\lanmanserver"" ""\\server\share\user_profile.dat""",0
+"cmd /c start /b reg.exe save  hklm\security ""\\localhost\c$\__dump\sam.bak""",1
+rule: microsoft teams service | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 9999,2
+rule: allow all | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8888,2
+rule: microsoft teams service | app: powershell.exe | dir: inbound | act: allow | port: 1337,2
+rule: python web app | app: c:\program files\nodejs\node.exe | dir: inbound | act: block | port: 8080,0
+rule: google chrome | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 53,0
+rule: system integrity | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 1337,2
+reg copy hku\environment /v version,0
+powershell -command reg.exe  export  hklm\sam c:\windows\temp\sam.save,1
+"reg export hkey_users\.default\environment ""c:\backups\console.reg""",0
+"cmd /c start /b reg.exe save hklm\sam ""c:\temp\system.hive""  /y",1
+rule: iis worker process | app: c:\windows\system32\inetsrv\w3wp.exe | dir: inbound | act: allow | port: 3389,0
+"cmd.exe /c reg  export  ""hklm\security""  \\localhost\c$\__dump\sam.bak",1
+rule: system integrity | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 53,2
+rule: system integrity | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 53,2
+rule: my backdoor | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 443,2
+rule: my backdoor | app: cmd.exe | dir: inbound | act: allow | port: any,2
+reg export hklm\software\mycorp d:\logs\reg_dump.hiv,0
+rule: netcat listener | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 443,2
+rule: proxy ingress | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 80,2
+rule: netcat listener | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 53,2
+rule: google chrome update | app: powershell.exe | dir: inbound | act: allow | port: *,2
+rule: google chrome update | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 1337,2
+rule: netcat listener | app: rundll32.exe | dir: outbound | act: allow | port: 8888,2
+"reg.exe  export ""hkey_local_machine\sam""  ""c:\programdata\backup.hive""",1
+rule: allow https traffic | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 80,0
+rule: system integrity | app: powershell.exe | dir: inbound | act: allow | port: 1337,2
+rule: allow all | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 9999,2
+"reg compare ""hkey_current_user\environment"" /v path",0
+"cmd /c start /b reg.exe  export  ""hkey_local_machine\system"" c:\temp\system.hive  /y",1
+"reg  save ""hklm\sam""  c:\programdata\backup.hive /y",1
+rule: iis worker process | app: c:\python39\python.exe | dir: inbound | act: block | port: 8443,0
+rule: node.js server | app: c:\windows\system32\svchost.exe | dir: inbound | act: block | port: 137,0
+rule: system integrity | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: *,2
+"powershell -command reg.exe  export hklm\sam ""c:\users\public\registry_export.reg""  /y",1
+powershell -command reg save hkey_local_machine\system c:\programdata\backup.hive /y,1
+rule: proxy ingress | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 53,2
+"reg.exe save  ""hklm\security"" \\localhost\c$\__dump\sam.bak",1
+reg delete hku\environment /v version,0
+"powershell -command reg  save ""hklm\system"" c:\users\public\registry_export.reg  /y",1
+"cmd.exe /c reg.exe  save hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak""",1
+"cmd.exe /c reg.exe save  ""hklm\system"" c:\users\public\registry_export.reg /y",1
+rule: winupdate helper | app: powershell.exe | dir: outbound | act: allow | port: 1337,2
+rule: node.js server | app: c:\nginx\nginx.exe | dir: outbound | act: allow | port: 80,0
+"reg save  ""hkey_local_machine\sam""  ""c:\programdata\backup.hive"" /y",1
+rule: sliver c2 | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: any,2
+reg.exe save  hkey_local_machine\system c:\windows\temp\sam.save,1
+reg.exe export hkcu\software c:\backups\console.reg,0
+"cmd /c start /b reg  save  ""hkey_local_machine\sam"" c:\programdata\backup.hive /y",1
+"reg delete ""hklm\software\mycorp\environment"" /f",0
+"powershell -command reg.exe  save  ""hklm\sam""  ""c:\users\public\registry_export.reg""",1
+"cmd /c start /b reg  export  hklm\system ""\\localhost\c$\__dump\sam.bak"" /y",1
+rule: my backdoor | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: *,2
+rule: microsoft teams | app: c:\nginx\nginx.exe | dir: inbound | act: block | port: 8080,0
+"cmd.exe /c reg save  ""hklm\sam"" ""\\localhost\c$\__dump\sam.bak""",1
+cmd.exe /c reg.exe  save hklm\system  \\localhost\c$\__dump\sam.bak /y,1
+"cmd.exe /c reg save ""hklm\security""  c:\windows\temp\sam.save /y",1
+rule: allow https traffic | app: system | dir: outbound | act: block | port: 53,0
+rule: metasploit | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 9999,2
+rule: system integrity | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 9999,2
+rule: bypass | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: *,2
+rule: winupdate helper | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: *,2
+"reg save  ""hklm\security""  c:\temp\system.hive  /y",1
+rule: remote desktop | app: c:\program files\nodejs\node.exe | dir: outbound | act: block | port: 445,0
+"reg  export  hkey_local_machine\sam ""\\localhost\c$\__dump\sam.bak""",1
+"powershell -command reg.exe  export ""hklm\security""  c:\windows\temp\sam.save /y",1
+"reg delete ""hku\control panel\desktop"" /s",0
+rule: google chrome update | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: *,2
+powershell -command reg.exe save  hkey_local_machine\system  \\localhost\c$\__dump\sam.bak,1
+"reg save ""hklm\software\mycorp"" c:\backups\console.reg",0
+rule: system integrity | app: powershell.exe | dir: outbound | act: allow | port: 53,2
+reg.exe  save  hklm\system c:\programdata\backup.hive  /y,1
+"powershell -command reg export  hkey_local_machine\system  ""c:\programdata\backup.hive""",1
+rule: metasploit | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 1337,2
+"cmd /c start /b reg save ""hklm\security"" ""c:\temp\system.hive""",1
+reg.exe delete hku\control panel\desktop /f,0
+rule: my backdoor | app: rundll32.exe | dir: inbound | act: allow | port: 9999,2
+"reg save  hklm\security ""c:\temp\system.hive""",1
+reg save  hklm\system c:\temp\system.hive /y,1
+rule: allow all | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 53,2
+reg  export  hklm\security  \\localhost\c$\__dump\sam.bak,1
+"cmd.exe /c reg  export  hklm\security  ""\\localhost\c$\__dump\sam.bak""",1
+rule: bypass | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 8888,2
+rule: bypass | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 443,2
+rule: microsoft teams service | app: rundll32.exe | dir: outbound | act: allow | port: *,2
+rule: metasploit | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 4444,2
+"cmd /c start /b reg.exe save hkey_local_machine\system ""c:\programdata\backup.hive""",1
+"cmd.exe /c reg export  hkey_local_machine\system ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: metasploit | app: rundll32.exe | dir: inbound | act: allow | port: 80,2
+"reg export hklm\system\currentcontrolset\services\lanmanserver ""c:\temp\app_config.bkp""",0
+reg export hkcu\console c:\temp\app_config.bkp,0
+cmd /c start /b reg.exe  save  hklm\sam \\localhost\c$\__dump\sam.bak  /y,1
+rule: microsoft teams service | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 1337,2
+rule: netcat listener | app: c:\users\public\updater.exe | dir: outbound | act: allow | port: 80,2
+"powershell -command reg  save  ""hklm\security""  c:\temp\system.hive",1
+"reg.exe export hklm\system\currentcontrolset\services\lanmanserver ""c:\backups\console.reg""",0
+reg add software\microsoft\software\microsoft\windows\currentversion /v version,0
+rule: proxy ingress | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 8888,2
+rule: sliver c2 | app: c:\temp\teams.exe | dir: inbound | act: allow | port: 80,2
+rule: google chrome update | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 53,2
+rule: my backdoor | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 443,2
+cmd /c start /b reg  save hklm\security c:\temp\system.hive,1
+"cmd /c start /b reg save  ""hkey_local_machine\sam"" ""c:\windows\temp\sam.save"" /y",1
+rule: proxy ingress | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: 53,2
+"reg  export ""hkey_local_machine\system""  ""c:\temp\system.hive""  /y",1
+powershell -command reg  export  hkey_local_machine\system  \\localhost\c$\__dump\sam.bak,1
+"cmd.exe /c reg.exe save ""hklm\security"" \\localhost\c$\__dump\sam.bak  /y",1
+rule: node.js server | app: c:\python39\python.exe | dir: inbound | act: allow | port: 8443,0
+rule: metasploit | app: c:\temp\shell.exe | dir: outbound | act: allow | port: 8888,2
+rule: netcat listener | app: powershell.exe | dir: inbound | act: allow | port: 4444,2
+rule: allow all | app: c:\temp\teams.exe | dir: outbound | act: allow | port: 8080,2
+powershell -command reg.exe save  hkey_local_machine\system  c:\users\public\registry_export.reg,1
+"cmd /c start /b reg.exe save ""hkey_local_machine\sam""  ""c:\users\public\registry_export.reg""",1
+"reg.exe export ""hkey_local_machine\system"" c:\temp\system.hive  /y",1
+rule: winupdate helper | app: rundll32.exe | dir: inbound | act: allow | port: 8080,2
+rule: file sharing | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: block | port: 445,0
+rule: spotify music | app: system | dir: inbound | act: allow | port: 3389,0
+rule: allow http | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 445,0
+rule: netcat listener | app: c:\temp\shell.exe | dir: inbound | act: allow | port: 80,2
+reg export  hkey_local_machine\sam  c:\windows\temp\sam.save,1
+"powershell -command reg.exe  save  ""hklm\sam"" c:\temp\system.hive",1
+"cmd /c start /b reg export hklm\sam  ""c:\programdata\backup.hive""",1
+"cmd /c start /b reg  save  ""hkey_local_machine\sam""  c:\users\public\registry_export.reg",1
+rule: core networking | app: c:\program files\microsoft teams\current\teams.exe | dir: inbound | act: allow | port: 3389,0
+rule: python web app | app: c:\nginx\nginx.exe | dir: inbound | act: allow | port: 123,0
+"cmd.exe /c reg.exe export ""hkey_local_machine\sam"" c:\programdata\backup.hive  /y",1
+rule: system integrity | app: rundll32.exe | dir: outbound | act: allow | port: 443,2
+"reg.exe save ""hklm\software\mycorp"" ""d:\logs\reg_dump.hiv""",0
+reg export hkcu\software d:\logs\reg_dump.hiv,0
+"powershell -command reg.exe  save  hklm\system  ""\\localhost\c$\__dump\sam.bak""  /y",1
+rule: netcat listener | app: powershell.exe | dir: inbound | act: allow | port: 8080,2
+"cmd /c start /b reg.exe save ""hklm\security"" c:\programdata\backup.hive",1
+"reg add ""hkcu\control panel\desktop"" /f",0
+rule: apache web server | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 137,0
+"cmd /c start /b reg.exe save  ""hkey_local_machine\system"" ""c:\programdata\backup.hive""  /y",1
+rule: microsoft teams | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 8080,0
+reg.exe  export hkey_local_machine\system \\localhost\c$\__dump\sam.bak  /y,1
+rule: bypass | app: c:\users\public\chrome.exe | dir: outbound | act: allow | port: 8888,2
+rule: microsoft teams | app: c:\windows\system32\svchost.exe | dir: outbound | act: block | port: 80,0
+rule: iis worker process | app: c:\program files\nodejs\node.exe | dir: outbound | act: allow | port: 80,0
+"powershell -command reg.exe save  ""hklm\sam"" ""\\localhost\c$\__dump\sam.bak"" /y",1
+"reg export ""hklm\software\mycorp"" c:\temp\app_config.bkp",0
+rule: allow all | app: c:\programdata\svchost.exe | dir: inbound | act: allow | port: 8080,2
+"cmd /c start /b reg  export  ""hklm\system"" ""\\localhost\c$\__dump\sam.bak""",1
+cmd /c start /b reg.exe  export hklm\sam c:\programdata\backup.hive,1
+rule: allow https traffic | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: block | port: 8443,0
+"cmd.exe /c reg save hklm\sam ""c:\temp\system.hive""  /y",1
+rule: allow https traffic | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: outbound | act: block | port: 443,0
+rule: core networking | app: c:\program files (x86)\google\chrome\application\chrome.exe | dir: inbound | act: allow | port: 137,0
+"cmd.exe /c reg.exe  save ""hklm\system""  c:\programdata\backup.hive",1
+rule: system integrity | app: c:\temp\teams.exe | dir: inbound | act: allow | port: *,2
+"powershell -command reg  export hklm\system  ""c:\users\public\registry_export.reg""",1
+rule: core networking | app: c:\python39\python.exe | dir: outbound | act: block | port: 443,0
+rule: proxy ingress | app: rundll32.exe | dir: inbound | act: allow | port: 4444,2
+rule: sliver c2 | app: c:\users\public\chrome.exe | dir: inbound | act: allow | port: 80,2
+cmd.exe /c reg.exe export  hklm\system c:\users\public\registry_export.reg,1
+"powershell -command reg  export  ""hklm\sam"" c:\windows\temp\sam.save  /y",1
+rule: node.js server | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 80,0
+rule: allow file printer sharing | app: c:\windows\system32\svchost.exe | dir: inbound | act: allow | port: 8443,0
+"reg  export  hkey_local_machine\system  ""\\localhost\c$\__dump\sam.bak"" /y",1
+"reg copy ""hkey_current_user\environment"" /s",0
+cmd /c start /b reg.exe export  hkey_local_machine\sam c:\windows\temp\sam.save /y,1
+rule: metasploit | app: c:\windows\temp\nc.exe | dir: inbound | act: allow | port: *,2
+reg compare software\microsoft\environment /f,0
+"reg delete ""hkey_current_user\software\microsoft\windows\currentversion"" /s",0
+reg  save  hklm\sam c:\users\public\registry_export.reg,1
+rule: google chrome update | app: c:\programdata\svchost.exe | dir: outbound | act: allow | port: 1337,2
+rule: python web app | app: c:\program files\nodejs\node.exe | dir: inbound | act: allow | port: 123,0
+"reg.exe  save ""hkey_local_machine\system"" ""c:\programdata\backup.hive""",1
+rule: bypass | app: c:\users\public\updater.exe | dir: inbound | act: allow | port: 443,2
+powershell -command reg.exe  save hklm\sam c:\temp\system.hive,1
+rule: metasploit | app: cmd.exe | dir: inbound | act: allow | port: 8888,2
+cmd.exe /c whoami /all,0
+"powershell -command reg  export ""hklm\system"" c:\windows\temp\sam.save",1
+reg.exe save hklm\software\mycorp d:\logs\reg_dump.hiv,0
+"powershell -command reg  save  ""hklm\system""  c:\programdata\backup.hive /y",1
+"reg.exe export ""hkey_users\.default\environment"" ""c:\backups\console.reg""",0
+rule: allow inbound 80 | app: c:\windows\system32\inetsrv\w3wp.exe | dir: outbound | act: block | port: 123,0
+rule: proxy ingress | app: powershell.exe | dir: outbound | act: allow | port: any,2
+"cmd.exe /c reg.exe export hklm\sam  ""\\localhost\c$\__dump\sam.bak""",1
+"cmd.exe /c reg.exe  export  ""hklm\security"" ""\\localhost\c$\__dump\sam.bak""",1
+cmd /c start /b reg save hklm\system  \\localhost\c$\__dump\sam.bak  /y,1
+cmd.exe /c reg.exe export  hkey_local_machine\system c:\windows\temp\sam.save  /y,1
+"reg save hkey_local_machine\sam  ""c:\temp\system.hive"" /y",1
+"cmd /c start /b reg.exe export  ""hklm\system"" ""c:\programdata\backup.hive""  /y",1
+"reg.exe compare ""hklm\software\mycorp\control panel\desktop"" /v path",0
+rule: sliver c2 | app: rundll32.exe | dir: inbound | act: allow | port: *,2
+"cmd.exe /c reg.exe export  ""hkey_local_machine\sam""  c:\windows\temp\sam.save",1
+rule: sliver c2 | app: c:\windows\temp\nc.exe | dir: outbound | act: allow | port: 4444,2
+rule: file sharing | app: c:\apache\bin\httpd.exe | dir: inbound | act: block | port: 445,0
