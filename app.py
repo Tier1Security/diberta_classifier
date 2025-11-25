@@ -5,14 +5,14 @@ import pathlib
 import torch.nn.functional as F
 
 # --- CONFIGURATION ---
-# We prioritize the path used in the merge_3class.py script
-TARGET_MODEL_PATH = "models/merged_multiclass_roberta"
+# UPDATED: Pointing to the new 4-class merged model
+TARGET_MODEL_PATH = "models/merged_4class_roberta"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 app = Flask(__name__)
 
 # --- 1. LOAD MODEL & TOKENIZER ---
-print(f"--- Initializing Security AI API ---")
+print(f"--- Initializing Security AI API (4-Class) ---")
 print(f"Target Device: {DEVICE}")
 
 try:
@@ -27,9 +27,10 @@ try:
     print(f"Loading model weights from {model_path}...")
     model = AutoModelForSequenceClassification.from_pretrained(str(model_path))
     model.to(DEVICE)
-    model.eval() # Set to evaluation mode (disable dropout, etc)
+    model.eval() # Set to evaluation mode
 
     # Extract label mappings from the model config
+    # This will now automatically include "T1134" (Label 3)
     id2label = model.config.id2label
     label2id = model.config.label2id
     print(f"Model Labels: {id2label}")
@@ -37,7 +38,7 @@ try:
 
 except Exception as e:
     print(f"\n[FATAL ERROR] Could not load model: {e}")
-    print("Did you run 'merge_3class.py'? Ensure 'models/merged_multiclass_roberta' exists.")
+    print(f"Ensure '{TARGET_MODEL_PATH}' exists and contains config.json/pytorch_model.bin.")
     exit(1)
 
 # --- 2. PREDICTION ENDPOINT ---
@@ -54,20 +55,17 @@ def predict():
     elif request.form:
         text_input = request.form.get("text")
     else:
-        # Fallback for raw string body
         data = request.get_data(as_text=True)
         if data: text_input = data
 
     if not text_input:
         return jsonify({"error": "No text provided"}), 400
 
-    # B. Preprocess (CRITICAL: Match Training Logic)
-    # We must lowercase because the training generator used normalize_case()
+    # B. Preprocess
     processed_text = text_input.lower()
     
     # C. Inference
     try:
-        # Tokenize
         inputs = tokenizer(
             processed_text, 
             return_tensors="pt", 
@@ -80,7 +78,7 @@ def predict():
             outputs = model(**inputs)
             logits = outputs.logits
         
-        # Calculate Probabilities (Softmax)
+        # Calculate Probabilities
         probs = F.softmax(logits, dim=1)[0]
         
         # Get the top prediction
@@ -88,20 +86,20 @@ def predict():
         pred_label = id2label[pred_id]
         pred_conf = probs[pred_id].item()
 
-        # Build detailed score dictionary for all classes
+        # Build detailed score dictionary
         scores = {
             label: round(probs[i].item(), 4) 
             for i, label in id2label.items()
         }
 
         response = {
-            "input": text_input[:200], # Echo back (truncated)
+            "input": text_input[:200],
             "verdict": pred_label,
             "confidence": round(pred_conf, 4),
-            "scores": scores # Full breakdown for SIEM/Logging
+            "scores": scores
         }
         
-        # Optional: Add a "high_risk" flag for the client
+        # Alert Logic
         if pred_label != "Benign" and pred_conf > 0.90:
             response["alert"] = True
         else:
@@ -119,7 +117,7 @@ def index():
     <html>
         <body style="font-family: sans-serif; text-align: center; padding-top: 50px;">
             <h1>🛡️ Security AI Classifier Online</h1>
-            <p>Model: <b>RoBERTa Multi-Class (Security)</b></p>
+            <p>Model: <b>RoBERTa 4-Class (Security)</b></p>
             <p>Labels: {list(id2label.values())}</p>
             <p>Status: <span style="color: green;">Ready</span></p>
         </body>
@@ -127,5 +125,5 @@ def index():
     """
 
 if __name__ == "__main__":
-    # Bind to localhost only for safety (prevent external access).
-    app.run(host='127.0.0.1', port=5050)
+    # Host 0.0.0.0 allows access from external IPs (e.g. from a VM or WSL)
+    app.run(host='0.0.0.0', port=5050)

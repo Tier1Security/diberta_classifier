@@ -26,8 +26,8 @@ else:
 # --- 1. CONFIGURATION ---
 MODEL_ID = "roberta-base" 
 # CRITICAL: Point to the folder created in the previous step
-TRAIN_DATA_FILE = "data_3class_security/train.csv"
-VAL_DATA_FILE = "data_3class_security/validation.csv"
+TRAIN_DATA_FILE = "data_4class_security/train.csv"
+VAL_DATA_FILE = "data_4class_security/validation.csv"
 OUTPUT_DIR = "models/multiclass_roberta_lora" 
 
 set_seed(42)
@@ -36,7 +36,7 @@ set_seed(42)
 # Label 0: Benign
 # Label 1: T1003.002 (Registry Hive Dumping)
 # Label 2: T1562 (Malicious Firewall / Impair Defenses)
-labels = ["Benign", "T1003.002", "T1562"] 
+labels = ["Benign", "T1003.002", "T1562", "T1134"]
 id2label = {i: label for i, label in enumerate(labels)}
 label2id = {label: i for i, label in enumerate(labels)}
 
@@ -47,8 +47,8 @@ raw_datasets = DatasetDict({
     "validation": load_dataset('csv', data_files=VAL_DATA_FILE, split="train"),
 })
 
-print("Filtering dataset for labels 0, 1, and 2...")
-raw_datasets = raw_datasets.filter(lambda example: example['label'] in [0, 1, 2])
+print("Filtering dataset for labels 0, 1, 2, and 3...")
+raw_datasets = raw_datasets.filter(lambda example: example['label'] in [0, 1, 2, 3])
 
 text_column = "text"
 label_column = "label"
@@ -125,7 +125,7 @@ def compute_metrics(eval_pred):
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
     num_train_epochs=10, 
-    per_device_train_batch_size=32, # Adjusted for LoRA overhead
+    per_device_train_batch_size=32, 
     gradient_accumulation_steps=2,
     learning_rate=2.0e-4, 
     weight_decay=0.01,
@@ -134,8 +134,11 @@ training_args = TrainingArguments(
     lr_scheduler_type='linear',
     warmup_steps=500,
     eval_strategy="steps",
-    eval_steps=200,      
-    save_steps=200,
+    
+    # UPDATED: Evaluate roughly once per epoch (750 steps total per epoch)
+    eval_steps=500,      
+    save_steps=500,
+    
     load_best_model_at_end=True,
     metric_for_best_model="f1",
     logging_steps=50,
@@ -147,7 +150,7 @@ data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
 # --- 8. INITIALIZE TRAINER ---
 early_stopping_callback = EarlyStoppingCallback(
-    early_stopping_patience=4, 
+    early_stopping_patience=10, 
     early_stopping_threshold=0.001 
 )
 
