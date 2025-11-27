@@ -29,30 +29,30 @@ def mutate_text(text):
             final_text += ' ' * random.randint(1, 2)
             
     return final_text
-
-# --- THE "RED TEAM" SCENARIOS ---
-# Note: These contain Mixed Case to prove the normalization works.
-# --- THE "RED TEAM" SCENARIOS V5 (Aligned with Training Data) ---
+# --- THE "RED TEAM" SCENARIOS V6 (Final Hardened Test Set) ---
+# NOTE: This list now includes the specific Benign OS processes that previously caused failure,
+# ensuring the model remains stable across these critical system boundaries.
 base_scenarios = [
-    # T1003 (REGISTRY/LSASS) - NOW INCLUDES MALICIOUS EXPORTS
+    # --- T1003 (REGISTRY/LSASS) ---
     {"text": "reg save hklm\\sam c:\\windows\\temp\\sam.hiv", "label": "T1003.002", "desc": "Standard SAM Save"},
-    {"text": "reg export hklm\\system c:\\users\\public\\system.reg /y", "label": "T1003.002", "desc": "Exporting SYSTEM Hive (Malicious)"}, # **FIXED LABEL**
+    {"text": "reg export hklm\\system c:\\users\\public\\system.reg /y", "label": "T1003.002", "desc": "Exporting SYSTEM Hive (Malicious)"},
     {"text": "powershell -nop -c \"reg save hklm\\security security.hive\"", "label": "T1003.002", "desc": "PowerShell Wrapped Security Dump"},
     {"text": "rundll32.exe c:\\windows\\system32\\comsvcs.dll, minidump 1234 c:\\temp\\lsass.dmp full", "label": "T1003.002", "desc": "LSASS Minidump"},
+    {"text": "type c:\\temp\\sam.save", "label": "T1003.002", "desc": "Reading a 'Scary' File"}, 
     
-    # T1562 (FIREWALL/DEFENSE) - NOW PURE COMMANDS
+    # --- T1562 (FIREWALL/DEFENSE) ---
     {"text": "set-mppreference -disablerealtimemonitoring $true", "label": "T1562", "desc": "Disable Realtime Monitoring"},
     {"text": "sc stop windefend", "label": "T1562", "desc": "Stop Defender Service"},
     {"text": "rule: chrome helper | app: c:\\users\\admin\\appdata\\local\\temp\\chrome.exe | dir: outbound | act: allow | port: 443", "label": "T1562", "desc": "Malware in AppData (Malicious Log)"}, 
     {"text": "rule: dns query | app: c:\\windows\\temp\\nc.exe | dir: inbound | act: allow | port: 53", "label": "T1562", "desc": "Netcat DNS Impersonation (Malicious Log)"},
 
-    # T1134 (TOKEN) - HIGH CONFIDENCE API CALLS
+    # --- T1134 (TOKEN) ---
     {"text": "[dllimport(\"advapi32.dll\")] public static extern bool adjusttokenprivileges(...)", "label": "T1134", "desc": "Full C# AdjustToken Signature"},
     {"text": "$handle = [system.diagnostics.process]::getcurrentprocess().handle; openprocesstoken($handle, ...)", "label": "T1134", "desc": "OpenProcessToken Call"},
     {"text": "settokenpriv::enableprivilege(sebackupprivilege)", "label": "T1134", "desc": "Enable SeBackupPrivilege"},
     {"text": "$a = [ref].assembly.gettype('system.management.automation.amsiutils')", "label": "T1134", "desc": "Reflection (AMSI Bypass)"}, 
 
-    # BENIGN - ALIGNED AND CLEANED
+    # --- BENIGN (HARDENED) ---
     {"text": "reg export hklm\\software\\policies policy_backup.reg", "label": "Benign", "desc": "Exporting Safe Hive"},
     {"text": "reg save hkcu\\console console.config", "label": "Benign", "desc": "Saving Console Settings"},
     {"text": "wmic process get commandline, processid", "label": "Benign", "desc": "WMIC Process List (Safe)"},
@@ -60,10 +60,12 @@ base_scenarios = [
     {"text": "python -m http.server 8000", "label": "Benign", "desc": "Python Dev Server (CLI Format)"}, 
     {"text": "node server.js --port 3000", "label": "Benign", "desc": "NodeJS Server (CLI Format)"},
     {"text": "whoami /priv", "label": "Benign", "desc": "Admin checking privs (Safe)"},
-    {"text": "select-string -path c:\\logs\\security.log -pattern 'failed logon'", "label": "Benign", "desc": "Searching Logs (Safe Pattern)"}, # Cleaned pattern
-    {"text": "type c:\\temp\\sam.save", "label": "T1003.002", "desc": "Reading a 'Scary' File"}, # **FIXED LABEL**
+    {"text": "select-string -path c:\\logs\\security.log -pattern 'failed logon'", "label": "Benign", "desc": "Searching Logs (Safe Pattern)"},
+    
+    # --- NEW CRITICAL SYSTEM BENIGN CHECKS ---
+    {"text": "c:\\windows\\system32\\svchost.exe -k localservicenonetworkfirewall -p", "label": "Benign", "desc": "OS Process Startup (Svchost)"},
+    {"text": "wmic product get name, version", "label": "Benign", "desc": "WMIC Product List (Safe/Product)"}
 ]
-
 def main():
     if SEED is not None:
         print(f"--- Running Deterministic Mode (Seed: {SEED}) ---")

@@ -92,20 +92,10 @@ def predict():
             for i, label in id2label.items()
         }
 
-        response = {
-            "input": text_input[:200],
-            "verdict": pred_label,
-            "confidence": round(pred_conf, 4),
-            "scores": scores
-        }
-        
-        # Alert Logic
-        if pred_label != "Benign" and pred_conf > 0.90:
-            response["alert"] = True
-        else:
-            response["alert"] = False
-
-        return jsonify(response)
+        return jsonify({
+            "label": pred_label,
+            "confidence score": round(pred_conf, 4)
+        })
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -124,6 +114,17 @@ def index():
     </html>
     """
 
+
+
+def kill_processes_on_port(port: int, timeout: float = 2.0):
+    """Attempt to gracefully terminate processes listening on `port`, then SIGKILL if needed.
+
+    Note: This function is Linux-focused and may require privileges to kill some processes.
+    """
+    # Function removed: no-op placeholder to preserve API if referenced elsewhere.
+    return
+
+
 if __name__ == "__main__":
-    # Host 0.0.0.0 allows access from external IPs (e.g. from a VM or WSL)
-    app.run(host='0.0.0.0', port=5050)
+    
+    app.run(host='127.0.0.1', port=80)

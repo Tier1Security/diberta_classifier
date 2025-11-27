@@ -4,7 +4,7 @@ import os
 import string
 
 # --- CONFIGURATION ---
-DATA_DIR = "data_clean_v9_final" 
+DATA_DIR = "data" 
 TRAIN_FILE = os.path.join(DATA_DIR, "train.csv")
 VALIDATION_FILE = os.path.join(DATA_DIR, "validation.csv")
 TEST_FILE = os.path.join(DATA_DIR, "test.csv")
