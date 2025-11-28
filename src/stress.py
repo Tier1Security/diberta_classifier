@@ -1,4 +1,5 @@
 import torch
+import time
 import random
 import csv
 import datetime
@@ -86,6 +87,16 @@ def main():
         print(f"Error: {e}")
         return
 
+    # For metrics: track durations and peak VRAM usage (if CUDA available)
+    durations = []
+    peak_memory_bytes = 0
+    using_cuda = torch.cuda.is_available()
+    if using_cuda:
+        try:
+            torch.cuda.reset_peak_memory_stats(0)
+        except Exception:
+            # Older PyTorch may not support device arg
+            torch.cuda.reset_peak_memory_stats()
     print(f"--- Starting {ITERATIONS} Iterations (Total {len(base_scenarios)*ITERATIONS} Tests) ---")
     
     failures = []
@@ -108,7 +119,31 @@ def main():
             true_label = case["label"]
             
             # Predict
+            # Measure per-sample time and VRAM usage for profiling
+            # Ensure accurate GPU timing measurements (sync before & after)
+            if using_cuda:
+                try:
+                    torch.cuda.synchronize()
+                except Exception:
+                    pass
+            start_time = time.perf_counter()
             result = classifier(final_input)[0]
+            if using_cuda:
+                try:
+                    torch.cuda.synchronize()
+                except Exception:
+                    pass
+            end_time = time.perf_counter()
+            durations.append(end_time - start_time)
+
+            if using_cuda:
+                # Query peak memory allocated so far (bytes)
+                try:
+                    cur_peak = torch.cuda.max_memory_allocated(0)
+                except Exception:
+                    cur_peak = torch.cuda.max_memory_allocated()
+                if cur_peak > peak_memory_bytes:
+                    peak_memory_bytes = cur_peak
             pred_label = result['label']
             score = result['score']
             
@@ -165,6 +200,21 @@ def main():
         print("\n[+] 0 Low Confidence results. Model was > 90% sure on everything.")
 
     print("="*80)
+
+    # 4. PERFORMANCE SUMMARY (NEW)
+    if durations:
+        avg_time = sum(durations) / len(durations)
+        median_time = sorted(durations)[len(durations)//2]
+        print(f"\n[+] Average Time per Test: {avg_time:.6f} seconds ({avg_time*1000:.2f} ms)")
+        print(f"[+] Median Time per Test: {median_time:.6f} seconds ({median_time*1000:.2f} ms)")
+    else:
+        print("\n[!] No duration data collected.")
+
+    if using_cuda:
+        peak_mb = peak_memory_bytes / (1024.0 ** 2)
+        print(f"[+] Peak GPU Memory Used: {peak_mb:.2f} MB ({peak_memory_bytes} bytes)")
+    else:
+        print("[+] No CUDA device detected; VRAM metrics not applicable (CPU run).")
 
     # 3. SAVE FAILURES & LOW CONFIDENCE TO CSV (MODIFIED)
     if LOG_FAILURES and (failures or low_confidence):
