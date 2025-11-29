@@ -4,9 +4,8 @@ import os
 import string
 
 # --- CONFIGURATION ---
-OUTPUT_FILE = "v13_svchost_batch.csv" # Renamed output file
-NUM_SAMPLES = 2000 
-HIVES = ["hklm\\sam", "hklm\\security", "hklm\\system"]
+OUTPUT_FILE = "v15_final_fix_batch.csv"
+NUM_SAMPLES = 2000 # High density batch size
 
 # --- UTILS ---
 def clean_text(text): return text.lower()
@@ -16,39 +15,67 @@ def get_wrapper(payload):
 
 # --- GENERATORS ---
 
-# 1. T1003: Wrapped Hard Negative (Targets the wrapped payload)
-def generate_wrapped_t1003():
-    # 90% chance of being the wrapped reg dump
-    if random.random() < 0.9:
-        payload = f"reg save {random.choice(HIVES)} c:\\temp\\{random.choice(['sec.dat', 'sam.dat'])}"
-        cmd = get_wrapper(payload)
-        return clean_text(cmd), 1
-    # 10% chance of being a simple naked signal 
+# 1. T1003 Fix (Targets Confusion with T1134)
+def generate_t1003_fix():
+    # Use the EXACT failing structure: reg save HKLM\SAM
+    hive = random.choice(["hklm\\sam", "hklm\\security"])
+    path = f"c:\\temp\\{random.choice(['sec.dat', 'sam.dat'])}"
+    
+    # 70% of this batch is the direct failing case or its core wrapper
+    if random.random() < 0.7:
+        cmd = f"reg save {hive} {path}"
     else:
-        return clean_text(f"rundll32.exe c:\\windows\\system32\\comsvcs.dll, minidump 1234 c:\\temp\\lsass.dmp full"), 1
+        # Wrapped version to secure against wrapper failures
+        payload = f"reg save {hive} {path}"
+        cmd = get_wrapper(payload)
 
-# 2. BENIGN: Svchost and System Process Contrast (Targets the new failure)
-def generate_benign_contrast():
-    # Includes the exact failing case and variations to stabilize the Benign boundary
+    return clean_text(cmd), 1
+
+# 2. T1134 Fix (Targets the 'runas' FN)
+def generate_t1134_fix():
     cmd = random.choice([
-        # --- NEW HARD NEGATIVES (Svchost and Winlogon) ---
-        "c:\\windows\\system32\\svchost.exe -k localservicenonetworkfirewall -p", 
-        "c:\\windows\\system32\\svchost.exe -k networkservice", 
-        "c:\\windows\\system32\\winlogon.exe",
-        # --- Existing Benign Recon/Wrapper Contrast ---
-        "powershell get-process | select-object name", 
-        "wmic useraccount get name", 
-        "reg query hkcu\\console"
+        # Targets FN 3: The exact failing 'runas' command structure
+        "runas /user:administrator cmd.exe",
+        "runas /user:system powershell.exe",
+        
+        # Targets the Kerberos TGT failure
+        "klist get krbtgt/domain.local",
+        
+        # Ensures klist purge confidence is maxed out
+        "klist purge",
+        "sekurlsa::pth /user:admin /ntlm:hash"
+    ])
+    return clean_text(cmd), 3
+
+# 3. BENIGN Contrast (Targets the confusing FN 3 'runas' shell behavior)
+def generate_benign_contrast():
+    cmd = random.choice([
+        # Benign shell spawning (The model must learn this is safe)
+        "start cmd.exe /c whoami",
+        "start powershell.exe -windowstyle hidden",
+        
+        # Benign Recon
+        "wmic product get name, version",
+        "reg query hklm\\software\\microsoft",
+        
+        # The exact query command that resulted in low confidence (FN 2)
+        "reg query hklm\\sam /v lsabdsize" 
     ])
     return clean_text(cmd), 0
 
 
 # --- MAIN SCRIPT ---
 data = []
-# 50/50 split for high contrast density
-for _ in range(NUM_SAMPLES // 2):
-    data.append(generate_wrapped_t1003())
-for _ in range(NUM_SAMPLES // 2):
+# Split data heavily toward the failed TTPs and the Benign contrast
+NUM_T1003 = 700 
+NUM_T1134 = 700
+NUM_BENIGN = 600
+
+for _ in range(NUM_T1003):
+    data.append(generate_t1003_fix())
+for _ in range(NUM_T1134):
+    data.append(generate_t1134_fix())
+for _ in range(NUM_BENIGN):
     data.append(generate_benign_contrast())
 
 random.shuffle(data)
@@ -59,5 +86,5 @@ with open(OUTPUT_FILE, 'w', newline='', encoding='utf-8') as f:
     writer.writerow(["text", "label"]) 
     writer.writerows(data)
     
-print(f"Created {NUM_SAMPLES} surgical augmentation samples.")
-print(f"NEXT STEP: Manually combine '{OUTPUT_FILE}' with your V9 training CSV and retrain.")
+print(f"Created {len(data)} surgical augmentation samples in {OUTPUT_FILE}.")
+print(f"NEXT STEP: Manually combine '{OUTPUT_FILE}' with your training CSV and retrain the model.")

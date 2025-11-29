@@ -1,0 +1,2001 @@
+text,label
+runas /user:administrator cmd.exe,3
+start cmd.exe /c whoami,0
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+klist purge,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+klist purge,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+reg query hklm\sam /v lsabdsize,0
+start cmd.exe /c whoami,0
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\sam /v lsabdsize,0
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist purge,3
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+"wmic product get name, version",0
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+klist purge,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+klist purge,3
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+start cmd.exe /c whoami,0
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+start cmd.exe /c whoami,0
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+reg query hklm\software\microsoft,0
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+reg query hklm\sam /v lsabdsize,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+runas /user:administrator cmd.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+klist purge,3
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+start powershell.exe -windowstyle hidden,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+klist purge,3
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+klist purge,3
+klist purge,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start cmd.exe /c whoami,0
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+klist purge,3
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+reg query hklm\software\microsoft,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"wmic product get name, version",0
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+runas /user:administrator cmd.exe,3
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+start powershell.exe -windowstyle hidden,0
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+klist purge,3
+klist get krbtgt/domain.local,3
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\sam /v lsabdsize,0
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+"wmic product get name, version",0
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+start cmd.exe /c whoami,0
+runas /user:administrator cmd.exe,3
+reg query hklm\sam /v lsabdsize,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+runas /user:administrator cmd.exe,3
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+klist purge,3
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+start powershell.exe -windowstyle hidden,0
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+klist purge,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+start cmd.exe /c whoami,0
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+klist purge,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+klist purge,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"wmic product get name, version",0
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+klist purge,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+start cmd.exe /c whoami,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+runas /user:system powershell.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+"wmic product get name, version",0
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+reg query hklm\sam /v lsabdsize,0
+klist purge,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+klist purge,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+runas /user:administrator cmd.exe,3
+klist purge,3
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+klist purge,3
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+klist purge,3
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+runas /user:system powershell.exe,3
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+klist purge,3
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+start powershell.exe -windowstyle hidden,0
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+klist purge,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+klist purge,3
+start cmd.exe /c whoami,0
+"wmic product get name, version",0
+reg query hklm\sam /v lsabdsize,0
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+runas /user:administrator cmd.exe,3
+klist purge,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+runas /user:administrator cmd.exe,3
+reg query hklm\sam /v lsabdsize,0
+klist purge,3
+klist purge,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start cmd.exe /c whoami,0
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+klist get krbtgt/domain.local,3
+klist purge,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+start cmd.exe /c whoami,0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+klist purge,3
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+start cmd.exe /c whoami,0
+runas /user:system powershell.exe,3
+reg query hklm\sam /v lsabdsize,0
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+klist purge,3
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+runas /user:system powershell.exe,3
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+runas /user:administrator cmd.exe,3
+klist purge,3
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+klist purge,3
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+klist purge,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+klist purge,3
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+start cmd.exe /c whoami,0
+runas /user:administrator cmd.exe,3
+reg query hklm\sam /v lsabdsize,0
+start cmd.exe /c whoami,0
+reg query hklm\software\microsoft,0
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+klist purge,3
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+klist purge,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+start cmd.exe /c whoami,0
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sec.dat,1
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+klist purge,3
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+klist get krbtgt/domain.local,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+start powershell.exe -windowstyle hidden,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start powershell.exe -windowstyle hidden,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+start cmd.exe /c whoami,0
+start powershell.exe -windowstyle hidden,0
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+runas /user:system powershell.exe,3
+"wmic product get name, version",0
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+start cmd.exe /c whoami,0
+runas /user:system powershell.exe,3
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist purge,3
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sec.dat,1
+klist purge,3
+klist get krbtgt/domain.local,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+klist purge,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist get krbtgt/domain.local,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+klist purge,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+runas /user:system powershell.exe,3
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist purge,3
+runas /user:system powershell.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+runas /user:administrator cmd.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist purge,3
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+start cmd.exe /c whoami,0
+klist purge,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\sam /v lsabdsize,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist purge,3
+"wmic product get name, version",0
+"wmic product get name, version",0
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\software\microsoft,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+runas /user:system powershell.exe,3
+klist purge,3
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\software\microsoft,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+klist purge,3
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+klist purge,3
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sam.dat,1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+klist purge,3
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+start cmd.exe /c whoami,0
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+klist purge,3
+runas /user:system powershell.exe,3
+"wmic product get name, version",0
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sam.dat,1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+runas /user:administrator cmd.exe,3
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+"wmic product get name, version",0
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+start cmd.exe /c whoami,0
+klist purge,3
+klist purge,3
+start cmd.exe /c whoami,0
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sec.dat,1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+start cmd.exe /c whoami,0
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+runas /user:system powershell.exe,3
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+runas /user:administrator cmd.exe,3
+start cmd.exe /c whoami,0
+start cmd.exe /c whoami,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+start cmd.exe /c whoami,0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+start cmd.exe /c whoami,0
+klist purge,3
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+klist purge,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hklm\software\microsoft,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+start powershell.exe -windowstyle hidden,0
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist get krbtgt/domain.local,3
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+klist purge,3
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+"wmic product get name, version",0
+runas /user:system powershell.exe,3
+reg query hklm\sam /v lsabdsize,0
+runas /user:system powershell.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\sam /v lsabdsize,0
+start cmd.exe /c whoami,0
+reg query hklm\software\microsoft,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+klist purge,3
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+klist purge,3
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+start powershell.exe -windowstyle hidden,0
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+klist purge,3
+klist purge,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+klist purge,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+"wmic product get name, version",0
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+runas /user:administrator cmd.exe,3
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+reg query hklm\sam /v lsabdsize,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+klist purge,3
+klist purge,3
+start cmd.exe /c whoami,0
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+klist purge,3
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+"wmic product get name, version",0
+klist purge,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+"wmic product get name, version",0
+klist purge,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+start cmd.exe /c whoami,0
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"wmic product get name, version",0
+runas /user:system powershell.exe,3
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sec.dat,1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg query hklm\sam /v lsabdsize,0
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+reg query hklm\sam /v lsabdsize,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"powershell -nop -c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+klist get krbtgt/domain.local,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+reg query hklm\sam /v lsabdsize,0
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg save hklm\sam c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg query hklm\software\microsoft,0
+klist purge,3
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+start cmd.exe /c whoami,0
+klist get krbtgt/domain.local,3
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+klist purge,3
+start cmd.exe /c whoami,0
+klist purge,3
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\security c:\temp\sec.dat,1
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+klist purge,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+start cmd.exe /c whoami,0
+start cmd.exe /c whoami,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+reg query hklm\software\microsoft,0
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+klist purge,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+start powershell.exe -windowstyle hidden,0
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+start cmd.exe /c whoami,0
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+start powershell.exe -windowstyle hidden,0
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+runas /user:administrator cmd.exe,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sam.dat,1
+"wmic product get name, version",0
+reg query hklm\software\microsoft,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+klist purge,3
+runas /user:system powershell.exe,3
+start powershell.exe -windowstyle hidden,0
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+klist purge,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\sam c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sec.dat,1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+reg query hklm\software\microsoft,0
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+reg query hklm\software\microsoft,0
+klist get krbtgt/domain.local,3
+klist purge,3
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+runas /user:system powershell.exe,3
+runas /user:system powershell.exe,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+klist get krbtgt/domain.local,3
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\security c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+"wmic product get name, version",0
+runas /user:system powershell.exe,3
+runas /user:administrator cmd.exe,3
+runas /user:administrator cmd.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+reg save hklm\sam c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+klist purge,3
+reg query hklm\sam /v lsabdsize,0
+klist get krbtgt/domain.local,3
+"wmic product get name, version",0
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sec.dat,1
+"wmic product get name, version",0
+reg save hklm\sam c:\temp\sam.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sam.dat,1
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+klist purge,3
+start cmd.exe /c whoami,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+start powershell.exe -windowstyle hidden,0
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+klist get krbtgt/domain.local,3
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+start cmd.exe /c whoami,0
+"wmic product get name, version",0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sec.dat,1
+klist get krbtgt/domain.local,3
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+"wmic product get name, version",0
+klist get krbtgt/domain.local,3
+reg save hklm\security c:\temp\sam.dat,1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\software\microsoft,0
+reg save hklm\security c:\temp\sec.dat,1
+start cmd.exe /c whoami,0
+klist purge,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+"wmic product get name, version",0
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg query hklm\sam /v lsabdsize,0
+"powershell -nop -c ""reg save hklm\security c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+start powershell.exe -windowstyle hidden,0
+"powershell -nop -c ""reg save hklm\sam c:\temp\sam.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:system powershell.exe,3
+klist get krbtgt/domain.local,3
+klist purge,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+klist purge,3
+reg save hklm\security c:\temp\sam.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+runas /user:system powershell.exe,3
+"cmd.exe /c ""reg save hklm\sam c:\temp\sec.dat""",1
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+runas /user:system powershell.exe,3
+reg query hklm\software\microsoft,0
+"cmd.exe /c ""reg save hklm\sam c:\temp\sam.dat""",1
+reg query hklm\software\microsoft,0
+"wmic product get name, version",0
+runas /user:administrator cmd.exe,3
+start powershell.exe -windowstyle hidden,0
+reg query hklm\software\microsoft,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:system powershell.exe,3
+klist purge,3
+"powershell -nop -c ""reg save hklm\sam c:\temp\sec.dat""",1
+start powershell.exe -windowstyle hidden,0
+reg save hklm\sam c:\temp\sam.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
+runas /user:administrator cmd.exe,3
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:administrator cmd.exe,3
+reg save hklm\sam c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sec.dat""",1
+sekurlsa::pth /user:admin /ntlm:hash,3
+runas /user:system powershell.exe,3
+reg save hklm\security c:\temp\sec.dat,1
+reg query hklm\sam /v lsabdsize,0
+reg save hklm\sam c:\temp\sec.dat,1
+klist purge,3
+reg query hklm\software\microsoft,0
+klist purge,3
+klist purge,3
+reg save hklm\security c:\temp\sec.dat,1
+"cmd.exe /c ""reg save hklm\security c:\temp\sam.dat""",1
+reg save hklm\security c:\temp\sec.dat,1
+reg save hklm\sam c:\temp\sam.dat,1
