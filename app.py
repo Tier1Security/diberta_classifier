@@ -3,6 +3,7 @@ import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import pathlib
 import torch.nn.functional as F
+from src.normalization import normalize_payload
 
 # --- CONFIGURATION ---
 # UPDATED: Pointing to the new 4-class merged model
@@ -10,6 +11,27 @@ TARGET_MODEL_PATH = "models/merged_4class_roberta"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 app = Flask(__name__)
+
+
+def normalize_payload(obj):
+    """Recursively normalize payload: lowercase, collapse whitespace.
+
+    - Strings: trim, collapse whitespace to single space, lowercase
+    - Maps: lower keys (strings) and normalize values recursively
+    - Lists: normalize members recursively
+    - Other values: returned unchanged
+    """
+    if isinstance(obj, str):
+        return re.sub(r"\s+", " ", obj).strip().lower()
+    if isinstance(obj, dict):
+        new = {}
+        for k, v in obj.items():
+            key = k.lower() if isinstance(k, str) else k
+            new[key] = normalize_payload(v)
+        return new
+    if isinstance(obj, list):
+        return [normalize_payload(i) for i in obj]
+    return obj
 
 # --- 1. LOAD MODEL & TOKENIZER ---
 print(f"--- Initializing Security AI API (4-Class) ---")
@@ -46,23 +68,48 @@ except Exception as e:
 def predict():
     """
     Expects JSON: { "text": "reg save HKLM\\SAM ..." }
+
+    NOTE: All incoming string payloads (JSON values, form fields, or raw body text)
+    are automatically normalized:
+    - lowercased
+    - whitespace collapsed to a single space, leading/trailing trimmed
+    This ensures consistent preprocessing regardless of incoming casing/spacing.
     """
     
-    # A. Extract Input
+    # A. Extract & Normalize Input
+    # Use top-level normalize function
+
     text_input = None
     if request.is_json:
-        text_input = request.json.get("text")
+        # get a parsed JSON payload safely
+        raw_json = request.get_json(silent=True)
+        if raw_json is None:
+            # fallback: try request.json (may raise) or raw data
+            try:
+                raw_json = request.json
+            except Exception:
+                raw_json = None
+        if raw_json is not None:
+            normalized_json = normalize_payload(raw_json)
+            if isinstance(normalized_json, dict):
+                # normalized keys are lowercased so 'text' will match 'Text', 'TEXT', etc.
+                text_input = normalized_json.get("text")
+            elif isinstance(normalized_json, str):
+                text_input = normalized_json
     elif request.form:
-        text_input = request.form.get("text")
+        raw_form_value = request.form.get("text")
+        if raw_form_value:
+            text_input = normalize_payload(raw_form_value)
     else:
         data = request.get_data(as_text=True)
-        if data: text_input = data
+        if data:
+            text_input = normalize_payload(data)
 
     if not text_input:
         return jsonify({"error": "No text provided"}), 400
 
-    # B. Preprocess
-    processed_text = text_input.lower()
+    # B. Preprocess (text already lowercased and whitespace-normalized from the input stage)
+    processed_text = text_input
     
     # C. Inference
     try:

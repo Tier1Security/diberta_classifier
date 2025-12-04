@@ -1,4 +1,0 @@
-timestamp,input_raw,input_normalized,true_label,predicted_label,confidence,desc
-2025-12-04T07:28:44.623644,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
-2025-12-04T07:28:44.634113,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
-2025-12-04T07:28:44.639442,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)

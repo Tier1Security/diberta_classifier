@@ -9,6 +9,18 @@ The classifier maps input text into **one of four mutually exclusive security cl
 - **T1562 — Impair Defenses**
 - **T1134 — Access Token Manipulation**
 
+Important: The service automatically normalizes incoming payloads:
+- All string values in JSON or form payloads are lowercased by default.
+- Multiple whitespace characters are collapsed to a single space, and leading/trailing whitespace is stripped.
+
+Example (curl):
+
+```bash
+curl -X POST -H 'Content-Type: application/json' \
+  -d '{ "Text": "  RUN   command  ", "extra": "MORE    SPACES" }' \
+  http://localhost/predict
+```
+The `Text` field will be normalized to `run command` and used as the input text.
 This model is designed for cybersecurity monitoring, SIEM augmentation, SOC automation, and defensive ML research.
 
 ---
