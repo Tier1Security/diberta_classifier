@@ -1,15 +1,15 @@
 {
-    "accuracy": 0.9990550437042287,
+    "accuracy": 1.0,
     "confusion_matrix": [
         [
-            122,
+            171,
             0,
-            4,
+            0,
             0
         ],
         [
             0,
-            3750,
+            4666,
             0,
             0
         ],
@@ -23,46 +23,46 @@
             0,
             0,
             0,
-            87
+            105
         ]
     ],
     "classification_report": {
         "Benign": {
             "precision": 1.0,
-            "recall": 0.9682539682539683,
-            "f1-score": 0.9838709677419355,
-            "support": 126.0
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 171.0
         },
         "T1003.002": {
             "precision": 1.0,
             "recall": 1.0,
             "f1-score": 1.0,
-            "support": 3750.0
+            "support": 4666.0
         },
         "T1562": {
-            "precision": 0.9854014598540146,
+            "precision": 1.0,
             "recall": 1.0,
-            "f1-score": 0.9926470588235294,
+            "f1-score": 1.0,
             "support": 270.0
         },
         "T1134": {
             "precision": 1.0,
             "recall": 1.0,
             "f1-score": 1.0,
-            "support": 87.0
+            "support": 105.0
         },
-        "accuracy": 0.9990550437042287,
+        "accuracy": 1.0,
         "macro avg": {
-            "precision": 0.9963503649635037,
-            "recall": 0.9920634920634921,
-            "f1-score": 0.9941295066413662,
-            "support": 4233.0
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5212.0
         },
         "weighted avg": {
-            "precision": 0.9990688386866486,
-            "recall": 0.9990550437042287,
-            "f1-score": 0.9990508971929688,
-            "support": 4233.0
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 5212.0
         }
     }
 }

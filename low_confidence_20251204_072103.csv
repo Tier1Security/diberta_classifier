@@ -1,0 +1,200 @@
+timestamp,input_raw,input_normalized,true_label,predicted_label,confidence,desc
+2025-12-04T07:20:57.329115,"powershell  -nop  -c ""reg save hklm\security security.hive""","powershell  -nop  -c ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.8542823195457458,PowerShell Wrapped Security Dump
+2025-12-04T07:20:57.452308,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,Benign,Benign,0.5486471652984619,OS Process Startup (Svchost)
+2025-12-04T07:20:57.462921,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:57.495478,"powershell -nop   -c ""reg save hklm\security security.hive""","powershell -nop   -c ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.844147264957428,PowerShell Wrapped Security Dump
+2025-12-04T07:20:57.581077,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,Benign,Benign,0.5486471652984619,OS Process Startup (Svchost)
+2025-12-04T07:20:57.591513,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:57.623076,"powershell -nop  -c ""reg save hklm\security security.hive""","powershell -nop  -c ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.6723889112472534,PowerShell Wrapped Security Dump
+2025-12-04T07:20:57.644041,sc stop   windefend,sc stop   windefend,T1562,T1562,0.8938004970550537,Stop Defender Service
+2025-12-04T07:20:57.707527,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall -p,Benign,Benign,0.49963870644569397,OS Process Startup (Svchost)
+2025-12-04T07:20:57.717965,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:57.723187,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:57.749544,"powershell -nop   -c   ""reg   save hklm\security security.hive""","powershell -nop   -c   ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.8459208607673645,PowerShell Wrapped Security Dump
+2025-12-04T07:20:57.770708,sc stop   windefend,sc stop   windefend,T1562,T1562,0.8938004970550537,Stop Defender Service
+2025-12-04T07:20:57.834025,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:20:57.844438,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:57.849616,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:57.875933,"powershell -nop -c   ""reg save hklm\security security.hive""","powershell -nop -c   ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.8612238764762878,PowerShell Wrapped Security Dump
+2025-12-04T07:20:57.960413,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:20:57.971175,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:57.976532,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:58.003244,"powershell  -nop   -c   ""reg save hklm\security security.hive""","powershell  -nop   -c   ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.8817306160926819,PowerShell Wrapped Security Dump
+2025-12-04T07:20:58.024300,sc stop  windefend,sc stop  windefend,T1562,T1562,0.8889992237091064,Stop Defender Service
+2025-12-04T07:20:58.087402,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:20:58.098284,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.103511,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:58.214303,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,Benign,Benign,0.5486471652984619,OS Process Startup (Svchost)
+2025-12-04T07:20:58.224733,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.256314,"powershell -nop -c  ""reg   save hklm\security security.hive""","powershell -nop -c  ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.829477846622467,PowerShell Wrapped Security Dump
+2025-12-04T07:20:58.340672,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,Benign,Benign,0.5549634099006653,OS Process Startup (Svchost)
+2025-12-04T07:20:58.351100,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.356311,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:58.467006,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:20:58.477586,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.482918,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:58.509204,"powershell -nop -c  ""reg save hklm\security   security.hive""","powershell -nop -c  ""reg save hklm\security   security.hive""",T1003.002,T1003.002,0.6564364433288574,PowerShell Wrapped Security Dump
+2025-12-04T07:20:58.593518,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:20:58.603954,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.609181,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:58.635743,"powershell -nop -c ""reg save   hklm\security   security.hive""","powershell -nop -c ""reg save   hklm\security   security.hive""",T1003.002,T1003.002,0.7675923109054565,PowerShell Wrapped Security Dump
+2025-12-04T07:20:58.719827,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall  -p,Benign,Benign,0.5830522179603577,OS Process Startup (Svchost)
+2025-12-04T07:20:58.730498,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.735713,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:58.762002,"powershell -nop -c ""reg   save hklm\security   security.hive""","powershell -nop -c ""reg   save hklm\security   security.hive""",T1003.002,T1003.002,0.7580046653747559,PowerShell Wrapped Security Dump
+2025-12-04T07:20:58.846270,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:20:58.856727,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.861931,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:58.888310,"powershell -nop -c ""reg   save hklm\security security.hive""","powershell -nop -c ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.6767311692237854,PowerShell Wrapped Security Dump
+2025-12-04T07:20:58.972947,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:20:58.983791,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:58.989015,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:59.015337,"powershell -nop  -c  ""reg save hklm\security   security.hive""","powershell -nop  -c  ""reg save hklm\security   security.hive""",T1003.002,T1003.002,0.794855535030365,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.099559,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,Benign,Benign,0.5549634099006653,OS Process Startup (Svchost)
+2025-12-04T07:20:59.109991,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:59.115231,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:59.141593,"powershell -nop -c   ""reg save hklm\security security.hive""","powershell -nop -c   ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.8612238764762878,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.225924,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,Benign,Benign,0.5074743032455444,OS Process Startup (Svchost)
+2025-12-04T07:20:59.236374,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:59.241577,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:59.268093,"powershell -nop -c ""reg save hklm\security   security.hive""","powershell -nop -c ""reg save hklm\security   security.hive""",T1003.002,T1003.002,0.5482627153396606,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.289151,sc stop   windefend,sc stop   windefend,T1562,T1562,0.8938004970550537,Stop Defender Service
+2025-12-04T07:20:59.352678,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall  -p,Benign,Benign,0.6628453135490417,OS Process Startup (Svchost)
+2025-12-04T07:20:59.363379,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:59.395115,"powershell -nop -c   ""reg   save hklm\security security.hive""","powershell -nop -c   ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.862243115901947,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.479975,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall -p,Benign,Benign,0.49963870644569397,OS Process Startup (Svchost)
+2025-12-04T07:20:59.490747,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:59.495988,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:59.522334,"powershell -nop -c ""reg  save hklm\security   security.hive""","powershell -nop -c ""reg  save hklm\security   security.hive""",T1003.002,T1003.002,0.6198849678039551,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.606612,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,Benign,Benign,0.5486471652984619,OS Process Startup (Svchost)
+2025-12-04T07:20:59.617043,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:59.622279,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:59.648657,"powershell -nop -c ""reg save hklm\security   security.hive""","powershell -nop -c ""reg save hklm\security   security.hive""",T1003.002,T1003.002,0.5482627153396606,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.669641,sc stop  windefend,sc stop  windefend,T1562,T1562,0.8889992237091064,Stop Defender Service
+2025-12-04T07:20:59.732924,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:20:59.743352,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:59.748566,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:59.774854,"powershell -nop  -c ""reg   save hklm\security   security.hive""","powershell -nop  -c ""reg   save hklm\security   security.hive""",T1003.002,T1003.002,0.8066257834434509,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.859219,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall  -p,Benign,Benign,0.5580256581306458,OS Process Startup (Svchost)
+2025-12-04T07:20:59.869635,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:20:59.874856,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:20:59.901494,"powershell -nop -c   ""reg   save hklm\security   security.hive""","powershell -nop -c   ""reg   save hklm\security   security.hive""",T1003.002,T1003.002,0.8883379101753235,PowerShell Wrapped Security Dump
+2025-12-04T07:20:59.986297,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:20:59.996938,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.002176,tasklist  /v,tasklist  /v,Benign,Benign,0.8129906058311462,System Noise (Process List)
+2025-12-04T07:21:00.028555,"powershell -nop -c ""reg   save hklm\security security.hive""","powershell -nop -c ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.6767311692237854,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.112900,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,Benign,Benign,0.5486471652984619,OS Process Startup (Svchost)
+2025-12-04T07:21:00.123388,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.154965,"powershell -nop -c ""reg save hklm\security   security.hive""","powershell -nop -c ""reg save hklm\security   security.hive""",T1003.002,T1003.002,0.5482627153396606,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.239430,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:21:00.249896,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.255148,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:00.281554,"powershell -nop -c  ""reg  save hklm\security   security.hive""","powershell -nop -c  ""reg  save hklm\security   security.hive""",T1003.002,T1003.002,0.8062312006950378,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.365808,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:00.376236,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.407834,"powershell -nop -c ""reg  save hklm\security security.hive""","powershell -nop -c ""reg  save hklm\security security.hive""",T1003.002,T1003.002,0.5166605114936829,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.429101,sc stop  windefend,sc stop  windefend,T1562,T1562,0.8889992237091064,Stop Defender Service
+2025-12-04T07:21:00.492688,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:00.503088,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.508325,tasklist  /v,tasklist  /v,Benign,Benign,0.8129906058311462,System Noise (Process List)
+2025-12-04T07:21:00.534859,"powershell -nop -c   ""reg save hklm\security   security.hive""","powershell -nop -c   ""reg save hklm\security   security.hive""",T1003.002,T1003.002,0.827842116355896,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.555889,sc stop  windefend,sc stop  windefend,T1562,T1562,0.8889992237091064,Stop Defender Service
+2025-12-04T07:21:00.619094,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:00.629749,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.634984,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:00.661313,"powershell -nop   -c  ""reg save hklm\security   security.hive""","powershell -nop   -c  ""reg save hklm\security   security.hive""",T1003.002,T1003.002,0.8939687013626099,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.745586,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,Benign,Benign,0.5549634099006653,OS Process Startup (Svchost)
+2025-12-04T07:21:00.755987,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.787522,"powershell -nop -c ""reg save  hklm\security   security.hive""","powershell -nop -c ""reg save  hklm\security   security.hive""",T1003.002,T1003.002,0.705598771572113,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.871784,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe   -k localservicenonetworkfirewall -p,Benign,Benign,0.49963870644569397,OS Process Startup (Svchost)
+2025-12-04T07:21:00.882224,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:00.913719,"powershell   -nop -c   ""reg   save hklm\security security.hive""","powershell   -nop -c   ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.8666948080062866,PowerShell Wrapped Security Dump
+2025-12-04T07:21:00.934723,sc stop  windefend,sc stop  windefend,T1562,T1562,0.8889992237091064,Stop Defender Service
+2025-12-04T07:21:00.998532,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:21:01.008953,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.014163,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:01.040486,"powershell -nop -c ""reg save  hklm\security   security.hive""","powershell -nop -c ""reg save  hklm\security   security.hive""",T1003.002,T1003.002,0.705598771572113,PowerShell Wrapped Security Dump
+2025-12-04T07:21:01.124822,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall -p,Benign,Benign,0.6372486352920532,OS Process Startup (Svchost)
+2025-12-04T07:21:01.135245,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.140475,tasklist  /v,tasklist  /v,Benign,Benign,0.8129906058311462,System Noise (Process List)
+2025-12-04T07:21:01.167042,"powershell -nop -c ""reg  save hklm\security security.hive""","powershell -nop -c ""reg  save hklm\security security.hive""",T1003.002,T1003.002,0.5166605114936829,PowerShell Wrapped Security Dump
+2025-12-04T07:21:01.251654,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:01.262327,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.267559,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:01.294648,"powershell -nop  -c  ""reg save hklm\security security.hive""","powershell -nop  -c  ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.8356448411941528,PowerShell Wrapped Security Dump
+2025-12-04T07:21:01.379044,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:01.389532,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.394773,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:01.421155,"powershell -nop -c ""reg save  hklm\security security.hive""","powershell -nop -c ""reg save  hklm\security security.hive""",T1003.002,T1003.002,0.692925214767456,PowerShell Wrapped Security Dump
+2025-12-04T07:21:01.505818,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:21:01.516255,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.521467,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:01.547791,"powershell -nop -c ""reg   save hklm\security security.hive""","powershell -nop -c ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.6767311692237854,PowerShell Wrapped Security Dump
+2025-12-04T07:21:01.568940,sc stop   windefend,sc stop   windefend,T1562,T1562,0.8938004970550537,Stop Defender Service
+2025-12-04T07:21:01.632483,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,Benign,Benign,0.5074743032455444,OS Process Startup (Svchost)
+2025-12-04T07:21:01.642957,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.648205,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:01.674617,"powershell -nop -c ""reg  save  hklm\security security.hive""","powershell -nop -c ""reg  save  hklm\security security.hive""",T1003.002,T1003.002,0.7655580043792725,PowerShell Wrapped Security Dump
+2025-12-04T07:21:01.695866,sc stop  windefend,sc stop  windefend,T1562,T1562,0.8889992237091064,Stop Defender Service
+2025-12-04T07:21:01.759065,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,Benign,Benign,0.5549634099006653,OS Process Startup (Svchost)
+2025-12-04T07:21:01.769545,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.774790,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:01.801445,"powershell  -nop   -c  ""reg  save hklm\security security.hive""","powershell  -nop   -c  ""reg  save hklm\security security.hive""",T1003.002,T1003.002,0.8543407917022705,PowerShell Wrapped Security Dump
+2025-12-04T07:21:01.886565,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:21:01.897276,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:01.902530,tasklist  /v,tasklist  /v,Benign,Benign,0.8129906058311462,System Noise (Process List)
+2025-12-04T07:21:01.928833,"powershell -nop  -c ""reg save hklm\security  security.hive""","powershell -nop  -c ""reg save hklm\security  security.hive""",T1003.002,T1003.002,0.6690439581871033,PowerShell Wrapped Security Dump
+2025-12-04T07:21:02.013614,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:02.024064,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.029298,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.055695,"powershell -nop  -c ""reg  save hklm\security  security.hive""","powershell -nop  -c ""reg  save hklm\security  security.hive""",T1003.002,T1003.002,0.7138519883155823,PowerShell Wrapped Security Dump
+2025-12-04T07:21:02.139857,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:02.150268,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.155469,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.181726,"powershell -nop -c ""reg   save hklm\security security.hive""","powershell -nop -c ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.6767311692237854,PowerShell Wrapped Security Dump
+2025-12-04T07:21:02.266039,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall  -p,Benign,Benign,0.6628453135490417,OS Process Startup (Svchost)
+2025-12-04T07:21:02.276466,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.281648,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.307948,"powershell   -nop -c ""reg   save   hklm\security security.hive""","powershell   -nop -c ""reg   save   hklm\security security.hive""",T1003.002,T1003.002,0.7303974032402039,PowerShell Wrapped Security Dump
+2025-12-04T07:21:02.392103,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:02.402535,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.407764,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.518482,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:02.529180,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.534364,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.560623,"powershell -nop -c   ""reg   save hklm\security security.hive""","powershell -nop -c   ""reg   save hklm\security security.hive""",T1003.002,T1003.002,0.862243115901947,PowerShell Wrapped Security Dump
+2025-12-04T07:21:02.644808,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe -k   localservicenonetworkfirewall   -p,Benign,Benign,0.6855275630950928,OS Process Startup (Svchost)
+2025-12-04T07:21:02.655236,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.660460,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.707675,sc stop   windefend,sc stop   windefend,T1562,T1562,0.8938004970550537,Stop Defender Service
+2025-12-04T07:21:02.770846,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,Benign,Benign,0.5074743032455444,OS Process Startup (Svchost)
+2025-12-04T07:21:02.781285,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.786508,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.812781,"powershell -nop -c  ""reg save hklm\security security.hive""","powershell -nop -c  ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.689050555229187,PowerShell Wrapped Security Dump
+2025-12-04T07:21:02.833770,sc stop   windefend,sc stop   windefend,T1562,T1562,0.8938004970550537,Stop Defender Service
+2025-12-04T07:21:02.896920,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall  -p,Benign,Benign,0.5074743032455444,OS Process Startup (Svchost)
+2025-12-04T07:21:02.907330,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:02.912529,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:02.938791,"powershell -nop  -c ""reg   save   hklm\security security.hive""","powershell -nop  -c ""reg   save   hklm\security security.hive""",T1003.002,T1003.002,0.6876983046531677,PowerShell Wrapped Security Dump
+2025-12-04T07:21:03.023741,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall -p,Benign,Benign,0.4413756728172302,OS Process Startup (Svchost)
+2025-12-04T07:21:03.034142,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:03.039374,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:03.086934,sc stop  windefend,sc stop  windefend,T1562,T1562,0.8889992237091064,Stop Defender Service
+2025-12-04T07:21:03.149914,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,Benign,Benign,0.5549634099006653,OS Process Startup (Svchost)
+2025-12-04T07:21:03.160608,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:03.192046,"powershell -nop -c  ""reg save hklm\security security.hive""","powershell -nop -c  ""reg save hklm\security security.hive""",T1003.002,T1003.002,0.689050555229187,PowerShell Wrapped Security Dump
+2025-12-04T07:21:03.276494,c:\windows\system32\svchost.exe   -k   localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe   -k   localservicenonetworkfirewall   -p,Benign,Benign,0.7172896862030029,OS Process Startup (Svchost)
+2025-12-04T07:21:03.286924,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:03.292126,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:03.318367,"powershell -nop -c  ""reg save   hklm\security security.hive""","powershell -nop -c  ""reg save   hklm\security security.hive""",T1003.002,T1003.002,0.8137955665588379,PowerShell Wrapped Security Dump
+2025-12-04T07:21:03.402560,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe -k  localservicenonetworkfirewall -p,Benign,Benign,0.5486471652984619,OS Process Startup (Svchost)
+2025-12-04T07:21:03.412959,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:03.418197,tasklist  /v,tasklist  /v,Benign,Benign,0.8129906058311462,System Noise (Process List)
+2025-12-04T07:21:03.444514,"powershell -nop -c ""reg save   hklm\security   security.hive""","powershell -nop -c ""reg save   hklm\security   security.hive""",T1003.002,T1003.002,0.7675923109054565,PowerShell Wrapped Security Dump
+2025-12-04T07:21:03.465500,sc stop   windefend,sc stop   windefend,T1562,T1562,0.8938004970550537,Stop Defender Service
+2025-12-04T07:21:03.529008,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,c:\windows\system32\svchost.exe -k localservicenonetworkfirewall   -p,Benign,Benign,0.5549634099006653,OS Process Startup (Svchost)
+2025-12-04T07:21:03.539399,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:03.544580,tasklist /v,tasklist /v,Benign,Benign,0.853132426738739,System Noise (Process List)
+2025-12-04T07:21:03.654961,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,c:\windows\system32\svchost.exe  -k localservicenonetworkfirewall -p,Benign,Benign,0.4466168284416199,OS Process Startup (Svchost)
+2025-12-04T07:21:03.665367,notepad.exe,notepad.exe,Benign,Benign,0.8212926387786865,System Noise (Simple App)
+2025-12-04T07:21:03.670601,tasklist  /v,tasklist  /v,Benign,Benign,0.8129906058311462,System Noise (Process List)

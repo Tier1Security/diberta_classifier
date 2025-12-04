@@ -5,6 +5,7 @@ import csv
 import datetime
 import os
 from transformers import pipeline
+import re 
 
 # --- CONFIGURATION ---
 MODEL_PATH = "models/merged_4class_roberta"
@@ -13,26 +14,7 @@ CONFIDENCE_THRESHOLD = 0.90
 SEED = 42 
 LOG_FAILURES = True 
 
-# --- DYNAMIC MUTATION ENGINE ---
-def mutate_text(text):
-    """
-    Applies real-world messiness.
-    NOTE: We REMOVED random casing here because we assume the 
-    pipeline forces lowercase before inference.
-    """
-    chars = list(text)
-    
-    # Random Whitespace (30% chance)
-    final_text = ""
-    for c in chars:
-        final_text += c
-        if c == ' ' and random.random() < 0.3:
-            final_text += ' ' * random.randint(1, 2)
-            
-    return final_text
-# --- THE "RED TEAM" SCENARIOS V6 (Final Hardened Test Set) ---
-# NOTE: This list now includes the specific Benign OS processes that previously caused failure,
-# ensuring the model remains stable across these critical system boundaries.
+# --- THE "RED TEAM" SCENARIOS V7 (Maximum Hardness) ---
 base_scenarios = [
     # --- T1003 (REGISTRY/LSASS) ---
     {"text": "reg save hklm\\sam c:\\windows\\temp\\sam.hiv", "label": "T1003.002", "desc": "Standard SAM Save"},
@@ -53,19 +35,20 @@ base_scenarios = [
     {"text": "settokenpriv::enableprivilege(sebackupprivilege)", "label": "T1134", "desc": "Enable SeBackupPrivilege"},
     {"text": "$a = [ref].assembly.gettype('system.management.automation.amsiutils')", "label": "T1134", "desc": "Reflection (AMSI Bypass)"}, 
 
-    # --- BENIGN (HARDENED) ---
-    {"text": "reg export hklm\\software\\policies policy_backup.reg", "label": "Benign", "desc": "Exporting Safe Hive"},
-    {"text": "reg save hkcu\\console console.config", "label": "Benign", "desc": "Saving Console Settings"},
-    {"text": "wmic process get commandline, processid", "label": "Benign", "desc": "WMIC Process List (Safe)"},
-    {"text": "get-help adjusttokenprivileges -full", "label": "Benign", "desc": "Help Lookup (Safe)"},
-    {"text": "python -m http.server 8000", "label": "Benign", "desc": "Python Dev Server (CLI Format)"}, 
-    {"text": "node server.js --port 3000", "label": "Benign", "desc": "NodeJS Server (CLI Format)"},
-    {"text": "whoami /priv", "label": "Benign", "desc": "Admin checking privs (Safe)"},
-    {"text": "select-string -path c:\\logs\\security.log -pattern 'failed logon'", "label": "Benign", "desc": "Searching Logs (Safe Pattern)"},
-    
-    # --- NEW CRITICAL SYSTEM BENIGN CHECKS ---
+    # --- BENIGN HARD NEGATIVES (Admin Ambiguity) ---
+    {"text": "reg query hklm\\software\\policies", "label": "Benign", "desc": "Exporting Safe Hive (Reg Query)"},
+    {"text": "wmic product get name, version", "label": "Benign", "desc": "WMIC Product List (Safe/Product)"},
+    {"text": "sc query windefend", "label": "Benign", "desc": "SC Query (Safe Service Check)"},
+    {"text": "get-help adjusttokenprivileges -full", "label": "Benign", "desc": "Help Lookup (T1134 Hard Negative)"},
+    {"text": "whoami /groups", "label": "Benign", "desc": "Admin checking groups (Safe)"},
     {"text": "c:\\windows\\system32\\svchost.exe -k localservicenonetworkfirewall -p", "label": "Benign", "desc": "OS Process Startup (Svchost)"},
-    {"text": "wmic product get name, version", "label": "Benign", "desc": "WMIC Product List (Safe/Product)"}
+
+    # --- BENIGN PURE NOISE (System Stability) ---
+    {"text": "ipconfig /all", "label": "Benign", "desc": "System Recon (Network/IP)"},
+    {"text": "notepad.exe", "label": "Benign", "desc": "System Noise (Simple App)"},
+    {"text": "tasklist /v", "label": "Benign", "desc": "System Noise (Process List)"},
+    {"text": "python -m http.server 8000", "label": "Benign", "desc": "Python Dev Server (CLI Format)"}, 
+    {"text": "select-string -path c:\\logs\\security.log -pattern 'failed logon'", "label": "Benign", "desc": "Searching Logs (Safe Pattern)"}
 ]
 def main():
     if SEED is not None:
@@ -73,7 +56,7 @@ def main():
         random.seed(SEED)
         torch.manual_seed(SEED)
     else:
-        print("--- Running Random Fuzzing Mode ---")
+        print("--- Running Standard Test Mode ---")
 
     print(f"--- Loading Model: {MODEL_PATH} ---")
     try:
@@ -102,6 +85,10 @@ def main():
     failures = []
     low_confidence = []
     total_tests = 0
+    
+    # NEW: Sets to track unique failures to prevent repetition
+    logged_failures_set = set()
+    logged_low_confidence_set = set()
 
     for i in range(1, ITERATIONS + 1):
         print(f"\rRunning Iteration {i}/{ITERATIONS}...", end="")
@@ -109,18 +96,20 @@ def main():
         for case in base_scenarios:
             total_tests += 1
             
-            # 1. Mutate (Add whitespace noise)
+            # 1. Input Preparation (No Mutation)
             raw_text = case["text"]
-            mutated_text = mutate_text(raw_text)
+            text_before_cleaning = raw_text 
             
-            # 2. NORMALIZE (Enforce Lowercase Assumption)
-            final_input = mutated_text.lower()
+            # 2. NORMALIZE (Enforce Lowercase and Single-Space Rule)
+            cleaned_text = re.sub(r'\s+', ' ', text_before_cleaning.strip())
+            final_input = cleaned_text.lower()
             
             true_label = case["label"]
             
+            # Create a unique key for this input/label combination
+            unique_key = (final_input, true_label)
+            
             # Predict
-            # Measure per-sample time and VRAM usage for profiling
-            # Ensure accurate GPU timing measurements (sync before & after)
             if using_cuda:
                 try:
                     torch.cuda.synchronize()
@@ -137,7 +126,6 @@ def main():
             durations.append(end_time - start_time)
 
             if using_cuda:
-                # Query peak memory allocated so far (bytes)
                 try:
                     cur_peak = torch.cuda.max_memory_allocated(0)
                 except Exception:
@@ -151,45 +139,52 @@ def main():
             is_correct = (pred_label == true_label)
             
             if not is_correct:
-                fail_data = {
-                    "timestamp": datetime.datetime.now().isoformat(),
-                    "input_raw": mutated_text,
-                    "input_normalized": final_input,
-                    "true_label": true_label,
-                    "predicted_label": pred_label,
-                    "confidence": score,
-                    "desc": case['desc']
-                }
-                failures.append(fail_data)
+                if unique_key not in logged_failures_set: # Check for uniqueness
+                    logged_failures_set.add(unique_key)
+                    fail_data = {
+                        "timestamp": datetime.datetime.now().isoformat(),
+                        "input_raw": text_before_cleaning, 
+                        "input_normalized": final_input,
+                        "true_label": true_label,
+                        "predicted_label": pred_label,
+                        "confidence": score,
+                        "desc": case['desc']
+                    }
+                    failures.append(fail_data)
                 
             elif score < CONFIDENCE_THRESHOLD:
-                # --- MODIFIED: Log comprehensive data for low confidence passes ---
-                low_conf_data = {
-                    "timestamp": datetime.datetime.now().isoformat(),
-                    "input_raw": mutated_text,
-                    "input_normalized": final_input,
-                    "true_label": true_label,
-                    "predicted_label": pred_label, # Log predicted for debugging
-                    "confidence": score,
-                    "desc": case['desc']
-                }
-                low_confidence.append(low_conf_data)
-                # --- END MODIFIED ---
+                if unique_key not in logged_low_confidence_set: # Check for uniqueness
+                    logged_low_confidence_set.add(unique_key)
+                    low_conf_data = {
+                        "timestamp": datetime.datetime.now().isoformat(),
+                        "input_raw": text_before_cleaning, 
+                        "input_normalized": final_input,
+                        "true_label": true_label,
+                        "predicted_label": pred_label, 
+                        "confidence": score,
+                        "desc": case['desc']
+                    }
+                    low_confidence.append(low_conf_data)
 
     print("\n\n" + "="*80)
     print(f"STRESS TEST REPORT ({total_tests} Total Samples Processed)")
     print("="*80)
 
-    # 1. REPORT FAILURES
+    # 1. REPORT FAILURES (DISPLAY)
     if failures:
-        # ... (reporting logic for failures remains the same) ...
-        pass
+        print(f"\n[!!!] FOUND {len(failures)} UNIQUE FAILURES (Incorrect Predictions):")
+        print("-" * 80)
+        print(f"{'Description':<25} | {'Predicted':<10} | {'Conf':<6} | {'Input Fragment'}")
+        print("-" * 80)
+        for f in failures:
+            short_input = (f['input_normalized'][:40] + '...') if len(f['input_normalized']) > 40 else f['input_normalized']
+            print(f"{f['desc']:<25} | {f['predicted_label']:<10} | {f['confidence']:.2f}   | {short_input}")
     else:
         print("\n[+] 0 Failures. The model was 100% accurate across all variations.")
 
     # 2. REPORT LOW CONFIDENCE (DISPLAY)
     if low_confidence:
-        print(f"\n[?] FOUND {len(low_confidence)} LOW CONFIDENCE PASSES (Correct but < {CONFIDENCE_THRESHOLD}):")
+        print(f"\n[?] FOUND {len(low_confidence)} UNIQUE LOW CONFIDENCE PASSES (Correct but < {CONFIDENCE_THRESHOLD}):")
         print("-" * 80)
         print(f"{'Description':<25} | {'True Label':<10} | {'Conf':<6} | {'Input Fragment'}")
         print("-" * 80)
@@ -201,7 +196,7 @@ def main():
 
     print("="*80)
 
-    # 4. PERFORMANCE SUMMARY (NEW)
+    # 4. PERFORMANCE SUMMARY
     if durations:
         avg_time = sum(durations) / len(durations)
         median_time = sorted(durations)[len(durations)//2]
@@ -216,27 +211,30 @@ def main():
     else:
         print("[+] No CUDA device detected; VRAM metrics not applicable (CPU run).")
 
-    # 3. SAVE FAILURES & LOW CONFIDENCE TO CSV (MODIFIED)
+    # 3. SAVE FAILURES & LOW CONFIDENCE TO CSV
     if LOG_FAILURES and (failures or low_confidence):
-        # Log failures and low confidence to separate files
+        
+        # Log Failures
+        if failures:
+            fail_filename = f"failures_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+            print(f"\n[+] Saving {len(failures)} unique failures to {fail_filename}...")
+            
+            with open(fail_filename, 'w', newline='', encoding='utf-8') as f:
+                fieldnames = ["timestamp", "input_raw", "input_normalized", "true_label", "predicted_label", "confidence", "desc"]
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(failures)
         
         # Log Low Confidence
         if low_confidence:
             lc_filename = f"low_confidence_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
-            print(f"\n[+] Saving {len(low_confidence)} low confidence passes to {lc_filename}...")
+            print(f"\n[+] Saving {len(low_confidence)} unique low confidence passes to {lc_filename}...")
             
             with open(lc_filename, 'w', newline='', encoding='utf-8') as f:
-                # Define fieldnames explicitly for the combined data structure
                 fieldnames = ["timestamp", "input_raw", "input_normalized", "true_label", "predicted_label", "confidence", "desc"]
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
                 writer.writeheader()
                 writer.writerows(low_confidence)
         
-        # Log Failures (if any)
-        if failures:
-             # Logic for saving failures remains the same as previous scripts
-             # ...
-             pass # Removed for brevity in this response, as failures were zero.
-
 if __name__ == "__main__":
     main()
