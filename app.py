@@ -3,6 +3,7 @@ import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import pathlib
 import torch.nn.functional as F
+import re
 from src.normalization import normalize_payload
 
 # --- CONFIGURATION ---

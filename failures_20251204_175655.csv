@@ -1,0 +1,4 @@
+timestamp,input_raw,input_normalized,true_label,predicted_label,confidence,desc
+2025-12-04T17:56:49.145182,reg export hklm\system c:\users\public\system.reg /y,reg export hklm\system c:\users\public\system.reg /y,T1003.002,Benign,0.9783726334571838,Exporting SYSTEM Hive (Malicious)
+2025-12-04T17:56:49.150951,"powershell -nop -c ""reg save hklm\security security.hive""","powershell -nop -c ""reg save hklm\security security.hive""",T1003.002,Benign,0.507283091545105,PowerShell Wrapped Security Dump
+2025-12-04T17:56:49.298807,select-string -path c:\logs\security.log -pattern 'failed logon',select-string -path c:\logs\security.log -pattern 'failed logon',Benign,T1562,0.6467725038528442,Searching Logs (Safe Pattern)
