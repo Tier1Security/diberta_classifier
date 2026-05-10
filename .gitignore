@@ -1,3 +1,9 @@
 models/final_roberta_bitfit_model
 
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
 
